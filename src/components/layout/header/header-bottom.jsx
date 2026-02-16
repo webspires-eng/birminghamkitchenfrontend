@@ -44,12 +44,12 @@ const HeaderBottom = ({
             </HeaderActionBtn>
           </Col>
 
-          <Col xs={5} lg={2} className="text-center text-lg-left">
+          <Col xs={5} lg={2} className="text-center text-lg-left d-flex align-items-center justify-content-center justify-content-lg-start">
             <Logo className="logo--desktop" src="/images/logo/logo.png" />
 
             <Logo
-              width={100}
-              height={30}
+              width={140}
+              height={42}
               className="logo--mobile"
               src="/images/logo/logo.png"
             />

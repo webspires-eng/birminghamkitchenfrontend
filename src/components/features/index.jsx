@@ -46,6 +46,8 @@ const FeatureItem = styled.div`
   }
 
   ${devices.xs} {
+    flex-direction: column;
+    text-align: center;
     padding: 16px 8px;
   }
 
@@ -76,7 +78,8 @@ const IconWrap = styled.div`
     width: 36px;
     height: 36px;
     font-size: 16px;
-    margin-right: 8px;
+    margin-right: 0;
+    margin-bottom: 8px;
     border-radius: 8px;
   }
 `

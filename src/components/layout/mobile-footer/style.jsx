@@ -1,4 +1,4 @@
-import styled, {devices, themeGet} from "@styled";
+import styled, { devices, themeGet } from "@styled";
 
 export const FooterButtons = styled.div`
   height: 50px;
@@ -29,16 +29,5 @@ export const FooterButtons = styled.div`
 `
 
 export const MobileFooterWrap = styled.div`
-  left: 0;
-  bottom: 0;
-  z-index: 99;
-  width: 100%;
   display: none;
-  position: fixed;
-  box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px 0;
-  background-color: ${themeGet('colors.secondary')};
-
-  ${devices.md} {
-    display: block;
-  }
 `

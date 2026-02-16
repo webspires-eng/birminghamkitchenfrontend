@@ -16,6 +16,10 @@ const ShowcaseWrap = styled.section`
   ${devices.md} {
     padding: 60px 0;
   }
+
+  ${devices.xs} {
+    padding: 40px 0;
+  }
 `;
 
 const ContentCol = styled(Col)`
@@ -90,8 +94,14 @@ const ImageContainer = styled.div`
   min-height: 420px;
   
   ${devices.md} {
-    min-height: 320px;
+    min-height: 300px;
     margin-top: 30px;
+  }
+
+  ${devices.xs} {
+    min-height: 240px;
+    margin-top: 24px;
+    border-radius: 8px;
   }
 `;
 
@@ -122,6 +132,12 @@ const StatsGrid = styled.div`
   ${devices.md} {
     bottom: 16px;
     left: 16px;
+  }
+
+  ${devices.xs} {
+    bottom: 12px;
+    left: 12px;
+    gap: 8px;
   }
 `;
 
