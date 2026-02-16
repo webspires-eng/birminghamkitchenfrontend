@@ -33,15 +33,15 @@ const SlideTwo = ({ subTitle, title, content, thumb, priority }) => {
                                     href="/shop"
                                     color="white"
                                     bg="primary"
-                                    hvrBg="black"
-                                    hvrColor="white"
+                                    hvrBg="white"
+                                    hvrColor="black"
                                     className="mt-4 mt-md-5"
                                     style={{
-                                        padding: '16px 48px',
+                                        padding: '16px 52px',
                                         fontSize: '12px',
                                         letterSpacing: '3px',
                                         textTransform: 'uppercase',
-                                        fontWeight: 600,
+                                        fontWeight: 700,
                                         borderRadius: '0',
                                     }}
                                 >
@@ -54,8 +54,7 @@ const SlideTwo = ({ subTitle, title, content, thumb, priority }) => {
             </Container>
 
             <ScrollIndicator>
-                <div className="scroll-mouse" />
-                <div className="scroll-line" />
+                <span>Scroll</span>
             </ScrollIndicator>
         </SlideItem>
     );

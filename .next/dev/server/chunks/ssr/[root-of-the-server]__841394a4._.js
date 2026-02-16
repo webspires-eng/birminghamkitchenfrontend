@@ -7530,21 +7530,16 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$js
 var __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__ = __turbopack_context__.i("[externals]/@styled-system/theme-get [external] (@styled-system/theme-get, cjs, [project]/node_modules/@styled-system/theme-get)");
 var __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__ = __turbopack_context__.i("[externals]/styled-components [external] (styled-components, cjs, [project]/node_modules/styled-components)");
 ;
-const hvrVisible = __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__["css"]`
-  visibility: visible;
-  transform: translateY(0);
-  opacity: 1;
-`;
 const ProductPrice = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
   font-size: 16px;
   line-height: 1;
   font-family: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])('fonts.montserrat')};
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   color: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])('colors.heading')};
   font-weight: 700;
-  margin-top: 8px;
+  margin-top: 10px;
 
   .price {
     &.old {
@@ -7564,9 +7559,9 @@ const ProductTitle = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
   font-family: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])('fonts.body')};
   font-weight: 600;
   margin-bottom: 4px;
-  line-height: 1.5;
+  line-height: 1.4;
   letter-spacing: 0;
-  text-align: left;
+  text-align: center;
 
   a {
     text-decoration: none;
@@ -7588,8 +7583,8 @@ const ProductMeta = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$style
   z-index: 10;
   display: flex;
   flex-direction: column;
-  padding: 16px 4px 0;
-  text-align: left;
+  padding: 18px 0 0;
+  text-align: center;
   transition: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])('transition')};
   background-color: transparent;
 
@@ -7614,7 +7609,7 @@ const buttonStyle = __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   font-family: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])('fonts.heading')};
   background-color: #111;
-  border-radius: 8px;
+  border-radius: 6px;
   margin: 0 auto;
   
   svg {
@@ -7625,8 +7620,6 @@ const buttonStyle = __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$
   &:hover {
     background-color: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])('colors.primary')};
     color: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])('colors.white')};
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(212, 5, 17, 0.25);
   }
 
   ${({ disabled })=>disabled && __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__["css"]`
@@ -7679,21 +7672,19 @@ const ActionButton = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
   justify-content: center;
   width: 40px;
   height: 40px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s ease;
   text-decoration: none;
   color: #333;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 
   svg {
     font-size: 17px;
   }
 
   &:not(.wishlist) {
-    transform: translateX(12px);
+    transform: translateX(10px);
     opacity: 0;
   }
 
@@ -7704,7 +7695,6 @@ const ActionButton = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
   &:hover {
     background-color: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])('colors.primary')};
     color: #fff;
-    transform: translateX(0) scale(1.05);
   }
 `;
 const ProductActions = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
@@ -7725,10 +7715,9 @@ const ProductActionsMobile = __TURBOPACK__imported__module__$5b$project$5d2f$src
 
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].sm} {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 8px;
     margin-top: 10px;
-    padding: 0 4px;
   }
 
   ${ActionButton} {
@@ -7736,9 +7725,6 @@ const ProductActionsMobile = __TURBOPACK__imported__module__$5b$project$5d2f$src
     opacity: 1;
     box-shadow: none;
     background: #f5f5f5;
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
     
     &:hover {
       background: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])('colors.primary')};
@@ -7752,7 +7738,7 @@ const Badge = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$i
   text-transform: uppercase;
   letter-spacing: 0.8px;
   padding: 5px 12px;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #fff;
 
   & + span {
@@ -7764,11 +7750,11 @@ const Badge = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$i
   `}
 
   ${(props)=>props.type === 'sale' && __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__["css"]`
-    background: linear-gradient(135deg, ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])('colors.primary')}, #ff4444);
+    background-color: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])('colors.primary')};
   `}
 
   ${(props)=>props.type === 'winter' && __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__["css"]`
-    background: linear-gradient(135deg, #6a1b9a, #9c4dcc);
+    background-color: #6a1b9a;
   `}
 
   ${(props)=>props.type === 'featured' && __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__["css"]`
@@ -7794,7 +7780,12 @@ const ProductImage = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
 
   .thumb {
     z-index: 1;
-    max-width: 100%;
+    width: 100%;
+
+    img {
+      width: 100% !important;
+      height: auto !important;
+    }
 
     &.hover-image {
       position: absolute;
@@ -7809,16 +7800,15 @@ const ProductThumb = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
   position: relative;
   overflow: hidden;
   margin: 0;
-  border-radius: 14px;
+  border-radius: 12px;
   background-color: #f5f5f5;
-  aspect-ratio: 1 / 1.15;
   
   img {
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: auto !important;
     display: block;
-    object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    mix-blend-mode: multiply;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .hover-image {
@@ -7828,12 +7818,13 @@ const ProductThumb = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.4s ease;
+    mix-blend-mode: multiply;
   }
 `;
 const Product = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
   position: relative;
-  margin-bottom: 36px; 
+  margin-bottom: 30px; 
 
   &:hover {
     ${ProductThumb} {
@@ -11102,15 +11093,15 @@ const SlideTwo = ({ subTitle, title, content, thumb, priority })=>{
                                         href: "/shop",
                                         color: "white",
                                         bg: "primary",
-                                        hvrBg: "black",
-                                        hvrColor: "white",
+                                        hvrBg: "white",
+                                        hvrColor: "black",
                                         className: "mt-4 mt-md-5",
                                         style: {
-                                            padding: '16px 48px',
+                                            padding: '16px 52px',
                                             fontSize: '12px',
                                             letterSpacing: '3px',
                                             textTransform: 'uppercase',
-                                            fontWeight: 600,
+                                            fontWeight: 700,
                                             borderRadius: '0'
                                         },
                                         children: "Explore Collection"
@@ -11146,23 +11137,14 @@ const SlideTwo = ({ subTitle, title, content, thumb, priority })=>{
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$slider$2f$slider$2e$style$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["ScrollIndicator"], {
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                        className: "scroll-mouse"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/slider/slide/slide-two.jsx",
-                        lineNumber: 57,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                        className: "scroll-line"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/slider/slide/slide-two.jsx",
-                        lineNumber: 58,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0))
-                ]
-            }, void 0, true, {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
+                    children: "Scroll"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/slider/slide/slide-two.jsx",
+                    lineNumber: 57,
+                    columnNumber: 17
+                }, ("TURBOPACK compile-time value", void 0))
+            }, void 0, false, {
                 fileName: "[project]/src/components/slider/slide/slide-two.jsx",
                 lineNumber: 56,
                 columnNumber: 13

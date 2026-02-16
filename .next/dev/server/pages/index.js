@@ -1,5 +1,5 @@
 var R=require("../chunks/ssr/[turbopack]_runtime.js")("server/pages/index.js")
-R.c("server/chunks/ssr/[root-of-the-server]__841394a4._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__e7583bf3._.js")
 R.c("server/chunks/ssr/node_modules_next_21e2fa73._.js")
 R.c("server/chunks/ssr/node_modules_react-icons_io_index_esm_a79d29d5.js")
 R.c("server/chunks/ssr/node_modules_react-icons_cg_index_esm_ec533bf3.js")

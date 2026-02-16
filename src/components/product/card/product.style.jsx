@@ -1,21 +1,15 @@
 import styled, { themeGet, css, devices } from "@styled";
 
-const hvrVisible = css`
-  visibility: visible;
-  transform: translateY(0);
-  opacity: 1;
-`
-
 export const ProductPrice = styled.div`
   font-size: 16px;
   line-height: 1;
   font-family: ${themeGet('fonts.montserrat')};
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   color: ${themeGet('colors.heading')};
   font-weight: 700;
-  margin-top: 8px;
+  margin-top: 10px;
 
   .price {
     &.old {
@@ -36,9 +30,9 @@ export const ProductTitle = styled.h2`
   font-family: ${themeGet('fonts.body')};
   font-weight: 600;
   margin-bottom: 4px;
-  line-height: 1.5;
+  line-height: 1.4;
   letter-spacing: 0;
-  text-align: left;
+  text-align: center;
 
   a {
     text-decoration: none;
@@ -61,8 +55,8 @@ export const ProductMeta = styled.div`
   z-index: 10;
   display: flex;
   flex-direction: column;
-  padding: 16px 4px 0;
-  text-align: left;
+  padding: 18px 0 0;
+  text-align: center;
   transition: ${themeGet('transition')};
   background-color: transparent;
 
@@ -88,7 +82,7 @@ const buttonStyle = css`
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   font-family: ${themeGet('fonts.heading')};
   background-color: #111;
-  border-radius: 8px;
+  border-radius: 6px;
   margin: 0 auto;
   
   svg {
@@ -99,8 +93,6 @@ const buttonStyle = css`
   &:hover {
     background-color: ${themeGet('colors.primary')};
     color: ${themeGet('colors.white')};
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(212, 5, 17, 0.25);
   }
 
   ${({ disabled }) => disabled && css`
@@ -156,21 +148,19 @@ export const ActionButton = styled.button`
   justify-content: center;
   width: 40px;
   height: 40px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s ease;
   text-decoration: none;
   color: #333;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 
   svg {
     font-size: 17px;
   }
 
   &:not(.wishlist) {
-    transform: translateX(12px);
+    transform: translateX(10px);
     opacity: 0;
   }
 
@@ -181,7 +171,6 @@ export const ActionButton = styled.button`
   &:hover {
     background-color: ${themeGet('colors.primary')};
     color: #fff;
-    transform: translateX(0) scale(1.05);
   }
 `
 
@@ -204,10 +193,9 @@ export const ProductActionsMobile = styled.div`
 
   ${devices.sm} {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 8px;
     margin-top: 10px;
-    padding: 0 4px;
   }
 
   ${ActionButton} {
@@ -215,9 +203,6 @@ export const ProductActionsMobile = styled.div`
     opacity: 1;
     box-shadow: none;
     background: #f5f5f5;
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
     
     &:hover {
       background: ${themeGet('colors.primary')};
@@ -232,7 +217,7 @@ export const Badge = styled.span`
   text-transform: uppercase;
   letter-spacing: 0.8px;
   padding: 5px 12px;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #fff;
 
   & + span {
@@ -244,11 +229,11 @@ export const Badge = styled.span`
   `}
 
   ${props => props.type === 'sale' && css`
-    background: linear-gradient(135deg, ${themeGet('colors.primary')}, #ff4444);
+    background-color: ${themeGet('colors.primary')};
   `}
 
   ${props => props.type === 'winter' && css`
-    background: linear-gradient(135deg, #6a1b9a, #9c4dcc);
+    background-color: #6a1b9a;
   `}
 
   ${props => props.type === 'featured' && css`
@@ -276,7 +261,12 @@ export const ProductImage = styled.div`
 
   .thumb {
     z-index: 1;
-    max-width: 100%;
+    width: 100%;
+
+    img {
+      width: 100% !important;
+      height: auto !important;
+    }
 
     &.hover-image {
       position: absolute;
@@ -292,16 +282,15 @@ export const ProductThumb = styled.figure`
   position: relative;
   overflow: hidden;
   margin: 0;
-  border-radius: 14px;
+  border-radius: 12px;
   background-color: #f5f5f5;
-  aspect-ratio: 1 / 1.15;
   
   img {
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: auto !important;
     display: block;
-    object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    mix-blend-mode: multiply;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .hover-image {
@@ -311,13 +300,14 @@ export const ProductThumb = styled.figure`
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.4s ease;
+    mix-blend-mode: multiply;
   }
 `
 
 export const Product = styled.div`
   position: relative;
-  margin-bottom: 36px; 
+  margin-bottom: 30px; 
 
   &:hover {
     ${ProductThumb} {

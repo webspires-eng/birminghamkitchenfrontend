@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
-import Image from "@components/ui/image";
+import Image from "next/image";
 import { placeholder } from "@utils/constant";
 import { CategoryItem, CatItemInner, CatName, CatSubtext } from "./category.style";
 
@@ -10,10 +10,11 @@ const Category = ({ category, icon, slug }) => {
             <CategoryItem>
                 <CatItemInner>
                     <Image
-                        width={400}
-                        height={400}
+                        fill
                         alt={category}
                         src={icon ? icon : placeholder}
+                        sizes="(max-width: 768px) 100vw, 25vw"
+                        style={{ objectFit: 'cover' }}
                     />
                     <CatName>{category}</CatName>
                     <CatSubtext>View Collection</CatSubtext>
