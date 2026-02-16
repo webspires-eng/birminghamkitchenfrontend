@@ -6,17 +6,6 @@ export const SliderWrap = styled.div`
   position: relative;
   transition: ${themeGet('transition')};
 
-  /* Force hero slider to respect slide height */
-  &:has(.hero-slider-one),
-  & {
-    .swiper {
-      height: auto;
-    }
-    .swiper-slide {
-      height: auto;
-    }
-  }
-
   ${({ arrows }) => arrows && css`
     .swiper-button {
       &-next,

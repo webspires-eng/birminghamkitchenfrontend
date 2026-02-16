@@ -83,10 +83,25 @@ export const GlobalStyle = createGlobalStyle`
     background: #999;
   }
 
-  /* Hero Slider Pagination */
+  /* Hero Slider - Force proper height */
   .hero-slider-one {
+    &.swiper-container,
+    &.swiper {
+      height: 92vh;
+      min-height: 550px;
+      max-height: 920px;
+    }
+
+    .swiper-wrapper {
+      height: 100%;
+    }
+
+    .swiper-slide {
+      height: 100% !important;
+    }
+
     .swiper-pagination {
-        bottom: 80px !important;
+        bottom: 40px !important;
         z-index: 20 !important;
         
         .swiper-pagination-bullet {

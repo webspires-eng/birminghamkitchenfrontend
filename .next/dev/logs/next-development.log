@@ -1807,3 +1807,234 @@ Import traces:
 [00:20:00.079] Browser WARN    GraphQL request failed, returning mock data to prevent crash.
 [00:20:00.079] Browser WARN    Shopify not configured, using mock data.
 [00:20:00.514] Server  ERROR   ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1617806118233-f8e137bc7288?auto=format&fit=crop&w=300&q=80" 404
+[00:20:29.605] Server  WARN    ⚠ [externals]/@bootstrap-styled/v4
+unexpected export *
+export * used with module [externals]/@bootstrap-styled/v4 [external] (@bootstrap-styled/v4, cjs, [project]/node_modules/@bootstrap-styled/v4) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/pages/index.jsx [SSR]
+
+  #2 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/styled/bootstrap.jsx [SSR]
+    ./src/pages/_app.jsx [SSR]
+
+
+[00:20:29.607] Server  WARN    ⚠ [externals]/styled-system
+unexpected export *
+export * used with module [externals]/styled-system [external] (styled-system, cjs, [project]/node_modules/styled-system) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/styled-system [external]
+    ./src/components/ui/button/index.jsx [SSR]
+    ./src/pages/index.jsx [SSR]
+
+  #2 [external]:
+    [externals]/styled-system [external]
+    ./src/styled/index.jsx [SSR]
+    ./src/pages/_document.jsx [SSR]
+
+
+[00:20:29.611] Server  WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:20:29.611] Server  WARN    Shopify not configured, using mock data.
+[00:20:29.612] Server  WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:20:29.612] Server  WARN    Shopify not configured, using mock data.
+[00:20:30.048] Server  WARN    ⚠ [externals]/@bootstrap-styled/v4
+unexpected export *
+export * used with module [externals]/@bootstrap-styled/v4 [external] (@bootstrap-styled/v4, cjs, [project]/node_modules/@bootstrap-styled/v4) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/pages/index.jsx [SSR]
+
+  #2 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/styled/bootstrap.jsx [SSR]
+    ./src/pages/_app.jsx [SSR]
+
+
+[00:20:30.051] Server  WARN    ⚠ [externals]/styled-system
+unexpected export *
+export * used with module [externals]/styled-system [external] (styled-system, cjs, [project]/node_modules/styled-system) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/styled-system [external]
+    ./src/components/ui/button/index.jsx [SSR]
+    ./src/pages/index.jsx [SSR]
+
+  #2 [external]:
+    [externals]/styled-system [external]
+    ./src/styled/index.jsx [SSR]
+    ./src/pages/_document.jsx [SSR]
+
+
+[00:20:30.054] Server  WARN    ⚠ [externals]/@bootstrap-styled/v4
+unexpected export *
+export * used with module [externals]/@bootstrap-styled/v4 [external] (@bootstrap-styled/v4, cjs, [project]/node_modules/@bootstrap-styled/v4) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/components/shop/index.jsx [SSR]
+    ./src/pages/collection/[slug].jsx [SSR]
+
+  #2 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/styled/bootstrap.jsx [SSR]
+    ./src/pages/_app.jsx [SSR]
+
+
+[00:20:30.056] Server  WARN    ⚠ [externals]/styled-system
+unexpected export *
+export * used with module [externals]/styled-system [external] (styled-system, cjs, [project]/node_modules/styled-system) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/styled-system [external]
+    ./src/styled/index.jsx [SSR]
+    ./src/pages/_document.jsx [SSR]
+
+  #2 [external]:
+    [externals]/styled-system [external]
+    ./src/components/layout/header/style.jsx [SSR]
+    ./src/components/layout/index.jsx [SSR]
+    ./src/pages/collection/[slug].jsx [SSR]
+
+
+[00:20:30.058] Server  WARN    ⚠ [externals]/@bootstrap-styled/v4
+unexpected export *
+export * used with module [externals]/@bootstrap-styled/v4 [external] (@bootstrap-styled/v4, cjs, [project]/node_modules/@bootstrap-styled/v4) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/components/ui/breadcrumb/index.jsx [SSR]
+    ./src/pages/product/[slug].jsx [SSR]
+
+  #2 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/styled/bootstrap.jsx [SSR]
+    ./src/pages/_app.jsx [SSR]
+
+
+[00:20:30.063] Server  WARN    ⚠ [externals]/styled-system
+unexpected export *
+export * used with module [externals]/styled-system [external] (styled-system, cjs, [project]/node_modules/styled-system) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/styled-system [external]
+    ./src/styled/index.jsx [SSR]
+    ./src/pages/_document.jsx [SSR]
+
+  #2 [external]:
+    [externals]/styled-system [external]
+    ./src/components/product/details/details.style.jsx [SSR]
+    ./src/components/product/details/index.jsx [SSR]
+    ./src/pages/product/[slug].jsx [SSR]
+
+
+[00:20:30.066] Server  WARN    ⚠ [externals]/styled-system
+unexpected export *
+export * used with module [externals]/styled-system [external] (styled-system, cjs, [project]/node_modules/styled-system) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/styled-system [external]
+    ./src/components/ui/button/index.jsx [SSR]
+    ./src/pages/404.jsx [SSR]
+
+  #2 [external]:
+    [externals]/styled-system [external]
+    ./src/styled/index.jsx [SSR]
+    ./src/pages/_document.jsx [SSR]
+
+
+[00:20:36.667] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <PathnameContextProviderAdapter router={{sdc:{},sbc:{}, ...}} isAutoExport={false}>
+      <FurnsAPP pageProps={{products:[...], ...}} __N_SSG={true} Component={function HomeTwo} err={undefined} ...>
+        <Head>
+        <Fe theme={{colors:{...}, ...}}>
+          <BootstrapProvider theme={{...}} reset={true}>
+            <Fe theme={{...}}>
+              <styled.div utils={{screen:true, ...}} theme={{_name:"boo...", ...}}>
+                <div
++                 className="sc-bdfBQB hSZMIG"
+-                 className="UtilityProvider-wqw4uj-0 jJKWqS"
+                  ref={null}
+                >
+      ...
+
+[00:20:36.667] Browser ERROR   `legacyBehavior` is deprecated and will be removed in a future release. A codemod is available to upgrade your components:
+
+npx @next/codemod@latest new-link .
+
+Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components
+[00:20:36.667] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <a> a 
+
+  ...
+    <section className="sc-gHfsNP ..." ref={null}>
+      <Styled(ContainerUnstyled)>
+        <ContainerUnstyled className="sc-jONnzC ..." ref={null} theme={{...}} fluid={false}>
+          <div className="sc-jONnzC ...">
+            <Slider settings={{loop:true, ...}}>
+              <styled.div animate={undefined} dots={false} arrows={true}>
+                <div className="sc-jlIlqL ..." ref={null}>
+                  <Swiper slidesPerView={1.2} pagination={false} navigation={true} loop={true} spaceBetween={15} ...>
+                    <div ref={{current:null}} className="swiper-con...">
+                      <div>
+                      <div>
+                      <div className="swiper-wra...">
+                        <SwiperSlide swiper={{...}} data-swiper-slide-index={2} className={" swiper-..."}>
+                          <div ref={{current:null}} className="swiper-sli..." data-swiper-slide-index={2}>
+                            <Category category="Bespoke Wa..." icon={"https://..."} slug="/collectio...">
+                              <LinkComponent href="/collectio..." passHref={true}>
+>                               <a
+>                                 ref={function}
+>                                 onClick={function onClick}
+>                                 onMouseEnter={function onMouseEnter}
+>                                 onTouchStart={function onTouchStart}
+>                                 href="/collection/bespoke-wardrobes"
+>                               >
+                                  <styled.a>
+>                                   <a className="sc-JAcba igCoXj" ref={null}>
+                        ...
+                        ...
+                      ...
+
+[00:20:36.667] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. a <a>
+[00:20:36.667] Browser WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:20:36.667] Browser WARN    Shopify not configured, using mock data.
+[00:20:36.899] Browser WARN    Image with src "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=300&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:20:37.177] Server  ERROR   ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1617806118233-f8e137bc7288?auto=format&fit=crop&w=300&q=80" 404
+[00:21:07.930] Server  LOG     ✓ Compiled in 12ms
+[00:21:46.118] Server  LOG     ✓ Compiled in 8ms

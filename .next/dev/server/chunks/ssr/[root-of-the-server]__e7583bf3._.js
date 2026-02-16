@@ -6993,17 +6993,6 @@ const SliderWrap = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled
   position: relative;
   transition: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])('transition')};
 
-  /* Force hero slider to respect slide height */
-  &:has(.hero-slider-one),
-  & {
-    .swiper {
-      height: auto;
-    }
-    .swiper-slide {
-      height: auto;
-    }
-  }
-
   ${({ arrows })=>arrows && __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__["css"]`
     .swiper-button {
       &-next,
