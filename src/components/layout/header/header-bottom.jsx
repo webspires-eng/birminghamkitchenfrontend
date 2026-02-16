@@ -48,7 +48,7 @@ const HeaderBottom = ({
             <Logo className="logo--desktop" src="/images/logo/logo.png" />
 
             <Logo
-              width={140}
+              width={180}
               height={42}
               className="logo--mobile"
               src="/images/logo/logo.png"

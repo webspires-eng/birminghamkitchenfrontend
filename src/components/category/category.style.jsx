@@ -45,8 +45,8 @@ export const CatItemInner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  padding: 0 20px 28px;
+  justify-content: center;
+  padding: 20px;
   position: relative;
   overflow: hidden;
 
@@ -86,7 +86,7 @@ export const CatItemInner = styled.div`
 export const CategoryItem = styled.a`
   display: block;
   width: 100%;
-  height: 380px;
+  height: 320px;
   position: relative;
   border-radius: 12px;
   overflow: hidden;
@@ -96,11 +96,11 @@ export const CategoryItem = styled.a`
   background: #e0e0e0;
 
   ${devices.sm} {
-    height: 300px;
+    height: 220px;
   }
 
   ${devices.xs} {
-    height: 260px;
+    height: 180px;
   }
 
   &:hover {
