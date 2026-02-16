@@ -45,7 +45,7 @@ export const CatItemInner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 20px;
   position: relative;
   overflow: hidden;
@@ -74,9 +74,9 @@ export const CatItemInner = styled.div`
     height: 100%;
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.1) 50%,
-      rgba(0, 0, 0, 0.7) 100%
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.6) 100%
     );
     transition: all 0.4s ease;
     z-index: 1;
