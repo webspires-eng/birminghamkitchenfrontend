@@ -22,24 +22,24 @@ const SlideTwo = ({ subTitle, title, content, thumb, priority }) => {
 
             <Container className="align-self-center">
                 <Row className="justify-content-center">
-                    <Col md={8} className="m-auto">
+                    <Col md={10} lg={8} className="m-auto">
                         <SlideContent mode="light" textAlign="center">
                             {subTitle && <SlideSubTitle>{subTitle}</SlideSubTitle>}
                             {title && <SlideTitle>{title}</SlideTitle>}
                             {content && <p>{content}</p>}
-                            <div style={{ opacity: 0, animation: 'fadeInUp 0.8s ease forwards', animationDelay: '0.8s' }}>
+                            <div style={{ opacity: 0, animation: 'fadeInUp 1s cubic-bezier(0.16,1,0.3,1) forwards', animationDelay: '0.9s' }}>
                                 <Button
                                     tag="a"
                                     href="/shop"
                                     color="white"
                                     bg="primary"
                                     hvrBg="black"
-                                    hvrColor="primary"
+                                    hvrColor="white"
                                     className="mt-4 mt-md-5"
                                     style={{
-                                        padding: '14px 42px',
-                                        fontSize: '13px',
-                                        letterSpacing: '2px',
+                                        padding: '16px 48px',
+                                        fontSize: '12px',
+                                        letterSpacing: '3px',
                                         textTransform: 'uppercase',
                                         fontWeight: 600,
                                         borderRadius: '0',
@@ -54,7 +54,8 @@ const SlideTwo = ({ subTitle, title, content, thumb, priority }) => {
             </Container>
 
             <ScrollIndicator>
-                <span>Scroll</span>
+                <div className="scroll-mouse" />
+                <div className="scroll-line" />
             </ScrollIndicator>
         </SlideItem>
     );

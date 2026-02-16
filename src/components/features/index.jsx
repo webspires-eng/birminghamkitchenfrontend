@@ -2,110 +2,129 @@ import { Container, Row, Col } from "@bootstrap";
 import styled, { themeGet, devices, keyframes } from "@styled";
 import { HiOutlineTruck, HiOutlineClock, HiOutlineShieldCheck, HiOutlineCreditCard } from "react-icons/hi";
 
-const float = keyframes`
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+const slideUp = keyframes`
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 `;
 
 const FeatureWrapper = styled.div`
   background: transparent;
   position: relative;
   z-index: 10;
-  margin-top: -80px; /* Pull up more into hero */
-  margin-bottom: 60px;
+  margin-top: -60px;
+  margin-bottom: 0;
+  padding: 0 20px;
 
   ${devices.md} {
     margin-top: 0;
-    margin-bottom: 30px;
-    background: #fff;
+    padding: 0;
   }
 `;
 
 const FeatureInner = styled.div`
-  background: #fff;
-  border-radius: 20px;
-  padding: 5px 0;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 0;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
   position: relative;
   z-index: 10;
-  border: 1px solid rgba(0,0,0,0.03);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  overflow: hidden;
 
   ${devices.md} {
     border-radius: 0;
-    box-shadow: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     border: none;
-    padding: 20px 0;
-    margin-top: -20px; /* Slight overlap on mobile or none */
-    background: transparent;
+    background: #fff;
   }
 `;
 
 const FeatureItem = styled.div`
   display: flex;
   align-items: center;
-  padding: 35px 25px;
-  transition: all 0.3s ease;
-  border-right: 1px solid #f0f0f0;
+  padding: 36px 28px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
 
-  &:last-child {
-    border-right: none;
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(0,0,0,0.06), transparent);
+  }
+
+  &:last-child::after {
+    display: none;
   }
 
   ${devices.lg} {
-      padding: 30px 15px;
+    padding: 30px 20px;
   }
 
   ${devices.md} {
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    padding: 30px 15px;
-    border-right: none;
-    border-bottom: 1px solid #f0f0f0;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 28px 24px;
+    
+    &::after {
+      right: 0;
+      top: auto;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,0,0,0.06), transparent);
+    }
   }
 
   &:hover {
     .feature-icon {
-      animation: ${float} 2s ease infinite;
+      transform: scale(1.08);
+      background: ${themeGet('colors.primary')};
+      color: #fff;
     }
   }
 `;
 
 const IconWrap = styled.div`
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background: rgba(212, 5, 17, 0.08); /* Light red tint */
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(212, 5, 17, 0.08), rgba(212, 5, 17, 0.04));
   color: ${themeGet('colors.primary')};
-  font-size: 28px;
-  margin-right: 20px;
+  font-size: 24px;
+  margin-right: 18px;
   flex-shrink: 0;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
   ${devices.md} {
-    margin-right: 0;
-    margin-bottom: 18px;
-    width: 70px;
-    height: 70px;
+    margin-right: 16px;
+    width: 52px;
+    height: 52px;
   }
 `
 
 const FeatureInfo = styled.div`
   h4 {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
-    margin-bottom: 5px;
-    color: #191919;
+    margin-bottom: 4px;
+    color: #111;
     letter-spacing: -0.2px;
   }
   p {
     margin: 0;
-    font-size: 14px;
-    color: #666;
+    font-size: 13px;
+    color: #888;
     line-height: 1.5;
+    font-weight: 400;
   }
 `;
 

@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS='--openssl-legacy-provider' next dev",
-    "build": "NODE_OPTIONS='--openssl-legacy-provider' next build",
-    "start": "NODE_OPTIONS='--openssl-legacy-provider' next start",
-    "export": "NODE_OPTIONS='--openssl-legacy-provider' next export"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
   },
   "dependencies": {
     "@bootstrap-styled/provider": "^2.0.3",

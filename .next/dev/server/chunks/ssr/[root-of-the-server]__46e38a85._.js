@@ -346,6 +346,8 @@ const GlobalStyle = __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$
     font-size: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])("fontSizes.body")};
     font-weight: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])("fontWeights.body")};
     line-height: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])("lineHeights.body")};
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     &[dir="rtl"] {
       text-align: right;
@@ -390,25 +392,54 @@ const GlobalStyle = __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$
     box-shadow: none;
     outline: 0;
   }
-  
-  /* Hero Slider Pagination Fix */
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #999;
+  }
+
+  /* Hero Slider Pagination */
   .hero-slider-one {
     .swiper-pagination {
         bottom: 80px !important;
         z-index: 20 !important;
         
         .swiper-pagination-bullet {
-            width: 10px;
-            height: 10px;
-            background: rgba(255,255,255,0.4);
+            width: 8px;
+            height: 8px;
+            background: rgba(255,255,255,0.3);
             opacity: 1;
-            margin: 0 6px !important;
+            margin: 0 5px !important;
+            border-radius: 4px;
+            transition: all 0.4s ease;
             
             &-active {
                 background: #fff;
-                transform: scale(1.2);
+                width: 24px;
             }
         }
+    }
+  }
+
+  /* FadeInUp animation for slide CTA */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
@@ -568,6 +599,12 @@ const GlobalStyle = __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$
       font-size: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])("fontSizes.standard")};
     }
   }
+
+  /* Selection color */
+  ::selection {
+    background: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])('colors.primary')};
+    color: #fff;
+  }
 `;
 const ErrorPage = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
   height: 100vh;
@@ -651,7 +688,7 @@ const FurnsAPP = ({ Component, pageProps })=>{
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("title", {
-                        children: "Furns :: React Next JS Furniture eCommerce Template"
+                        children: "Birmingham Kitchens & Bedrooms | Premium Bespoke Design"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/_app.jsx",
                         lineNumber: 44,
@@ -659,7 +696,7 @@ const FurnsAPP = ({ Component, pageProps })=>{
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
                         name: "description",
-                        content: "React Next JS Furniture eCommerce Template by Hasthemes"
+                        content: "Premium bespoke kitchens and bedrooms designed and crafted in Birmingham, UK."
                     }, void 0, false, {
                         fileName: "[project]/src/pages/_app.jsx",
                         lineNumber: 45,

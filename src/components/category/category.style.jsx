@@ -1,20 +1,20 @@
 import styled, { devices, themeGet, keyframes } from "@styled";
 
-const shimmer = keyframes`
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+const reveal = keyframes`
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 `;
 
 export const CatName = styled.h4`
   margin: 0;
   color: #fff;
   font-weight: 700;
-  font-size: 24px;
-  letter-spacing: 0.5px;
+  font-size: 22px;
+  letter-spacing: 0.3px;
   position: relative;
   z-index: 2;
-  transition: all 0.4s ease;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 
   ${devices.xs} {
     font-size: 18px;
@@ -22,18 +22,26 @@ export const CatName = styled.h4`
 `
 
 export const CatSubtext = styled.span`
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-top: 8px;
+  margin-top: 12px;
   position: relative;
   z-index: 2;
-  transition: all 0.4s ease;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(12px);
+
+  &::after {
+    content: '→';
+    font-size: 14px;
+    transition: transform 0.3s ease;
+  }
 `;
 
 export const CatItemInner = styled.div`
@@ -42,8 +50,8 @@ export const CatItemInner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end; /* Align text to bottom */
-  padding-bottom: 30px; /* Add padding */
+  justify-content: flex-end;
+  padding: 0 24px 32px;
   position: relative;
   overflow: hidden;
 
@@ -54,7 +62,7 @@ export const CatItemInner = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover !important;
-    transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   /* Gradient Overlay */
@@ -68,10 +76,10 @@ export const CatItemInner = styled.div`
     background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.1) 50%,
-      rgba(0, 0, 0, 0.7) 100%
+      rgba(0, 0, 0, 0.05) 40%,
+      rgba(0, 0, 0, 0.65) 100%
     );
-    transition: all 0.4s ease;
+    transition: all 0.5s ease;
     z-index: 1;
   }
 `
@@ -79,48 +87,52 @@ export const CatItemInner = styled.div`
 export const CategoryItem = styled.a`
   display: block;
   width: 100%;
-  height: 380px; /* Taller Cards */
+  height: 420px;
   position: relative;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   text-decoration: none !important;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* Sudo-shadow for depth */
-  transition: all 0.5s cubic-bezier(0.2, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   background: #f0f0f0;
 
   ${devices.sm} {
-    height: 300px;
+    height: 340px;
   }
 
   ${devices.xs} {
-    height: 250px;
+    height: 280px;
   }
 
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
 
     ${CatItemInner} {
       img {
-        transform: scale(1.08);
+        transform: scale(1.1);
       }
       &::after {
         background: linear-gradient(
           180deg,
           rgba(0, 0, 0, 0) 0%,
-          rgba(0, 0, 0, 0.2) 40%,
+          rgba(0, 0, 0, 0.15) 35%,
           rgba(0, 0, 0, 0.8) 100%
         );
       }
     }
 
     ${CatName} {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
     }
 
     ${CatSubtext} {
       opacity: 1;
       transform: translateY(0);
+
+      &::after {
+        transform: translateX(4px);
+      }
     }
   }
 `

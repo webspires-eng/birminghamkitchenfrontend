@@ -1,11 +1,16 @@
 import { Container, Row, Col } from "@bootstrap";
-import styled, { themeGet, devices } from "@styled";
+import styled, { themeGet, devices, keyframes } from "@styled";
 import Button from "@components/ui/button";
+
+const float = keyframes`
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+`;
 
 const ShowcaseWrap = styled.section`
   overflow: hidden;
   position: relative;
-  background-color: #fafaeb; /* Subtle warm tone */
+  background-color: #fafaf8;
 `;
 
 const ContentCol = styled(Col)`
@@ -16,85 +21,81 @@ const ContentCol = styled(Col)`
 
 const ShowcaseContent = styled.div`
   padding: 100px 0;
-  max-width: 540px;
+  max-width: 520px;
   
   ${devices.md} {
-    padding: 60px 0;
+    padding: 60px 20px;
     text-align: center;
     margin: 0 auto;
   }
+`;
 
-  h5 {
-    color: ${themeGet('colors.primary')};
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-    font-size: 13px;
-    display: inline-block;
-    position: relative;
-    padding-left: 50px;
+const ShowcaseLabel = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: ${themeGet('colors.primary')};
+  margin-bottom: 24px;
 
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      height: 2px;
-      width: 40px;
-      background: ${themeGet('colors.primary')};
-    }
-
-    ${devices.md} {
-      padding-left: 0;
-      &::before {
-        display: none;
-      }
-    }
+  &::before {
+    content: '';
+    width: 30px;
+    height: 2px;
+    background: ${themeGet('colors.primary')};
   }
 
-  h2 {
-    font-size: 48px;
-    font-weight: 800;
-    margin-bottom: 30px;
-    line-height: 1.15;
-    color: #191919;
-    letter-spacing: -1px;
+  ${devices.md} {
+    justify-content: center;
+    &::before { display: none; }
+  }
+`;
 
-    ${devices.lg} {
-      font-size: 42px;
-    }
+const ShowcaseHeading = styled.h2`
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  line-height: 1.1;
+  color: #111;
+  letter-spacing: -1.5px;
 
-    ${devices.md} {
-      font-size: 36px;
-    }
+  ${devices.lg} {
+    font-size: 40px;
   }
 
-  p {
-    font-size: 17px;
-    line-height: 1.8;
-    color: #666;
-    margin-bottom: 45px;
-    
-    ${devices.md} {
-      margin: 0 auto 35px;
-    }
+  ${devices.md} {
+    font-size: 34px;
+    letter-spacing: -0.5px;
+  }
+`;
+
+const ShowcaseText = styled.p`
+  font-size: 16px;
+  line-height: 1.8;
+  color: #777;
+  margin-bottom: 40px;
+  
+  ${devices.md} {
+    margin: 0 auto 32px;
   }
 `;
 
 const ImageContainer = styled.div`
   position: relative;
   height: 100%;
-  min-height: 600px;
+  min-height: 620px;
   width: 100%;
   
   ${devices.md} {
     min-height: 400px;
-    margin-top: 40px;
+    margin-top: 0;
   }
 
   ${devices.sm} {
-    min-height: 300px;
+    min-height: 320px;
   }
 `;
 
@@ -109,49 +110,58 @@ const ImageWrap = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    box-shadow: -20px 0 60px rgba(0,0,0,0.1);
     
     ${devices.md} {
-      box-shadow: none;
-      border-radius: 12px;
+      border-radius: 0;
     }
   }
 `;
 
-const FloatingCard = styled.div`
+const StatsGrid = styled.div`
   position: absolute;
-  bottom: 80px;
-  left: -60px;
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-  max-width: 280px;
+  bottom: 40px;
+  left: -40px;
+  display: flex;
+  gap: 16px;
   z-index: 2;
+  animation: ${float} 4s ease infinite;
 
   ${devices.lg} {
-    left: -30px;
-    bottom: 50px;
+    left: 0;
+    bottom: 30px;
   }
 
   ${devices.md} {
     display: none;
   }
+`;
 
-  h4 {
-    font-size: 42px;
+const StatCard = styled.div`
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 24px 28px;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  text-align: center;
+  min-width: 120px;
+
+  .stat-value {
+    font-size: 36px;
     color: ${themeGet('colors.primary')};
     font-weight: 800;
     line-height: 1;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    font-family: ${themeGet('fonts.montserrat')};
   }
 
-  span {
-    font-size: 14px;
-    color: #555;
-    font-weight: 500;
+  .stat-label {
+    font-size: 11px;
+    color: #888;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    line-height: 1.3;
   }
 `;
 
@@ -161,16 +171,15 @@ const BrandShowcase = () => {
       <Container fluid className="p-0">
         <Row className="g-0 align-items-stretch">
           <ContentCol lg={6}>
-            <Container> {/* Inner container for content alignment */}
+            <Container>
               <ShowcaseContent>
-                <h5>Our Craftsmanship</h5>
-                <h2>Designed for Life, Built to Last.</h2>
-                <p>
+                <ShowcaseLabel>Our Craftsmanship</ShowcaseLabel>
+                <ShowcaseHeading>Designed for Life, Built to Last.</ShowcaseHeading>
+                <ShowcaseText>
                   Every Birmingham Kitchen & Bedroom is a masterpiece of British engineering.
                   We combine traditional artisan techniques with modern innovation to create
                   spaces that are as functional as they are beautiful.
-                  Experience the difference of bespoke design tailored perfectly to your home.
-                </p>
+                </ShowcaseText>
                 <Button
                   tag="a"
                   href="/about"
@@ -181,10 +190,11 @@ const BrandShowcase = () => {
                   className="px-5 py-3"
                   style={{
                     borderRadius: '0',
-                    letterSpacing: '2px',
-                    fontSize: '13px',
+                    letterSpacing: '2.5px',
+                    fontSize: '12px',
                     fontWeight: 600,
-                    textTransform: 'uppercase'
+                    textTransform: 'uppercase',
+                    padding: '16px 40px'
                   }}
                 >
                   Discover Our Story
@@ -201,10 +211,16 @@ const BrandShowcase = () => {
                 />
               </ImageWrap>
 
-              <FloatingCard>
-                <h4>25+</h4>
-                <span>Years of Excellence in British Design</span>
-              </FloatingCard>
+              <StatsGrid>
+                <StatCard>
+                  <div className="stat-value">25+</div>
+                  <div className="stat-label">Years of<br />Excellence</div>
+                </StatCard>
+                <StatCard>
+                  <div className="stat-value">5K+</div>
+                  <div className="stat-label">Projects<br />Delivered</div>
+                </StatCard>
+              </StatsGrid>
             </ImageContainer>
           </Col>
         </Row>

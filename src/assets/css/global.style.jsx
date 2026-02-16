@@ -21,6 +21,8 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${themeGet("fontSizes.body")};
     font-weight: ${themeGet("fontWeights.body")};
     line-height: ${themeGet("lineHeights.body")};
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     &[dir="rtl"] {
       text-align: right;
@@ -65,25 +67,54 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: none;
     outline: 0;
   }
-  
-  /* Hero Slider Pagination Fix */
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #999;
+  }
+
+  /* Hero Slider Pagination */
   .hero-slider-one {
     .swiper-pagination {
         bottom: 80px !important;
         z-index: 20 !important;
         
         .swiper-pagination-bullet {
-            width: 10px;
-            height: 10px;
-            background: rgba(255,255,255,0.4);
+            width: 8px;
+            height: 8px;
+            background: rgba(255,255,255,0.3);
             opacity: 1;
-            margin: 0 6px !important;
+            margin: 0 5px !important;
+            border-radius: 4px;
+            transition: all 0.4s ease;
             
             &-active {
                 background: #fff;
-                transform: scale(1.2);
+                width: 24px;
             }
         }
+    }
+  }
+
+  /* FadeInUp animation for slide CTA */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
@@ -242,6 +273,12 @@ export const GlobalStyle = createGlobalStyle`
       line-height: 2;
       font-size: ${themeGet("fontSizes.standard")};
     }
+  }
+
+  /* Selection color */
+  ::selection {
+    background: ${themeGet('colors.primary')};
+    color: #fff;
   }
 `
 

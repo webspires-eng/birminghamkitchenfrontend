@@ -7,47 +7,47 @@ const hvrVisible = css`
 `
 
 export const ProductPrice = styled.div`
-  font-size: 16px; /* Increased from 15px */
+  font-size: 16px;
   line-height: 1;
   font-family: ${themeGet('fonts.montserrat')};
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   color: ${themeGet('colors.heading')};
   font-weight: 700;
-  margin-top: 10px;
+  margin-top: 8px;
 
   .price {
     &.old {
       margin-right: 10px;
-      color: #999;
+      color: #bbb;
       text-decoration: line-through;
       font-weight: 400;
       font-size: 14px;
     }
     &.new {
-      color: ${themeGet('colors.primary')};
+      color: #111;
     }
   }
 `
 
 export const ProductTitle = styled.h2`
-  font-size: 16px; /* Increased from 15px */
+  font-size: 15px;
   font-family: ${themeGet('fonts.body')};
-  font-weight: 600; /* Increased weight slightly */
-  margin-bottom: 5px;
-  line-height: 1.4;
+  font-weight: 600;
+  margin-bottom: 4px;
+  line-height: 1.5;
   letter-spacing: 0;
-  text-align: center;
+  text-align: left;
 
   a {
     text-decoration: none;
-    color: #191919;
+    color: #222;
     display: block;
-    transition: color 0.2s ease;
+    transition: color 0.3s ease;
 
     ${devices.sm} {
-      font-size: 15px;
+      font-size: 14px;
     }
 
     &:hover {
@@ -61,34 +61,34 @@ export const ProductMeta = styled.div`
   z-index: 10;
   display: flex;
   flex-direction: column;
-  padding: 18px 0 0;
-  text-align: center;
+  padding: 16px 4px 0;
+  text-align: left;
   transition: ${themeGet('transition')};
   background-color: transparent;
 
   ${devices.sm} {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 14px;
+    padding-bottom: 12px;
   }
 `
 
 const buttonStyle = css`
   border: 0;
-  width: calc(100% - 30px);
+  width: calc(100% - 24px);
   z-index: 11;
-  height: 40px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   font-weight: 600;
   color: ${themeGet('colors.white')};
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   font-family: ${themeGet('fonts.heading')};
-  background-color: ${themeGet('colors.black')};
-  border-radius: 4px;
+  background-color: #111;
+  border-radius: 8px;
   margin: 0 auto;
   
   svg {
@@ -99,6 +99,8 @@ const buttonStyle = css`
   &:hover {
     background-color: ${themeGet('colors.primary')};
     color: ${themeGet('colors.white')};
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 5, 17, 0.25);
   }
 
   ${({ disabled }) => disabled && css`
@@ -110,8 +112,8 @@ const buttonStyle = css`
 export const AddToCartButton = styled.button`
   ${buttonStyle}
   position: absolute;
-  bottom: 15px;
-  left: 15px;
+  bottom: 12px;
+  left: 12px;
   transform: translateY(20px);
   opacity: 0;
   visibility: hidden;
@@ -121,7 +123,7 @@ export const AddToCartButton = styled.button`
     transform: none;
     opacity: 1;
     visibility: visible;
-    margin-top: 15px;
+    margin-top: 12px;
     width: 100%;
     margin-left: 0;
   }
@@ -130,8 +132,8 @@ export const AddToCartButton = styled.button`
 export const SelectOptionButton = styled.span`
   ${buttonStyle}
   position: absolute;
-  bottom: 15px;
-  left: 15px;
+  bottom: 12px;
+  left: 12px;
   transform: translateY(20px);
   opacity: 0;
   visibility: hidden;
@@ -142,7 +144,7 @@ export const SelectOptionButton = styled.span`
     transform: none;
     opacity: 1;
     visibility: visible;
-    margin-top: 15px;
+    margin-top: 12px;
     width: 100%;
     margin-left: 0;
   }
@@ -154,19 +156,21 @@ export const ActionButton = styled.button`
   justify-content: center;
   width: 40px;
   height: 40px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
-  color: #191919;
-  border-radius: 50%;
-  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 
   svg {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   &:not(.wishlist) {
-    transform: translateX(10px);
+    transform: translateX(12px);
     opacity: 0;
   }
 
@@ -177,17 +181,18 @@ export const ActionButton = styled.button`
   &:hover {
     background-color: ${themeGet('colors.primary')};
     color: #fff;
+    transform: translateX(0) scale(1.05);
   }
 `
 
 export const ProductActions = styled.div`
   position: absolute;
   z-index: 9;
-  top: 15px;
-  right: 15px;
+  top: 12px;
+  right: 12px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 
   ${devices.sm} {
     display: none;
@@ -199,9 +204,10 @@ export const ProductActionsMobile = styled.div`
 
   ${devices.sm} {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 12px;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 0 4px;
   }
 
   ${ActionButton} {
@@ -209,6 +215,9 @@ export const ProductActionsMobile = styled.div`
     opacity: 1;
     box-shadow: none;
     background: #f5f5f5;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
     
     &:hover {
       background: ${themeGet('colors.primary')};
@@ -218,15 +227,13 @@ export const ProductActionsMobile = styled.div`
 `
 
 export const Badge = styled.span`
-  background-color: ${themeGet('colors.black')};
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 4px 10px;
-  border-radius: 4px;
+  letter-spacing: 0.8px;
+  padding: 5px 12px;
+  border-radius: 6px;
   color: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 
   & + span {
     margin-top: 6px;
@@ -237,23 +244,23 @@ export const Badge = styled.span`
   `}
 
   ${props => props.type === 'sale' && css`
-    background-color: ${themeGet('colors.primary')};
+    background: linear-gradient(135deg, ${themeGet('colors.primary')}, #ff4444);
   `}
 
   ${props => props.type === 'winter' && css`
-    background-color: #6a1b9a;
+    background: linear-gradient(135deg, #6a1b9a, #9c4dcc);
   `}
 
   ${props => props.type === 'featured' && css`
-    background-color: ${themeGet('colors.secondary')};
+    background-color: #333;
   `}
 `
 
 export const ProductBadges = styled.div`
   position: absolute;
   z-index: 8;
-  top: 15px;
-  left: 15px;
+  top: 12px;
+  left: 12px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -285,15 +292,16 @@ export const ProductThumb = styled.figure`
   position: relative;
   overflow: hidden;
   margin: 0;
-  border-radius: 12px;
-  background-color: #f7f7f7;
+  border-radius: 14px;
+  background-color: #f5f5f5;
+  aspect-ratio: 1 / 1.15;
   
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
-    mix-blend-mode: multiply; /* Helps transparent PNG products look integrated */
-    transition: transform 0.6s cubic-bezier(0.2, 0, 0.2, 1);
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .hover-image {
@@ -303,22 +311,23 @@ export const ProductThumb = styled.figure`
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 0.4s ease;
-    mix-blend-mode: multiply;
+    transition: opacity 0.5s ease;
   }
 `
 
 export const Product = styled.div`
   position: relative;
-  margin-bottom: 40px; 
+  margin-bottom: 36px; 
 
   &:hover {
-    ${ProductThumb} img {
-      transform: scale(1.05);
-    }
+    ${ProductThumb} {
+      img {
+        transform: scale(1.06);
+      }
 
-    ${ProductThumb} .hover-image {
-      opacity: 1;
+      .hover-image {
+        opacity: 1;
+      }
     }
 
     ${AddToCartButton}, ${SelectOptionButton} {

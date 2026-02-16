@@ -23,8 +23,7 @@
   "static/chunks/node_modules_@bootstrap-styled_v4_dist_@bootstrap-styled_v4_esm_ccad93cb.js",
   "static/chunks/node_modules_react-select_dist_221fc51e._.js",
   "static/chunks/node_modules_swiper_esm_713bce12._.js",
-  "static/chunks/node_modules_@emotion_6abb62b9._.js",
-  "static/chunks/node_modules_e462531b._.js"
+  "static/chunks/node_modules_5c540044._.js"
 ],
     source: "entry"
 });

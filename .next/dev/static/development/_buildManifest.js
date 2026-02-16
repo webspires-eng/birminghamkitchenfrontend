@@ -5,8 +5,11 @@ self.__BUILD_MANIFEST = {
   "/404": [
     "static/chunks/pages/404.js"
   ],
-  "/_error": [
-    "static/chunks/pages/_error.js"
+  "/collection/[slug]": [
+    "static/chunks/pages/collection/[slug].js"
+  ],
+  "/product/[slug]": [
+    "static/chunks/pages/product/[slug].js"
   ],
   "__rewrites": {
     "afterFiles": [],

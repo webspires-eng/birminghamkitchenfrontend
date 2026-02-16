@@ -41,10 +41,10 @@ const FurnsAPP = ({ Component, pageProps }) => {
   return (
     <Fragment>
       <Head>
-        <title>Furns :: React Next JS Furniture eCommerce Template</title>
+        <title>Birmingham Kitchens & Bedrooms | Premium Bespoke Design</title>
         <meta
           name="description"
-          content="React Next JS Furniture eCommerce Template by Hasthemes"
+          content="Premium bespoke kitchens and bedrooms designed and crafted in Birmingham, UK."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
