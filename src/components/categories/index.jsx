@@ -1,35 +1,11 @@
 import cn from "classnames";
 import PropTypes from "prop-types";
-import { Container } from "@bootstrap";
+import { Container, Row, Col } from "@bootstrap";
 import Category from "@components/category";
 import { CategoriesWrap } from "./categories.style";
-import Slider, { Slide } from "@components/ui/swiper";
 import EmptyProduct from "@components/ui/empty";
 
 const Categories = ({ categories, className, ...props }) => {
-    const settings = {
-        loop: true,
-        slidesPerView: 1.2,
-        spaceBetween: 15,
-        autoplay: false,
-        pagination: false,
-        navigation: true,
-        breakpoints: {
-            480: {
-                slidesPerView: 2,
-                spaceBetween: 20
-            },
-            768: {
-                slidesPerView: 3,
-                spaceBetween: 25
-            },
-            1200: {
-                slidesPerView: 4,
-                spaceBetween: 30
-            }
-        }
-    }
-
     return (
         <CategoriesWrap
             className={cn(className)}
@@ -37,19 +13,17 @@ const Categories = ({ categories, className, ...props }) => {
         >
             <Container>
                 {categories.length > 0 ? (
-                    <Slider
-                        settings={settings}
-                    >
+                    <Row>
                         {categories?.map(({ node: category }) => (
-                            <Slide key={category?.id}>
+                            <Col xs={6} sm={6} md={3} key={category?.id} className="mb-4">
                                 <Category
                                     category={category?.title}
                                     icon={category?.image?.originalSrc}
                                     slug={`/collection/${category?.handle}`}
                                 />
-                            </Slide>
+                            </Col>
                         ))}
-                    </Slider>
+                    </Row>
                 ) : (
                     <EmptyProduct className="mt-0" message="Collections not found!" />
                 )}
