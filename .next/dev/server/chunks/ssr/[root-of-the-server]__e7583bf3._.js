@@ -7314,7 +7314,7 @@ __turbopack_async_result__();
 __turbopack_context__.v([{"id":1,"subtitle":"Modern Living","title":"Contemporary Kitchens","content":"Minimalist designs paired with high-end appliances for the ultimate culinary experience.","thumb":"https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1920&q=80"},{"id":2,"subtitle":"Elegant Rest","title":"Sophisticated Bedrooms","content":"Create your dream escape with our range of luxury bedding and custom furniture.","thumb":"https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?auto=format&fit=crop&w=1920&q=80"},{"id":3,"subtitle":"Organization Redefined","title":"Custom Built-In Storage","content":"Sleek and efficient storage solutions for every room in your home.","thumb":"https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1920&q=80"}]);}),
 "[project]/src/data/categories.json (json)", ((__turbopack_context__) => {
 
-__turbopack_context__.v([{"node":{"id":"1","title":"Modern Kitchens","handle":"modern-kitchens","image":{"originalSrc":"https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=300&q=80"}}},{"node":{"id":"2","title":"Luxury Bedrooms","handle":"luxury-bedrooms","image":{"originalSrc":"https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=300&q=80"}}},{"node":{"id":"3","title":"Bespoke Wardrobes","handle":"bespoke-wardrobes","image":{"originalSrc":"https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=300&q=80"}}},{"node":{"id":"4","title":"Dining Sets","handle":"dining-sets","image":{"originalSrc":"https://images.unsplash.com/photo-1617806118233-f8e137bc7288?auto=format&fit=crop&w=300&q=80"}}},{"node":{"id":"5","title":"Home Office","handle":"home-office","image":{"originalSrc":"https://images.unsplash.com/photo-1593062096033-9a26b09da705?auto=format&fit=crop&w=300&q=80"}}},{"node":{"id":"6","title":"Kitchen Appliances","handle":"kitchen-appliances","image":{"originalSrc":"https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=300&q=80"}}}]);}),
+__turbopack_context__.v([{"node":{"id":"1","title":"Modern Kitchens","handle":"modern-kitchens","image":{"originalSrc":"https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=800&q=80"}}},{"node":{"id":"2","title":"Luxury Bedrooms","handle":"luxury-bedrooms","image":{"originalSrc":"https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80"}}},{"node":{"id":"3","title":"Bespoke Wardrobes","handle":"bespoke-wardrobes","image":{"originalSrc":"https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80"}}},{"node":{"id":"4","title":"Dining Sets","handle":"dining-sets","image":{"originalSrc":"https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=800&q=80"}}},{"node":{"id":"5","title":"Home Office","handle":"home-office","image":{"originalSrc":"https://images.unsplash.com/photo-1593062096033-9a26b09da705?auto=format&fit=crop&w=800&q=80"}}},{"node":{"id":"6","title":"Kitchen Appliances","handle":"kitchen-appliances","image":{"originalSrc":"https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80"}}}]);}),
 "[project]/src/components/ui/loader/style.jsx [ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -10437,16 +10437,14 @@ var __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$
 var __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$system__$5b$external$5d$__$28$styled$2d$system$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$system$29$__ = __turbopack_context__.i("[externals]/styled-system [external] (styled-system, cjs, [project]/node_modules/styled-system)");
 var __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__ = __turbopack_context__.i("[externals]/@styled-system/theme-get [external] (@styled-system/theme-get, cjs, [project]/node_modules/@styled-system/theme-get)");
 ;
-const lineExpand = __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__["keyframes"]`
-  from { width: 0; }
-  to { width: 50px; }
-`;
 const SectionText = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].p`
   max-width: 560px;
   font-size: 16px;
   line-height: 1.7;
   color: #777;
   margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
   font-weight: 400;
   
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].sm} {
@@ -10485,6 +10483,7 @@ const SectionLabel = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
   font-weight: 600;
   color: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])('colors.primary')};
   margin-bottom: 16px;
+  justify-content: center;
 
   &::before {
     content: '';
@@ -10496,28 +10495,29 @@ const SectionLabel = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
 const SectionTitleWrap = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
   ${__TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$system__$5b$external$5d$__$28$styled$2d$system$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$system$29$__["space"]};
   text-align: ${(props)=>props.align ? props.align : 'center'};
-  margin-bottom: 56px;
+  margin-bottom: 50px;
   position: relative;
   width: 100%;
   
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
   }
 
   ${SectionText} {
-    ${(props)=>props.align === "center" && __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__["css"]`
-      margin-left: auto;
-      margin-right: auto;
+    ${(props)=>props.align === "left" && __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__["css"]`
+      margin-left: 0;
+      margin-right: 0;
     `}
 
     ${(props)=>props.align === "right" && __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__["css"]`
       margin-left: auto;
+      margin-right: 0;
     `}
   }
 
   ${SectionLabel} {
-    ${(props)=>props.align === "center" && __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__["css"]`
-      justify-content: center;
+    ${(props)=>props.align === "left" && __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__["css"]`
+      justify-content: flex-start;
     `}
   }
 `;

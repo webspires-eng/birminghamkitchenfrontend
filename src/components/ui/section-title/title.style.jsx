@@ -1,16 +1,13 @@
 import styled, { css, devices, space, themeGet, keyframes } from "@styled";
 
-const lineExpand = keyframes`
-  from { width: 0; }
-  to { width: 50px; }
-`;
-
 export const SectionText = styled.p`
   max-width: 560px;
   font-size: 16px;
   line-height: 1.7;
   color: #777;
   margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
   font-weight: 400;
   
   ${devices.sm} {
@@ -51,6 +48,7 @@ export const SectionLabel = styled.span`
   font-weight: 600;
   color: ${themeGet('colors.primary')};
   margin-bottom: 16px;
+  justify-content: center;
 
   &::before {
     content: '';
@@ -63,28 +61,29 @@ export const SectionLabel = styled.span`
 export const SectionTitleWrap = styled.div`
   ${space};
   text-align: ${props => props.align ? props.align : 'center'};
-  margin-bottom: 56px;
+  margin-bottom: 50px;
   position: relative;
   width: 100%;
   
   ${devices.md} {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
   }
 
   ${SectionText} {
-    ${props => props.align === "center" && css`
-      margin-left: auto;
-      margin-right: auto;
+    ${props => props.align === "left" && css`
+      margin-left: 0;
+      margin-right: 0;
     `}
 
     ${props => props.align === "right" && css`
       margin-left: auto;
+      margin-right: 0;
     `}
   }
 
   ${SectionLabel} {
-    ${props => props.align === "center" && css`
-      justify-content: center;
+    ${props => props.align === "left" && css`
+      justify-content: flex-start;
     `}
   }
 `
