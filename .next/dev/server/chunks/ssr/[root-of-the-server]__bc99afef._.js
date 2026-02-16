@@ -7053,54 +7053,59 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/styled/index.jsx [ssr] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__ = __turbopack_context__.i("[externals]/styled-components [external] (styled-components, cjs, [project]/node_modules/styled-components)");
 var __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$system__$5b$external$5d$__$28$styled$2d$system$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$system$29$__ = __turbopack_context__.i("[externals]/styled-system [external] (styled-system, cjs, [project]/node_modules/styled-system)");
-var __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__ = __turbopack_context__.i("[externals]/@styled-system/theme-get [external] (@styled-system/theme-get, cjs, [project]/node_modules/@styled-system/theme-get)");
 ;
 const SectionText = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].p`
-  max-width: 465px;
-
+  max-width: 600px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin-top: 15px;
+  
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].sm} {
     max-width: 100%;
+    font-size: 15px;
   }
 `;
 const Title = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].h2`
-  font-size: 38px;
-  margin-bottom: 20px;
+  font-size: 36px;
+  margin-bottom: 0;
   font-weight: 700;
   color: #191919;
   position: relative;
   display: inline-block;
-  padding-bottom: 10px;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: ${(props)=>props.align === 'center' ? '50%' : '0'};
-    transform: ${(props)=>props.align === 'center' ? 'translateX(-50%)' : 'none'};
-    width: 60px;
-    height: 3px;
-    background: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])('colors.primary')};
-  }
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  text-transform: capitalize;
 
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
-    font-size: 30px;
+    font-size: 28px;
+  }
+
+  ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].xs} {
+    font-size: 24px;
   }
 `;
 const SectionTitleWrap = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
   ${__TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$system__$5b$external$5d$__$28$styled$2d$system$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$system$29$__["space"]};
   text-align: ${(props)=>props.align ? props.align : 'center'};
   margin-bottom: 50px;
+  position: relative;
+  width: 100%;
+  
+  ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
+    margin-bottom: 40px;
+  }
 
   ${SectionText} {
     ${(props)=>props.align === "center" && __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__["css"]`
-      margin: auto;
+      margin-left: auto;
+      margin-right: auto;
     `}
 
     ${(props)=>props.align === "right" && __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__["css"]`
       margin-left: auto;
     `}
   }
-}
 `;
 }),
 "[project]/src/components/ui/section-title/index.jsx [ssr] (ecmascript)", ((__turbopack_context__) => {
@@ -8110,6 +8115,8 @@ __turbopack_context__.s([
     ()=>ProductActionsMobile,
     "ProductBadges",
     ()=>ProductBadges,
+    "ProductImage",
+    ()=>ProductImage,
     "ProductMeta",
     ()=>ProductMeta,
     "ProductPrice",
@@ -8370,6 +8377,27 @@ const ProductBadges = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$sty
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+`;
+const ProductImage = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+  .thumb {
+    z-index: 1;
+    max-width: 100%;
+
+    &.hover-image {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+  }
 `;
 const ProductThumb = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].figure`
   position: relative;
@@ -12254,12 +12282,12 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
 const HomeTwo = ({ blogs, products, collections })=>{
     const displayCollections = collections?.length > 0 ? collections : __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$categories$2e$json__$28$json$29$__["default"];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-        bg: "white",
+        bg: "#fcfcfc",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("title", {
-                        children: "Home :: " + __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$settings$2e$json__$28$json$29$__["default"]?.title
+                        children: "Birmingham Kitchen & Bedroom | Bespoke Design"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
                         lineNumber: 21,
@@ -12284,7 +12312,11 @@ const HomeTwo = ({ blogs, products, collections })=>{
                 data: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$slider$2f$home$2d$2$2e$json__$28$json$29$__["default"],
                 settings: {
                     effect: "fade",
-                    speed: 1000
+                    speed: 1000,
+                    autoplay: {
+                        delay: 6000,
+                        disableOnInteraction: false
+                    }
                 }
             }, void 0, false, {
                 fileName: "[project]/src/pages/index.jsx",
@@ -12293,49 +12325,49 @@ const HomeTwo = ({ blogs, products, collections })=>{
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$features$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 31,
+                lineNumber: 38,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                className: "collection-section py-5 my-0 bg-white",
+                className: "collection-section py-5 my-5",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$section$2d$title$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        title: "Shop By Category",
-                        content: "Browse our wide selection of bespoke kitchen and bedroom collections."
+                        title: "Curated Collections",
+                        content: "Explore our signature ranges, designed to bring elegance and functionality to every corner of your home."
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 34,
+                        lineNumber: 41,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$categories$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                         categories: displayCollections,
                         pt: 0,
-                        pb: 80
+                        pb: 60
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 38,
+                        lineNumber: 45,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 33,
+                lineNumber: 40,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$brand$2d$showcase$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 41,
+                lineNumber: 48,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                className: "products-section py-5 my-4 bg-white",
+                className: "products-section py-5 my-5 bg-white",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$section$2d$title$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        title: "Our Best Sellers",
-                        content: "Hand-picked premium products for your modern home."
+                        title: "Best Sellers",
+                        content: "Discover the pieces our customers love most. Timeless quality meets modern design."
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 44,
+                        lineNumber: 51,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$product$2f$feed$2f$products$2d$tab$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ProductsTab$3e$__["ProductsTab"], {
@@ -12343,37 +12375,27 @@ const HomeTwo = ({ blogs, products, collections })=>{
                         limit: 8
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 48,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0))
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 43,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$promotions$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                fluid: true
-            }, void 0, false, {
-                fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 51,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                className: "blog-section py-5 my-4 bg-white",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$section$2d$title$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        title: "Latest From Journal",
-                        content: "Experience modern living through our latest design tips and project showcases."
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 54,
+                        lineNumber: 55,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$blog$2f$posts$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        posts: blogs,
-                        pt: 0,
-                        pb: 80
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                        className: "text-center mt-5",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
+                            href: "/shop",
+                            style: {
+                                textDecoration: 'underline',
+                                color: '#333',
+                                fontWeight: 600,
+                                letterSpacing: '1px',
+                                textTransform: 'uppercase',
+                                fontSize: '13px'
+                            },
+                            children: "View All Products"
+                        }, void 0, false, {
+                            fileName: "[project]/src/pages/index.jsx",
+                            lineNumber: 59,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
                         lineNumber: 58,
@@ -12382,7 +12404,47 @@ const HomeTwo = ({ blogs, products, collections })=>{
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 53,
+                lineNumber: 50,
+                columnNumber: 13
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                className: "my-5",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$promotions$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                    fluid: true
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/index.jsx",
+                    lineNumber: 64,
+                    columnNumber: 17
+                }, ("TURBOPACK compile-time value", void 0))
+            }, void 0, false, {
+                fileName: "[project]/src/pages/index.jsx",
+                lineNumber: 63,
+                columnNumber: 13
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                className: "blog-section py-5 my-5 bg-light",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$section$2d$title$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                        title: "Design Journal",
+                        content: "Inspiration, tips, and stories from the world of bespoke interiors."
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/index.jsx",
+                        lineNumber: 68,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$blog$2f$posts$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                        posts: blogs,
+                        pt: 0,
+                        pb: 80
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/index.jsx",
+                        lineNumber: 72,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/pages/index.jsx",
+                lineNumber: 67,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]

@@ -1244,3 +1244,365 @@ Import traces:
     ./src/components/product/feed/related-products.jsx
     ./src/components/product/feed/index.jsx
     ./src/pages/index.jsx
+[00:08:08.720] Server  LOG     ✓ Compiled in 974ms
+[00:08:08.848] Browser ERROR   ./src/components/product/card/thumbnail.jsx:7:1
+Export ProductImage doesn't exist in target module
+   5 | import Image from "@components/ui/image";
+   6 | import { placeholder } from "@utils/constant";
+>  7 | import { ProductImage } from "./product.style";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const ProductThumbnail = ({ product }) => {
+  10 |     const { title, images, handle } = product;
+
+The export ProductImage was not found in module [project]/src/components/product/card/product.style.jsx [client] (ecmascript).
+Did you mean to import ProductBadges?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Browser:
+    ./src/components/product/card/thumbnail.jsx
+    ./src/components/product/card/index.jsx
+    ./src/components/product/feed/related-products.jsx
+    ./src/components/product/feed/index.jsx
+    ./src/pages/index.jsx
+
+  SSR:
+    ./src/components/product/card/thumbnail.jsx
+    ./src/components/product/card/index.jsx
+    ./src/components/product/feed/related-products.jsx
+    ./src/components/product/feed/index.jsx
+    ./src/pages/index.jsx
+[00:08:08.848] Browser ERROR   ./src/components/product/card/thumbnail.jsx:7:1
+Export ProductImage doesn't exist in target module
+   5 | import Image from "@components/ui/image";
+   6 | import { placeholder } from "@utils/constant";
+>  7 | import { ProductImage } from "./product.style";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const ProductThumbnail = ({ product }) => {
+  10 |     const { title, images, handle } = product;
+
+The export ProductImage was not found in module [project]/src/components/product/card/product.style.jsx [ssr] (ecmascript).
+Did you mean to import ProductBadges?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Browser:
+    ./src/components/product/card/thumbnail.jsx
+    ./src/components/product/card/index.jsx
+    ./src/components/product/feed/related-products.jsx
+    ./src/components/product/feed/index.jsx
+    ./src/pages/index.jsx
+
+  SSR:
+    ./src/components/product/card/thumbnail.jsx
+    ./src/components/product/card/index.jsx
+    ./src/components/product/feed/related-products.jsx
+    ./src/components/product/feed/index.jsx
+    ./src/pages/index.jsx
+[00:08:22.309] Browser ERROR   ./src/components/product/card/thumbnail.jsx:7:1
+Export ProductImage doesn't exist in target module
+   5 | import Image from "@components/ui/image";
+   6 | import { placeholder } from "@utils/constant";
+>  7 | import { ProductImage } from "./product.style";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const ProductThumbnail = ({ product }) => {
+  10 |     const { title, images, handle } = product;
+
+The export ProductImage was not found in module [project]/src/components/product/card/product.style.jsx [client] (ecmascript).
+Did you mean to import ProductBadges?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Browser:
+    ./src/components/product/card/thumbnail.jsx
+    ./src/components/product/card/index.jsx
+    ./src/components/product/feed/related-products.jsx
+    ./src/components/product/feed/index.jsx
+    ./src/pages/index.jsx
+
+  SSR:
+    ./src/components/product/card/thumbnail.jsx
+    ./src/components/product/card/index.jsx
+    ./src/components/product/feed/related-products.jsx
+    ./src/components/product/feed/index.jsx
+    ./src/pages/index.jsx
+[00:08:22.309] Browser ERROR   ./src/components/product/card/thumbnail.jsx:7:1
+Export ProductImage doesn't exist in target module
+   5 | import Image from "@components/ui/image";
+   6 | import { placeholder } from "@utils/constant";
+>  7 | import { ProductImage } from "./product.style";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const ProductThumbnail = ({ product }) => {
+  10 |     const { title, images, handle } = product;
+
+The export ProductImage was not found in module [project]/src/components/product/card/product.style.jsx [ssr] (ecmascript).
+Did you mean to import ProductBadges?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Browser:
+    ./src/components/product/card/thumbnail.jsx
+    ./src/components/product/card/index.jsx
+    ./src/components/product/feed/related-products.jsx
+    ./src/components/product/feed/index.jsx
+    ./src/pages/index.jsx
+
+  SSR:
+    ./src/components/product/card/thumbnail.jsx
+    ./src/components/product/card/index.jsx
+    ./src/components/product/feed/related-products.jsx
+    ./src/components/product/feed/index.jsx
+    ./src/pages/index.jsx
+[00:08:22.309] Browser ERROR   ./src/components/product/card/thumbnail.jsx:7:1
+Export ProductImage doesn't exist in target module
+   5 | import Image from "@components/ui/image";
+   6 | import { placeholder } from "@utils/constant";
+>  7 | import { ProductImage } from "./product.style";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const ProductThumbnail = ({ product }) => {
+  10 |     const { title, images, handle } = product;
+
+The export ProductImage was not found in module [project]/src/components/product/card/product.style.jsx [client] (ecmascript).
+Did you mean to import ProductBadges?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Browser:
+    ./src/components/product/card/thumbnail.jsx
+    ./src/components/product/card/index.jsx
+    ./src/components/product/feed/related-products.jsx
+    ./src/components/product/feed/index.jsx
+    ./src/pages/index.jsx
+
+  SSR:
+    ./src/components/product/card/thumbnail.jsx
+    ./src/components/product/card/index.jsx
+    ./src/components/product/feed/related-products.jsx
+    ./src/components/product/feed/index.jsx
+    ./src/pages/index.jsx
+[00:08:22.309] Browser ERROR   ./src/components/product/card/thumbnail.jsx:7:1
+Export ProductImage doesn't exist in target module
+   5 | import Image from "@components/ui/image";
+   6 | import { placeholder } from "@utils/constant";
+>  7 | import { ProductImage } from "./product.style";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const ProductThumbnail = ({ product }) => {
+  10 |     const { title, images, handle } = product;
+
+The export ProductImage was not found in module [project]/src/components/product/card/product.style.jsx [ssr] (ecmascript).
+Did you mean to import ProductBadges?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Browser:
+    ./src/components/product/card/thumbnail.jsx
+    ./src/components/product/card/index.jsx
+    ./src/components/product/feed/related-products.jsx
+    ./src/components/product/feed/index.jsx
+    ./src/pages/index.jsx
+
+  SSR:
+    ./src/components/product/card/thumbnail.jsx
+    ./src/components/product/card/index.jsx
+    ./src/components/product/feed/related-products.jsx
+    ./src/components/product/feed/index.jsx
+    ./src/pages/index.jsx
+[00:08:22.580] Server  WARN    ⚠ [externals]/@bootstrap-styled/v4
+unexpected export *
+export * used with module [externals]/@bootstrap-styled/v4 [external] (@bootstrap-styled/v4, cjs, [project]/node_modules/@bootstrap-styled/v4) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/components/features/index.jsx [SSR]
+    ./src/pages/index.jsx [SSR]
+
+  #2 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/styled/bootstrap.jsx [SSR]
+    ./src/pages/_app.jsx [SSR]
+
+
+[00:08:22.580] Server  WARN    ⚠ [externals]/styled-system
+unexpected export *
+export * used with module [externals]/styled-system [external] (styled-system, cjs, [project]/node_modules/styled-system) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/styled-system [external]
+    ./src/styled/index.jsx [SSR]
+    ./src/pages/_document.jsx [SSR]
+
+  #2 [external]:
+    [externals]/styled-system [external]
+    ./src/components/promotions/promotions.style.jsx [SSR]
+    ./src/components/promotions/index.jsx [SSR]
+    ./src/pages/index.jsx [SSR]
+
+
+[00:08:23.719] Server  ERROR   redux-persist failed to create sync storage. falling back to noop storage.
+[00:08:23.785] Server  WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:08:23.785] Server  WARN    Shopify not configured, using mock data.
+[00:08:23.786] Server  WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:08:23.786] Server  WARN    Shopify not configured, using mock data.
+[00:08:23.786] Server  WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:08:23.786] Server  WARN    Shopify not configured, using mock data.
+[00:08:23.850] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:08:24.553] Server  WARN    ⚠ [externals]/@bootstrap-styled/v4
+unexpected export *
+export * used with module [externals]/@bootstrap-styled/v4 [external] (@bootstrap-styled/v4, cjs, [project]/node_modules/@bootstrap-styled/v4) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/components/features/index.jsx [SSR]
+    ./src/pages/index.jsx [SSR]
+
+  #2 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/styled/bootstrap.jsx [SSR]
+    ./src/pages/_app.jsx [SSR]
+
+
+[00:08:24.554] Server  WARN    ⚠ [externals]/styled-system
+unexpected export *
+export * used with module [externals]/styled-system [external] (styled-system, cjs, [project]/node_modules/styled-system) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/styled-system [external]
+    ./src/styled/index.jsx [SSR]
+    ./src/pages/_document.jsx [SSR]
+
+  #2 [external]:
+    [externals]/styled-system [external]
+    ./src/components/promotions/promotions.style.jsx [SSR]
+    ./src/components/promotions/index.jsx [SSR]
+    ./src/pages/index.jsx [SSR]
+
+
+[00:08:24.555] Server  WARN    ⚠ [externals]/styled-system
+unexpected export *
+export * used with module [externals]/styled-system [external] (styled-system, cjs, [project]/node_modules/styled-system) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/styled-system [external]
+    ./src/components/ui/button/index.jsx [SSR]
+    ./src/pages/404.jsx [SSR]
+
+  #2 [external]:
+    [externals]/styled-system [external]
+    ./src/styled/index.jsx [SSR]
+    ./src/pages/_document.jsx [SSR]
+
+
+[00:08:28.118] Server  WARN    ⚠ [externals]/styled-system
+unexpected export *
+export * used with module [externals]/styled-system [external] (styled-system, cjs, [project]/node_modules/styled-system) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/styled-system [external]
+    ./src/components/ui/button/index.jsx [SSR]
+    ./src/pages/404.jsx [SSR]
+
+  #2 [external]:
+    [externals]/styled-system [external]
+    ./src/styled/index.jsx [SSR]
+    ./src/pages/_document.jsx [SSR]
+
+
+[00:08:28.262] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <PathnameContextProviderAdapter router={{sdc:{},sbc:{}, ...}} isAutoExport={false}>
+      <FurnsAPP pageProps={{blogs:[...], ...}} __N_SSG={true} Component={function HomeTwo} err={undefined} ...>
+        <Head>
+        <Le theme={{colors:{...}, ...}}>
+          <BootstrapProvider theme={{...}} reset={true}>
+            <Le theme={{...}}>
+              <styled.div utils={{screen:true, ...}} theme={{_name:"boo...", ...}}>
+                <div
++                 className="sc-aXZVg fOiBuA"
+-                 className="UtilityProvider-wqw4uj-0 jJKWqS"
+                  ref={null}
+                >
+      ...
+
+[00:08:28.262] Browser ERROR   `legacyBehavior` is deprecated and will be removed in a future release. A codemod is available to upgrade your components:
+
+npx @next/codemod@latest new-link .
+
+Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components
+[00:08:28.262] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <a> a 
+
+  ...
+    <OffCanvas open={false} onHandler={function onMiniCartHandler}>
+      <styled.aside open={false} position={undefined}>
+        <aside open={false} className="sc-ehixzo ..." ref={null}>
+          <styled.div maxWidth={undefined}>
+            <div className="sc-fBdRDi ..." ref={null}>
+              <styled.div>
+                <div className="sc-jIGnZt ..." ref={null}>
+                  <styled.div>
+                  <styled.div>
+                    <div className="sc-ERObt i..." ref={null}>
+                      <ScrollBar>
+                        <div style={undefined} ref={function bound handleRef}>
+                          <MiniCartProduct product={{id:"prod_1", ...}}>
+                            <styled.div>
+                              <div className="sc-dxcDKg ..." ref={null}>
+                                <LinkComponent href="/product/s...">
+>                                 <a
+>                                   ref={function}
+>                                   onClick={function onClick}
+>                                   onMouseEnter={function onMouseEnter}
+>                                   onTouchStart={function onTouchStart}
+>                                   href="/product/sofia-ottoman-divan-bed"
+>                                 >
+                                    <styled.a>
+>                                     <a className="sc-kqGoIF ja-DBCc" ref={null}>
+                                ...
+                  ...
+          ...
+
+[00:08:28.262] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. a <a>
+[00:08:28.262] Browser LOG     NaN
+[00:08:28.262] Browser LOG     NaN
+[00:08:28.262] Browser LOG     NaN
+[00:08:28.262] Browser WARN    Image with src "/images/banner/1.jpg" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+[00:08:28.262] Browser WARN    Image with src "/images/banner/2.jpg" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+[00:08:28.262] Browser WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:08:28.262] Browser WARN    Shopify not configured, using mock data.
+[00:08:28.262] Browser LOG     50
+[00:08:28.262] Browser LOG     -Infinity
+[00:08:28.262] Browser LOG     NaN
+[00:08:28.294] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/assets/images/products/sofia_pink.png" "received" null
+[00:11:07.867] Server  LOG     ✓ Compiled in 1621ms

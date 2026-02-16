@@ -258,6 +258,28 @@ export const ProductBadges = styled.div`
   align-items: flex-start;
 `
 
+export const ProductImage = styled.div`
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+  .thumb {
+    z-index: 1;
+    max-width: 100%;
+
+    &.hover-image {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+  }
+`
+
 export const ProductThumb = styled.figure`
   position: relative;
   overflow: hidden;
