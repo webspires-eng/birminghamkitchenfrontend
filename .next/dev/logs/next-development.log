@@ -1725,3 +1725,85 @@ See this log for the ancestor stack trace. a <a>
 [00:18:35.436] Browser WARN    Image with src "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=300&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
 [00:18:36.113] Server  ERROR   ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1617806118233-f8e137bc7288?auto=format&fit=crop&w=300&q=80" 404
+[00:19:37.938] Server  LOG     ✓ Compiled in 57ms
+[00:19:50.334] Server  WARN    ⚠ [externals]/@bootstrap-styled/v4
+unexpected export *
+export * used with module [externals]/@bootstrap-styled/v4 [external] (@bootstrap-styled/v4, cjs, [project]/node_modules/@bootstrap-styled/v4) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/components/shop/index.jsx [SSR]
+    ./src/pages/collection/[slug].jsx [SSR]
+
+  #2 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/styled/bootstrap.jsx [SSR]
+    ./src/pages/_app.jsx [SSR]
+
+
+[00:19:50.336] Server  WARN    ⚠ [externals]/styled-system
+unexpected export *
+export * used with module [externals]/styled-system [external] (styled-system, cjs, [project]/node_modules/styled-system) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/styled-system [external]
+    ./src/styled/index.jsx [SSR]
+    ./src/pages/_document.jsx [SSR]
+
+  #2 [external]:
+    [externals]/styled-system [external]
+    ./src/components/layout/header/style.jsx [SSR]
+    ./src/components/layout/index.jsx [SSR]
+    ./src/pages/collection/[slug].jsx [SSR]
+
+
+[00:19:50.522] Server  ERROR   redux-persist failed to create sync storage. falling back to noop storage.
+[00:19:50.598] Server  WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:19:50.598] Server  WARN    Shopify not configured, using mock data.
+[00:19:52.095] Browser WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:19:52.095] Browser WARN    Shopify not configured, using mock data.
+[00:19:58.605] Server  WARN    ⚠ [externals]/@bootstrap-styled/v4
+unexpected export *
+export * used with module [externals]/@bootstrap-styled/v4 [external] (@bootstrap-styled/v4, cjs, [project]/node_modules/@bootstrap-styled/v4) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/pages/index.jsx [SSR]
+
+  #2 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/styled/bootstrap.jsx [SSR]
+    ./src/pages/_app.jsx [SSR]
+
+
+[00:19:58.607] Server  WARN    ⚠ [externals]/styled-system
+unexpected export *
+export * used with module [externals]/styled-system [external] (styled-system, cjs, [project]/node_modules/styled-system) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/styled-system [external]
+    ./src/components/ui/button/index.jsx [SSR]
+    ./src/pages/index.jsx [SSR]
+
+  #2 [external]:
+    [externals]/styled-system [external]
+    ./src/styled/index.jsx [SSR]
+    ./src/pages/_document.jsx [SSR]
+
+
+[00:19:58.800] Server  ERROR   redux-persist failed to create sync storage. falling back to noop storage.
+[00:19:58.866] Server  WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:19:58.866] Server  WARN    Shopify not configured, using mock data.
+[00:19:58.866] Server  WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:19:58.866] Server  WARN    Shopify not configured, using mock data.
+[00:20:00.079] Browser WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:20:00.079] Browser WARN    Shopify not configured, using mock data.
+[00:20:00.514] Server  ERROR   ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1617806118233-f8e137bc7288?auto=format&fit=crop&w=300&q=80" 404

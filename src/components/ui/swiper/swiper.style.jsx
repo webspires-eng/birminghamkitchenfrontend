@@ -1,21 +1,32 @@
-import styled, {css, themeGet} from "@styled";
-import {fadeInUp, fadeOutUp} from "@assets/css/keyframes";
-import {SlideContent, SliderThumb} from "@components/slider/slider.style";
+import styled, { css, themeGet } from "@styled";
+import { fadeInUp, fadeOutUp } from "@assets/css/keyframes";
+import { SlideContent, SliderThumb } from "@components/slider/slider.style";
 
 export const SliderWrap = styled.div`
   position: relative;
   transition: ${themeGet('transition')};
 
-  ${({arrows}) => arrows && css`
+  /* Force hero slider to respect slide height */
+  &:has(.hero-slider-one),
+  & {
+    .swiper {
+      height: auto;
+    }
+    .swiper-slide {
+      height: auto;
+    }
+  }
+
+  ${({ arrows }) => arrows && css`
     .swiper-button {
       &-next,
       &-prev {
         top: 50%;
         z-index: 9;
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
         margin: auto;
-        line-height: 40px;
+        line-height: 44px;
         position: absolute;
         visibility: hidden;
         text-align: center;
@@ -24,7 +35,7 @@ export const SliderWrap = styled.div`
         transition: ${themeGet('transition')};
         border-radius: ${themeGet('radii.circle')};
         background-color: ${themeGet('colors.white')};
-        box-shadow: 0 3px 25.5px 4.5px rgba(0, 0, 0, .06);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 
         &:hover {
           color: ${themeGet('colors.white')};
@@ -78,7 +89,7 @@ export const SliderWrap = styled.div`
     }
   `}
 
-  ${({dots}) => dots && css`
+  ${({ dots }) => dots && css`
     .swiper-pagination {
       &-bullet {
         cursor: pointer;
@@ -101,7 +112,7 @@ export const SliderWrap = styled.div`
     }
   `};
 
-  ${({animate}) => animate && css`
+  ${({ animate }) => animate && css`
     ${SlideContent} {
       & > * {
         animation-duration: 0.7s;
