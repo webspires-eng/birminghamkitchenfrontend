@@ -6935,9 +6935,7 @@ const ScrollIndicator = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$s
   }
 `;
 const SlideItem = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
-  height: 92vh;
-  min-height: 550px;
-  max-height: 920px;
+  height: 100%;
   display: flex;
   background-color: #000;
   position: relative;
@@ -6957,16 +6955,6 @@ const SlideItem = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$
       rgba(0, 0, 0, 0.45) 100%
     );
     z-index: 0;
-  }
-
-  ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
-    height: 75vh;
-    min-height: 450px;
-  }
-
-  ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].sm} {
-    height: 65vh;
-    min-height: 400px;
   }
 
   & > div {

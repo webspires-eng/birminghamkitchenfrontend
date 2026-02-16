@@ -161,9 +161,7 @@ export const ScrollIndicator = styled.div`
 `;
 
 export const SlideItem = styled.div`
-  height: 92vh;
-  min-height: 550px;
-  max-height: 920px;
+  height: 100%;
   display: flex;
   background-color: #000;
   position: relative;
@@ -183,16 +181,6 @@ export const SlideItem = styled.div`
       rgba(0, 0, 0, 0.45) 100%
     );
     z-index: 0;
-  }
-
-  ${devices.md} {
-    height: 75vh;
-    min-height: 450px;
-  }
-
-  ${devices.sm} {
-    height: 65vh;
-    min-height: 400px;
   }
 
   & > div {
