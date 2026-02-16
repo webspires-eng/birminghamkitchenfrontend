@@ -3,35 +3,33 @@ import settings from "@data/settings";
 import Layout from "@components/layout";
 import ShopProductsFeed from "@components/shop";
 import EmptyProduct from "@components/ui/empty";
-import {client, collectionQuery} from "@graphql";
+import { client, collectionQuery } from "@graphql";
 import Breadcrumb from "@components/ui/breadcrumb";
 
-const CollectionPage = ({collection}) => {
+const CollectionPage = ({ collection }) => {
     return (
         <Layout>
             <Head>
-                <title>{collection?.title + " Products :: " + settings?.title}</title>
-                <meta name="description" content={settings?.title}/>
+                <title>{collection?.title + " | Birmingham Kitchens & Bedrooms"}</title>
+                <meta name="description" content={`Shop our ${collection?.title} collection. Premium quality, crafted in the UK.`} />
             </Head>
 
             <Breadcrumb
-                py={[40, 80]}
-                mb={[60, null, 100]}
                 pageTitle={collection?.title}
             />
 
             {collection?.products?.length ? (
-                <ShopProductsFeed products={collection?.products}/>
+                <ShopProductsFeed products={collection?.products} />
             ) : (
-                <EmptyProduct/>
+                <EmptyProduct />
             )}
         </Layout>
     );
 };
 
-export const getServerSideProps = async ({params, query}) => {
-    const {slug} = params;
-    const {sort} = query;
+export const getServerSideProps = async ({ params, query }) => {
+    const { slug } = params;
+    const { sort } = query;
     const sortKey = sort?.split("-")[0].toUpperCase();
     const reverse = sort?.split("-")[1] !== "ascending";
     const collectionData = await client(collectionQuery(slug, sortKey, reverse));
