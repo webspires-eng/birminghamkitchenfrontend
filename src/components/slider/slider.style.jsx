@@ -17,29 +17,17 @@ const pulse = keyframes`
 `;
 
 export const SliderThumb = styled.div`
-  &:not(.style-2) {
-    img {
-      ${devices.md} {
-        height: 250px;
-      }
-      ${devices.sm} {
-        width: 300px;
-        height: 250px;
-        margin-bottom: 10px;
-      }
-    }
-  }
-
   &.style-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    
     img {
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
       object-fit: cover;
-      position: absolute;
       object-position: center;
-      animation: none !important;
       transition: transform 8s ease;
     }
   }
@@ -119,7 +107,7 @@ export const SlideContent = styled.div`
 
 export const ScrollIndicator = styled.div`
   position: absolute;
-  bottom: 30px;
+  bottom: 80px; /* Moved up to avoid overlap */
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;

@@ -18,12 +18,12 @@ const HomeTwo = ({ products, collections }) => {
             <Head>
                 <title>{"Birmingham Kitchen & Bedroom | Bespoke Design"}</title>
                 <meta name="description" content={settings?.description} />
-                {/* Preload critical font/assets if necessary, often next/font handles this */}
             </Head>
 
             <Slider
                 animate={true}
                 data={sliderData}
+                className="hero-slider-one"
                 settings={{
                     effect: "fade",
                     speed: 1000,
@@ -53,7 +53,6 @@ const HomeTwo = ({ products, collections }) => {
                 />
                 <ProductsTab products={products} limit={8} />
 
-                {/* Add a view all button wrapper if needed later */}
                 <div className="text-center mt-5 mb-5">
                     <a href="/shop" style={{ textDecoration: 'underline', color: '#333', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', fontSize: '13px' }}>View All Products</a>
                 </div>

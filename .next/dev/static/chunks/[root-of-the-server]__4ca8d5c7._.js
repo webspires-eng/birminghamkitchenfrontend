@@ -7748,29 +7748,17 @@ const pulse = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$st
   50% { opacity: 0.4; }
 `;
 const SliderThumb = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
-  &:not(.style-2) {
-    img {
-      ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
-        height: 250px;
-      }
-      ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].sm} {
-        width: 300px;
-        height: 250px;
-        margin-bottom: 10px;
-      }
-    }
-  }
-
   &.style-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    
     img {
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
       object-fit: cover;
-      position: absolute;
       object-position: center;
-      animation: none !important;
       transition: transform 8s ease;
     }
   }
@@ -7846,7 +7834,7 @@ const SlideContent = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
 `;
 const ScrollIndicator = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
   position: absolute;
-  bottom: 30px;
+  bottom: 80px; /* Moved up to avoid overlap */
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
@@ -12853,6 +12841,7 @@ const HomeTwo = ({ products, collections })=>{
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$slider$2f$home$2d$2$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__SliderTwo$3e$__["SliderTwo"], {
                 animate: true,
                 data: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$slider$2f$home$2d$2$2e$json__$28$json$29$__["default"],
+                className: "hero-slider-one",
                 settings: {
                     effect: "fade",
                     speed: 1000,
@@ -12863,7 +12852,7 @@ const HomeTwo = ({ products, collections })=>{
                 }
             }, void 0, false, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 24,
+                lineNumber: 23,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$features$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
@@ -12936,12 +12925,12 @@ const HomeTwo = ({ products, collections })=>{
                             children: "View All Products"
                         }, void 0, false, {
                             fileName: "[project]/src/pages/index.jsx",
-                            lineNumber: 58,
+                            lineNumber: 57,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 57,
+                        lineNumber: 56,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
