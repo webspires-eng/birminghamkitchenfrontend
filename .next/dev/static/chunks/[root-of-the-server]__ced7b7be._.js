@@ -8801,24 +8801,25 @@ const CatName = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f
   margin: 0;
   color: #fff;
   font-weight: 700;
-  font-size: 22px;
-  letter-spacing: 1px;
+  font-size: 24px;
+  letter-spacing: 0.5px;
   position: relative;
   z-index: 2;
   transition: all 0.4s ease;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].xs} {
-    font-size: 16px;
+    font-size: 18px;
   }
 `;
 const CatSubtext = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].span`
   display: block;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-top: 6px;
+  margin-top: 8px;
   position: relative;
   z-index: 2;
   transition: all 0.4s ease;
@@ -8831,7 +8832,8 @@ const CatItemInner = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end; /* Align text to bottom */
+  padding-bottom: 30px; /* Add padding */
   position: relative;
   overflow: hidden;
 
@@ -8843,9 +8845,9 @@ const CatItemInner = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
     height: 100%;
     object-fit: cover !important;
     transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
-    filter: brightness(0.95);
   }
 
+  /* Gradient Overlay */
   &::after {
     content: '';
     position: absolute;
@@ -8855,8 +8857,9 @@ const CatItemInner = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
     height: 100%;
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.05) 0%,
-      rgba(0, 0, 0, 0.55) 100%
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.1) 50%,
+      rgba(0, 0, 0, 0.7) 100%
     );
     transition: all 0.4s ease;
     z-index: 1;
@@ -8865,36 +8868,37 @@ const CatItemInner = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
 const CategoryItem = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].a`
   display: block;
   width: 100%;
-  height: 340px;
+  height: 380px; /* Taller Cards */
   position: relative;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
   text-decoration: none !important;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* Sudo-shadow for depth */
   transition: all 0.5s cubic-bezier(0.2, 0, 0.2, 1);
+  background: #f0f0f0;
 
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].sm} {
-    height: 260px;
+    height: 300px;
   }
 
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].xs} {
-    height: 220px;
+    height: 250px;
   }
 
   &:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 
     ${CatItemInner} {
       img {
-        transform: scale(1.12);
-        filter: brightness(1.05);
+        transform: scale(1.08);
       }
       &::after {
         background: linear-gradient(
           180deg,
-          rgba(0, 0, 0, 0.1) 0%,
-          rgba(0, 0, 0, 0.7) 100%
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.2) 40%,
+          rgba(0, 0, 0, 0.8) 100%
         );
       }
     }
