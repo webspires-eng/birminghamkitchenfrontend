@@ -3,15 +3,16 @@ import { GraphQLClient } from 'graphql-request';
 const client = async (query, variables) => {
     const storeName = process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_NAME;
     const accessToken = process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
+    const customApiUrl = process.env.NEXT_PUBLIC_GRAPHQL_API_URL;
 
-    // Check if configured properly
-    const isConfigured = storeName && storeName !== "your store name" && accessToken && accessToken !== "your store access token";
+    // Check if configured properly for Shopify OR Custom API
+    const isConfigured = customApiUrl || (storeName && storeName !== "your store name" && accessToken && accessToken !== "your store access token");
 
-    const endpoint = `https://${storeName}.myshopify.com/api/2021-07/graphql.json`;
+    const endpoint = customApiUrl || `https://${storeName}.myshopify.com/api/2021-07/graphql.json`;
 
     try {
         if (!isConfigured) {
-            throw new Error("Shopify not configured, using mock data.");
+            throw new Error("API not configured, using mock data.");
         }
 
         const graphQLClient = new GraphQLClient(endpoint, {
