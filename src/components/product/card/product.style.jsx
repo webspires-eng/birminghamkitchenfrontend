@@ -7,41 +7,46 @@ const hvrVisible = css`
 `
 
 export const ProductPrice = styled.div`
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1;
   font-family: ${themeGet('fonts.montserrat')};
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: ${themeGet('colors.primary')};
-  font-weight: 600;
-  margin-top: 5px;
+  justify-content: flex-start;
+  color: ${themeGet('colors.heading')};
+  font-weight: 700;
+  margin-top: 8px;
 
   .price {
     &.old {
-      margin-right: 8px;
-      color: ${themeGet('colors.darkgray')};
+      margin-right: 10px;
+      color: #999;
       text-decoration: line-through;
       font-weight: 400;
       font-size: 14px;
+    }
+    &.new {
+      color: ${themeGet('colors.primary')};
     }
   }
 `
 
 export const ProductTitle = styled.h2`
-  font-size: 16px;
-  font-family: ${themeGet('fonts.montserrat')};
+  font-size: 15px;
+  font-family: ${themeGet('fonts.body')};
   font-weight: 500;
-  margin-bottom: 8px;
-  letter-spacing: 0.3px;
+  margin-bottom: 0;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
 
   a {
     text-decoration: none;
-    color: ${themeGet('colors.heading')};
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    color: #191919;
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+    /* text-overflow: ellipsis; */
     display: block;
+    transition: color 0.2s ease;
 
     ${devices.sm} {
       font-size: 14px;
@@ -58,10 +63,10 @@ export const ProductMeta = styled.div`
   z-index: 10;
   display: flex;
   flex-direction: column;
-  padding: 15px 15px 20px;
-  text-align: center;
+  padding: 18px 0;
+  text-align: left;
   transition: ${themeGet('transition')};
-  background-color: ${themeGet('colors.white')};
+  background-color: transparent;
 
   ${devices.sm} {
     padding-top: 15px;
@@ -71,62 +76,31 @@ export const ProductMeta = styled.div`
 
 const buttonStyle = css`
   border: 0;
-  width: 80%;
+  width: 100%;
   z-index: 11;
-  height: 32px;
-  display: none;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 13px;
-  line-height: 32px;
-  text-align: center;
-  margin: 10px auto 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
   color: ${themeGet('colors.white')};
-  transition: ${themeGet('transition')};
-  border-radius: ${themeGet('radii.sm')};
+  transition: all 0.3s ease;
   font-family: ${themeGet('fonts.heading')};
-  background-color: ${themeGet('colors.primary')};
-  font-weight: ${themeGet('fontWeights.subHeading')};
-
+  background-color: ${themeGet('colors.black')};
+  border-radius: 4px;
+  
   svg {
-    margin-right: 3px;
-    vertical-align: text-bottom;
-    font-size: ${themeGet('fontSizes.body')};
-  }
-
-  ${devices.md} {
-    display: block;
+    margin-right: 6px;
+    font-size: 16px;
   }
 
   &:hover {
+    background-color: ${themeGet('colors.primary')};
     color: ${themeGet('colors.white')};
   }
-
-  ${({ mobile }) => !mobile && css`
-    left: 0;
-    right: 0;
-    opacity: 0;
-    bottom: 20px;
-    height: 45px;
-    display: block;
-    line-height: 45px;
-    position: absolute;
-    visibility: hidden;
-    transform: translateY(20px);
-    color: ${themeGet('colors.secondary')};
-    font-size: ${themeGet('fontSizes.standard')};
-    background-color: ${themeGet('colors.white')};
-
-    ${devices.md} {
-      display: none;
-    }
-
-    &:hover {
-      color: ${themeGet('colors.primary')};
-    }
-  `}
-`
-
-export const AddToCartButton = styled.button`
-  ${buttonStyle}
 
   ${({ disabled }) => disabled && css`
     pointer-events: none;
@@ -134,8 +108,43 @@ export const AddToCartButton = styled.button`
   `}
 `
 
+export const AddToCartButton = styled.button`
+  ${buttonStyle}
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(100%);
+  opacity: 0;
+  visibility: hidden;
+
+  ${devices.md} {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    margin-top: 15px;
+  }
+`
+
 export const SelectOptionButton = styled.span`
   ${buttonStyle}
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(100%);
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+
+  ${devices.md} {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    margin-top: 15px;
+  }
 `
 
 export const ActionButton = styled.button`
@@ -144,46 +153,40 @@ export const ActionButton = styled.button`
   justify-content: center;
   width: 40px;
   height: 40px;
-  transition: ${themeGet('transition')};
+  transition: all 0.3s ease;
   text-decoration: none;
-  color: ${themeGet('colors.heading')};
-  border-radius: ${themeGet('radii.circle')};
-  background-color: ${themeGet('colors.white')};
+  color: #191919;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 
   svg {
-    font-size: 20px;
-    line-height: 1;
+    font-size: 18px;
   }
 
   &:not(.wishlist) {
-    visibility: hidden;
-    transform: translateY(20px);
+    transform: translateX(10px);
     opacity: 0;
   }
 
   ${({ isActive }) => isActive && css`
     color: ${themeGet('colors.primary')};
   `}
+  
   &:hover {
-    color: ${themeGet('colors.white')};
     background-color: ${themeGet('colors.primary')};
+    color: #fff;
   }
 `
 
 export const ProductActions = styled.div`
   position: absolute;
   z-index: 9;
-  top: 18px;
-  right: 18px;
+  top: 15px;
+  right: 15px;
   display: flex;
   flex-direction: column;
-  transition: ${themeGet('transition')};
-
-  .btn-action {
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-  }
+  gap: 10px;
 
   ${devices.sm} {
     display: none;
@@ -193,59 +196,39 @@ export const ProductActions = styled.div`
 export const ProductActionsMobile = styled.div`
   display: none;
 
-  ${devices.sm}, ${devices.md} {
+  ${devices.sm} {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
-  }
-
-  .btn-action {
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
+    gap: 10px;
+    margin-top: 12px;
   }
 
   ${ActionButton} {
-    visibility: visible;
-    opacity: 1;
     transform: none;
-    margin-top: 0;
-    height: auto;
-    width: auto;
-    padding: 0;
-
+    opacity: 1;
+    box-shadow: none;
+    background: #f5f5f5;
+    
     &:hover {
-      background: transparent;
-      color: ${themeGet('colors.primary')}
+      background: ${themeGet('colors.primary')};
+      color: #fff;
     }
   }
 `
 
 export const Badge = styled.span`
-  background-color: ${themeGet('colors.secondary')};
-  font-size: 12px;
-  font-weight: ${themeGet('fontWeights.medium')};
-  font-family: ${themeGet('fonts.body')};
-  line-height: 1;
-  display: block;
-  padding: 5px 7px;
-  text-align: center;
+  background-color: ${themeGet('colors.black')};
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
-  width: auto;
-  border-radius: ${themeGet('radii.sm')};
-  color: ${themeGet('colors.white')};
-
-  ${devices.xs} {
-    font-size: 11px;
-    padding: 3px 4px;
-  }
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 
   & + span {
-    margin-top: 7px;
-
-    ${devices.xs} {
-      margin-top: 5px;
-    }
+    margin-top: 6px;
   }
 
   ${props => props.type === 'new' && css`
@@ -253,100 +236,76 @@ export const Badge = styled.span`
   `}
 
   ${props => props.type === 'sale' && css`
-    background-color: ${themeGet('colors.primary')}; // Red
+    background-color: ${themeGet('colors.primary')};
   `}
 
   ${props => props.type === 'winter' && css`
-    background-color: #6a1b9a; // darker purple for Winter Sale
-    color: #fff;
+    background-color: #6a1b9a;
   `}
 
   ${props => props.type === 'featured' && css`
-    background-color: ${themeGet('colors.secondary')}; // Blue
+    background-color: ${themeGet('colors.secondary')};
   `}
 `
 
 export const ProductBadges = styled.div`
   position: absolute;
   z-index: 8;
-  top: 18px;
-  left: 18px;
+  top: 15px;
+  left: 15px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
-  ${devices.xs} {
-    top: 10px;
-    left: 10px;
-  }
-`
-
-export const ProductImage = styled.div`
-  position: relative;
-  display: block;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-
-  .thumb {
-    z-index: 1;
-    max-width: 100%;
-
-    &.hover-image {
-      position: absolute;
-      z-index: 2;
-      top: 0;
-      left: 0;
-      opacity: 0;
-    }
-  }
 `
 
 export const ProductThumb = styled.figure`
   position: relative;
   overflow: hidden;
+  margin: 0;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+  
+  /* Aspect ratio fix if needed, or rely on image size */
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.2, 0, 0.2, 1);
+  }
+
+  .hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
 `
 
 export const Product = styled.div`
-  overflow: hidden;
-  margin-top: 30px;
-  background: ${themeGet('colors.white')};
-  border: 1px solid #f0f0f0;
-  border-radius: 8px;
-  transition: all 0.3s ease;
   position: relative;
+  margin-bottom: 30px;
 
   &:hover {
-    border-color: #ddd;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    ${ProductThumb} img {
+      transform: scale(1.06);
+    }
 
-    ${ProductImage} {
-      .thumb {
-        img {
-          transform: scale(1.05);
-        }
+    ${ProductThumb} .hover-image {
+      opacity: 1;
+    }
 
-        &:not(:last-child) {
-          opacity: 0;
-        }
-
-        &.hover-image {
-          opacity: 1;
-        }
-      }
+    ${AddToCartButton}, ${SelectOptionButton} {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
     }
 
     ${ActionButton} {
-      ${hvrVisible}
-    }
-
-    ${AddToCartButton} {
-      ${hvrVisible}
-    }
-
-    ${SelectOptionButton} {
-      ${hvrVisible}
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 `

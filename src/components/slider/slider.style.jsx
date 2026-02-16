@@ -1,4 +1,20 @@
-import styled, { devices, themeGet, css, typography } from "@styled";
+import styled, { devices, themeGet, css, typography, keyframes } from "@styled";
+
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const pulse = keyframes`
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+`;
 
 export const SliderThumb = styled.div`
   &:not(.style-2) {
@@ -6,7 +22,6 @@ export const SliderThumb = styled.div`
       ${devices.md} {
         height: 250px;
       }
-
       ${devices.sm} {
         width: 300px;
         height: 250px;
@@ -25,28 +40,50 @@ export const SliderThumb = styled.div`
       position: absolute;
       object-position: center;
       animation: none !important;
+      transition: transform 8s ease;
     }
   }
 `
 
 export const SlideSubTitle = styled.h4`
-  font-size: 24px;
+  font-size: 14px;
   line-height: 1;
-  color: ${themeGet('colors.text')};
-  font-weight: ${themeGet('fontWeights.subHeading')};
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  margin-bottom: 20px;
+  animation: ${fadeInUp} 0.8s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+
+  ${devices.sm} {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
 `
 
 export const SlideTitle = styled.h2`
-  font-size: 52px;
-  margin-bottom: 15px;
-  font-weight: ${themeGet('fontWeights.heading')};
+  font-size: 62px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  animation: ${fadeInUp} 0.8s ease forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
 
   ${devices.md} {
-    font-size: 42px;
+    font-size: 46px;
   }
 
   ${devices.sm} {
-    font-size: 32px;
+    font-size: 34px;
+    letter-spacing: 0;
+  }
+
+  ${devices.xs} {
+    font-size: 28px;
   }
 `
 
@@ -56,11 +93,21 @@ export const SlideContent = styled.div`
   ${typography};
 
   & > p {
-    max-width: 470px;
+    max-width: 520px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    animation: ${fadeInUp} 0.8s ease forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
 
     ${props => props.textAlign === "center" && css`
       margin: auto;
     `}
+
+    ${devices.sm} {
+      font-size: 15px;
+    }
   }
 
   ${props => props.mode === "light" && css`
@@ -70,10 +117,43 @@ export const SlideContent = styled.div`
   `}
 `
 
-export const SlideItem = styled.div`
-  height: 400px;
+export const ScrollIndicator = styled.div`
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
   display: flex;
-  background-color: ${themeGet('colors.offWhite')};
+  flex-direction: column;
+  align-items: center;
+  animation: ${pulse} 2s ease infinite;
+
+  ${devices.sm} {
+    display: none;
+  }
+
+  &::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.5);
+    margin-top: 8px;
+  }
+
+  span {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+  }
+`;
+
+export const SlideItem = styled.div`
+  height: 85vh;
+  min-height: 550px;
+  max-height: 900px;
+  display: flex;
+  background-color: #111;
   position: relative;
   overflow: hidden;
 
@@ -84,20 +164,23 @@ export const SlideItem = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.45);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.15) 40%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
     z-index: 0;
   }
 
   ${devices.md} {
-    height: 400px;
+    height: 70vh;
+    min-height: 450px;
   }
 
   ${devices.sm} {
-    height: 400px;
-  }
-
-  ${devices.xs} {
-    height: 400px;
+    height: 60vh;
+    min-height: 400px;
   }
 
   & > div {

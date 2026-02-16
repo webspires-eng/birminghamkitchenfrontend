@@ -1,51 +1,92 @@
 import { Container, Row, Col } from "@bootstrap";
-import styled, { themeGet, devices } from "@styled";
+import styled, { themeGet, devices, keyframes } from "@styled";
 import { HiOutlineTruck, HiOutlineClock, HiOutlineShieldCheck, HiOutlineCreditCard } from "react-icons/hi";
 
+const float = keyframes`
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+`;
+
 const FeatureWrapper = styled.div`
-  background-color: ${themeGet('colors.white')};
-  border-top: 1px solid #f0f0f0;
-  border-bottom: 1px solid #f0f0f0;
+  background: #111;
+  position: relative;
+  z-index: 10;
+  margin-top: -60px;
+
+  ${devices.md} {
+    margin-top: 0;
+  }
+`;
+
+const FeatureInner = styled.div`
+  background: #fff;
+  border-radius: 16px;
+  padding: 10px 0;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 10;
+
+  ${devices.md} {
+    border-radius: 0;
+    box-shadow: none;
+    padding: 10px 0 0;
+  }
 `;
 
 const FeatureItem = styled.div`
   display: flex;
   align-items: center;
-  padding: 40px 0;
-  
+  padding: 32px 20px;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+
   ${devices.md} {
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    padding: 30px 0;
+    padding: 24px 15px;
+  }
+
+  &:hover {
+    .feature-icon {
+      animation: ${float} 2s ease infinite;
+    }
   }
 `;
 
 const IconWrap = styled.div`
-  font-size: 40px;
-  color: ${themeGet('colors.primary')};
-  margin-right: 20px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, ${themeGet('colors.primary')}, #ff4444);
+  color: #fff;
+  font-size: 26px;
+  margin-right: 18px;
+  flex-shrink: 0;
+  box-shadow: 0 6px 20px rgba(212, 5, 17, 0.25);
 
   ${devices.md} {
     margin-right: 0;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
   }
 `
 
 const FeatureInfo = styled.div`
   h4 {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    color: #191919;
+    letter-spacing: 0.3px;
   }
   p {
     margin: 0;
-    font-size: 14px;
-    color: #666;
+    font-size: 13px;
+    color: #888;
+    line-height: 1.5;
   }
 `;
 
@@ -80,19 +121,21 @@ const Features = () => {
   return (
     <FeatureWrapper>
       <Container>
-        <Row className="justify-content-center">
-          {featureData.map(item => (
-            <Col key={item.id} xs={10} sm={6} lg={3}>
-              <FeatureItem>
-                <IconWrap>{item.icon}</IconWrap>
-                <FeatureInfo>
-                  <h4>{item.title}</h4>
-                  <p>{item.content}</p>
-                </FeatureInfo>
-              </FeatureItem>
-            </Col>
-          ))}
-        </Row>
+        <FeatureInner>
+          <Row className="justify-content-center align-items-center">
+            {featureData.map(item => (
+              <Col key={item.id} xs={6} sm={6} lg={3}>
+                <FeatureItem>
+                  <IconWrap className="feature-icon">{item.icon}</IconWrap>
+                  <FeatureInfo>
+                    <h4>{item.title}</h4>
+                    <p>{item.content}</p>
+                  </FeatureInfo>
+                </FeatureItem>
+              </Col>
+            ))}
+          </Row>
+        </FeatureInner>
       </Container>
     </FeatureWrapper>
   );

@@ -2,7 +2,7 @@ import Link from "next/link";
 import PropTypes from "prop-types";
 import Image from "@components/ui/image";
 import { placeholder } from "@utils/constant";
-import { CategoryItem, CatItemInner, CatName } from "./category.style";
+import { CategoryItem, CatItemInner, CatName, CatSubtext } from "./category.style";
 
 const Category = ({ category, icon, slug }) => {
     return (
@@ -16,6 +16,7 @@ const Category = ({ category, icon, slug }) => {
                         src={icon ? icon : placeholder}
                     />
                     <CatName>{category}</CatName>
+                    <CatSubtext>View Collection</CatSubtext>
                 </CatItemInner>
             </CategoryItem>
         </Link>

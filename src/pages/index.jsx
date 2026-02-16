@@ -16,44 +16,58 @@ import { client, blogsQuery, productsQuery, collectionsQuery } from "@graphql";
 const HomeTwo = ({ blogs, products, collections }) => {
     const displayCollections = collections?.length > 0 ? collections : categoriesData;
     return (
-        <Layout bg="white">
+        <Layout bg="#fcfcfc">
             <Head>
-                <title>{"Home :: " + settings?.title}</title>
+                <title>{"Birmingham Kitchen & Bedroom | Bespoke Design"}</title>
                 <meta name="description" content={settings?.description} />
             </Head>
 
             <Slider
                 animate={true}
                 data={sliderData}
-                settings={{ effect: "fade", speed: 1000 }}
+                settings={{
+                    effect: "fade",
+                    speed: 1000,
+                    autoplay: {
+                        delay: 6000,
+                        disableOnInteraction: false
+                    }
+                }}
             />
 
             <Features />
 
-            <div className="collection-section py-5 my-0 bg-white">
+            <div className="collection-section py-5 my-5">
                 <SectionTitle
-                    title="Shop By Category"
-                    content="Browse our wide selection of bespoke kitchen and bedroom collections."
+                    title="Curated Collections"
+                    content="Explore our signature ranges, designed to bring elegance and functionality to every corner of your home."
                 />
-                <Categories categories={displayCollections} pt={0} pb={80} />
+                <Categories categories={displayCollections} pt={0} pb={60} />
             </div>
 
             <BrandShowcase />
 
-            <div className="products-section py-5 my-4 bg-white">
+            <div className="products-section py-5 my-5 bg-white">
                 <SectionTitle
-                    title="Our Best Sellers"
-                    content="Hand-picked premium products for your modern home."
+                    title="Best Sellers"
+                    content="Discover the pieces our customers love most. Timeless quality meets modern design."
                 />
                 <ProductsTab products={products} limit={8} />
+
+                {/* Add a view all button wrapper if needed later */}
+                <div className="text-center mt-5">
+                    <a href="/shop" style={{ textDecoration: 'underline', color: '#333', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', fontSize: '13px' }}>View All Products</a>
+                </div>
             </div>
 
-            <Promotions fluid={true} />
+            <div className="my-5">
+                <Promotions fluid={true} />
+            </div>
 
-            <div className="blog-section py-5 my-4 bg-white">
+            <div className="blog-section py-5 my-5 bg-light">
                 <SectionTitle
-                    title="Latest From Journal"
-                    content="Experience modern living through our latest design tips and project showcases."
+                    title="Design Journal"
+                    content="Inspiration, tips, and stories from the world of bespoke interiors."
                 />
                 <LatestBlog posts={blogs} pt={0} pb={80} />
             </div>

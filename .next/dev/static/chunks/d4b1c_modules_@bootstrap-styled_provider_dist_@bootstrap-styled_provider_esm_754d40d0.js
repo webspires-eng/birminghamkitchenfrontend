@@ -1,0 +1,10853 @@
+(globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([typeof document === "object" ? document.currentScript : undefined,
+"[project]/node_modules/@bootstrap-styled/provider/dist/@bootstrap-styled/provider.esm.js [client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "BootstrapProvider",
+    ()=>BootstrapProvider,
+    "UtilityProvider",
+    ()=>UtilityProvider,
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/index.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/styled-components/dist/styled-components.browser.esm.js [client] (ecmascript)");
+;
+;
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+function _defineProperties(target, props) {
+    for(var i = 0; i < props.length; i++){
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+    }
+}
+function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+}
+function _defineProperty(obj, key, value) {
+    if (key in obj) {
+        Object.defineProperty(obj, key, {
+            value: value,
+            enumerable: true,
+            configurable: true,
+            writable: true
+        });
+    } else {
+        obj[key] = value;
+    }
+    return obj;
+}
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function");
+    }
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+        constructor: {
+            value: subClass,
+            writable: true,
+            configurable: true
+        }
+    });
+    if (superClass) _setPrototypeOf(subClass, superClass);
+}
+function _getPrototypeOf(o) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+        return o.__proto__ || Object.getPrototypeOf(o);
+    };
+    return _getPrototypeOf(o);
+}
+function _setPrototypeOf(o, p) {
+    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+        o.__proto__ = p;
+        return o;
+    };
+    return _setPrototypeOf(o, p);
+}
+function _isNativeReflectConstruct() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+    try {
+        Date.prototype.toString.call(Reflect.construct(Date, [], function() {}));
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+function _assertThisInitialized(self1) {
+    if (self1 === void 0) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+    return self1;
+}
+function _possibleConstructorReturn(self1, call) {
+    if (call && (typeof call === "object" || typeof call === "function")) {
+        return call;
+    }
+    return _assertThisInitialized(self1);
+}
+function _createSuper(Derived) {
+    var hasNativeReflectConstruct = _isNativeReflectConstruct();
+    return function _createSuperInternal() {
+        var Super = _getPrototypeOf(Derived), result;
+        if (hasNativeReflectConstruct) {
+            var NewTarget = _getPrototypeOf(this).constructor;
+            result = Reflect.construct(Super, arguments, NewTarget);
+        } else {
+            result = Super.apply(this, arguments);
+        }
+        return _possibleConstructorReturn(this, result);
+    };
+}
+function _taggedTemplateLiteral(strings, raw) {
+    if (!raw) {
+        raw = strings.slice(0);
+    }
+    return Object.freeze(Object.defineProperties(strings, {
+        raw: {
+            value: Object.freeze(raw)
+        }
+    }));
+}
+function unwrapExports(x) {
+    return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+}
+function createCommonjsModule(fn, module) {
+    return module = {
+        exports: {}
+    }, fn(module, module.exports), module.exports;
+}
+/** @license React v16.13.1
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ var b = "function" === typeof Symbol && Symbol.for, c = b ? Symbol.for("react.element") : 60103, d = b ? Symbol.for("react.portal") : 60106, e = b ? Symbol.for("react.fragment") : 60107, f = b ? Symbol.for("react.strict_mode") : 60108, g = b ? Symbol.for("react.profiler") : 60114, h = b ? Symbol.for("react.provider") : 60109, k = b ? Symbol.for("react.context") : 60110, l = b ? Symbol.for("react.async_mode") : 60111, m = b ? Symbol.for("react.concurrent_mode") : 60111, n = b ? Symbol.for("react.forward_ref") : 60112, p = b ? Symbol.for("react.suspense") : 60113, q = b ? Symbol.for("react.suspense_list") : 60120, r = b ? Symbol.for("react.memo") : 60115, t = b ? Symbol.for("react.lazy") : 60116, v = b ? Symbol.for("react.block") : 60121, w = b ? Symbol.for("react.fundamental") : 60117, x = b ? Symbol.for("react.responder") : 60118, y = b ? Symbol.for("react.scope") : 60119;
+function z(a) {
+    if ("object" === typeof a && null !== a) {
+        var u = a.$$typeof;
+        switch(u){
+            case c:
+                switch(a = a.type, a){
+                    case l:
+                    case m:
+                    case e:
+                    case g:
+                    case f:
+                    case p:
+                        return a;
+                    default:
+                        switch(a = a && a.$$typeof, a){
+                            case k:
+                            case n:
+                            case t:
+                            case r:
+                            case h:
+                                return a;
+                            default:
+                                return u;
+                        }
+                }
+            case d:
+                return u;
+        }
+    }
+}
+function A(a) {
+    return z(a) === m;
+}
+var AsyncMode = l;
+var ConcurrentMode = m;
+var ContextConsumer = k;
+var ContextProvider = h;
+var Element = c;
+var ForwardRef = n;
+var Fragment = e;
+var Lazy = t;
+var Memo = r;
+var Portal = d;
+var Profiler = g;
+var StrictMode = f;
+var Suspense = p;
+var isAsyncMode = function(a) {
+    return A(a) || z(a) === l;
+};
+var isConcurrentMode = A;
+var isContextConsumer = function(a) {
+    return z(a) === k;
+};
+var isContextProvider = function(a) {
+    return z(a) === h;
+};
+var isElement = function(a) {
+    return "object" === typeof a && null !== a && a.$$typeof === c;
+};
+var isForwardRef = function(a) {
+    return z(a) === n;
+};
+var isFragment = function(a) {
+    return z(a) === e;
+};
+var isLazy = function(a) {
+    return z(a) === t;
+};
+var isMemo = function(a) {
+    return z(a) === r;
+};
+var isPortal = function(a) {
+    return z(a) === d;
+};
+var isProfiler = function(a) {
+    return z(a) === g;
+};
+var isStrictMode = function(a) {
+    return z(a) === f;
+};
+var isSuspense = function(a) {
+    return z(a) === p;
+};
+var isValidElementType = function(a) {
+    return "string" === typeof a || "function" === typeof a || a === e || a === m || a === g || a === f || a === p || a === q || "object" === typeof a && null !== a && (a.$$typeof === t || a.$$typeof === r || a.$$typeof === h || a.$$typeof === k || a.$$typeof === n || a.$$typeof === w || a.$$typeof === x || a.$$typeof === y || a.$$typeof === v);
+};
+var typeOf = z;
+var reactIs_production_min = {
+    AsyncMode: AsyncMode,
+    ConcurrentMode: ConcurrentMode,
+    ContextConsumer: ContextConsumer,
+    ContextProvider: ContextProvider,
+    Element: Element,
+    ForwardRef: ForwardRef,
+    Fragment: Fragment,
+    Lazy: Lazy,
+    Memo: Memo,
+    Portal: Portal,
+    Profiler: Profiler,
+    StrictMode: StrictMode,
+    Suspense: Suspense,
+    isAsyncMode: isAsyncMode,
+    isConcurrentMode: isConcurrentMode,
+    isContextConsumer: isContextConsumer,
+    isContextProvider: isContextProvider,
+    isElement: isElement,
+    isForwardRef: isForwardRef,
+    isFragment: isFragment,
+    isLazy: isLazy,
+    isMemo: isMemo,
+    isPortal: isPortal,
+    isProfiler: isProfiler,
+    isStrictMode: isStrictMode,
+    isSuspense: isSuspense,
+    isValidElementType: isValidElementType,
+    typeOf: typeOf
+};
+var reactIs_development = createCommonjsModule(function(module, exports) {});
+var reactIs_development_1 = reactIs_development.AsyncMode;
+var reactIs_development_2 = reactIs_development.ConcurrentMode;
+var reactIs_development_3 = reactIs_development.ContextConsumer;
+var reactIs_development_4 = reactIs_development.ContextProvider;
+var reactIs_development_5 = reactIs_development.Element;
+var reactIs_development_6 = reactIs_development.ForwardRef;
+var reactIs_development_7 = reactIs_development.Fragment;
+var reactIs_development_8 = reactIs_development.Lazy;
+var reactIs_development_9 = reactIs_development.Memo;
+var reactIs_development_10 = reactIs_development.Portal;
+var reactIs_development_11 = reactIs_development.Profiler;
+var reactIs_development_12 = reactIs_development.StrictMode;
+var reactIs_development_13 = reactIs_development.Suspense;
+var reactIs_development_14 = reactIs_development.isAsyncMode;
+var reactIs_development_15 = reactIs_development.isConcurrentMode;
+var reactIs_development_16 = reactIs_development.isContextConsumer;
+var reactIs_development_17 = reactIs_development.isContextProvider;
+var reactIs_development_18 = reactIs_development.isElement;
+var reactIs_development_19 = reactIs_development.isForwardRef;
+var reactIs_development_20 = reactIs_development.isFragment;
+var reactIs_development_21 = reactIs_development.isLazy;
+var reactIs_development_22 = reactIs_development.isMemo;
+var reactIs_development_23 = reactIs_development.isPortal;
+var reactIs_development_24 = reactIs_development.isProfiler;
+var reactIs_development_25 = reactIs_development.isStrictMode;
+var reactIs_development_26 = reactIs_development.isSuspense;
+var reactIs_development_27 = reactIs_development.isValidElementType;
+var reactIs_development_28 = reactIs_development.typeOf;
+var reactIs = createCommonjsModule(function(module) {
+    {
+        module.exports = reactIs_production_min;
+    }
+});
+var reactIs_1 = reactIs.isValidElementType;
+var reactIs_2 = reactIs.isAsyncMode;
+var reactIs_3 = reactIs.isConcurrentMode;
+var reactIs_4 = reactIs.isContextConsumer;
+var reactIs_5 = reactIs.isContextProvider;
+var reactIs_6 = reactIs.isElement;
+var reactIs_7 = reactIs.isForwardRef;
+var reactIs_8 = reactIs.isFragment;
+var reactIs_9 = reactIs.isLazy;
+var reactIs_10 = reactIs.isMemo;
+var reactIs_11 = reactIs.isPortal;
+var reactIs_12 = reactIs.isProfiler;
+var reactIs_13 = reactIs.isStrictMode;
+var reactIs_14 = reactIs.isSuspense;
+var reactIs_15 = reactIs.AsyncMode;
+var reactIs_16 = reactIs.ConcurrentMode;
+var reactIs_17 = reactIs.ContextConsumer;
+var reactIs_18 = reactIs.ContextProvider;
+var reactIs_19 = reactIs.Element;
+var reactIs_20 = reactIs.ForwardRef;
+var reactIs_21 = reactIs.Fragment;
+var reactIs_22 = reactIs.Lazy;
+var reactIs_23 = reactIs.Memo;
+var reactIs_24 = reactIs.Portal;
+var reactIs_25 = reactIs.Profiler;
+var reactIs_26 = reactIs.StrictMode;
+var reactIs_27 = reactIs.Suspense;
+var reactIs_28 = reactIs.typeOf;
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/ var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+function toObject(val) {
+    if (val === null || val === undefined) {
+        throw new TypeError('Object.assign cannot be called with null or undefined');
+    }
+    return Object(val);
+}
+function shouldUseNative() {
+    try {
+        if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+        ;
+        var test1 = new String('abc');
+        test1[5] = 'de';
+        if (Object.getOwnPropertyNames(test1)[0] === '5') {
+            return false;
+        }
+        var test2 = {};
+        for(var i = 0; i < 10; i++){
+            test2['_' + String.fromCharCode(i)] = i;
+        }
+        var order2 = Object.getOwnPropertyNames(test2).map(function(n) {
+            return test2[n];
+        });
+        if (order2.join('') !== '0123456789') {
+            return false;
+        }
+        var test3 = {};
+        'abcdefghijklmnopqrst'.split('').forEach(function(letter) {
+            test3[letter] = letter;
+        });
+        if (Object.keys(Object.assign({}, test3)).join('') !== 'abcdefghijklmnopqrst') {
+            return false;
+        }
+        return true;
+    } catch (err) {
+        return false;
+    }
+}
+var objectAssign = shouldUseNative() ? Object.assign : function(target, source) {
+    var from;
+    var to = toObject(target);
+    var symbols;
+    for(var s = 1; s < arguments.length; s++){
+        from = Object(arguments[s]);
+        for(var key in from){
+            if (hasOwnProperty.call(from, key)) {
+                to[key] = from[key];
+            }
+        }
+        if (getOwnPropertySymbols) {
+            symbols = getOwnPropertySymbols(from);
+            for(var i = 0; i < symbols.length; i++){
+                if (propIsEnumerable.call(from, symbols[i])) {
+                    to[symbols[i]] = from[symbols[i]];
+                }
+            }
+        }
+    }
+    return to;
+};
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+var ReactPropTypesSecret_1 = ReactPropTypesSecret;
+var has = Function.call.bind(Object.prototype.hasOwnProperty);
+function emptyFunction() {}
+function emptyFunctionWithReset() {}
+emptyFunctionWithReset.resetWarningCache = emptyFunction;
+var factoryWithThrowingShims = function() {
+    function shim(props, propName, componentName, location, propFullName, secret) {
+        if (secret === ReactPropTypesSecret_1) {
+            return;
+        }
+        var err = new Error('Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use PropTypes.checkPropTypes() to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
+        err.name = 'Invariant Violation';
+        throw err;
+    }
+    shim.isRequired = shim;
+    function getShim() {
+        return shim;
+    }
+    var ReactPropTypes = {
+        array: shim,
+        bool: shim,
+        func: shim,
+        number: shim,
+        object: shim,
+        string: shim,
+        symbol: shim,
+        any: shim,
+        arrayOf: getShim,
+        element: shim,
+        elementType: shim,
+        instanceOf: getShim,
+        node: shim,
+        objectOf: getShim,
+        oneOf: getShim,
+        oneOfType: getShim,
+        shape: getShim,
+        exact: getShim,
+        checkPropTypes: emptyFunctionWithReset,
+        resetWarningCache: emptyFunction
+    };
+    ReactPropTypes.PropTypes = ReactPropTypes;
+    return ReactPropTypes;
+};
+var propTypes = createCommonjsModule(function(module) {
+    {
+        module.exports = factoryWithThrowingShims();
+    }
+});
+function _defineProperty$1(obj, key, value) {
+    if (key in obj) {
+        Object.defineProperty(obj, key, {
+            value: value,
+            enumerable: true,
+            configurable: true,
+            writable: true
+        });
+    } else {
+        obj[key] = value;
+    }
+    return obj;
+}
+function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+    if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        if (enumerableOnly) symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+        });
+        keys.push.apply(keys, symbols);
+    }
+    return keys;
+}
+function _objectSpread2(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = arguments[i] != null ? arguments[i] : {};
+        if (i % 2) {
+            ownKeys(Object(source), true).forEach(function(key) {
+                _defineProperty$1(target, key, source[key]);
+            });
+        } else if (Object.getOwnPropertyDescriptors) {
+            Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+        } else {
+            ownKeys(Object(source)).forEach(function(key) {
+                Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+            });
+        }
+    }
+    return target;
+}
+function _slicedToArray(arr, i) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
+}
+function _toConsumableArray(arr) {
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+}
+function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr)) {
+        for(var i = 0, arr2 = new Array(arr.length); i < arr.length; i++)arr2[i] = arr[i];
+        return arr2;
+    }
+}
+function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+}
+function _iterableToArray(iter) {
+    if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+function _iterableToArrayLimit(arr, i) {
+    if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
+        return;
+    }
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = undefined;
+    try {
+        for(var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true){
+            _arr.push(_s.value);
+            if (i && _arr.length === i) break;
+        }
+    } catch (err) {
+        _d = true;
+        _e = err;
+    } finally{
+        try {
+            if (!_n && _i["return"] != null) _i["return"]();
+        } finally{
+            if (_d) throw _e;
+        }
+    }
+    return _arr;
+}
+function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+function _classCallCheck$1(r, e) {
+    if (!(r instanceof e)) throw new TypeError("Cannot call a class as a function");
+}
+var classCallCheck = _classCallCheck$1;
+function _defineProperty$1$1(r, e, n) {
+    return e in r ? Object.defineProperty(r, e, {
+        value: n,
+        enumerable: !0,
+        configurable: !0,
+        writable: !0
+    }) : r[e] = n, r;
+}
+var defineProperty = _defineProperty$1$1;
+function createCommonjsModule$1(r, e) {
+    return r(e = {
+        exports: {}
+    }, e.exports), e.exports;
+}
+var colorName = {
+    aliceblue: [
+        240,
+        248,
+        255
+    ],
+    antiquewhite: [
+        250,
+        235,
+        215
+    ],
+    aqua: [
+        0,
+        255,
+        255
+    ],
+    aquamarine: [
+        127,
+        255,
+        212
+    ],
+    azure: [
+        240,
+        255,
+        255
+    ],
+    beige: [
+        245,
+        245,
+        220
+    ],
+    bisque: [
+        255,
+        228,
+        196
+    ],
+    black: [
+        0,
+        0,
+        0
+    ],
+    blanchedalmond: [
+        255,
+        235,
+        205
+    ],
+    blue: [
+        0,
+        0,
+        255
+    ],
+    blueviolet: [
+        138,
+        43,
+        226
+    ],
+    brown: [
+        165,
+        42,
+        42
+    ],
+    burlywood: [
+        222,
+        184,
+        135
+    ],
+    cadetblue: [
+        95,
+        158,
+        160
+    ],
+    chartreuse: [
+        127,
+        255,
+        0
+    ],
+    chocolate: [
+        210,
+        105,
+        30
+    ],
+    coral: [
+        255,
+        127,
+        80
+    ],
+    cornflowerblue: [
+        100,
+        149,
+        237
+    ],
+    cornsilk: [
+        255,
+        248,
+        220
+    ],
+    crimson: [
+        220,
+        20,
+        60
+    ],
+    cyan: [
+        0,
+        255,
+        255
+    ],
+    darkblue: [
+        0,
+        0,
+        139
+    ],
+    darkcyan: [
+        0,
+        139,
+        139
+    ],
+    darkgoldenrod: [
+        184,
+        134,
+        11
+    ],
+    darkgray: [
+        169,
+        169,
+        169
+    ],
+    darkgreen: [
+        0,
+        100,
+        0
+    ],
+    darkgrey: [
+        169,
+        169,
+        169
+    ],
+    darkkhaki: [
+        189,
+        183,
+        107
+    ],
+    darkmagenta: [
+        139,
+        0,
+        139
+    ],
+    darkolivegreen: [
+        85,
+        107,
+        47
+    ],
+    darkorange: [
+        255,
+        140,
+        0
+    ],
+    darkorchid: [
+        153,
+        50,
+        204
+    ],
+    darkred: [
+        139,
+        0,
+        0
+    ],
+    darksalmon: [
+        233,
+        150,
+        122
+    ],
+    darkseagreen: [
+        143,
+        188,
+        143
+    ],
+    darkslateblue: [
+        72,
+        61,
+        139
+    ],
+    darkslategray: [
+        47,
+        79,
+        79
+    ],
+    darkslategrey: [
+        47,
+        79,
+        79
+    ],
+    darkturquoise: [
+        0,
+        206,
+        209
+    ],
+    darkviolet: [
+        148,
+        0,
+        211
+    ],
+    deeppink: [
+        255,
+        20,
+        147
+    ],
+    deepskyblue: [
+        0,
+        191,
+        255
+    ],
+    dimgray: [
+        105,
+        105,
+        105
+    ],
+    dimgrey: [
+        105,
+        105,
+        105
+    ],
+    dodgerblue: [
+        30,
+        144,
+        255
+    ],
+    firebrick: [
+        178,
+        34,
+        34
+    ],
+    floralwhite: [
+        255,
+        250,
+        240
+    ],
+    forestgreen: [
+        34,
+        139,
+        34
+    ],
+    fuchsia: [
+        255,
+        0,
+        255
+    ],
+    gainsboro: [
+        220,
+        220,
+        220
+    ],
+    ghostwhite: [
+        248,
+        248,
+        255
+    ],
+    gold: [
+        255,
+        215,
+        0
+    ],
+    goldenrod: [
+        218,
+        165,
+        32
+    ],
+    gray: [
+        128,
+        128,
+        128
+    ],
+    green: [
+        0,
+        128,
+        0
+    ],
+    greenyellow: [
+        173,
+        255,
+        47
+    ],
+    grey: [
+        128,
+        128,
+        128
+    ],
+    honeydew: [
+        240,
+        255,
+        240
+    ],
+    hotpink: [
+        255,
+        105,
+        180
+    ],
+    indianred: [
+        205,
+        92,
+        92
+    ],
+    indigo: [
+        75,
+        0,
+        130
+    ],
+    ivory: [
+        255,
+        255,
+        240
+    ],
+    khaki: [
+        240,
+        230,
+        140
+    ],
+    lavender: [
+        230,
+        230,
+        250
+    ],
+    lavenderblush: [
+        255,
+        240,
+        245
+    ],
+    lawngreen: [
+        124,
+        252,
+        0
+    ],
+    lemonchiffon: [
+        255,
+        250,
+        205
+    ],
+    lightblue: [
+        173,
+        216,
+        230
+    ],
+    lightcoral: [
+        240,
+        128,
+        128
+    ],
+    lightcyan: [
+        224,
+        255,
+        255
+    ],
+    lightgoldenrodyellow: [
+        250,
+        250,
+        210
+    ],
+    lightgray: [
+        211,
+        211,
+        211
+    ],
+    lightgreen: [
+        144,
+        238,
+        144
+    ],
+    lightgrey: [
+        211,
+        211,
+        211
+    ],
+    lightpink: [
+        255,
+        182,
+        193
+    ],
+    lightsalmon: [
+        255,
+        160,
+        122
+    ],
+    lightseagreen: [
+        32,
+        178,
+        170
+    ],
+    lightskyblue: [
+        135,
+        206,
+        250
+    ],
+    lightslategray: [
+        119,
+        136,
+        153
+    ],
+    lightslategrey: [
+        119,
+        136,
+        153
+    ],
+    lightsteelblue: [
+        176,
+        196,
+        222
+    ],
+    lightyellow: [
+        255,
+        255,
+        224
+    ],
+    lime: [
+        0,
+        255,
+        0
+    ],
+    limegreen: [
+        50,
+        205,
+        50
+    ],
+    linen: [
+        250,
+        240,
+        230
+    ],
+    magenta: [
+        255,
+        0,
+        255
+    ],
+    maroon: [
+        128,
+        0,
+        0
+    ],
+    mediumaquamarine: [
+        102,
+        205,
+        170
+    ],
+    mediumblue: [
+        0,
+        0,
+        205
+    ],
+    mediumorchid: [
+        186,
+        85,
+        211
+    ],
+    mediumpurple: [
+        147,
+        112,
+        219
+    ],
+    mediumseagreen: [
+        60,
+        179,
+        113
+    ],
+    mediumslateblue: [
+        123,
+        104,
+        238
+    ],
+    mediumspringgreen: [
+        0,
+        250,
+        154
+    ],
+    mediumturquoise: [
+        72,
+        209,
+        204
+    ],
+    mediumvioletred: [
+        199,
+        21,
+        133
+    ],
+    midnightblue: [
+        25,
+        25,
+        112
+    ],
+    mintcream: [
+        245,
+        255,
+        250
+    ],
+    mistyrose: [
+        255,
+        228,
+        225
+    ],
+    moccasin: [
+        255,
+        228,
+        181
+    ],
+    navajowhite: [
+        255,
+        222,
+        173
+    ],
+    navy: [
+        0,
+        0,
+        128
+    ],
+    oldlace: [
+        253,
+        245,
+        230
+    ],
+    olive: [
+        128,
+        128,
+        0
+    ],
+    olivedrab: [
+        107,
+        142,
+        35
+    ],
+    orange: [
+        255,
+        165,
+        0
+    ],
+    orangered: [
+        255,
+        69,
+        0
+    ],
+    orchid: [
+        218,
+        112,
+        214
+    ],
+    palegoldenrod: [
+        238,
+        232,
+        170
+    ],
+    palegreen: [
+        152,
+        251,
+        152
+    ],
+    paleturquoise: [
+        175,
+        238,
+        238
+    ],
+    palevioletred: [
+        219,
+        112,
+        147
+    ],
+    papayawhip: [
+        255,
+        239,
+        213
+    ],
+    peachpuff: [
+        255,
+        218,
+        185
+    ],
+    peru: [
+        205,
+        133,
+        63
+    ],
+    pink: [
+        255,
+        192,
+        203
+    ],
+    plum: [
+        221,
+        160,
+        221
+    ],
+    powderblue: [
+        176,
+        224,
+        230
+    ],
+    purple: [
+        128,
+        0,
+        128
+    ],
+    rebeccapurple: [
+        102,
+        51,
+        153
+    ],
+    red: [
+        255,
+        0,
+        0
+    ],
+    rosybrown: [
+        188,
+        143,
+        143
+    ],
+    royalblue: [
+        65,
+        105,
+        225
+    ],
+    saddlebrown: [
+        139,
+        69,
+        19
+    ],
+    salmon: [
+        250,
+        128,
+        114
+    ],
+    sandybrown: [
+        244,
+        164,
+        96
+    ],
+    seagreen: [
+        46,
+        139,
+        87
+    ],
+    seashell: [
+        255,
+        245,
+        238
+    ],
+    sienna: [
+        160,
+        82,
+        45
+    ],
+    silver: [
+        192,
+        192,
+        192
+    ],
+    skyblue: [
+        135,
+        206,
+        235
+    ],
+    slateblue: [
+        106,
+        90,
+        205
+    ],
+    slategray: [
+        112,
+        128,
+        144
+    ],
+    slategrey: [
+        112,
+        128,
+        144
+    ],
+    snow: [
+        255,
+        250,
+        250
+    ],
+    springgreen: [
+        0,
+        255,
+        127
+    ],
+    steelblue: [
+        70,
+        130,
+        180
+    ],
+    tan: [
+        210,
+        180,
+        140
+    ],
+    teal: [
+        0,
+        128,
+        128
+    ],
+    thistle: [
+        216,
+        191,
+        216
+    ],
+    tomato: [
+        255,
+        99,
+        71
+    ],
+    turquoise: [
+        64,
+        224,
+        208
+    ],
+    violet: [
+        238,
+        130,
+        238
+    ],
+    wheat: [
+        245,
+        222,
+        179
+    ],
+    white: [
+        255,
+        255,
+        255
+    ],
+    whitesmoke: [
+        245,
+        245,
+        245
+    ],
+    yellow: [
+        255,
+        255,
+        0
+    ],
+    yellowgreen: [
+        154,
+        205,
+        50
+    ]
+}, isArrayish = function(r) {
+    return !(!r || "string" == typeof r) && (r instanceof Array || Array.isArray(r) || r.length >= 0 && (r.splice instanceof Function || Object.getOwnPropertyDescriptor(r, r.length - 1) && "String" !== r.constructor.name));
+}, simpleSwizzle = createCommonjsModule$1(function(r) {
+    var e = Array.prototype.concat, n = Array.prototype.slice, t = r.exports = function(r) {
+        for(var t = [], o = 0, a = r.length; o < a; o++){
+            var i = r[o];
+            isArrayish(i) ? t = e.call(t, n.call(i)) : t.push(i);
+        }
+        return t;
+    };
+    t.wrap = function(r) {
+        return function() {
+            return r(t(arguments));
+        };
+    };
+}), colorString = createCommonjsModule$1(function(r) {
+    var e = {};
+    for(var n in colorName)colorName.hasOwnProperty(n) && (e[colorName[n]] = n);
+    var t = r.exports = {
+        to: {},
+        get: {}
+    };
+    function o(r, e, n) {
+        return Math.min(Math.max(e, r), n);
+    }
+    function a(r) {
+        var e = r.toString(16).toUpperCase();
+        return e.length < 2 ? "0" + e : e;
+    }
+    t.get = function(r) {
+        var e, n;
+        switch(r.substring(0, 3).toLowerCase()){
+            case "hsl":
+                e = t.get.hsl(r), n = "hsl";
+                break;
+            case "hwb":
+                e = t.get.hwb(r), n = "hwb";
+                break;
+            default:
+                e = t.get.rgb(r), n = "rgb";
+        }
+        return e ? {
+            model: n,
+            value: e
+        } : null;
+    }, t.get.rgb = function(r) {
+        if (!r) return null;
+        var e, n, t, a = [
+            0,
+            0,
+            0,
+            1
+        ];
+        if (e = r.match(/^#([a-f0-9]{6})([a-f0-9]{2})?$/i)) {
+            for(t = e[2], e = e[1], n = 0; n < 3; n++){
+                var i = 2 * n;
+                a[n] = parseInt(e.slice(i, i + 2), 16);
+            }
+            t && (a[3] = Math.round(parseInt(t, 16) / 255 * 100) / 100);
+        } else if (e = r.match(/^#([a-f0-9]{3,4})$/i)) {
+            for(t = (e = e[1])[3], n = 0; n < 3; n++)a[n] = parseInt(e[n] + e[n], 16);
+            t && (a[3] = Math.round(parseInt(t + t, 16) / 255 * 100) / 100);
+        } else if (e = r.match(/^rgba?\(\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/)) {
+            for(n = 0; n < 3; n++)a[n] = parseInt(e[n + 1], 0);
+            e[4] && (a[3] = parseFloat(e[4]));
+        } else {
+            if (!(e = r.match(/^rgba?\(\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/))) return (e = r.match(/(\D+)/)) ? "transparent" === e[1] ? [
+                0,
+                0,
+                0,
+                0
+            ] : (a = colorName[e[1]]) ? (a[3] = 1, a) : null : null;
+            for(n = 0; n < 3; n++)a[n] = Math.round(2.55 * parseFloat(e[n + 1]));
+            e[4] && (a[3] = parseFloat(e[4]));
+        }
+        for(n = 0; n < 3; n++)a[n] = o(a[n], 0, 255);
+        return a[3] = o(a[3], 0, 1), a;
+    }, t.get.hsl = function(r) {
+        if (!r) return null;
+        var e = r.match(/^hsla?\(\s*([+-]?(?:\d*\.)?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/);
+        if (e) {
+            var n = parseFloat(e[4]);
+            return [
+                (parseFloat(e[1]) + 360) % 360,
+                o(parseFloat(e[2]), 0, 100),
+                o(parseFloat(e[3]), 0, 100),
+                o(isNaN(n) ? 1 : n, 0, 1)
+            ];
+        }
+        return null;
+    }, t.get.hwb = function(r) {
+        if (!r) return null;
+        var e = r.match(/^hwb\(\s*([+-]?\d*[\.]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/);
+        if (e) {
+            var n = parseFloat(e[4]);
+            return [
+                (parseFloat(e[1]) % 360 + 360) % 360,
+                o(parseFloat(e[2]), 0, 100),
+                o(parseFloat(e[3]), 0, 100),
+                o(isNaN(n) ? 1 : n, 0, 1)
+            ];
+        }
+        return null;
+    }, t.to.hex = function() {
+        var r = simpleSwizzle(arguments);
+        return "#" + a(r[0]) + a(r[1]) + a(r[2]) + (r[3] < 1 ? a(Math.round(255 * r[3])) : "");
+    }, t.to.rgb = function() {
+        var r = simpleSwizzle(arguments);
+        return r.length < 4 || 1 === r[3] ? "rgb(" + Math.round(r[0]) + ", " + Math.round(r[1]) + ", " + Math.round(r[2]) + ")" : "rgba(" + Math.round(r[0]) + ", " + Math.round(r[1]) + ", " + Math.round(r[2]) + ", " + r[3] + ")";
+    }, t.to.rgb.percent = function() {
+        var r = simpleSwizzle(arguments), e = Math.round(r[0] / 255 * 100), n = Math.round(r[1] / 255 * 100), t = Math.round(r[2] / 255 * 100);
+        return r.length < 4 || 1 === r[3] ? "rgb(" + e + "%, " + n + "%, " + t + "%)" : "rgba(" + e + "%, " + n + "%, " + t + "%, " + r[3] + ")";
+    }, t.to.hsl = function() {
+        var r = simpleSwizzle(arguments);
+        return r.length < 4 || 1 === r[3] ? "hsl(" + r[0] + ", " + r[1] + "%, " + r[2] + "%)" : "hsla(" + r[0] + ", " + r[1] + "%, " + r[2] + "%, " + r[3] + ")";
+    }, t.to.hwb = function() {
+        var r = simpleSwizzle(arguments), e = "";
+        return r.length >= 4 && 1 !== r[3] && (e = ", " + r[3]), "hwb(" + r[0] + ", " + r[1] + "%, " + r[2] + "%" + e + ")";
+    }, t.to.keyword = function(r) {
+        return e[r.slice(0, 3)];
+    };
+}), colorString_1 = colorString.to, colorString_2 = colorString.get, conversions = createCommonjsModule$1(function(r) {
+    var e = {};
+    for(var n in colorName)colorName.hasOwnProperty(n) && (e[colorName[n]] = n);
+    var t = r.exports = {
+        rgb: {
+            channels: 3,
+            labels: "rgb"
+        },
+        hsl: {
+            channels: 3,
+            labels: "hsl"
+        },
+        hsv: {
+            channels: 3,
+            labels: "hsv"
+        },
+        hwb: {
+            channels: 3,
+            labels: "hwb"
+        },
+        cmyk: {
+            channels: 4,
+            labels: "cmyk"
+        },
+        xyz: {
+            channels: 3,
+            labels: "xyz"
+        },
+        lab: {
+            channels: 3,
+            labels: "lab"
+        },
+        lch: {
+            channels: 3,
+            labels: "lch"
+        },
+        hex: {
+            channels: 1,
+            labels: [
+                "hex"
+            ]
+        },
+        keyword: {
+            channels: 1,
+            labels: [
+                "keyword"
+            ]
+        },
+        ansi16: {
+            channels: 1,
+            labels: [
+                "ansi16"
+            ]
+        },
+        ansi256: {
+            channels: 1,
+            labels: [
+                "ansi256"
+            ]
+        },
+        hcg: {
+            channels: 3,
+            labels: [
+                "h",
+                "c",
+                "g"
+            ]
+        },
+        apple: {
+            channels: 3,
+            labels: [
+                "r16",
+                "g16",
+                "b16"
+            ]
+        },
+        gray: {
+            channels: 1,
+            labels: [
+                "gray"
+            ]
+        }
+    };
+    for(var o in t)if (t.hasOwnProperty(o)) {
+        if (!("channels" in t[o])) throw new Error("missing channels property: " + o);
+        if (!("labels" in t[o])) throw new Error("missing channel labels property: " + o);
+        if (t[o].labels.length !== t[o].channels) throw new Error("channel and label counts mismatch: " + o);
+        var a = t[o].channels, i = t[o].labels;
+        delete t[o].channels, delete t[o].labels, Object.defineProperty(t[o], "channels", {
+            value: a
+        }), Object.defineProperty(t[o], "labels", {
+            value: i
+        });
+    }
+    t.rgb.hsl = function(r) {
+        var e, n, t = r[0] / 255, o = r[1] / 255, a = r[2] / 255, i = Math.min(t, o, a), s = Math.max(t, o, a), l = s - i;
+        return s === i ? e = 0 : t === s ? e = (o - a) / l : o === s ? e = 2 + (a - t) / l : a === s && (e = 4 + (t - o) / l), (e = Math.min(60 * e, 360)) < 0 && (e += 360), n = (i + s) / 2, [
+            e,
+            100 * (s === i ? 0 : n <= .5 ? l / (s + i) : l / (2 - s - i)),
+            100 * n
+        ];
+    }, t.rgb.hsv = function(r) {
+        var e, n, t, o, a, i = r[0] / 255, s = r[1] / 255, l = r[2] / 255, c = Math.max(i, s, l), h = c - Math.min(i, s, l), u = function(r) {
+            return (c - r) / 6 / h + .5;
+        };
+        return 0 === h ? o = a = 0 : (a = h / c, e = u(i), n = u(s), t = u(l), i === c ? o = t - n : s === c ? o = 1 / 3 + e - t : l === c && (o = 2 / 3 + n - e), o < 0 ? o += 1 : o > 1 && (o -= 1)), [
+            360 * o,
+            100 * a,
+            100 * c
+        ];
+    }, t.rgb.hwb = function(r) {
+        var e = r[0], n = r[1], o = r[2];
+        return [
+            t.rgb.hsl(r)[0],
+            100 * (1 / 255 * Math.min(e, Math.min(n, o))),
+            100 * (o = 1 - 1 / 255 * Math.max(e, Math.max(n, o)))
+        ];
+    }, t.rgb.cmyk = function(r) {
+        var e, n = r[0] / 255, t = r[1] / 255, o = r[2] / 255;
+        return [
+            100 * ((1 - n - (e = Math.min(1 - n, 1 - t, 1 - o))) / (1 - e) || 0),
+            100 * ((1 - t - e) / (1 - e) || 0),
+            100 * ((1 - o - e) / (1 - e) || 0),
+            100 * e
+        ];
+    }, t.rgb.keyword = function(r) {
+        var n = e[r];
+        if (n) return n;
+        var t, o, a, i = 1 / 0;
+        for(var s in colorName)if (colorName.hasOwnProperty(s)) {
+            var l = colorName[s], c = (o = r, a = l, Math.pow(o[0] - a[0], 2) + Math.pow(o[1] - a[1], 2) + Math.pow(o[2] - a[2], 2));
+            c < i && (i = c, t = s);
+        }
+        return t;
+    }, t.keyword.rgb = function(r) {
+        return colorName[r];
+    }, t.rgb.xyz = function(r) {
+        var e = r[0] / 255, n = r[1] / 255, t = r[2] / 255;
+        return [
+            100 * (.4124 * (e = e > .04045 ? Math.pow((e + .055) / 1.055, 2.4) : e / 12.92) + .3576 * (n = n > .04045 ? Math.pow((n + .055) / 1.055, 2.4) : n / 12.92) + .1805 * (t = t > .04045 ? Math.pow((t + .055) / 1.055, 2.4) : t / 12.92)),
+            100 * (.2126 * e + .7152 * n + .0722 * t),
+            100 * (.0193 * e + .1192 * n + .9505 * t)
+        ];
+    }, t.rgb.lab = function(r) {
+        var e = t.rgb.xyz(r), n = e[0], o = e[1], a = e[2];
+        return o /= 100, a /= 108.883, n = (n /= 95.047) > .008856 ? Math.pow(n, 1 / 3) : 7.787 * n + 16 / 116, [
+            116 * (o = o > .008856 ? Math.pow(o, 1 / 3) : 7.787 * o + 16 / 116) - 16,
+            500 * (n - o),
+            200 * (o - (a = a > .008856 ? Math.pow(a, 1 / 3) : 7.787 * a + 16 / 116))
+        ];
+    }, t.hsl.rgb = function(r) {
+        var e, n, t, o, a, i = r[0] / 360, s = r[1] / 100, l = r[2] / 100;
+        if (0 === s) return [
+            a = 255 * l,
+            a,
+            a
+        ];
+        e = 2 * l - (n = l < .5 ? l * (1 + s) : l + s - l * s), o = [
+            0,
+            0,
+            0
+        ];
+        for(var c = 0; c < 3; c++)(t = i + 1 / 3 * -(c - 1)) < 0 && t++, t > 1 && t--, a = 6 * t < 1 ? e + 6 * (n - e) * t : 2 * t < 1 ? n : 3 * t < 2 ? e + (n - e) * (2 / 3 - t) * 6 : e, o[c] = 255 * a;
+        return o;
+    }, t.hsl.hsv = function(r) {
+        var e = r[0], n = r[1] / 100, t = r[2] / 100, o = n, a = Math.max(t, .01);
+        return n *= (t *= 2) <= 1 ? t : 2 - t, o *= a <= 1 ? a : 2 - a, [
+            e,
+            100 * (0 === t ? 2 * o / (a + o) : 2 * n / (t + n)),
+            100 * ((t + n) / 2)
+        ];
+    }, t.hsv.rgb = function(r) {
+        var e = r[0] / 60, n = r[1] / 100, t = r[2] / 100, o = Math.floor(e) % 6, a = e - Math.floor(e), i = 255 * t * (1 - n), s = 255 * t * (1 - n * a), l = 255 * t * (1 - n * (1 - a));
+        switch(t *= 255, o){
+            case 0:
+                return [
+                    t,
+                    l,
+                    i
+                ];
+            case 1:
+                return [
+                    s,
+                    t,
+                    i
+                ];
+            case 2:
+                return [
+                    i,
+                    t,
+                    l
+                ];
+            case 3:
+                return [
+                    i,
+                    s,
+                    t
+                ];
+            case 4:
+                return [
+                    l,
+                    i,
+                    t
+                ];
+            case 5:
+                return [
+                    t,
+                    i,
+                    s
+                ];
+        }
+    }, t.hsv.hsl = function(r) {
+        var e, n, t, o = r[0], a = r[1] / 100, i = r[2] / 100, s = Math.max(i, .01);
+        return t = (2 - a) * i, n = a * s, [
+            o,
+            100 * (n = (n /= (e = (2 - a) * s) <= 1 ? e : 2 - e) || 0),
+            100 * (t /= 2)
+        ];
+    }, t.hwb.rgb = function(r) {
+        var e, n, t, o, a, i, s, l = r[0] / 360, c = r[1] / 100, h = r[2] / 100, u = c + h;
+        switch(u > 1 && (c /= u, h /= u), t = 6 * l - (e = Math.floor(6 * l)), 0 != (1 & e) && (t = 1 - t), o = c + t * ((n = 1 - h) - c), e){
+            default:
+            case 6:
+            case 0:
+                a = n, i = o, s = c;
+                break;
+            case 1:
+                a = o, i = n, s = c;
+                break;
+            case 2:
+                a = c, i = n, s = o;
+                break;
+            case 3:
+                a = c, i = o, s = n;
+                break;
+            case 4:
+                a = o, i = c, s = n;
+                break;
+            case 5:
+                a = n, i = c, s = o;
+        }
+        return [
+            255 * a,
+            255 * i,
+            255 * s
+        ];
+    }, t.cmyk.rgb = function(r) {
+        var e = r[0] / 100, n = r[1] / 100, t = r[2] / 100, o = r[3] / 100;
+        return [
+            255 * (1 - Math.min(1, e * (1 - o) + o)),
+            255 * (1 - Math.min(1, n * (1 - o) + o)),
+            255 * (1 - Math.min(1, t * (1 - o) + o))
+        ];
+    }, t.xyz.rgb = function(r) {
+        var e, n, t, o = r[0] / 100, a = r[1] / 100, i = r[2] / 100;
+        return n = -.9689 * o + 1.8758 * a + .0415 * i, t = .0557 * o + -.204 * a + 1.057 * i, e = (e = 3.2406 * o + -1.5372 * a + -.4986 * i) > .0031308 ? 1.055 * Math.pow(e, 1 / 2.4) - .055 : 12.92 * e, n = n > .0031308 ? 1.055 * Math.pow(n, 1 / 2.4) - .055 : 12.92 * n, t = t > .0031308 ? 1.055 * Math.pow(t, 1 / 2.4) - .055 : 12.92 * t, [
+            255 * (e = Math.min(Math.max(0, e), 1)),
+            255 * (n = Math.min(Math.max(0, n), 1)),
+            255 * (t = Math.min(Math.max(0, t), 1))
+        ];
+    }, t.xyz.lab = function(r) {
+        var e = r[0], n = r[1], t = r[2];
+        return n /= 100, t /= 108.883, e = (e /= 95.047) > .008856 ? Math.pow(e, 1 / 3) : 7.787 * e + 16 / 116, [
+            116 * (n = n > .008856 ? Math.pow(n, 1 / 3) : 7.787 * n + 16 / 116) - 16,
+            500 * (e - n),
+            200 * (n - (t = t > .008856 ? Math.pow(t, 1 / 3) : 7.787 * t + 16 / 116))
+        ];
+    }, t.lab.xyz = function(r) {
+        var e, n, t, o = r[0];
+        e = r[1] / 500 + (n = (o + 16) / 116), t = n - r[2] / 200;
+        var a = Math.pow(n, 3), i = Math.pow(e, 3), s = Math.pow(t, 3);
+        return n = a > .008856 ? a : (n - 16 / 116) / 7.787, e = i > .008856 ? i : (e - 16 / 116) / 7.787, t = s > .008856 ? s : (t - 16 / 116) / 7.787, [
+            e *= 95.047,
+            n *= 100,
+            t *= 108.883
+        ];
+    }, t.lab.lch = function(r) {
+        var e, n = r[0], t = r[1], o = r[2];
+        return (e = 360 * Math.atan2(o, t) / 2 / Math.PI) < 0 && (e += 360), [
+            n,
+            Math.sqrt(t * t + o * o),
+            e
+        ];
+    }, t.lch.lab = function(r) {
+        var e, n = r[0], t = r[1];
+        return e = r[2] / 360 * 2 * Math.PI, [
+            n,
+            t * Math.cos(e),
+            t * Math.sin(e)
+        ];
+    }, t.rgb.ansi16 = function(r) {
+        var e = r[0], n = r[1], o = r[2], a = 1 in arguments ? arguments[1] : t.rgb.hsv(r)[2];
+        if (0 === (a = Math.round(a / 50))) return 30;
+        var i = 30 + (Math.round(o / 255) << 2 | Math.round(n / 255) << 1 | Math.round(e / 255));
+        return 2 === a && (i += 60), i;
+    }, t.hsv.ansi16 = function(r) {
+        return t.rgb.ansi16(t.hsv.rgb(r), r[2]);
+    }, t.rgb.ansi256 = function(r) {
+        var e = r[0], n = r[1], t = r[2];
+        return e === n && n === t ? e < 8 ? 16 : e > 248 ? 231 : Math.round((e - 8) / 247 * 24) + 232 : 16 + 36 * Math.round(e / 255 * 5) + 6 * Math.round(n / 255 * 5) + Math.round(t / 255 * 5);
+    }, t.ansi16.rgb = function(r) {
+        var e = r % 10;
+        if (0 === e || 7 === e) return r > 50 && (e += 3.5), [
+            e = e / 10.5 * 255,
+            e,
+            e
+        ];
+        var n = .5 * (1 + ~~(r > 50));
+        return [
+            (1 & e) * n * 255,
+            (e >> 1 & 1) * n * 255,
+            (e >> 2 & 1) * n * 255
+        ];
+    }, t.ansi256.rgb = function(r) {
+        if (r >= 232) {
+            var e = 10 * (r - 232) + 8;
+            return [
+                e,
+                e,
+                e
+            ];
+        }
+        var n;
+        return r -= 16, [
+            Math.floor(r / 36) / 5 * 255,
+            Math.floor((n = r % 36) / 6) / 5 * 255,
+            n % 6 / 5 * 255
+        ];
+    }, t.rgb.hex = function(r) {
+        var e = (((255 & Math.round(r[0])) << 16) + ((255 & Math.round(r[1])) << 8) + (255 & Math.round(r[2]))).toString(16).toUpperCase();
+        return "000000".substring(e.length) + e;
+    }, t.hex.rgb = function(r) {
+        var e = r.toString(16).match(/[a-f0-9]{6}|[a-f0-9]{3}/i);
+        if (!e) return [
+            0,
+            0,
+            0
+        ];
+        var n = e[0];
+        3 === e[0].length && (n = n.split("").map(function(r) {
+            return r + r;
+        }).join(""));
+        var t = parseInt(n, 16);
+        return [
+            t >> 16 & 255,
+            t >> 8 & 255,
+            255 & t
+        ];
+    }, t.rgb.hcg = function(r) {
+        var e, n = r[0] / 255, t = r[1] / 255, o = r[2] / 255, a = Math.max(Math.max(n, t), o), i = Math.min(Math.min(n, t), o), s = a - i;
+        return e = s <= 0 ? 0 : a === n ? (t - o) / s % 6 : a === t ? 2 + (o - n) / s : 4 + (n - t) / s + 4, e /= 6, [
+            360 * (e %= 1),
+            100 * s,
+            100 * (s < 1 ? i / (1 - s) : 0)
+        ];
+    }, t.hsl.hcg = function(r) {
+        var e = r[1] / 100, n = r[2] / 100, t = 1, o = 0;
+        return (t = n < .5 ? 2 * e * n : 2 * e * (1 - n)) < 1 && (o = (n - .5 * t) / (1 - t)), [
+            r[0],
+            100 * t,
+            100 * o
+        ];
+    }, t.hsv.hcg = function(r) {
+        var e = r[1] / 100, n = r[2] / 100, t = e * n, o = 0;
+        return t < 1 && (o = (n - t) / (1 - t)), [
+            r[0],
+            100 * t,
+            100 * o
+        ];
+    }, t.hcg.rgb = function(r) {
+        var e = r[0] / 360, n = r[1] / 100, t = r[2] / 100;
+        if (0 === n) return [
+            255 * t,
+            255 * t,
+            255 * t
+        ];
+        var o, a = [
+            0,
+            0,
+            0
+        ], i = e % 1 * 6, s = i % 1, l = 1 - s;
+        switch(Math.floor(i)){
+            case 0:
+                a[0] = 1, a[1] = s, a[2] = 0;
+                break;
+            case 1:
+                a[0] = l, a[1] = 1, a[2] = 0;
+                break;
+            case 2:
+                a[0] = 0, a[1] = 1, a[2] = s;
+                break;
+            case 3:
+                a[0] = 0, a[1] = l, a[2] = 1;
+                break;
+            case 4:
+                a[0] = s, a[1] = 0, a[2] = 1;
+                break;
+            default:
+                a[0] = 1, a[1] = 0, a[2] = l;
+        }
+        return o = (1 - n) * t, [
+            255 * (n * a[0] + o),
+            255 * (n * a[1] + o),
+            255 * (n * a[2] + o)
+        ];
+    }, t.hcg.hsv = function(r) {
+        var e = r[1] / 100, n = e + r[2] / 100 * (1 - e), t = 0;
+        return n > 0 && (t = e / n), [
+            r[0],
+            100 * t,
+            100 * n
+        ];
+    }, t.hcg.hsl = function(r) {
+        var e = r[1] / 100, n = r[2] / 100 * (1 - e) + .5 * e, t = 0;
+        return n > 0 && n < .5 ? t = e / (2 * n) : n >= .5 && n < 1 && (t = e / (2 * (1 - n))), [
+            r[0],
+            100 * t,
+            100 * n
+        ];
+    }, t.hcg.hwb = function(r) {
+        var e = r[1] / 100, n = e + r[2] / 100 * (1 - e);
+        return [
+            r[0],
+            100 * (n - e),
+            100 * (1 - n)
+        ];
+    }, t.hwb.hcg = function(r) {
+        var e = r[1] / 100, n = 1 - r[2] / 100, t = n - e, o = 0;
+        return t < 1 && (o = (n - t) / (1 - t)), [
+            r[0],
+            100 * t,
+            100 * o
+        ];
+    }, t.apple.rgb = function(r) {
+        return [
+            r[0] / 65535 * 255,
+            r[1] / 65535 * 255,
+            r[2] / 65535 * 255
+        ];
+    }, t.rgb.apple = function(r) {
+        return [
+            r[0] / 255 * 65535,
+            r[1] / 255 * 65535,
+            r[2] / 255 * 65535
+        ];
+    }, t.gray.rgb = function(r) {
+        return [
+            r[0] / 100 * 255,
+            r[0] / 100 * 255,
+            r[0] / 100 * 255
+        ];
+    }, t.gray.hsl = t.gray.hsv = function(r) {
+        return [
+            0,
+            0,
+            r[0]
+        ];
+    }, t.gray.hwb = function(r) {
+        return [
+            0,
+            100,
+            r[0]
+        ];
+    }, t.gray.cmyk = function(r) {
+        return [
+            0,
+            0,
+            0,
+            r[0]
+        ];
+    }, t.gray.lab = function(r) {
+        return [
+            r[0],
+            0,
+            0
+        ];
+    }, t.gray.hex = function(r) {
+        var e = 255 & Math.round(r[0] / 100 * 255), n = ((e << 16) + (e << 8) + e).toString(16).toUpperCase();
+        return "000000".substring(n.length) + n;
+    }, t.rgb.gray = function(r) {
+        return [
+            (r[0] + r[1] + r[2]) / 3 / 255 * 100
+        ];
+    };
+}), conversions_1 = conversions.rgb, conversions_2 = conversions.hsl, conversions_3 = conversions.hsv, conversions_4 = conversions.hwb, conversions_5 = conversions.cmyk, conversions_6 = conversions.xyz, conversions_7 = conversions.lab, conversions_8 = conversions.lch, conversions_9 = conversions.hex, conversions_10 = conversions.keyword, conversions_11 = conversions.ansi16, conversions_12 = conversions.ansi256, conversions_13 = conversions.hcg, conversions_14 = conversions.apple, conversions_15 = conversions.gray;
+function buildGraph() {
+    for(var r = {}, e = Object.keys(conversions), n = e.length, t = 0; t < n; t++)r[e[t]] = {
+        distance: -1,
+        parent: null
+    };
+    return r;
+}
+function deriveBFS(r) {
+    var e = buildGraph(), n = [
+        r
+    ];
+    for(e[r].distance = 0; n.length;)for(var t = n.pop(), o = Object.keys(conversions[t]), a = o.length, i = 0; i < a; i++){
+        var s = o[i], l = e[s];
+        -1 === l.distance && (l.distance = e[t].distance + 1, l.parent = t, n.unshift(s));
+    }
+    return e;
+}
+function link(r, e) {
+    return function(n) {
+        return e(r(n));
+    };
+}
+function wrapConversion(r, e) {
+    for(var n = [
+        e[r].parent,
+        r
+    ], t = conversions[e[r].parent][r], o = e[r].parent; e[o].parent;)n.unshift(e[o].parent), t = link(conversions[e[o].parent][o], t), o = e[o].parent;
+    return t.conversion = n, t;
+}
+var route = function(r) {
+    for(var e = deriveBFS(r), n = {}, t = Object.keys(e), o = t.length, a = 0; a < o; a++){
+        var i = t[a];
+        null !== e[i].parent && (n[i] = wrapConversion(i, e));
+    }
+    return n;
+}, convert = {}, models = Object.keys(conversions);
+function wrapRaw(r) {
+    var e = function(e) {
+        return null == e ? e : (arguments.length > 1 && (e = Array.prototype.slice.call(arguments)), r(e));
+    };
+    return "conversion" in r && (e.conversion = r.conversion), e;
+}
+function wrapRounded(r) {
+    var e = function(e) {
+        if (null == e) return e;
+        arguments.length > 1 && (e = Array.prototype.slice.call(arguments));
+        var n = r(e);
+        if ("object" == typeof n) for(var t = n.length, o = 0; o < t; o++)n[o] = Math.round(n[o]);
+        return n;
+    };
+    return "conversion" in r && (e.conversion = r.conversion), e;
+}
+models.forEach(function(r) {
+    convert[r] = {}, Object.defineProperty(convert[r], "channels", {
+        value: conversions[r].channels
+    }), Object.defineProperty(convert[r], "labels", {
+        value: conversions[r].labels
+    });
+    var e = route(r);
+    Object.keys(e).forEach(function(n) {
+        var t = e[n];
+        convert[r][n] = wrapRounded(t), convert[r][n].raw = wrapRaw(t);
+    });
+});
+var colorConvert = convert, _slice = [].slice, skippedModels = [
+    "keyword",
+    "gray",
+    "hex"
+], hashedModelKeys = {};
+Object.keys(colorConvert).forEach(function(r) {
+    hashedModelKeys[_slice.call(colorConvert[r].labels).sort().join("")] = r;
+});
+var limiters = {};
+function Color(r, e) {
+    if (!(this instanceof Color)) return new Color(r, e);
+    if (e && e in skippedModels && (e = null), e && !(e in colorConvert)) throw new Error("Unknown model: " + e);
+    var n, t;
+    if (void 0 === r) this.model = "rgb", this.color = [
+        0,
+        0,
+        0
+    ], this.valpha = 1;
+    else if (r instanceof Color) this.model = r.model, this.color = r.color.slice(), this.valpha = r.valpha;
+    else if ("string" == typeof r) {
+        var o = colorString.get(r);
+        if (null === o) throw new Error("Unable to parse color from string: " + r);
+        this.model = o.model, t = colorConvert[this.model].channels, this.color = o.value.slice(0, t), this.valpha = "number" == typeof o.value[t] ? o.value[t] : 1;
+    } else if (r.length) {
+        this.model = e || "rgb", t = colorConvert[this.model].channels;
+        var a = _slice.call(r, 0, t);
+        this.color = zeroArray(a, t), this.valpha = "number" == typeof r[t] ? r[t] : 1;
+    } else if ("number" == typeof r) r &= 16777215, this.model = "rgb", this.color = [
+        r >> 16 & 255,
+        r >> 8 & 255,
+        255 & r
+    ], this.valpha = 1;
+    else {
+        this.valpha = 1;
+        var i = Object.keys(r);
+        "alpha" in r && (i.splice(i.indexOf("alpha"), 1), this.valpha = "number" == typeof r.alpha ? r.alpha : 0);
+        var s = i.sort().join("");
+        if (!(s in hashedModelKeys)) throw new Error("Unable to parse color from object: " + JSON.stringify(r));
+        this.model = hashedModelKeys[s];
+        var l = colorConvert[this.model].labels, c = [];
+        for(n = 0; n < l.length; n++)c.push(r[l[n]]);
+        this.color = zeroArray(c);
+    }
+    if (limiters[this.model]) for(t = colorConvert[this.model].channels, n = 0; n < t; n++){
+        var h = limiters[this.model][n];
+        h && (this.color[n] = h(this.color[n]));
+    }
+    this.valpha = Math.max(0, Math.min(1, this.valpha)), Object.freeze && Object.freeze(this);
+}
+function roundTo(r, e) {
+    return Number(r.toFixed(e));
+}
+function roundToPlace(r) {
+    return function(e) {
+        return roundTo(e, r);
+    };
+}
+function getset(r, e, n) {
+    return (r = Array.isArray(r) ? r : [
+        r
+    ]).forEach(function(r) {
+        (limiters[r] || (limiters[r] = []))[e] = n;
+    }), r = r[0], function(t) {
+        var o;
+        return arguments.length ? (n && (t = n(t)), (o = this[r]()).color[e] = t, o) : (o = this[r]().color[e], n && (o = n(o)), o);
+    };
+}
+function maxfn(r) {
+    return function(e) {
+        return Math.max(0, Math.min(r, e));
+    };
+}
+function assertArray(r) {
+    return Array.isArray(r) ? r : [
+        r
+    ];
+}
+function zeroArray(r, e) {
+    for(var n = 0; n < e; n++)"number" != typeof r[n] && (r[n] = 0);
+    return r;
+}
+Color.prototype = {
+    toString: function() {
+        return this.string();
+    },
+    toJSON: function() {
+        return this[this.model]();
+    },
+    string: function(r) {
+        var e = this.model in colorString.to ? this : this.rgb(), n = 1 === (e = e.round("number" == typeof r ? r : 1)).valpha ? e.color : e.color.concat(this.valpha);
+        return colorString.to[e.model](n);
+    },
+    percentString: function(r) {
+        var e = this.rgb().round("number" == typeof r ? r : 1), n = 1 === e.valpha ? e.color : e.color.concat(this.valpha);
+        return colorString.to.rgb.percent(n);
+    },
+    array: function() {
+        return 1 === this.valpha ? this.color.slice() : this.color.concat(this.valpha);
+    },
+    object: function() {
+        for(var r = {}, e = colorConvert[this.model].channels, n = colorConvert[this.model].labels, t = 0; t < e; t++)r[n[t]] = this.color[t];
+        return 1 !== this.valpha && (r.alpha = this.valpha), r;
+    },
+    unitArray: function() {
+        var r = this.rgb().color;
+        return r[0] /= 255, r[1] /= 255, r[2] /= 255, 1 !== this.valpha && r.push(this.valpha), r;
+    },
+    unitObject: function() {
+        var r = this.rgb().object();
+        return r.r /= 255, r.g /= 255, r.b /= 255, 1 !== this.valpha && (r.alpha = this.valpha), r;
+    },
+    round: function(r) {
+        return r = Math.max(r || 0, 0), new Color(this.color.map(roundToPlace(r)).concat(this.valpha), this.model);
+    },
+    alpha: function(r) {
+        return arguments.length ? new Color(this.color.concat(Math.max(0, Math.min(1, r))), this.model) : this.valpha;
+    },
+    red: getset("rgb", 0, maxfn(255)),
+    green: getset("rgb", 1, maxfn(255)),
+    blue: getset("rgb", 2, maxfn(255)),
+    hue: getset([
+        "hsl",
+        "hsv",
+        "hsl",
+        "hwb",
+        "hcg"
+    ], 0, function(r) {
+        return (r % 360 + 360) % 360;
+    }),
+    saturationl: getset("hsl", 1, maxfn(100)),
+    lightness: getset("hsl", 2, maxfn(100)),
+    saturationv: getset("hsv", 1, maxfn(100)),
+    value: getset("hsv", 2, maxfn(100)),
+    chroma: getset("hcg", 1, maxfn(100)),
+    gray: getset("hcg", 2, maxfn(100)),
+    white: getset("hwb", 1, maxfn(100)),
+    wblack: getset("hwb", 2, maxfn(100)),
+    cyan: getset("cmyk", 0, maxfn(100)),
+    magenta: getset("cmyk", 1, maxfn(100)),
+    yellow: getset("cmyk", 2, maxfn(100)),
+    black: getset("cmyk", 3, maxfn(100)),
+    x: getset("xyz", 0, maxfn(100)),
+    y: getset("xyz", 1, maxfn(100)),
+    z: getset("xyz", 2, maxfn(100)),
+    l: getset("lab", 0, maxfn(100)),
+    a: getset("lab", 1),
+    b: getset("lab", 2),
+    keyword: function(r) {
+        return arguments.length ? new Color(r) : colorConvert[this.model].keyword(this.color);
+    },
+    hex: function(r) {
+        return arguments.length ? new Color(r) : colorString.to.hex(this.rgb().round().color);
+    },
+    rgbNumber: function() {
+        var r = this.rgb().color;
+        return (255 & r[0]) << 16 | (255 & r[1]) << 8 | 255 & r[2];
+    },
+    luminosity: function() {
+        for(var r = this.rgb().color, e = [], n = 0; n < r.length; n++){
+            var t = r[n] / 255;
+            e[n] = t <= .03928 ? t / 12.92 : Math.pow((t + .055) / 1.055, 2.4);
+        }
+        return .2126 * e[0] + .7152 * e[1] + .0722 * e[2];
+    },
+    contrast: function(r) {
+        var e = this.luminosity(), n = r.luminosity();
+        return e > n ? (e + .05) / (n + .05) : (n + .05) / (e + .05);
+    },
+    level: function(r) {
+        var e = this.contrast(r);
+        return e >= 7.1 ? "AAA" : e >= 4.5 ? "AA" : "";
+    },
+    isDark: function() {
+        var r = this.rgb().color;
+        return (299 * r[0] + 587 * r[1] + 114 * r[2]) / 1e3 < 128;
+    },
+    isLight: function() {
+        return !this.isDark();
+    },
+    negate: function() {
+        for(var r = this.rgb(), e = 0; e < 3; e++)r.color[e] = 255 - r.color[e];
+        return r;
+    },
+    lighten: function(r) {
+        var e = this.hsl();
+        return e.color[2] += e.color[2] * r, e;
+    },
+    darken: function(r) {
+        var e = this.hsl();
+        return e.color[2] -= e.color[2] * r, e;
+    },
+    saturate: function(r) {
+        var e = this.hsl();
+        return e.color[1] += e.color[1] * r, e;
+    },
+    desaturate: function(r) {
+        var e = this.hsl();
+        return e.color[1] -= e.color[1] * r, e;
+    },
+    whiten: function(r) {
+        var e = this.hwb();
+        return e.color[1] += e.color[1] * r, e;
+    },
+    blacken: function(r) {
+        var e = this.hwb();
+        return e.color[2] += e.color[2] * r, e;
+    },
+    grayscale: function() {
+        var r = this.rgb().color, e = .3 * r[0] + .59 * r[1] + .11 * r[2];
+        return Color.rgb(e, e, e);
+    },
+    fade: function(r) {
+        return this.alpha(this.valpha - this.valpha * r);
+    },
+    opaquer: function(r) {
+        return this.alpha(this.valpha + this.valpha * r);
+    },
+    rotate: function(r) {
+        var e = this.hsl(), n = e.color[0];
+        return n = (n = (n + r) % 360) < 0 ? 360 + n : n, e.color[0] = n, e;
+    },
+    mix: function(r, e) {
+        var n = r.rgb(), t = this.rgb(), o = void 0 === e ? .5 : e, a = 2 * o - 1, i = n.alpha() - t.alpha(), s = ((a * i == -1 ? a : (a + i) / (1 + a * i)) + 1) / 2, l = 1 - s;
+        return Color.rgb(s * n.red() + l * t.red(), s * n.green() + l * t.green(), s * n.blue() + l * t.blue(), n.alpha() * o + t.alpha() * (1 - o));
+    }
+}, Object.keys(colorConvert).forEach(function(r) {
+    if (-1 === skippedModels.indexOf(r)) {
+        var e = colorConvert[r].channels;
+        Color.prototype[r] = function() {
+            if (this.model === r) return new Color(this);
+            if (arguments.length) return new Color(arguments, r);
+            var n = "number" == typeof arguments[e] ? e : this.valpha;
+            return new Color(assertArray(colorConvert[this.model][r].raw(this.color)).concat(n), r);
+        }, Color[r] = function(n) {
+            return "number" == typeof n && (n = zeroArray(_slice.call(arguments), e)), new Color(n, r);
+        };
+    }
+});
+var color = Color, ColorMock = function r(e) {
+    var n = this;
+    classCallCheck(this, r), defineProperty(this, "hsl", function() {
+        return n;
+    }), defineProperty(this, "isLight", function() {
+        return !1;
+    }), defineProperty(this, "isDark", function() {
+        return !1;
+    }), defineProperty(this, "negate", function() {
+        return n;
+    }), defineProperty(this, "lighten", function() {
+        return n;
+    }), defineProperty(this, "darken", function() {
+        return n;
+    }), defineProperty(this, "alpha", function() {
+        return n;
+    }), defineProperty(this, "saturate", function() {
+        return n;
+    }), defineProperty(this, "desaturate", function() {
+        return n;
+    }), defineProperty(this, "grayscale", function() {
+        return n;
+    }), defineProperty(this, "whiten", function() {
+        return n;
+    }), defineProperty(this, "blacken", function() {
+        return n;
+    }), defineProperty(this, "fade", function() {
+        return n;
+    }), defineProperty(this, "opaquer", function() {
+        return n;
+    }), defineProperty(this, "rotate", function() {
+        return n;
+    }), defineProperty(this, "contrast", function() {
+        return 10;
+    }), defineProperty(this, "luminosity", function() {
+        return .5;
+    }), defineProperty(this, "mix", function() {
+        return n;
+    }), defineProperty(this, "blue", function() {
+        return n.toString();
+    }), defineProperty(this, "green", function() {
+        return n.toString();
+    }), defineProperty(this, "red", function() {
+        return n.toString();
+    }), defineProperty(this, "hex", function() {
+        return n.toString();
+    }), defineProperty(this, "rgbNumber", function() {
+        return n.toString();
+    }), defineProperty(this, "rgb", function() {
+        return n.toString();
+    }), defineProperty(this, "toString", function() {
+        return n.color;
+    }), this.color = e;
+};
+function ColorWrapper(r) {
+    return "string" == typeof r && -1 !== r.indexOf("linear-gradient") ? new ColorMock(r) : color(r);
+}
+var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : ("TURBOPACK compile-time truthy", 1) ? /*TURBOPACK member replacement*/ __turbopack_context__.g : "TURBOPACK unreachable";
+function unwrapExports$1(x) {
+    return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+}
+function createCommonjsModule$1$1(fn, module) {
+    return module = {
+        exports: {}
+    }, fn(module, module.exports), module.exports;
+}
+var unitUtils = createCommonjsModule$1$1(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = void 0;
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+    var UnitUtils = function UnitUtils() {
+        var _this = this;
+        _classCallCheck(this, UnitUtils);
+        this.UNIT = {
+            EM: 'em',
+            REM: 'rem',
+            PX: 'px',
+            PERCENT: '%'
+        };
+        this.math = {
+            addition: (function addition(a, b) {
+                var unit = this.detectUnit(a) || this.detectUnit(b);
+                return this.rmUnit(a) + this.rmUnit(b) + unit;
+            }).bind(this),
+            subtract: (function subtract(a, b) {
+                var unit = this.detectUnit(a) || this.detectUnit(b);
+                return this.rmUnit(a) - this.rmUnit(b) + unit;
+            }).bind(this),
+            multiply: (function multiply(a, b) {
+                var unit = this.detectUnit(a) || this.detectUnit(b);
+                return this.rmUnit(a) * this.rmUnit(b) + unit;
+            }).bind(this),
+            divide: (function divide(a, b) {
+                var unit = this.detectUnit(a) || this.detectUnit(b);
+                return this.rmUnit(a) / this.rmUnit(b) + unit;
+            }).bind(this)
+        };
+        this.detectUnit = function(value) {
+            var ext;
+            var valueStr = value.toString();
+            if (valueStr.match(_this.UNIT.PX)) {
+                ext = _this.UNIT.PX;
+            } else if (valueStr.match(_this.UNIT.REM)) {
+                ext = _this.UNIT.REM;
+            } else if (valueStr.match(_this.UNIT.EM)) {
+                ext = _this.UNIT.EM;
+            } else if (valueStr.match(_this.UNIT.PERCENT)) {
+                ext = _this.UNIT.PERCENT;
+            } else if (!isNaN(value)) {
+                return null;
+            } else {
+                throw new Error("detectUnit can't find unit for ".concat(value));
+            }
+            return ext;
+        };
+        this.rmUnit = function(value, unit) {
+            var valueStr = value.toString();
+            var ext = unit || _this.detectUnit(valueStr);
+            var number = valueStr.replace(ext, '');
+            return parseFloat(number);
+        };
+        this.toPercent = function(value) {
+            var total = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
+            var decimal = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 2;
+            return "".concat(Math.floor(value / total * 100 * Math.pow(10, decimal)) / Math.pow(10, decimal)).concat(_this.UNIT.PERCENT);
+        };
+    };
+    var _default = new UnitUtils();
+    exports.default = _default;
+    module.exports = exports.default;
+});
+var unitUtils$1 = unwrapExports$1(unitUtils);
+var utilities = createCommonjsModule$1$1(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getUtilities = getUtilities;
+    function _toConsumableArray(arr) {
+        return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+    }
+    function _nonIterableSpread() {
+        throw new TypeError("Invalid attempt to spread non-iterable instance");
+    }
+    function _iterableToArray(iter) {
+        if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+    }
+    function _arrayWithoutHoles(arr) {
+        if (Array.isArray(arr)) {
+            for(var i = 0, arr2 = new Array(arr.length); i < arr.length; i++){
+                arr2[i] = arr[i];
+            }
+            return arr2;
+        }
+    }
+    function getUtilities(theme) {
+        var utilities = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Map();
+        if (!theme) {
+            throw new Error('getUtilities expect theme and should be called at the end of your makeTheme.');
+        }
+        var v = theme;
+        var spacersMap = new Map();
+        Object.keys(v.$spacers).forEach(function(key) {
+            return spacersMap.set(key, v.$spacers[key]);
+        });
+        var negativeSpacersMap = new Map();
+        Object.keys(v['$negative-spacers']).forEach(function(key) {
+            return negativeSpacersMap.set(key, v['$negative-spacers'][key]);
+        });
+        var themeColorsMap = new Map();
+        Object.keys(v['$theme-colors']).forEach(function(key) {
+            return themeColorsMap.set(key, v['$theme-colors'][key]);
+        });
+        return new Map([].concat(_toConsumableArray(new Map([
+            [
+                'align',
+                {
+                    property: 'vertical-align',
+                    class: 'align',
+                    values: [
+                        'baseline',
+                        'top',
+                        'middle',
+                        'bottom',
+                        'text-bottom',
+                        'text-top'
+                    ]
+                }
+            ],
+            [
+                'float',
+                {
+                    responsive: true,
+                    property: 'float',
+                    values: [
+                        'left',
+                        'right',
+                        'none'
+                    ]
+                }
+            ],
+            [
+                'overflow',
+                {
+                    property: 'overflow',
+                    values: [
+                        'auto',
+                        'hidden'
+                    ]
+                }
+            ],
+            [
+                'display',
+                {
+                    responsive: true,
+                    print: true,
+                    property: 'display',
+                    class: 'd',
+                    values: [
+                        'none',
+                        'inline',
+                        'inline-block',
+                        'block',
+                        'table',
+                        'table-row',
+                        'table-cell',
+                        'flex',
+                        'inline-flex'
+                    ]
+                }
+            ],
+            [
+                'shadow',
+                {
+                    property: 'box-shadow',
+                    class: 'shadow',
+                    values: new Map([
+                        [
+                            'sm',
+                            v['$box-shadow-sm']
+                        ],
+                        [
+                            null,
+                            v['$box-shadow']
+                        ],
+                        [
+                            'lg',
+                            v['$box-shadow-lg']
+                        ],
+                        [
+                            'none',
+                            'none'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'position',
+                {
+                    property: 'position',
+                    values: [
+                        'static',
+                        'relative',
+                        'absolute',
+                        'fixed',
+                        'sticky'
+                    ]
+                }
+            ],
+            [
+                'border',
+                {
+                    property: 'border',
+                    values: new Map([
+                        [
+                            null,
+                            "".concat(v['$border-width'], " solid ").concat(v['$border-color'])
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ])
+                }
+            ],
+            [
+                'border-top',
+                {
+                    property: 'border-top',
+                    values: new Map([
+                        [
+                            null,
+                            "".concat(v['$border-width'], " solid ").concat(v['$border-color'])
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ])
+                }
+            ],
+            [
+                'border-right',
+                {
+                    property: 'border-right',
+                    values: new Map([
+                        [
+                            null,
+                            "".concat(v['$border-width'], " solid ").concat(v['$border-color'])
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ])
+                }
+            ],
+            [
+                'border-bottom',
+                {
+                    property: 'border-bottom',
+                    values: new Map([
+                        [
+                            null,
+                            "".concat(v['$border-width'], " solid ").concat(v['$border-color'])
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ])
+                }
+            ],
+            [
+                'border-left',
+                {
+                    property: 'border-left',
+                    values: new Map([
+                        [
+                            null,
+                            "".concat(v['$border-width'], " solid ").concat(v['$border-color'])
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ])
+                }
+            ],
+            [
+                'border-color',
+                {
+                    property: 'border-color',
+                    class: 'border',
+                    values: new Map([].concat(_toConsumableArray(themeColorsMap), _toConsumableArray(new Map([
+                        [
+                            'white',
+                            v.$white
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'width',
+                {
+                    property: 'width',
+                    class: 'w',
+                    values: new Map([
+                        [
+                            '25',
+                            '25%'
+                        ],
+                        [
+                            '50',
+                            '50%'
+                        ],
+                        [
+                            '75',
+                            '75%'
+                        ],
+                        [
+                            '100',
+                            '100%'
+                        ],
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'max-width',
+                {
+                    property: 'max-width',
+                    class: 'mw',
+                    values: new Map([
+                        [
+                            '100',
+                            '100%'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'viewport-width',
+                {
+                    property: 'width',
+                    class: 'vw',
+                    values: new Map([
+                        [
+                            '100',
+                            '100vw'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'min-viewport-width',
+                {
+                    property: 'min-width',
+                    class: 'min-vw',
+                    values: new Map([
+                        [
+                            '100',
+                            '100vw'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'height',
+                {
+                    property: 'height',
+                    class: 'h',
+                    values: new Map([
+                        [
+                            '25',
+                            '25%'
+                        ],
+                        [
+                            '50',
+                            '50%'
+                        ],
+                        [
+                            '75',
+                            '75%'
+                        ],
+                        [
+                            '100',
+                            '100%'
+                        ],
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'max-height',
+                {
+                    property: 'max-height',
+                    class: 'mh',
+                    values: new Map([
+                        [
+                            '100',
+                            '100%'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'viewport-height',
+                {
+                    property: 'height',
+                    class: 'vh',
+                    values: new Map([
+                        [
+                            '100',
+                            '100vh'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'min-viewport-height',
+                {
+                    property: 'min-height',
+                    class: 'min-vh',
+                    values: new Map([
+                        [
+                            '100',
+                            '100vh'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'flex',
+                {
+                    responsive: true,
+                    property: 'flex',
+                    values: new Map([
+                        [
+                            'fill',
+                            '1 1 auto'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'flex-direction',
+                {
+                    responsive: true,
+                    property: 'flex-direction',
+                    class: 'flex',
+                    values: [
+                        'row',
+                        'column',
+                        'row-reverse',
+                        'column-reverse'
+                    ]
+                }
+            ],
+            [
+                'flex-grow',
+                {
+                    responsive: true,
+                    property: 'flex-grow',
+                    class: 'flex',
+                    values: new Map([
+                        [
+                            'grow-0',
+                            '0'
+                        ],
+                        [
+                            'grow-1',
+                            '1'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'flex-shrink',
+                {
+                    responsive: true,
+                    property: 'flex-shrink',
+                    class: 'flex',
+                    values: new Map([
+                        [
+                            'shrink-0',
+                            '0'
+                        ],
+                        [
+                            'shrink-1',
+                            '1'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'flex-wrap',
+                {
+                    responsive: true,
+                    property: 'flex-wrap',
+                    class: 'flex',
+                    values: [
+                        'wrap',
+                        'nowrap',
+                        'wrap-reverse'
+                    ]
+                }
+            ],
+            [
+                'justify-content',
+                {
+                    responsive: true,
+                    property: 'justify-content',
+                    values: new Map([
+                        [
+                            'start',
+                            'flex-start'
+                        ],
+                        [
+                            'end',
+                            'flex-end'
+                        ],
+                        [
+                            'center',
+                            'center'
+                        ],
+                        [
+                            'between',
+                            'space-between'
+                        ],
+                        [
+                            'around',
+                            'space-around'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'align-items',
+                {
+                    responsive: true,
+                    property: 'align-items',
+                    values: new Map([
+                        [
+                            'start',
+                            'flex-start'
+                        ],
+                        [
+                            'end',
+                            'flex-end'
+                        ],
+                        [
+                            'center',
+                            'center'
+                        ],
+                        [
+                            'baseline',
+                            'baseline'
+                        ],
+                        [
+                            'stretch',
+                            'stretch'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'align-content',
+                {
+                    responsive: true,
+                    property: 'align-content',
+                    values: new Map([
+                        [
+                            'start',
+                            'flex-start'
+                        ],
+                        [
+                            'end',
+                            'flex-end'
+                        ],
+                        [
+                            'center',
+                            'center'
+                        ],
+                        [
+                            'between',
+                            'space-between'
+                        ],
+                        [
+                            'around',
+                            'space-around'
+                        ],
+                        [
+                            'stretch',
+                            'stretch'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'align-self',
+                {
+                    responsive: true,
+                    property: 'align-self',
+                    values: new Map([
+                        [
+                            'auto',
+                            'auto'
+                        ],
+                        [
+                            'start',
+                            'flex-start'
+                        ],
+                        [
+                            'end',
+                            'flex-end'
+                        ],
+                        [
+                            'center',
+                            'center'
+                        ],
+                        [
+                            'baseline',
+                            'baseline'
+                        ],
+                        [
+                            'stretch',
+                            'stretch'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'order',
+                {
+                    responsive: true,
+                    property: 'order',
+                    values: new Map([
+                        [
+                            'first',
+                            '-1'
+                        ],
+                        [
+                            '0',
+                            '0'
+                        ],
+                        [
+                            '1',
+                            '1'
+                        ],
+                        [
+                            '2',
+                            '2'
+                        ],
+                        [
+                            '3',
+                            '3'
+                        ],
+                        [
+                            '4',
+                            '4'
+                        ],
+                        [
+                            '5',
+                            '5'
+                        ],
+                        [
+                            'last',
+                            '6'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'margin',
+                {
+                    responsive: true,
+                    property: 'margin',
+                    class: 'm',
+                    values: new Map([].concat(_toConsumableArray(spacersMap), _toConsumableArray(new Map([
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'margin-x',
+                {
+                    responsive: true,
+                    property: [
+                        'margin-right',
+                        'margin-left'
+                    ],
+                    class: 'mx',
+                    values: new Map([].concat(_toConsumableArray(spacersMap), _toConsumableArray(new Map([
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'margin-y',
+                {
+                    responsive: true,
+                    property: [
+                        'margin-top',
+                        'margin-bottom'
+                    ],
+                    class: 'my',
+                    values: new Map([].concat(_toConsumableArray(spacersMap), _toConsumableArray(new Map([
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'margin-top',
+                {
+                    responsive: true,
+                    property: 'margin-top',
+                    class: 'mt',
+                    values: new Map([].concat(_toConsumableArray(spacersMap), _toConsumableArray(new Map([
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'margin-right',
+                {
+                    responsive: true,
+                    property: 'margin-right',
+                    class: 'mr',
+                    values: new Map([].concat(_toConsumableArray(spacersMap), _toConsumableArray(new Map([
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'margin-bottom',
+                {
+                    responsive: true,
+                    property: 'margin-bottom',
+                    class: 'mb',
+                    values: new Map([].concat(_toConsumableArray(spacersMap), _toConsumableArray(new Map([
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'margin-left',
+                {
+                    responsive: true,
+                    property: 'margin-left',
+                    class: 'ml',
+                    values: new Map([].concat(_toConsumableArray(spacersMap), _toConsumableArray(new Map([
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'negative-margin',
+                {
+                    responsive: true,
+                    property: 'margin',
+                    class: 'm',
+                    values: negativeSpacersMap
+                }
+            ],
+            [
+                'negative-margin-x',
+                {
+                    responsive: true,
+                    property: [
+                        'margin-right',
+                        'margin-left'
+                    ],
+                    class: 'mx',
+                    values: negativeSpacersMap
+                }
+            ],
+            [
+                'negative-margin-y',
+                {
+                    responsive: true,
+                    property: [
+                        'margin-top',
+                        'margin-bottom'
+                    ],
+                    class: 'my',
+                    values: negativeSpacersMap
+                }
+            ],
+            [
+                'negative-margin-top',
+                {
+                    responsive: true,
+                    property: [
+                        'margin-top'
+                    ],
+                    class: 'mt',
+                    values: negativeSpacersMap
+                }
+            ],
+            [
+                'negative-margin-right',
+                {
+                    responsive: true,
+                    property: 'margin-right',
+                    class: 'mr',
+                    values: negativeSpacersMap
+                }
+            ],
+            [
+                'negative-margin-bottom',
+                {
+                    responsive: true,
+                    property: 'margin-bottom',
+                    class: 'mb',
+                    values: negativeSpacersMap
+                }
+            ],
+            [
+                'negative-margin-left',
+                {
+                    responsive: true,
+                    property: 'margin-left',
+                    class: 'ml',
+                    values: negativeSpacersMap
+                }
+            ],
+            [
+                'padding',
+                {
+                    responsive: true,
+                    property: 'padding',
+                    class: 'p',
+                    values: spacersMap
+                }
+            ],
+            [
+                'padding-x',
+                {
+                    responsive: true,
+                    property: [
+                        'padding-right',
+                        'padding-left'
+                    ],
+                    class: 'px',
+                    values: spacersMap
+                }
+            ],
+            [
+                'padding-y',
+                {
+                    responsive: true,
+                    property: [
+                        'padding-top',
+                        'padding-bottom'
+                    ],
+                    class: 'py',
+                    values: spacersMap
+                }
+            ],
+            [
+                'padding-top',
+                {
+                    responsive: true,
+                    property: 'padding-top',
+                    class: 'pt',
+                    values: spacersMap
+                }
+            ],
+            [
+                'padding-right',
+                {
+                    responsive: true,
+                    property: 'padding-right',
+                    class: 'pr',
+                    values: spacersMap
+                }
+            ],
+            [
+                'padding-bottom',
+                {
+                    responsive: true,
+                    property: 'padding-bottom',
+                    class: 'pb',
+                    values: spacersMap
+                }
+            ],
+            [
+                'padding-left',
+                {
+                    responsive: true,
+                    property: 'padding-left',
+                    class: 'pl',
+                    values: spacersMap
+                }
+            ],
+            [
+                'font-weight',
+                {
+                    property: 'font-weight',
+                    values: new Map([
+                        [
+                            'light',
+                            v['$font-weight-light']
+                        ],
+                        [
+                            'lighter',
+                            v['$font-weight-lighter']
+                        ],
+                        [
+                            'normal',
+                            v['$font-weight-normal']
+                        ],
+                        [
+                            'bold',
+                            v['$font-weight-bold']
+                        ],
+                        [
+                            'bolder',
+                            v['$font-weight-bolder']
+                        ]
+                    ])
+                }
+            ],
+            [
+                'text-transform',
+                {
+                    property: 'text-transform',
+                    class: 'text',
+                    values: [
+                        'lowercase',
+                        'uppercase',
+                        'capitalize'
+                    ]
+                }
+            ],
+            [
+                'text-align',
+                {
+                    responsive: true,
+                    property: 'text-align',
+                    class: 'text',
+                    values: [
+                        'left',
+                        'right',
+                        'center',
+                        'justify'
+                    ]
+                }
+            ],
+            [
+                'color',
+                {
+                    property: 'color',
+                    class: 'text',
+                    values: new Map([].concat(_toConsumableArray(themeColorsMap), _toConsumableArray(new Map([
+                        [
+                            'white',
+                            v.$white
+                        ],
+                        [
+                            'body',
+                            v['$body-color']
+                        ],
+                        [
+                            'muted',
+                            v['$text-muted']
+                        ],
+                        [
+                            'black-50',
+                            "rgba(".concat(v.$black, ", .5)")
+                        ],
+                        [
+                            'white-50',
+                            "rgba(".concat(v.$white, ", .5)")
+                        ],
+                        [
+                            'reset',
+                            'inherit'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'line-height',
+                {
+                    property: 'line-height',
+                    class: 'lh',
+                    values: new Map([
+                        [
+                            '1',
+                            '1'
+                        ],
+                        [
+                            'sm',
+                            v['$line-height-sm']
+                        ],
+                        [
+                            'base',
+                            v['$line-height-base']
+                        ],
+                        [
+                            'lg',
+                            v['$line-height-lg']
+                        ]
+                    ])
+                }
+            ],
+            [
+                'background-color',
+                {
+                    property: 'background-color',
+                    class: 'bg',
+                    values: new Map([].concat(_toConsumableArray(themeColorsMap), _toConsumableArray(new Map([
+                        [
+                            'body',
+                            v['$body-bg']
+                        ],
+                        [
+                            'white',
+                            v.$white
+                        ],
+                        [
+                            'transparent',
+                            'transparent'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'white-space',
+                {
+                    property: 'white-space',
+                    class: 'text',
+                    values: new Map([
+                        [
+                            'wrap',
+                            'normal'
+                        ],
+                        [
+                            'nowrap',
+                            'nowrap'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'text-decoration',
+                {
+                    property: 'text-decoration',
+                    values: [
+                        'none',
+                        'underline',
+                        'line-through'
+                    ]
+                }
+            ],
+            [
+                'font-style',
+                {
+                    property: 'font-style',
+                    class: 'font',
+                    values: [
+                        'italic'
+                    ]
+                }
+            ],
+            [
+                'overflow-wrap',
+                {
+                    property: [
+                        'overflow-wrap',
+                        'word-break'
+                    ],
+                    class: 'text',
+                    values: new Map([
+                        [
+                            'break',
+                            'break-word'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'font-family',
+                {
+                    property: 'font-family',
+                    class: 'font',
+                    values: new Map([
+                        [
+                            'monospace',
+                            v['$font-family-monospace']
+                        ]
+                    ])
+                }
+            ],
+            [
+                'rounded',
+                {
+                    property: 'border-radius',
+                    class: 'rounded',
+                    values: new Map([
+                        [
+                            null,
+                            v['$border-radius']
+                        ],
+                        [
+                            'sm',
+                            v['$border-radius-sm']
+                        ],
+                        [
+                            'lg',
+                            v['$border-radius-lg']
+                        ],
+                        [
+                            'circle',
+                            '50%'
+                        ],
+                        [
+                            'pill',
+                            v['$rounded-pill']
+                        ],
+                        [
+                            '0',
+                            '0'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'rounded-top',
+                {
+                    property: [
+                        'border-top-left-radius',
+                        'border-top-right-radius'
+                    ],
+                    class: 'rounded-top',
+                    values: new Map([
+                        [
+                            null,
+                            v['$border-radius']
+                        ]
+                    ])
+                }
+            ],
+            [
+                'rounded-right',
+                {
+                    property: [
+                        'border-top-right-radius',
+                        'border-bottom-right-radius'
+                    ],
+                    class: 'rounded-right',
+                    values: new Map([
+                        [
+                            null,
+                            v['$border-radius']
+                        ]
+                    ])
+                }
+            ],
+            [
+                'rounded-bottom',
+                {
+                    property: [
+                        'border-bottom-right-radius',
+                        'border-bottom-left-radius'
+                    ],
+                    class: 'rounded-bottom',
+                    values: new Map([
+                        [
+                            null,
+                            v['$border-radius']
+                        ]
+                    ])
+                }
+            ],
+            [
+                'rounded-left',
+                {
+                    property: [
+                        'border-bottom-left-radius',
+                        'border-top-left-radius'
+                    ],
+                    class: 'rounded-left',
+                    values: new Map([
+                        [
+                            null,
+                            v['$border-radius']
+                        ]
+                    ])
+                }
+            ],
+            [
+                'visibility',
+                {
+                    property: 'visibility',
+                    class: null,
+                    values: new Map([
+                        [
+                            'visible',
+                            'visible'
+                        ],
+                        [
+                            'invisible',
+                            'hidden'
+                        ]
+                    ])
+                }
+            ]
+        ])), _toConsumableArray(utilities)));
+    }
+});
+unwrapExports$1(utilities);
+var utilities_1 = utilities.getUtilities;
+var detectUnit = unitUtils$1.detectUnit, rmUnit = unitUtils$1.rmUnit;
+function allowFalseValue(userValue, defaultValue) {
+    return userValue === false ? userValue : userValue || defaultValue;
+}
+function assertAscending(map, mapName) {
+    var prevKey;
+    var prevNum;
+    var asserted = true;
+    Object.keys(map).forEach(function(key) {
+        var num = map[key];
+        if (prevNum == null) ;
+        else if (!comparable(rmUnit(prevNum), rmUnit(num))) {
+            {
+                console.warn("Potentially invalid value for ".concat(mapName, ": This map must be in ascending order, but key '").concat(key, "' has value ").concat(num, " whose unit makes it incomparable to ").concat(prevNum, ", the value of the previous key '").concat(prevKey, "' !"));
+            }
+            asserted = false;
+        } else if (rmUnit(prevNum) >= rmUnit(num)) {
+            {
+                console.warn("Invalid value for ".concat(mapName, ": This map must be in ascending order, but key '").concat(key, "' has value ").concat(num, " which isn't greater than ").concat(prevNum, ", the value of the previous key '").concat(prevKey, "' !"));
+            }
+            asserted = false;
+        }
+        prevKey = key;
+        prevNum = num;
+    });
+    return asserted;
+}
+function assertStartAtZero(map) {
+    var values = Object.keys(map).map(function(key) {
+        return map[key];
+    });
+    var firstValue = rmUnit(values[0]);
+    var asserted = true;
+    if (firstValue !== 0) {
+        {
+            console.warn("First breakpoint in $grid-breakpoints must start at 0, but starts at ".concat(firstValue, "."));
+        }
+        asserted = false;
+    }
+    return asserted;
+}
+function comparable(a, b) {
+    return !isNaN(a + b);
+}
+function negativifyMap(map) {
+    if (map instanceof Map) {
+        var _result = new Map();
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+        try {
+            for(var _iterator = map[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true){
+                var _step$value = _slicedToArray(_step.value, 2), key = _step$value[0], value = _step$value[1];
+                if (key !== 0 && key !== '0') {
+                    var detectedUnit = detectUnit(value);
+                    var newValue = rmUnit(value) * -1 + detectedUnit;
+                    _result = new Map([].concat(_toConsumableArray(_result), _toConsumableArray(new Map([
+                        [
+                            "n".concat(key),
+                            newValue
+                        ]
+                    ]))));
+                }
+            }
+        } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+        } finally{
+            try {
+                if (!_iteratorNormalCompletion && _iterator.return != null) {
+                    _iterator.return();
+                }
+            } finally{
+                if (_didIteratorError) {
+                    throw _iteratorError;
+                }
+            }
+        }
+        return _result;
+    }
+    var result = {};
+    Object.keys(map).forEach(function(key) {
+        if (key !== 0 && key !== '0') {
+            var _detectedUnit = detectUnit(map[key]);
+            var _newValue = rmUnit(map[key]) * -1 + _detectedUnit;
+            result = _objectSpread2({}, result, {}, _defineProperty$1({}, "n".concat(key), _newValue));
+        }
+    });
+    return result;
+}
+var linearGradientRe = /#[0-9a-fA-F]{3,6}|rgb ?\([ 0-9.%,]+?\)/g;
+var detectUnit$1 = unitUtils$1.detectUnit, rmUnit$1 = unitUtils$1.rmUnit;
+function makeOriginal() {
+    var userTheme = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var v = {};
+    var u = userTheme;
+    var detectedUnit;
+    v._name = u._name || 'bootstrap-styled';
+    v['$white'] = u['$white'] || '#fff';
+    v['$gray-100'] = v['$gray-100'] || '#f8f9fa';
+    v['$gray-200'] = v['$gray-200'] || '#e9ecef';
+    v['$gray-300'] = v['$gray-300'] || '#dee2e6';
+    v['$gray-400'] = v['$gray-400'] || '#ced4da';
+    v['$gray-500'] = v['$gray-500'] || '#adb5bd';
+    v['$gray-600'] = v['$gray-600'] || '#6c757d';
+    v['$gray-700'] = v['$gray-700'] || '#495057';
+    v['$gray-800'] = v['$gray-800'] || '#343a40';
+    v['$gray-900'] = v['$gray-900'] || '#212529';
+    v['$black'] = u['$black'] || '#000';
+    v['$grays'] = u['$grays'] || {
+        100: v['$gray-100'],
+        200: v['$gray-200'],
+        300: v['$gray-300'],
+        400: v['$gray-400'],
+        500: v['$gray-500'],
+        600: v['$gray-600'],
+        700: v['$gray-700'],
+        800: v['$gray-800'],
+        900: v['$gray-900']
+    };
+    v['$blue'] = u['$blue'] || '#0275d8';
+    v['$indigo'] = u['$indigo'] || '#0275d8';
+    v['$purple'] = u['$purple'] || '#613d7c';
+    v['$pink'] = u['$pink'] || '#ff5b77';
+    v['$red'] = u['$red'] || '#d9534f';
+    v['$orange'] = u['$orange'] || '#f0ad4e';
+    v['$yellow'] = u['$yellow'] || '#ffd500';
+    v['$green'] = u['$green'] || '#5cb85c';
+    v['$teal'] = u['$teal'] || '#5bc0de';
+    v['$cyan'] = u['$cyan'] || '#17a2b8';
+    v['$light'] = u['$light'] || v['$gray-100'];
+    v['$dark'] = u['$dark'] || v['$gray-800'];
+    v['$colors'] = _objectSpread2({}, {
+        blue: v['$blue'],
+        indigo: v['$indigo'],
+        purple: v['$purple'],
+        pink: v['$pink'],
+        red: v['$red'],
+        orange: v['$orange'],
+        yellow: v['$yellow'],
+        green: v['$green'],
+        teal: v['$teal'],
+        cyan: v['$cyan'],
+        white: v['$white'],
+        gray: v['$gray-600'],
+        'gray-dark': v['$gray-800']
+    }, {}, u['$colors'] || {});
+    v['$primary'] = u['$primary'] || v['$blue'];
+    v['$secondary'] = u['$secondary'] || v['$gray-600'];
+    v['$success'] = u['$success'] || v['$green'];
+    v['$info'] = u['$info'] || v['$cyan'];
+    v['$warning'] = u['$warning'] || v['$yellow'];
+    v['$danger'] = u['$danger'] || v['$red'];
+    v['$light'] = u['$light'] || v['$gray-100'];
+    v['$dark'] = u['$dark'] || v['$gray-800'];
+    v['$gray-dark'] = u['$gray-dark'] || '#292b2c';
+    v['$gray'] = u['$gray'] || '#464a4c';
+    v['$gray-light'] = u['$gray-light'] || '#636c72';
+    v['$gray-lighter'] = u['$gray-lighter'] || '#eceeef';
+    v['$gray-lightest'] = u['$gray-lightest'] || '#f7f7f9';
+    v['$brand-primary'] = u['$brand-primary'] || v['$primary'];
+    v['$brand-success'] = u['$brand-success'] || v['$success'];
+    v['$brand-info'] = u['$brand-info'] || v['$info'];
+    v['$brand-warning'] = u['$brand-warning'] || v['$warning'];
+    v['$brand-danger'] = u['$brand-danger'] || v['$danger'];
+    v['$brand-inverse'] = u['$brand-inverse'] || v['$gray-dark'];
+    v['$theme-colors'] = _objectSpread2({}, {
+        primary: v['$primary'],
+        secondary: v['$secondary'],
+        success: v['$success'],
+        info: v['$info'],
+        warning: v['$warning'],
+        danger: v['$danger'],
+        light: v['$light'],
+        dark: v['$dark']
+    }, {}, u['$theme-colors'] || {});
+    v['$enable-rounded'] = allowFalseValue(u['$enable-rounded'], true);
+    v['$enable-shadows'] = allowFalseValue(u['$enable-shadows'], false);
+    v['$enable-gradients'] = allowFalseValue(u['$enable-gradients'], false);
+    v['$enable-transitions'] = allowFalseValue(u['$enable-transitions'], true);
+    v['$enable-hover-media-query'] = allowFalseValue(u['$enable-hover-media-query'], false);
+    v['$enable-grid-classes'] = allowFalseValue(u['$enable-grid-classes'], true);
+    v['$enable-print-styles'] = allowFalseValue(u['$enable-print-styles'], true);
+    v['$spacer'] = u['$spacer'] || '1rem';
+    detectedUnit = detectUnit$1(v['$spacer']);
+    v['$spacer-halved'] = u['$spacer-halved'] || rmUnit$1(v['$spacer'], detectedUnit) / 2 + detectedUnit;
+    v['$spacer-x'] = u['$spacer-x'] || v['$spacer'];
+    v['$spacer-y'] = u['$spacer-y'] || v['$spacer'];
+    v['$spacers'] = u['$spacers'] || {
+        0: 0,
+        1: rmUnit$1(v['$spacer']) * 0.25 + detectedUnit,
+        2: rmUnit$1(v['$spacer']) * 0.5 + detectedUnit,
+        3: v['$spacer'],
+        4: rmUnit$1(v['$spacer']) * 1.5 + detectedUnit,
+        5: rmUnit$1(v['$spacer']) * 3 + detectedUnit
+    };
+    v['$negative-spacers'] = u['$negative-spacers'] || negativifyMap(v['$spacers']);
+    v['$border-width'] = u['$border-width'] || '1px';
+    v['$border-color'] = u['$border-color'] || v['$gray-300'];
+    v['$sizes'] = u['$sizes'] || {
+        25: '25%',
+        50: '50%',
+        75: '75%',
+        100: '100%'
+    };
+    v['$body-bg'] = u['$body-bg'] || v['$white'];
+    v['$body-color'] = u['$body-color'] || v['$gray-dark'];
+    v['$link-color'] = u['$link-color'] || v['$brand-primary'];
+    v['$link-decoration'] = u['$link-decoration'] || 'none';
+    v['$link-hover-color'] = u['$link-hover-color'] || ColorWrapper(v['$link-color']).darken(0.35).toString();
+    v['$link-hover-decoration'] = u['$link-hover-decoration'] || 'underline';
+    v['$grid-breakpoints'] = u['$grid-breakpoints'] || {
+        xs: '0',
+        sm: '576px',
+        md: '768px',
+        lg: '992px',
+        xl: '1200px',
+        xxl: '1452px'
+    };
+    assertAscending(v['$grid-breakpoints'], '$grid-breakpoints');
+    assertStartAtZero(v['$grid-breakpoints']);
+    v['$container-max-widths'] = u['$container-max-widths'] || {
+        sm: '540px',
+        md: '720px',
+        lg: '960px',
+        xl: '1140px'
+    };
+    assertAscending(v['$container-max-widths'], '$container-max-widths');
+    v['$grid-columns'] = u['$grid-columns'] || '12';
+    v['$grid-gutter-width'] = u['$grid-gutter-width'] || '30px';
+    v['$font-family-sans-serif'] = u['$font-family-sans-serif'] || '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
+    v['$font-family-monospace'] = u['$font-family-monospace'] || 'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+    v['$font-family-base'] = u['$font-family-base'] || v['$font-family-sans-serif'];
+    v['$font-size-base'] = u['$font-size-base'] || '1rem';
+    v['$font-size-lg'] = u['$font-size-lg'] || '1.25rem';
+    v['$font-size-sm'] = u['$font-size-sm'] || '.875rem';
+    v['$font-size-xs'] = u['$font-size-xs'] || '.75rem';
+    v['$font-weight-light'] = u['$font-weight-light'] || '300';
+    v['$font-weight-lighter'] = u['$font-weight-lighter'] || 'lighter';
+    v['$font-weight-bolder'] = u['$font-weight-bolder'] || 'bolder';
+    v['$font-weight-normal'] = u['$font-weight-normal'] || '400';
+    v['$font-weight-bold'] = u['$font-weight-bold'] || '700';
+    v['$font-weight-base'] = u['$font-weight-base'] || v['$font-weight-normal'];
+    v['$line-height-base'] = u['$line-height-base'] || '1.5';
+    v['$font-size-h1'] = u['$font-size-h1'] || '2.5rem';
+    v['$font-size-h2'] = u['$font-size-h2'] || '2rem';
+    v['$font-size-h3'] = u['$font-size-h3'] || '1.75rem';
+    v['$font-size-h4'] = u['$font-size-h4'] || '1.5rem';
+    v['$font-size-h5'] = u['$font-size-h5'] || '1.25rem';
+    v['$font-size-h6'] = u['$font-size-h6'] || '1rem';
+    detectedUnit = detectUnit$1(v['$spacer']);
+    v['$headings-margin-bottom'] = u['$headings-margin-bottom'] || rmUnit$1(v['$spacer'], detectedUnit) / 2 + detectedUnit;
+    v['$headings-font-family'] = u['$headings-font-family'] || 'inherit';
+    v['$headings-font-weight'] = u['$headings-font-weight'] || '500';
+    v['$headings-line-height'] = u['$headings-line-height'] || '1.1';
+    v['$headings-color'] = u['$headings-color'] || 'inherit';
+    v['$display1-size'] = u['$display1-size'] || '6rem';
+    v['$display2-size'] = u['$display2-size'] || '5.5rem';
+    v['$display3-size'] = u['$display3-size'] || '4.5rem';
+    v['$display4-size'] = u['$display4-size'] || '3.5rem';
+    v['$display1-weight'] = u['$display1-weight'] || '300';
+    v['$display2-weight'] = u['$display2-weight'] || '300';
+    v['$display3-weight'] = u['$display3-weight'] || '300';
+    v['$display4-weight'] = u['$display4-weight'] || '300';
+    v['$display-line-height'] = u['$display-line-height'] || v['$headings-line-height'];
+    v['$lead-font-size'] = u['$lead-font-size'] || '1.25rem';
+    v['$lead-font-weight'] = u['$lead-font-weight'] || '300';
+    v['$small-font-size'] = u['$small-font-size'] || '80%';
+    v['$text-muted'] = u['$text-muted'] || v['$gray-light'];
+    v['$blockquote-small-color'] = u['$blockquote-small-color'] || v['$gray-light'];
+    detectedUnit = detectUnit$1(v['$font-size-base']);
+    v['$blockquote-font-size'] = u['$blockquote-font-size'] || rmUnit$1(v['$font-size-base'], detectedUnit) * 1.25 + detectedUnit;
+    v['$blockquote-border-color'] = u['$blockquote-border-color'] || v['$gray-lighter'];
+    v['$blockquote-border-width'] = u['$blockquote-border-width'] || '.25rem';
+    v['$hr-border-color'] = u['$hr-border-color'] || ColorWrapper(v['$black']).alpha(0.1).toString();
+    v['$hr-border-width'] = u['$hr-border-width'] || v['$border-width'];
+    v['$mark-padding'] = u['$mark-padding'] || '.2em';
+    v['$dt-font-weight'] = u['$dt-font-weight'] || v['$font-weight-bold'];
+    v['$list-inline-padding'] = u['$list-inline-padding'] || '5px';
+    v['$line-height-lg'] = u['$line-height-lg'] || '1.6';
+    v['$line-height-sm'] = u['$line-height-sm'] || '1.3';
+    v['$border-radius'] = u['$border-radius'] || '.25rem';
+    v['$border-radius-lg'] = u['$border-radius-lg'] || '.3rem';
+    v['$border-radius-sm'] = u['$border-radius-sm'] || '.2rem';
+    v['$rounded-pill'] = u['$rounded-pill'] || '50rem';
+    v['$box-shadow-sm'] = u['$box-shadow-sm'] || "0 .125rem .25rem ".concat(ColorWrapper(v.$black).alpha(0.075).toString());
+    v['$box-shadow'] = u['$box-shadow'] || "0 .5rem 1rem ".concat(ColorWrapper(v.$black).alpha(0.15).toString());
+    v['$box-shadow-lg'] = u['$box-shadow-lg'] || "0 1rem 3rem ".concat(ColorWrapper(v.$black).alpha(0.175).toString());
+    v['$box-shadow-inset'] = u['$box-shadow-inset'] || "inset 0 1px 2px ".concat(ColorWrapper(v.$black).alpha(0.075).toString());
+    v['$component-active-color'] = u['$component-active-color'] || v['$white'];
+    v['$component-active-bg'] = u['$component-active-bg'] || v['$brand-primary'];
+    v['$caret-width'] = u['$caret-width'] || '.3em';
+    v['$transition-base'] = u['$transition-base'] || 'all .2s ease-in-out';
+    v['$transition-fade'] = u['$transition-fade'] || 'opacity .15s linear';
+    v['$transition-collapse'] = u['$transition-collapse'] || 'height .35s ease';
+    v['$table-cell-padding'] = u['$table-cell-padding'] || '.75rem';
+    v['$table-sm-cell-padding'] = u['$table-sm-cell-padding'] || '.3rem';
+    v['$table-bg'] = u['$table-bg'] || 'transparent';
+    v['$table-inverse-bg'] = u['$table-inverse-bg'] || v['$gray-dark'];
+    v['$table-inverse-bg-accent'] = u['$table-inverse-bg-accent'] || ColorWrapper(v['$white']).alpha(0.05).toString();
+    v['$table-inverse-bg-hover'] = u['$table-inverse-bg-hover'] || ColorWrapper(v['$white']).alpha(0.075).toString();
+    v['$table-inverse-color'] = u['$table-inverse-color'] || v['$body-bg'];
+    v['$table-inverse-border'] = u['$table-inverse-border'] || ColorWrapper(v['$gray-dark']).lighten(0.075).toString();
+    v['$table-bg-accent'] = u['$table-bg-accent'] || ColorWrapper(v['$black']).alpha(0.05).toString();
+    v['$table-bg-hover'] = u['$table-bg-hover'] || ColorWrapper(v['$black']).alpha(0.075).toString();
+    v['$table-bg-active'] = u['$table-bg-active'] || v['$table-bg-hover'];
+    v['$table-head-bg'] = u['$table-head-bg'] || v['$gray-lighter'];
+    v['$table-head-color'] = u['$table-head-color'] || v['$gray'];
+    v['$table-border-width'] = u['$table-border-width'] || v['$border-width'];
+    v['$table-border-color'] = u['$table-border-color'] || v['$gray-lighter'];
+    v['$btn-padding-x'] = u['$btn-padding-x'] || '1rem';
+    v['$btn-padding-y'] = u['$btn-padding-y'] || '.5rem';
+    v['$btn-line-height'] = u['$btn-line-height'] || '1.25';
+    v['$btn-font-weight'] = u['$btn-font-weight'] || v['$font-weight-normal'];
+    v['$btn-box-shadow'] = u['$btn-box-shadow'] || "inset 0 1px 0 ".concat(ColorWrapper(v['$white']).alpha(0.15).toString(), ", 0 1px 1px ").concat(ColorWrapper(v['$black']).alpha(0.075).toString());
+    v['$btn-focus-box-shadow'] = u['$btn-focus-box-shadow'] || "0 0 0 2px ".concat(ColorWrapper(v['$brand-primary']).alpha(0.25).toString());
+    v['$btn-disabled-opacity'] = u['$btn-disabled-opacity'] || '.65';
+    v['$btn-active-box-shadow'] = u['$btn-active-box-shadow'] || "inset 0 3px 5px ".concat(ColorWrapper(v['$black']).alpha(0.125).toString());
+    v['$btn-primary-color'] = u['$btn-primary-color'] || v['$white'];
+    v['$btn-primary-bg'] = u['$btn-primary-bg'] || v['$brand-primary'];
+    v['$btn-secondary-color'] = u['$btn-secondary-color'] || v['$gray-dark'];
+    v['$btn-secondary-bg'] = u['$btn-secondary-bg'] || v['$white'];
+    v['$btn-info-color'] = u['$btn-info-color'] || v['$white'];
+    v['$btn-info-bg'] = u['$btn-info-bg'] || v['$brand-info'];
+    v['$btn-success-color'] = u['$btn-success-color'] || v['$white'];
+    v['$btn-success-bg'] = u['$btn-success-bg'] || v['$brand-success'];
+    v['$btn-warning-color'] = u['$btn-warning-color'] || v['$white'];
+    v['$btn-warning-bg'] = u['$btn-warning-bg'] || v['$brand-warning'];
+    v['$btn-danger-color'] = u['$btn-danger-color'] || v['$white'];
+    v['$btn-danger-bg'] = u['$btn-danger-bg'] || v['$brand-danger'];
+    [
+        'primary',
+        'secondary',
+        'info',
+        'success',
+        'warning',
+        'danger'
+    ].forEach(function(type) {
+        if (v["$btn-".concat(type, "-bg")].includes('linear-gradient')) {
+            v["$btn-".concat(type, "-border")] = v["$btn-".concat(type, "-bg")].match(linearGradientRe)[1];
+        } else if (type === 'secondary') {
+            v['$btn-secondary-border'] = u['$btn-secondary-border'] || '#ccc';
+        } else {
+            v["$btn-".concat(type, "-border")] = u["$btn-".concat(type, "-border")] || v["$btn-".concat(type, "-bg")];
+        }
+    });
+    v['$btn-link-disabled-color'] = u['$btn-link-disabled-color'] || v['$gray-light'];
+    v['$btn-padding-x-sm'] = u['$btn-padding-x-sm'] || '.5rem';
+    v['$btn-padding-y-sm'] = u['$btn-padding-y-sm'] || '.25rem';
+    v['$btn-padding-x-lg'] = u['$btn-padding-x-lg'] || '1.5rem';
+    v['$btn-padding-y-lg'] = u['$btn-padding-y-lg'] || '.75rem';
+    v['$btn-block-spacing-y'] = u['$btn-block-spacing-y'] || '.5rem';
+    v['$btn-border-radius'] = u['$btn-border-radius'] || v['$border-radius'];
+    v['$btn-border-radius-lg'] = u['$btn-border-radius-lg'] || v['$border-radius-lg'];
+    v['$btn-border-radius-sm'] = u['$btn-border-radius-sm'] || v['$border-radius-sm'];
+    v['$btn-border-width'] = u['$btn-border-width'] || '1px';
+    v['$btn-transition'] = u['$btn-transition'] || v['$transition-base'];
+    v['$input-padding-x'] = u['$input-padding-x'] || '.75rem';
+    v['$input-padding-y'] = u['$input-padding-y'] || '.5rem';
+    v['$input-line-height'] = u['$input-line-height'] || '1.25';
+    v['$input-bg'] = u['$input-bg'] || v['$white'];
+    v['$input-bg-disabled'] = u['$input-bg-disabled'] || v['$gray-lighter'];
+    v['$input-color'] = u['$input-color'] || v['$gray'];
+    v['$input-border-color'] = u['$input-border-color'] || ColorWrapper(v['$black']).alpha(0.15).toString();
+    v['$input-btn-border-width'] = u['$input-btn-border-width'] || v['$border-width'];
+    v['$input-box-shadow'] = u['$input-box-shadow'] || "inset 0 1px 1px ".concat(ColorWrapper(v['$black']).alpha(0.075).toString());
+    v['$input-border-radius'] = u['$input-border-radius'] || v['$border-radius'];
+    v['$input-border-radius-lg'] = u['$input-border-radius-lg'] || v['$border-radius-lg'];
+    v['$input-border-radius-sm'] = u['$input-border-radius-sm'] || v['$border-radius-sm'];
+    v['$input-bg-focus'] = u['$input-bg-focus'] || v['$input-bg'];
+    v['$input-border-focus'] = u['$input-border-focus'] || ColorWrapper(v['$brand-primary']).lighten(0.25).toString();
+    v['$input-box-shadow-focus'] = u['$input-box-shadow-focus'] || "".concat(v['$input-box-shadow'], ", 0 0 8px ").concat(ColorWrapper(v['$input-border-focus']).alpha(0.6).toString());
+    v['$input-color-focus'] = u['$input-color-focus'] || v['$input-color'];
+    v['$input-color-placeholder'] = u['$input-color-placeholder'] || v['$gray-light'];
+    v['$input-padding-x-sm'] = u['$input-padding-x-sm'] || '.5rem';
+    v['$input-padding-y-sm'] = u['$input-padding-y-sm'] || '.25rem';
+    v['$input-padding-x-lg'] = u['$input-padding-x-lg'] || '1.5rem';
+    v['$input-padding-y-lg'] = u['$input-padding-y-lg'] || '.75rem';
+    detectedUnit = detectUnit$1(v['$font-size-base']);
+    v['$input-height'] = u['$input-height'] || rmUnit$1(v['$font-size-base'], detectedUnit) * v['$line-height-base'] + rmUnit$1(v['$input-padding-y'], detectedUnit) * 2 + detectedUnit;
+    v['$input-height-sm'] = u['$input-height-sm'] || rmUnit$1(v['$font-size-sm'], detectedUnit) * v['$line-height-sm'] + rmUnit$1(v['$input-padding-y-sm'], detectedUnit) * 2 + detectedUnit;
+    v['$input-height-lg'] = u['$input-height-lg'] || rmUnit$1(v['$font-size-lg'], detectedUnit) * v['$line-height-lg'] + rmUnit$1(v['$input-padding-y-lg'], detectedUnit) * 2 + detectedUnit;
+    v['$input-transition'] = u['$input-transition'] || 'border-color ease-in-out .15s, box-shadow ease-in-out .15s';
+    v['$label-margin-bottom'] = u['$label-margin-bottom'] || '.5rem';
+    v['$form-text-margin-top'] = u['$form-text-margin-top'] || '.25rem';
+    v['$form-feedback-margin-top'] = u['$form-feedback-margin-top'] || v['$form-text-margin-top'];
+    v['$form-check-margin-bottom'] = u['$form-check-margin-bottom'] || '.5rem';
+    v['$form-check-input-gutter'] = u['$form-check-input-gutter'] || '1.25rem';
+    v['$form-check-input-margin-y'] = u['$form-check-input-margin-y'] || '.25rem';
+    v['$form-check-input-margin-x'] = u['$form-check-input-margin-x'] || '.25rem';
+    v['$form-check-inline-margin-x'] = u['$form-check-inline-margin-x'] || '.75rem';
+    v['$form-group-margin-bottom'] = u['$form-group-margin-bottom'] || v['$spacer-y'];
+    v['$input-group-addon-bg'] = u['$input-group-addon-bg'] || v['$gray-lighter'];
+    v['$input-group-addon-border-color'] = u['$input-group-addon-border-color'] || v['$input-border-color'];
+    v['$cursor-disabled'] = u['$cursor-disabled'] || 'not-allowed';
+    v['$custom-control-gutter'] = u['$custom-control-gutter'] || '1.5rem';
+    v['$custom-control-spacer-x'] = u['$custom-control-spacer-x'] || '1rem';
+    v['$custom-control-spacer-y'] = u['$custom-control-spacer-y'] || '.25rem';
+    v['$custom-control-indicator-size'] = u['$custom-control-indicator-size'] || '1rem';
+    v['$custom-control-indicator-bg'] = u['$custom-control-indicator-bg'] || '#ddd';
+    v['$custom-control-indicator-bg-size'] = u['$custom-control-indicator-bg-size'] || '50% 50%';
+    v['$custom-control-indicator-box-shadow'] = u['$custom-control-indicator-box-shadow'] || "inset 0 .25rem .25rem ".concat(ColorWrapper(v['$black']).alpha(0.1).toString());
+    v['$custom-control-disabled-cursor'] = u['$custom-control-disabled-cursor'] || v['$cursor-disabled'];
+    v['$custom-control-disabled-indicator-bg'] = u['$custom-control-disabled-indicator-bg'] || v['$gray-lighter'];
+    v['$custom-control-disabled-description-color'] = u['$custom-control-disabled-description-color'] || v['$gray-light'];
+    v['$custom-control-checked-indicator-color'] = u['$custom-control-checked-indicator-color'] || v['$white'];
+    v['$custom-control-checked-indicator-bg'] = u['$custom-control-checked-indicator-bg'] || v['$brand-primary'];
+    v['$custom-control-checked-indicator-box-shadow'] = u['$custom-control-checked-indicator-box-shadow'] || 'none';
+    v['$custom-control-focus-indicator-box-shadow'] = u['$custom-control-focus-indicator-box-shadow'] || "0 0 0 1px ".concat(v['$body-bg'], ", 0 0 0 3px ").concat(v['$brand-primary']);
+    v['$custom-control-active-indicator-color'] = u['$custom-control-active-indicator-color'] || v['$white'];
+    v['$custom-control-active-indicator-bg'] = u['$custom-control-active-indicator-bg'] || ColorWrapper(v['$brand-primary']).lighten(0.35).toString();
+    v['$custom-control-active-indicator-box-shadow'] = u['$custom-control-active-indicator-box-shadow'] || 'none';
+    v['$custom-checkbox-radius'] = u['$custom-checkbox-radius'] || v['$border-radius'];
+    v['$custom-checkbox-checked-icon'] = u['$custom-checkbox-checked-icon'] || "url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 8 8\"%3E%3Cpath fill=\"".concat(v['$custom-control-checked-indicator-color'], "\" d=\"M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z\"/%3E%3C/svg%3E')");
+    v['$custom-checkbox-indeterminate-bg'] = u['$custom-checkbox-indeterminate-bg'] || v['$brand-primary'];
+    v['$custom-checkbox-indeterminate-indicator-color'] = u['$custom-checkbox-indeterminate-indicator-color'] || v['$custom-control-checked-indicator-color'];
+    v['$custom-checkbox-indeterminate-icon'] = u['$custom-checkbox-indeterminate-icon'] || "url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 4 4\"%3E%3Cpath stroke=\"".concat(v['$custom-checkbox-indeterminate-indicator-color'], "\" d=\"M0 2h4\"/%3E%3C/svg%3E')");
+    v['$custom-checkbox-indeterminate-box-shadow'] = u['$custom-checkbox-indeterminate-box-shadow'] || 'none';
+    v['$custom-radio-radius'] = u['$custom-radio-radius'] || '50%';
+    v['$custom-radio-checked-icon'] = u['$custom-radio-checked-icon'] || "url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 8 8\"%3E%3Ccircle r=\"3\" fill=\"".concat(v['$custom-control-checked-indicator-color'], "\"/%3E%3C/svg%3E')");
+    v['$custom-select-padding-x'] = u['$custom-select-padding-x'] || '.75rem ';
+    v['$custom-select-padding-y'] = u['$custom-select-padding-y'] || '.375rem';
+    v['$custom-select-indicator-padding'] = u['$custom-select-indicator-padding'] || '1rem';
+    v['$custom-select-line-height'] = u['$custom-select-line-height'] || v['$input-line-height'];
+    v['$custom-select-color'] = u['$custom-select-color'] || v['$input-color'];
+    v['$custom-select-disabled-color'] = u['$custom-select-disabled-color'] || v['$gray-light'];
+    v['$custom-select-bg'] = u['$custom-select-bg'] || v['$white'];
+    v['$custom-select-disabled-bg'] = u['$custom-select-disabled-bg'] || v['$gray-lighter'];
+    v['$custom-select-bg-size'] = u['$custom-select-bg-size'] || '8px 10px';
+    v['$custom-select-indicator-color'] = u['$custom-select-indicator-color'] || '#333';
+    v['$custom-select-indicator'] = u['$custom-select-indicator'] || "url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 4 5\"%3E%3Cpath fill=\"".concat(v['$custom-select-indicator-color'], "\" d=\"M2 0L0 2h4zm0 5L0 3h4z\"/%3E%3C/svg%3E')");
+    v['$custom-select-border-width'] = u['$custom-select-border-width'] || v['$input-btn-border-width'];
+    v['$custom-select-border-color'] = u['$custom-select-border-color'] || v['$input-border-color'];
+    v['$custom-select-border-radius'] = u['$custom-select-border-radius'] || v['$border-radius'];
+    v['$custom-select-focus-border-color'] = u['$custom-select-focus-border-color'] || ColorWrapper(v['$brand-primary']).lighten(0.25).toString();
+    v['$custom-select-focus-box-shadow'] = u['$custom-select-focus-box-shadow'] || "inset 0 1px 2px ".concat(ColorWrapper(v['$black']).alpha(0.75).toString(), ", 0 0 5px ").concat(ColorWrapper(v['$custom-select-focus-border-color']).alpha(0.5).toString());
+    v['$custom-select-sm-font-size'] = u['$custom-select-sm-font-size'] || '75%';
+    v['$custom-file-height'] = u['$custom-file-height'] || '2.5rem';
+    v['$custom-file-width'] = u['$custom-file-width'] || '14rem';
+    v['$custom-file-focus-box-shadow'] = u['$custom-file-focus-box-shadow'] || "0 0 0 .075rem ".concat(v['$white'], ", 0 0 0 .2rem ").concat(v['$brand-primary']);
+    v['$custom-file-padding-x'] = u['$custom-file-padding-x'] || '.5rem';
+    v['$custom-file-padding-y'] = u['$custom-file-padding-y'] || '1rem';
+    v['$custom-file-line-height'] = u['$custom-file-line-height'] || '1.5';
+    v['$custom-file-color'] = u['$custom-file-color'] || v['$gray'];
+    v['$custom-file-bg'] = u['$custom-file-bg'] || v['$white'];
+    v['$custom-file-border-width'] = u['$custom-file-border-width'] || v['$border-width'];
+    v['$custom-file-border-color'] = u['$custom-file-border-color'] || v['$input-border-color'];
+    v['$custom-file-border-radius'] = u['$custom-file-border-radius'] || v['$border-radius'];
+    v['$custom-file-box-shadow'] = u['$custom-file-box-shadow'] || "inset 0 .2rem .4rem ".concat(ColorWrapper(v['$black']).alpha(0.05).toString());
+    v['$custom-file-button-color'] = u['$custom-file-button-color'] || v['$custom-file-color'];
+    v['$custom-file-button-bg'] = u['$custom-file-button-bg'] || v['$gray-lighter'];
+    v['$custom-file-text'] = u['$custom-file-text'] || {
+        placeholder: {
+            en: 'Choose file...'
+        },
+        'button-label': {
+            en: 'Browse'
+        }
+    };
+    v['$form-icon-success-color'] = u['$form-icon-success-color'] || v['$brand-success'];
+    v['$form-icon-success'] = u['$form-icon-success'] || "url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 8 8\"%3E%3Cpath fill=\"".concat(v['$form-icon-success-color'], "\" d=\"M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z\"/%3E%3C/svg%3E')");
+    v['$form-icon-warning-color'] = u['$form-icon-warning-color'] || v['$brand-warning'];
+    v['$form-icon-warning'] = u['$form-icon-warning'] || "url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 8 8\"%3E%3Cpath fill=\"".concat(v['$form-icon-warning-color'], "\" d=\"M4.4 5.324h-.8v-2.46h.8zm0 1.42h-.8V5.89h.8zM3.76.63L.04 7.075c-.115.2.016.425.26.426h7.397c.242 0 .372-.226.258-.426C6.726 4.924 5.47 2.79 4.253.63c-.113-.174-.39-.174-.494 0z\"/%3E%3C/svg%3E')");
+    v['$form-icon-danger-color'] = u['$form-icon-danger-color'] || v['$brand-danger'];
+    v['$form-icon-danger'] = u['$form-icon-danger'] || "url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" fill=\"".concat(v['$form-icon-danger-color'], "\" viewBox=\"-2 -2 7 7\"%3E%3Cpath stroke=\"%23d9534f\" d=\"M0 0l3 3m0-3L0 3\"/%3E%3Ccircle r=\".5\"/%3E%3Ccircle cx=\"3\" r=\".5\"/%3E%3Ccircle cy=\"3\" r=\".5\"/%3E%3Ccircle cx=\"3\" cy=\"3\" r=\".5\"/%3E%3C/svg%3E')");
+    v['$dropdown-min-width'] = u['$dropdown-min-width'] || '10rem';
+    v['$dropdown-padding-y'] = u['$dropdown-padding-y'] || '.5rem';
+    v['$dropdown-margin-top'] = u['$dropdown-margin-top'] || '.125rem';
+    v['$dropdown-bg'] = u['$dropdown-bg'] || v['$white'];
+    v['$dropdown-border-color'] = u['$dropdown-border-color'] || ColorWrapper(v['$black']).alpha(0.15).toString();
+    v['$dropdown-border-width'] = u['$dropdown-border-width'] || v['$border-width'];
+    v['$dropdown-divider-bg'] = u['$dropdown-divider-bg'] || v['$gray-lighter'];
+    v['$dropdown-box-shadow'] = u['$dropdown-box-shadow'] || "0 .5rem 1rem ".concat(ColorWrapper(v['$black']).alpha(0.175).toString());
+    v['$dropdown-link-color'] = u['$dropdown-link-color'] || v['$gray-dark'];
+    v['$dropdown-link-hover-color'] = u['$dropdown-link-hover-color'] || ColorWrapper(v['$gray-dark']).darken(0.05).toString();
+    v['$dropdown-link-hover-bg'] = u['$dropdown-link-hover-bg'] || v['$gray-lightest'];
+    v['$dropdown-link-active-color'] = u['$dropdown-link-active-color'] || v['$component-active-color'];
+    v['$dropdown-link-active-bg'] = u['$dropdown-link-active-bg'] || v['$component-active-bg'];
+    v['$dropdown-link-disabled-color'] = u['$dropdown-link-disabled-color'] || v['$gray-light'];
+    v['$dropdown-item-padding-x'] = u['$dropdown-item-padding-x'] || '1.5rem';
+    v['$dropdown-header-color'] = u['$dropdown-header-color'] || v['$gray-light'];
+    v['$zindex-dropdown-backdrop'] = u['$zindex-dropdown-backdrop'] || '990';
+    v['$zindex-dropdown'] = u['$zindex-dropdown'] || '1000';
+    v['$zindex-modal-backdrop'] = u['$zindex-modal-backdrop'] || '2040';
+    v['$zindex-modal'] = u['$zindex-modal'] || '2050';
+    v['$zindex-popover'] = u['$zindex-popover'] || '1060';
+    v['$zindex-tooltip'] = u['$zindex-tooltip'] || '1070';
+    v['$zindex-navbar'] = u['$zindex-navbar'] || '1000';
+    v['$zindex-navbar-fixed'] = u['$zindex-navbar-fixed'] || '1030';
+    v['$zindex-navbar-sticky'] = u['$zindex-navbar-sticky'] || '1030';
+    v['$navbar-padding-x'] = u['$navbar-padding-x'] || v['$spacer'];
+    v['$navbar-padding-y'] = u['$navbar-padding-y'] || v['$spacer-halved'];
+    v['$navbar-brand-padding-y'] = u['$navbar-brand-padding-y'] || '.25rem';
+    v['$navbar-divider-padding-y'] = u['$navbar-divider-padding-y'] || '.425rem';
+    v['$navbar-toggler-padding-x'] = u['$navbar-toggler-padding-x'] || '.75rem';
+    v['$navbar-toggler-padding-y'] = u['$navbar-toggler-padding-y'] || '.25rem';
+    v['$navbar-toggler-font-size'] = u['$navbar-toggler-font-size'] || v['$font-size-lg'];
+    v['$navbar-toggler-border-radius'] = u['$navbar-toggler-border-radius'] || v['$btn-border-radius'];
+    v['$navbar-inverse-color'] = u['$navbar-inverse-color'] || ColorWrapper(v['$white']).alpha(0.5).toString();
+    v['$navbar-inverse-hover-color'] = u['$navbar-inverse-hover-color'] || ColorWrapper(v['$white']).alpha(0.75).toString();
+    v['$navbar-inverse-active-color'] = u['$navbar-inverse-active-color'] || ColorWrapper(v['$white']).alpha(1).toString();
+    v['$navbar-inverse-disabled-color'] = u['$navbar-inverse-disabled-color'] || ColorWrapper(v['$white']).alpha(0.25).toString();
+    v['$navbar-inverse-toggler-bg'] = u['$navbar-inverse-toggler-bg'] || "url('data:image/svg+xml;charset=utf8,%3Csvg viewBox=\"0 0 30 30\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath stroke=\"".concat(v['$navbar-inverse-color'], "\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-miterlimit=\"10\" d=\"M4 7h22M4 15h22M4 23h22\"/%3E%3C/svg%3E')");
+    v['$navbar-inverse-toggler-border'] = u['$navbar-inverse-toggler-border'] || ColorWrapper(v['$white']).alpha(0.1).toString();
+    v['$navbar-light-color'] = u['$navbar-light-color'] || ColorWrapper(v['$black']).alpha(0.5).toString();
+    v['$navbar-light-hover-color'] = u['$navbar-light-hover-color'] || ColorWrapper(v['$black']).alpha(0.7).toString();
+    v['$navbar-light-active-color'] = u['$navbar-light-active-color'] || ColorWrapper(v['$black']).alpha(0.9).toString();
+    v['$navbar-light-disabled-color'] = u['$navbar-light-disabled-color'] || ColorWrapper(v['$black']).alpha(0.3).toString();
+    v['$navbar-light-toggler-bg'] = u['$navbar-light-toggler-bg'] || "url('data:image/svg+xml;charset=utf8,%3Csvg viewBox=\"0 0 30 30\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath stroke=\"".concat(v['$navbar-light-color'], "\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-miterlimit=\"10\" d=\"M4 7h22M4 15h22M4 23h22\"/%3E%3C/svg%3E')");
+    v['$navbar-light-toggler-border'] = u['$navbar-light-toggler-border'] || ColorWrapper(v['$black']).alpha(0.1).toString();
+    v['$nav-link-padding'] = u['$nav-link-padding'] || '.5em 1em';
+    v['$nav-disabled-link-color'] = u['$nav-disabled-link-color'] || v['$gray-light'];
+    v['$nav-tabs-border-color'] = u['$nav-tabs-border-color'] || '#ddd';
+    v['$nav-tabs-border-width'] = u['$nav-tabs-border-width'] || v['$border-width'];
+    v['$nav-tabs-border-radius'] = u['$nav-tabs-border-radius'] || v['$border-radius'];
+    v['$nav-tabs-link-hover-border-color'] = u['$nav-tabs-link-hover-border-color'] || v['$gray-lighter'];
+    v['$nav-tabs-active-link-hover-color'] = u['$nav-tabs-active-link-hover-color'] || v['$gray'];
+    v['$nav-tabs-active-link-hover-bg'] = u['$nav-tabs-active-link-hover-bg'] || v['$body-bg'];
+    v['$nav-tabs-active-link-hover-border-color'] = u['$nav-tabs-active-link-hover-border-color'] || '#ddd';
+    v['$nav-pills-border-radius'] = u['$nav-pills-border-radius'] || v['$border-radius'];
+    v['$nav-pills-active-link-color'] = u['$nav-pills-active-link-color'] || v['$component-active-color'];
+    v['$nav-pills-active-link-bg'] = u['$nav-pills-active-link-bg'] || v['$component-active-bg'];
+    v['$pagination-padding-x'] = u['$pagination-padding-x'] || '.75rem';
+    v['$pagination-padding-y'] = u['$pagination-padding-y'] || '.5rem';
+    v['$pagination-padding-x-sm'] = u['$pagination-padding-x-sm'] || '.5rem';
+    v['$pagination-padding-y-sm'] = u['$pagination-padding-y-sm'] || '.25rem';
+    v['$pagination-padding-x-lg'] = u['$pagination-padding-x-lg'] || '1.5rem';
+    v['$pagination-padding-y-lg'] = u['$pagination-padding-y-lg'] || '.75rem';
+    v['$pagination-line-height'] = u['$pagination-line-height'] || '1.25';
+    v['$pagination-color'] = u['$pagination-color'] || v['$link-color'];
+    v['$pagination-bg'] = u['$pagination-bg'] || v['$white'];
+    v['$pagination-border-width'] = u['$pagination-border-width'] || v['$border-width'];
+    v['$pagination-border-color'] = u['$pagination-border-color'] || '#ddd';
+    v['$pagination-hover-color'] = u['$pagination-hover-color'] || v['$link-hover-color'];
+    v['$pagination-hover-bg'] = u['$pagination-hover-bg'] || v['$gray-lighter'];
+    v['$pagination-hover-border'] = u['$pagination-hover-border'] || '#ddd';
+    v['$pagination-active-color'] = u['$pagination-active-color'] || v['$white'];
+    v['$pagination-active-bg'] = u['$pagination-active-bg'] || v['$brand-primary'];
+    v['$pagination-active-border'] = u['$pagination-active-border'] || v['$brand-primary'];
+    v['$pagination-disabled-color'] = u['$pagination-disabled-color'] || v['$gray-light'];
+    v['$pagination-disabled-bg'] = u['$pagination-disabled-bg'] || v['$white'];
+    v['$pagination-disabled-border'] = u['$pagination-disabled-border'] || '#ddd';
+    v['$jumbotron-padding'] = u['$jumbotron-padding'] || '2rem';
+    v['$jumbotron-bg'] = u['$jumbotron-bg'] || v['$gray-lighter'];
+    v['$state-success-text'] = u['$state-success-text'] || '#3c763d';
+    v['$state-success-bg'] = u['$state-success-bg'] || '#dff0d8';
+    v['$state-success-border'] = u['$state-success-border'] || ColorWrapper(v['$state-success-bg']).darken(0.05).toString();
+    v['$state-info-text'] = u['$state-info-text'] || '#31708f';
+    v['$state-info-bg'] = u['$state-info-bg'] || '#d9edf7';
+    v['$state-info-border'] = u['$state-info-border'] || ColorWrapper(v['$state-info-bg']).darken(0.07).toString();
+    v['$state-warning-text'] = u['$state-warning-text'] || '#8a6d3b';
+    v['$state-warning-bg'] = u['$state-warning-bg'] || '#fcf8e3';
+    v['$state-warning-border'] = u['$state-warning-border'] || ColorWrapper(v['$state-warning-bg']).darken(0.05).toString();
+    v['$mark-bg'] = u['$mark-bg'] || v['$state-warning-bg'];
+    v['$state-danger-text'] = u['$state-danger-text'] || '#a94442';
+    v['$state-danger-bg'] = u['$state-danger-bg'] || '#f2dede';
+    v['$state-danger-border'] = u['$state-danger-border'] || ColorWrapper(v['$state-danger-bg']).darken(0.05).toString();
+    v['$card-spacer-x'] = u['$card-spacer-x'] || '1.25rem';
+    v['$card-spacer-y'] = u['$card-spacer-y'] || '.75rem';
+    v['$card-border-width'] = u['$card-border-width'] || '1px';
+    v['$card-border-radius'] = u['$card-border-radius'] || v['$border-radius'];
+    v['$card-border-color'] = u['$card-border-color'] || ColorWrapper(v['$black']).alpha(0.125).toString();
+    v['$card-border-radius-inner'] = u['$card-border-radius-inner'] || "calc(".concat(v['$card-border-radius'], " - ").concat(v['$card-border-width'], ")");
+    v['$card-cap-bg'] = u['$card-cap-bg'] || v['$gray-lightest'];
+    v['$card-bg'] = u['$card-bg'] || v['$white'];
+    v['$card-link-hover-color'] = u['$card-link-hover-color'] || v['$white'];
+    v['$card-img-overlay-padding'] = u['$card-img-overlay-padding'] || '1.25rem';
+    detectedUnit = detectUnit$1(v['$grid-gutter-width']);
+    v['$card-group-margin'] = u['$card-group-margin'] || rmUnit$1(v['$grid-gutter-width'], detectedUnit) / 2 + detectedUnit;
+    v['$card-deck-margin'] = u['$card-deck-margin'] || v['$card-group-margin'];
+    v['$card-columns-count-md'] = u['$card-columns-count-md'] || '2';
+    v['$card-columns-gap-md'] = u['$card-columns-gap-md'] || '1rem';
+    v['$card-columns-margin-md'] = u['$card-columns-margin-md'] || v['$card-spacer-y'];
+    v['$card-columns-count-lg'] = u['$card-columns-count-lg'] || '2';
+    v['$card-columns-gap-lg'] = u['$card-columns-gap-lg'] || '1.15rem';
+    v['$card-columns-margin-lg'] = u['$card-columns-margin-lg'] || v['$card-spacer-y'];
+    v['$card-columns-count-xl'] = u['$card-columns-count-xl'] || '3';
+    v['$card-columns-gap-xl'] = u['$card-columns-gap-xl'] || '1.25rem';
+    v['$card-columns-margin-xl'] = u['$card-columns-margin-xl'] || v['$card-spacer-y'];
+    v['$card-columns-count-xxl'] = u['$card-columns-count-xxl'] || '4';
+    v['$card-columns-gap-xxl'] = u['$card-columns-gap-xxl'] || '1.25rem';
+    v['$card-columns-margin-xxl'] = u['$card-columns-margin-xxl'] || v['$card-spacer-y'];
+    v['$tooltip-font-family'] = u['$tooltip-font-family'] || v['$font-family-base'];
+    v['$tooltip-font-size'] = u['$tooltip-font-size'] || '.875rem';
+    v['$tooltip-font-weight'] = u['$tooltip-font-weight'] || '400';
+    v['$tooltip-max-width'] = u['$tooltip-max-width'] || '200px';
+    v['$tooltip-color'] = u['$tooltip-color'] || v['$white'];
+    v['$tooltip-bg'] = u['$tooltip-bg'] || v['$black'];
+    v['$tooltip-border-radius'] = u['$tooltip-border-radius'] || v['$border-radius'];
+    v['$tooltip-opacity'] = u['$tooltip-opacity'] || '.9';
+    v['$tooltip-padding-y'] = u['$tooltip-padding-y'] || '.25rem';
+    v['$tooltip-padding-x'] = u['$tooltip-padding-x'] || '.5rem';
+    v['$tooltip-margin'] = u['$tooltip-margin'] || '0';
+    v['$tooltip-line-height'] = u['$tooltip-line-height'] || '1.5';
+    v['$tooltip-arrow-width'] = u['$tooltip-arrow-width'] || '.8rem';
+    v['$tooltip-arrow-height'] = u['$tooltip-arrow-height'] || '.4rem';
+    v['$tooltip-arrow-color'] = u['$tooltip-arrow-color'] || v['$tooltip-bg'];
+    v['$popover-inner-padding'] = u['$popover-inner-padding'] || '1px';
+    v['$popover-bg'] = u['$popover-bg'] || v['$white'];
+    v['$popover-max-width'] = u['$popover-max-width'] || '276px';
+    v['$popover-border-width'] = u['$popover-border-width'] || v['$border-width'];
+    v['$popover-border-color'] = u['$popover-border-color'] || ColorWrapper(v['$black']).alpha(0.2).toString();
+    v['$popover-box-shadow'] = u['$popover-box-shadow'] || "0 5px 10px ".concat(ColorWrapper(v['$black']).alpha(0.2).toString());
+    v['$popover-title-bg'] = u['$popover-title-bg'] || ColorWrapper(v['$popover-bg']).darken(0.03).toString();
+    v['$popover-title-padding-x'] = u['$popover-title-padding-x'] || '14px';
+    v['$popover-title-padding-y'] = u['$popover-title-padding-y'] || '8px';
+    v['$popover-content-padding-x'] = u['$popover-content-padding-x'] || '14px';
+    v['$popover-content-padding-y'] = u['$popover-content-padding-y'] || '9px';
+    v['$popover-arrow-width'] = u['$popover-arrow-width'] || '10px';
+    v['$popover-arrow-color'] = u['$popover-arrow-color'] || v['$popover-bg'];
+    detectedUnit = detectUnit$1(v['$popover-arrow-width']);
+    v['$popover-arrow-outer-width'] = u['$popover-arrow-outer-width'] || rmUnit$1(v['$popover-arrow-width'], detectedUnit) + 1 + detectedUnit;
+    v['$popover-arrow-outer-color'] = u['$popover-arrow-outer-color'] || ColorWrapper(v['$popover-border-color']).fade(0.5).toString();
+    v['$badge-default-bg'] = u['$badge-default-bg'] || v['$gray-light'];
+    v['$badge-primary-bg'] = u['$badge-primary-bg'] || v['$brand-primary'];
+    v['$badge-success-bg'] = u['$badge-success-bg'] || v['$brand-success'];
+    v['$badge-info-bg'] = u['$badge-info-bg'] || v['$brand-info'];
+    v['$badge-warning-bg'] = u['$badge-warning-bg'] || v['$brand-warning'];
+    v['$badge-danger-bg'] = u['$badge-danger-bg'] || v['$brand-danger'];
+    v['$badge-color'] = u['$badge-color'] || v['$white'];
+    v['$badge-link-hover-color'] = u['$badge-link-hover-color'] || v['$white'];
+    v['$badge-font-size'] = u['$badge-font-size'] || '75%';
+    v['$badge-font-weight'] = u['$badge-font-weight'] || v['$font-weight-bold'];
+    v['$badge-padding-x'] = u['$badge-padding-x'] || '.4em';
+    v['$badge-padding-y'] = u['$badge-padding-y'] || '.25em';
+    v['$badge-pill-padding-x'] = u['$badge-pill-padding-x'] || '.6em';
+    v['$badge-pill-border-radius'] = u['$badge-pill-border-radius'] || '10rem';
+    v['$modal-inner-padding'] = u['$modal-inner-padding'] || '15px';
+    v['$modal-dialog-margin'] = u['$modal-dialog-margin'] || '10px';
+    v['$modal-dialog-sm-up-margin-y'] = u['$modal-dialog-sm-up-margin-y'] || '30px';
+    v['$modal-title-line-height'] = u['$modal-title-line-height'] || v['$line-height-base'];
+    v['$modal-content-bg'] = u['$modal-content-bg'] || v['$white'];
+    v['$modal-content-border-color'] = u['$modal-content-border-color'] || ColorWrapper(v['$black']).alpha(0.2).toString();
+    v['$modal-content-border-width'] = u['$modal-content-border-width'] || v['$border-width'];
+    v['$modal-content-xs-box-shadow'] = u['$modal-content-xs-box-shadow'] || "0 3px 9px ".concat(ColorWrapper(v['$black']).alpha(0.5).toString());
+    v['$modal-content-sm-up-box-shadow'] = u['$modal-content-sm-up-box-shadow'] || "0 5px 15px ".concat(ColorWrapper(v['$black']).alpha(0.5).toString());
+    v['$modal-backdrop-bg'] = u['$modal-backdrop-bg'] || v['$black'];
+    v['$modal-backdrop-opacity'] = u['$modal-backdrop-opacity'] || '.5';
+    v['$modal-header-border-color'] = u['$modal-header-border-color'] || v['$gray-lighter'];
+    v['$modal-footer-border-color'] = u['$modal-footer-border-color'] || v['$modal-header-border-color'];
+    v['$modal-header-border-width'] = u['$modal-header-border-width'] || v['$modal-content-border-width'];
+    v['$modal-footer-border-width'] = u['$modal-footer-border-width'] || v['$modal-header-border-width'];
+    v['$modal-header-padding'] = u['$modal-header-padding'] || '15px';
+    v['$modal-lg'] = u['$modal-lg'] || '800px';
+    v['$modal-md'] = u['$modal-md'] || '500px';
+    v['$modal-sm'] = u['$modal-sm'] || '300px';
+    v['$modal-transition'] = u['$modal-transition'] || 'transform .3s ease-out';
+    v['$alert-padding-x'] = u['$alert-padding-x'] || '1.25rem';
+    v['$alert-padding-y'] = u['$alert-padding-y'] || '.75rem';
+    v['$alert-margin-bottom'] = u['$alert-margin-bottom'] || v['$spacer-y'];
+    v['$alert-border-radius'] = u['$alert-border-radius'] || v['$border-radius'];
+    v['$alert-link-font-weight'] = u['$alert-link-font-weight'] || v['$font-weight-bold'];
+    v['$alert-border-width'] = u['$alert-border-width'] || v['$border-width'];
+    v['$alert-success-bg'] = u['$alert-success-bg'] || v['$state-success-bg'];
+    v['$alert-success-text'] = u['$alert-success-text'] || v['$state-success-text'];
+    v['$alert-success-border'] = u['$alert-success-border'] || v['$state-success-border'];
+    v['$alert-info-bg'] = u['$alert-info-bg'] || v['$state-info-bg'];
+    v['$alert-info-text'] = u['$alert-info-text'] || v['$state-info-text'];
+    v['$alert-info-border'] = u['$alert-info-border'] || v['$state-info-border'];
+    v['$alert-warning-bg'] = u['$alert-warning-bg'] || v['$state-warning-bg'];
+    v['$alert-warning-text'] = u['$alert-warning-text'] || v['$state-warning-text'];
+    v['$alert-warning-border'] = u['$alert-warning-border'] || v['$state-warning-border'];
+    v['$alert-danger-bg'] = u['$alert-danger-bg'] || v['$state-danger-bg'];
+    v['$alert-danger-text'] = u['$alert-danger-text'] || v['$state-danger-text'];
+    v['$alert-danger-border'] = u['$alert-danger-border'] || v['$state-danger-border'];
+    v['$progress-height'] = u['$progress-height'] || '1rem';
+    v['$progress-font-size'] = u['$progress-font-size'] || '.75rem';
+    v['$progress-bg'] = u['$progress-bg'] || v['$gray-lighter'];
+    v['$progress-border-radius'] = u['$progress-border-radius'] || v['$border-radius'];
+    v['$progress-box-shadow'] = u['$progress-box-shadow'] || "inset 0 .1rem .1rem ".concat(ColorWrapper(v['$black']).alpha(0.1).toString());
+    v['$progress-bar-color'] = u['$progress-bar-color'] || v['$white'];
+    v['$progress-bar-bg'] = u['$progress-bar-bg'] || v['$brand-primary'];
+    v['$progress-bar-animation-timing'] = u['$progress-bar-animation-timing'] || '1s linear infinite';
+    v['$list-group-color'] = u['$list-group-color'] || v['$body-color'];
+    v['$list-group-bg'] = u['$list-group-bg'] || v['$white'];
+    v['$list-group-border-color'] = u['$list-group-border-color'] || ColorWrapper(v['$black']).alpha(0.125).toString();
+    v['$list-group-border-width'] = u['$list-group-border-width'] || v['$border-width'];
+    v['$list-group-border-radius'] = u['$list-group-border-radius'] || v['$border-radius'];
+    v['$list-group-item-padding-x'] = u['$list-group-item-padding-x'] || '1.25rem';
+    v['$list-group-item-padding-y'] = u['$list-group-item-padding-y'] || '.75rem';
+    v['$list-group-hover-bg'] = u['$list-group-hover-bg'] || v['$gray-lightest'];
+    v['$list-group-active-color'] = u['$list-group-active-color'] || v['$component-active-color'];
+    v['$list-group-active-bg'] = u['$list-group-active-bg'] || v['$component-active-bg'];
+    v['$list-group-active-border'] = u['$list-group-active-border'] || v['$list-group-active-bg'];
+    v['$list-group-disabled-color'] = u['$list-group-disabled-color'] || v['$gray-light'];
+    v['$list-group-disabled-bg'] = u['$list-group-disabled-bg'] || v['$list-group-bg'];
+    v['$list-group-link-color'] = u['$list-group-link-color'] || v['$gray'];
+    v['$list-group-link-hover-color'] = u['$list-group-link-hover-color'] || v['$list-group-link-color'];
+    v['$list-group-link-active-color'] = u['$list-group-link-active-color'] || v['$list-group-color'];
+    v['$list-group-link-active-bg'] = u['$list-group-link-active-bg'] || v['$gray-lighter'];
+    v['$thumbnail-padding'] = u['$thumbnail-padding'] || '.25rem';
+    v['$thumbnail-bg'] = u['$thumbnail-bg'] || v['$body-bg'];
+    v['$thumbnail-border-width'] = u['$thumbnail-border-width'] || v['$border-width'];
+    v['$thumbnail-border-color'] = u['$thumbnail-border-color'] || '#ddd';
+    v['$thumbnail-border-radius'] = u['$thumbnail-border-radius'] || v['$border-radius'];
+    v['$thumbnail-box-shadow'] = u['$thumbnail-box-shadow'] || "0 1px 2px ".concat(ColorWrapper(v['$black']).alpha(0.75).toString());
+    v['$thumbnail-transition'] = u['$thumbnail-transition'] || 'all .2s ease-in-out';
+    v['$figure-caption-font-size'] = u['$figure-caption-font-size'] || '90%';
+    v['$figure-caption-color'] = u['$figure-caption-color'] || v['$gray-light'];
+    v['$breadcrumb-padding-y'] = u['$breadcrumb-padding-y'] || '.75rem';
+    v['$breadcrumb-padding-x'] = u['$breadcrumb-padding-x'] || '1rem';
+    v['$breadcrumb-item-padding'] = u['$breadcrumb-item-padding'] || '.5rem';
+    v['$breadcrumb-bg'] = u['$breadcrumb-bg'] || v['$gray-lighter'];
+    v['$breadcrumb-divider-color'] = u['$breadcrumb-divider-color'] || v['$gray-light'];
+    v['$breadcrumb-active-color'] = u['$breadcrumb-active-color'] || v['$gray-light'];
+    v['$breadcrumb-divider'] = u['$breadcrumb-divider'] || '"/"';
+    v['$close-font-size'] = u['$close-font-size'] || rmUnit$1(v['$font-size-base']) * 1.5 + detectUnit$1(v['$font-size-base']);
+    v['$close-font-weight'] = u['$close-font-weight'] || v['$font-weight-bold'];
+    v['$close-color'] = u['$close-color'] || v['$black'];
+    v['$close-text-shadow'] = u['$close-text-shadow'] || "0 1px 0 ".concat(v['$white']);
+    v['$code-font-size'] = u['$code-font-size'] || '90%';
+    v['$code-padding-x'] = u['$code-padding-x'] || '.4rem';
+    v['$code-padding-y'] = u['$code-padding-y'] || '.2rem';
+    v['$code-color'] = u['$code-color'] || '#bd4147';
+    v['$code-bg'] = u['$code-bg'] || v['$gray-lightest'];
+    v['$kbd-color'] = u['$kbd-color'] || v['$white'];
+    v['$kbd-bg'] = u['$kbd-bg'] || v['$gray-dark'];
+    v['$kbd-box-shadow'] = u['$kbd-box-shadow'] || "inset 0 -.1rem 0 ".concat(ColorWrapper(v['$black']).alpha(0.25).toString());
+    v['$nested-kbd-font-weight'] = u['$nested-kbd-font-weight'] || v['$font-weight-bold'];
+    v['$pre-color'] = u['$pre-color'] || v['$gray-dark'];
+    v['$pre-scrollable-max-height'] = u['$pre-scrollable-max-height'] || '340px';
+    v['$utilities'] = utilities_1(v, u['$utilities']);
+    return _objectSpread2({}, u, {}, v);
+}
+var makeTheme = makeOriginal;
+var index = makeOriginal();
+var lodash_merge = createCommonjsModule$1$1(function(module, exports) {
+    var LARGE_ARRAY_SIZE = 200;
+    var HASH_UNDEFINED = '__lodash_hash_undefined__';
+    var HOT_COUNT = 800, HOT_SPAN = 16;
+    var MAX_SAFE_INTEGER = 9007199254740991;
+    var argsTag = '[object Arguments]', arrayTag = '[object Array]', asyncTag = '[object AsyncFunction]', boolTag = '[object Boolean]', dateTag = '[object Date]', errorTag = '[object Error]', funcTag = '[object Function]', genTag = '[object GeneratorFunction]', mapTag = '[object Map]', numberTag = '[object Number]', nullTag = '[object Null]', objectTag = '[object Object]', proxyTag = '[object Proxy]', regexpTag = '[object RegExp]', setTag = '[object Set]', stringTag = '[object String]', undefinedTag = '[object Undefined]', weakMapTag = '[object WeakMap]';
+    var arrayBufferTag = '[object ArrayBuffer]', dataViewTag = '[object DataView]', float32Tag = '[object Float32Array]', float64Tag = '[object Float64Array]', int8Tag = '[object Int8Array]', int16Tag = '[object Int16Array]', int32Tag = '[object Int32Array]', uint8Tag = '[object Uint8Array]', uint8ClampedTag = '[object Uint8ClampedArray]', uint16Tag = '[object Uint16Array]', uint32Tag = '[object Uint32Array]';
+    var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
+    var reIsHostCtor = /^\[object .+?Constructor\]$/;
+    var reIsUint = /^(?:0|[1-9]\d*)$/;
+    var typedArrayTags = {};
+    typedArrayTags[float32Tag] = typedArrayTags[float64Tag] = typedArrayTags[int8Tag] = typedArrayTags[int16Tag] = typedArrayTags[int32Tag] = typedArrayTags[uint8Tag] = typedArrayTags[uint8ClampedTag] = typedArrayTags[uint16Tag] = typedArrayTags[uint32Tag] = true;
+    typedArrayTags[argsTag] = typedArrayTags[arrayTag] = typedArrayTags[arrayBufferTag] = typedArrayTags[boolTag] = typedArrayTags[dataViewTag] = typedArrayTags[dateTag] = typedArrayTags[errorTag] = typedArrayTags[funcTag] = typedArrayTags[mapTag] = typedArrayTags[numberTag] = typedArrayTags[objectTag] = typedArrayTags[regexpTag] = typedArrayTags[setTag] = typedArrayTags[stringTag] = typedArrayTags[weakMapTag] = false;
+    var freeGlobal = typeof commonjsGlobal == 'object' && commonjsGlobal && commonjsGlobal.Object === Object && commonjsGlobal;
+    var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+    var root = freeGlobal || freeSelf || Function('return this')();
+    var freeExports = exports && !exports.nodeType && exports;
+    var freeModule = freeExports && 'object' == 'object' && module && !module.nodeType && module;
+    var moduleExports = freeModule && freeModule.exports === freeExports;
+    var freeProcess = moduleExports && freeGlobal.process;
+    var nodeUtil = function() {
+        try {
+            var types = freeModule && freeModule.require && freeModule.require('util').types;
+            if (types) {
+                return types;
+            }
+            return freeProcess && freeProcess.binding && freeProcess.binding('util');
+        } catch (e) {}
+    }();
+    var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
+    function apply(func, thisArg, args) {
+        switch(args.length){
+            case 0:
+                return func.call(thisArg);
+            case 1:
+                return func.call(thisArg, args[0]);
+            case 2:
+                return func.call(thisArg, args[0], args[1]);
+            case 3:
+                return func.call(thisArg, args[0], args[1], args[2]);
+        }
+        return func.apply(thisArg, args);
+    }
+    function baseTimes(n, iteratee) {
+        var index = -1, result = Array(n);
+        while(++index < n){
+            result[index] = iteratee(index);
+        }
+        return result;
+    }
+    function baseUnary(func) {
+        return function(value) {
+            return func(value);
+        };
+    }
+    function getValue(object, key) {
+        return object == null ? undefined : object[key];
+    }
+    function overArg(func, transform) {
+        return function(arg) {
+            return func(transform(arg));
+        };
+    }
+    var arrayProto = Array.prototype, funcProto = Function.prototype, objectProto = Object.prototype;
+    var coreJsData = root['__core-js_shared__'];
+    var funcToString = funcProto.toString;
+    var hasOwnProperty = objectProto.hasOwnProperty;
+    var maskSrcKey = function() {
+        var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
+        return uid ? 'Symbol(src)_1.' + uid : '';
+    }();
+    var nativeObjectToString = objectProto.toString;
+    var objectCtorString = funcToString.call(Object);
+    var reIsNative = RegExp('^' + funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&').replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$');
+    var Buffer = moduleExports ? root.Buffer : undefined, Symbol1 = root.Symbol, Uint8Array = root.Uint8Array, allocUnsafe = Buffer ? Buffer.allocUnsafe : undefined, getPrototype = overArg(Object.getPrototypeOf, Object), objectCreate = Object.create, propertyIsEnumerable = objectProto.propertyIsEnumerable, splice = arrayProto.splice, symToStringTag = Symbol1 ? Symbol1.toStringTag : undefined;
+    var defineProperty = function() {
+        try {
+            var func = getNative(Object, 'defineProperty');
+            func({}, '', {});
+            return func;
+        } catch (e) {}
+    }();
+    var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined, nativeMax = Math.max, nativeNow = Date.now;
+    var Map1 = getNative(root, 'Map'), nativeCreate = getNative(Object, 'create');
+    var baseCreate = function() {
+        function object() {}
+        return function(proto) {
+            if (!isObject(proto)) {
+                return {};
+            }
+            if (objectCreate) {
+                return objectCreate(proto);
+            }
+            object.prototype = proto;
+            var result = new object;
+            object.prototype = undefined;
+            return result;
+        };
+    }();
+    function Hash(entries) {
+        var index = -1, length = entries == null ? 0 : entries.length;
+        this.clear();
+        while(++index < length){
+            var entry = entries[index];
+            this.set(entry[0], entry[1]);
+        }
+    }
+    function hashClear() {
+        this.__data__ = nativeCreate ? nativeCreate(null) : {};
+        this.size = 0;
+    }
+    function hashDelete(key) {
+        var result = this.has(key) && delete this.__data__[key];
+        this.size -= result ? 1 : 0;
+        return result;
+    }
+    function hashGet(key) {
+        var data = this.__data__;
+        if (nativeCreate) {
+            var result = data[key];
+            return result === HASH_UNDEFINED ? undefined : result;
+        }
+        return hasOwnProperty.call(data, key) ? data[key] : undefined;
+    }
+    function hashHas(key) {
+        var data = this.__data__;
+        return nativeCreate ? data[key] !== undefined : hasOwnProperty.call(data, key);
+    }
+    function hashSet(key, value) {
+        var data = this.__data__;
+        this.size += this.has(key) ? 0 : 1;
+        data[key] = nativeCreate && value === undefined ? HASH_UNDEFINED : value;
+        return this;
+    }
+    Hash.prototype.clear = hashClear;
+    Hash.prototype['delete'] = hashDelete;
+    Hash.prototype.get = hashGet;
+    Hash.prototype.has = hashHas;
+    Hash.prototype.set = hashSet;
+    function ListCache(entries) {
+        var index = -1, length = entries == null ? 0 : entries.length;
+        this.clear();
+        while(++index < length){
+            var entry = entries[index];
+            this.set(entry[0], entry[1]);
+        }
+    }
+    function listCacheClear() {
+        this.__data__ = [];
+        this.size = 0;
+    }
+    function listCacheDelete(key) {
+        var data = this.__data__, index = assocIndexOf(data, key);
+        if (index < 0) {
+            return false;
+        }
+        var lastIndex = data.length - 1;
+        if (index == lastIndex) {
+            data.pop();
+        } else {
+            splice.call(data, index, 1);
+        }
+        --this.size;
+        return true;
+    }
+    function listCacheGet(key) {
+        var data = this.__data__, index = assocIndexOf(data, key);
+        return index < 0 ? undefined : data[index][1];
+    }
+    function listCacheHas(key) {
+        return assocIndexOf(this.__data__, key) > -1;
+    }
+    function listCacheSet(key, value) {
+        var data = this.__data__, index = assocIndexOf(data, key);
+        if (index < 0) {
+            ++this.size;
+            data.push([
+                key,
+                value
+            ]);
+        } else {
+            data[index][1] = value;
+        }
+        return this;
+    }
+    ListCache.prototype.clear = listCacheClear;
+    ListCache.prototype['delete'] = listCacheDelete;
+    ListCache.prototype.get = listCacheGet;
+    ListCache.prototype.has = listCacheHas;
+    ListCache.prototype.set = listCacheSet;
+    function MapCache(entries) {
+        var index = -1, length = entries == null ? 0 : entries.length;
+        this.clear();
+        while(++index < length){
+            var entry = entries[index];
+            this.set(entry[0], entry[1]);
+        }
+    }
+    function mapCacheClear() {
+        this.size = 0;
+        this.__data__ = {
+            'hash': new Hash,
+            'map': new (Map1 || ListCache),
+            'string': new Hash
+        };
+    }
+    function mapCacheDelete(key) {
+        var result = getMapData(this, key)['delete'](key);
+        this.size -= result ? 1 : 0;
+        return result;
+    }
+    function mapCacheGet(key) {
+        return getMapData(this, key).get(key);
+    }
+    function mapCacheHas(key) {
+        return getMapData(this, key).has(key);
+    }
+    function mapCacheSet(key, value) {
+        var data = getMapData(this, key), size = data.size;
+        data.set(key, value);
+        this.size += data.size == size ? 0 : 1;
+        return this;
+    }
+    MapCache.prototype.clear = mapCacheClear;
+    MapCache.prototype['delete'] = mapCacheDelete;
+    MapCache.prototype.get = mapCacheGet;
+    MapCache.prototype.has = mapCacheHas;
+    MapCache.prototype.set = mapCacheSet;
+    function Stack(entries) {
+        var data = this.__data__ = new ListCache(entries);
+        this.size = data.size;
+    }
+    function stackClear() {
+        this.__data__ = new ListCache;
+        this.size = 0;
+    }
+    function stackDelete(key) {
+        var data = this.__data__, result = data['delete'](key);
+        this.size = data.size;
+        return result;
+    }
+    function stackGet(key) {
+        return this.__data__.get(key);
+    }
+    function stackHas(key) {
+        return this.__data__.has(key);
+    }
+    function stackSet(key, value) {
+        var data = this.__data__;
+        if (data instanceof ListCache) {
+            var pairs = data.__data__;
+            if (!Map1 || pairs.length < LARGE_ARRAY_SIZE - 1) {
+                pairs.push([
+                    key,
+                    value
+                ]);
+                this.size = ++data.size;
+                return this;
+            }
+            data = this.__data__ = new MapCache(pairs);
+        }
+        data.set(key, value);
+        this.size = data.size;
+        return this;
+    }
+    Stack.prototype.clear = stackClear;
+    Stack.prototype['delete'] = stackDelete;
+    Stack.prototype.get = stackGet;
+    Stack.prototype.has = stackHas;
+    Stack.prototype.set = stackSet;
+    function arrayLikeKeys(value, inherited) {
+        var isArr = isArray(value), isArg = !isArr && isArguments(value), isBuff = !isArr && !isArg && isBuffer(value), isType = !isArr && !isArg && !isBuff && isTypedArray(value), skipIndexes = isArr || isArg || isBuff || isType, result = skipIndexes ? baseTimes(value.length, String) : [], length = result.length;
+        for(var key in value){
+            if ((inherited || hasOwnProperty.call(value, key)) && !(skipIndexes && (key == 'length' || isBuff && (key == 'offset' || key == 'parent') || isType && (key == 'buffer' || key == 'byteLength' || key == 'byteOffset') || isIndex(key, length)))) {
+                result.push(key);
+            }
+        }
+        return result;
+    }
+    function assignMergeValue(object, key, value) {
+        if (value !== undefined && !eq(object[key], value) || value === undefined && !(key in object)) {
+            baseAssignValue(object, key, value);
+        }
+    }
+    function assignValue(object, key, value) {
+        var objValue = object[key];
+        if (!(hasOwnProperty.call(object, key) && eq(objValue, value)) || value === undefined && !(key in object)) {
+            baseAssignValue(object, key, value);
+        }
+    }
+    function assocIndexOf(array, key) {
+        var length = array.length;
+        while(length--){
+            if (eq(array[length][0], key)) {
+                return length;
+            }
+        }
+        return -1;
+    }
+    function baseAssignValue(object, key, value) {
+        if (key == '__proto__' && defineProperty) {
+            defineProperty(object, key, {
+                'configurable': true,
+                'enumerable': true,
+                'value': value,
+                'writable': true
+            });
+        } else {
+            object[key] = value;
+        }
+    }
+    var baseFor = createBaseFor();
+    function baseGetTag(value) {
+        if (value == null) {
+            return value === undefined ? undefinedTag : nullTag;
+        }
+        return symToStringTag && symToStringTag in Object(value) ? getRawTag(value) : objectToString(value);
+    }
+    function baseIsArguments(value) {
+        return isObjectLike(value) && baseGetTag(value) == argsTag;
+    }
+    function baseIsNative(value) {
+        if (!isObject(value) || isMasked(value)) {
+            return false;
+        }
+        var pattern = isFunction(value) ? reIsNative : reIsHostCtor;
+        return pattern.test(toSource(value));
+    }
+    function baseIsTypedArray(value) {
+        return isObjectLike(value) && isLength(value.length) && !!typedArrayTags[baseGetTag(value)];
+    }
+    function baseKeysIn(object) {
+        if (!isObject(object)) {
+            return nativeKeysIn(object);
+        }
+        var isProto = isPrototype(object), result = [];
+        for(var key in object){
+            if (!(key == 'constructor' && (isProto || !hasOwnProperty.call(object, key)))) {
+                result.push(key);
+            }
+        }
+        return result;
+    }
+    function baseMerge(object, source, srcIndex, customizer, stack) {
+        if (object === source) {
+            return;
+        }
+        baseFor(source, function(srcValue, key) {
+            stack || (stack = new Stack);
+            if (isObject(srcValue)) {
+                baseMergeDeep(object, source, key, srcIndex, baseMerge, customizer, stack);
+            } else {
+                var newValue = customizer ? customizer(safeGet(object, key), srcValue, key + '', object, source, stack) : undefined;
+                if (newValue === undefined) {
+                    newValue = srcValue;
+                }
+                assignMergeValue(object, key, newValue);
+            }
+        }, keysIn);
+    }
+    function baseMergeDeep(object, source, key, srcIndex, mergeFunc, customizer, stack) {
+        var objValue = safeGet(object, key), srcValue = safeGet(source, key), stacked = stack.get(srcValue);
+        if (stacked) {
+            assignMergeValue(object, key, stacked);
+            return;
+        }
+        var newValue = customizer ? customizer(objValue, srcValue, key + '', object, source, stack) : undefined;
+        var isCommon = newValue === undefined;
+        if (isCommon) {
+            var isArr = isArray(srcValue), isBuff = !isArr && isBuffer(srcValue), isTyped = !isArr && !isBuff && isTypedArray(srcValue);
+            newValue = srcValue;
+            if (isArr || isBuff || isTyped) {
+                if (isArray(objValue)) {
+                    newValue = objValue;
+                } else if (isArrayLikeObject(objValue)) {
+                    newValue = copyArray(objValue);
+                } else if (isBuff) {
+                    isCommon = false;
+                    newValue = cloneBuffer(srcValue, true);
+                } else if (isTyped) {
+                    isCommon = false;
+                    newValue = cloneTypedArray(srcValue, true);
+                } else {
+                    newValue = [];
+                }
+            } else if (isPlainObject(srcValue) || isArguments(srcValue)) {
+                newValue = objValue;
+                if (isArguments(objValue)) {
+                    newValue = toPlainObject(objValue);
+                } else if (!isObject(objValue) || isFunction(objValue)) {
+                    newValue = initCloneObject(srcValue);
+                }
+            } else {
+                isCommon = false;
+            }
+        }
+        if (isCommon) {
+            stack.set(srcValue, newValue);
+            mergeFunc(newValue, srcValue, srcIndex, customizer, stack);
+            stack['delete'](srcValue);
+        }
+        assignMergeValue(object, key, newValue);
+    }
+    function baseRest(func, start) {
+        return setToString(overRest(func, start, identity), func + '');
+    }
+    var baseSetToString = !defineProperty ? identity : function(func, string) {
+        return defineProperty(func, 'toString', {
+            'configurable': true,
+            'enumerable': false,
+            'value': constant(string),
+            'writable': true
+        });
+    };
+    function cloneBuffer(buffer, isDeep) {
+        if (isDeep) {
+            return buffer.slice();
+        }
+        var length = buffer.length, result = allocUnsafe ? allocUnsafe(length) : new buffer.constructor(length);
+        buffer.copy(result);
+        return result;
+    }
+    function cloneArrayBuffer(arrayBuffer) {
+        var result = new arrayBuffer.constructor(arrayBuffer.byteLength);
+        new Uint8Array(result).set(new Uint8Array(arrayBuffer));
+        return result;
+    }
+    function cloneTypedArray(typedArray, isDeep) {
+        var buffer = isDeep ? cloneArrayBuffer(typedArray.buffer) : typedArray.buffer;
+        return new typedArray.constructor(buffer, typedArray.byteOffset, typedArray.length);
+    }
+    function copyArray(source, array) {
+        var index = -1, length = source.length;
+        array || (array = Array(length));
+        while(++index < length){
+            array[index] = source[index];
+        }
+        return array;
+    }
+    function copyObject(source, props, object, customizer) {
+        var isNew = !object;
+        object || (object = {});
+        var index = -1, length = props.length;
+        while(++index < length){
+            var key = props[index];
+            var newValue = customizer ? customizer(object[key], source[key], key, object, source) : undefined;
+            if (newValue === undefined) {
+                newValue = source[key];
+            }
+            if (isNew) {
+                baseAssignValue(object, key, newValue);
+            } else {
+                assignValue(object, key, newValue);
+            }
+        }
+        return object;
+    }
+    function createAssigner(assigner) {
+        return baseRest(function(object, sources) {
+            var index = -1, length = sources.length, customizer = length > 1 ? sources[length - 1] : undefined, guard = length > 2 ? sources[2] : undefined;
+            customizer = assigner.length > 3 && typeof customizer == 'function' ? (length--, customizer) : undefined;
+            if (guard && isIterateeCall(sources[0], sources[1], guard)) {
+                customizer = length < 3 ? undefined : customizer;
+                length = 1;
+            }
+            object = Object(object);
+            while(++index < length){
+                var source = sources[index];
+                if (source) {
+                    assigner(object, source, index, customizer);
+                }
+            }
+            return object;
+        });
+    }
+    function createBaseFor(fromRight) {
+        return function(object, iteratee, keysFunc) {
+            var index = -1, iterable = Object(object), props = keysFunc(object), length = props.length;
+            while(length--){
+                var key = props[fromRight ? length : ++index];
+                if (iteratee(iterable[key], key, iterable) === false) {
+                    break;
+                }
+            }
+            return object;
+        };
+    }
+    function getMapData(map, key) {
+        var data = map.__data__;
+        return isKeyable(key) ? data[typeof key == 'string' ? 'string' : 'hash'] : data.map;
+    }
+    function getNative(object, key) {
+        var value = getValue(object, key);
+        return baseIsNative(value) ? value : undefined;
+    }
+    function getRawTag(value) {
+        var isOwn = hasOwnProperty.call(value, symToStringTag), tag = value[symToStringTag];
+        try {
+            value[symToStringTag] = undefined;
+            var unmasked = true;
+        } catch (e) {}
+        var result = nativeObjectToString.call(value);
+        if (unmasked) {
+            if (isOwn) {
+                value[symToStringTag] = tag;
+            } else {
+                delete value[symToStringTag];
+            }
+        }
+        return result;
+    }
+    function initCloneObject(object) {
+        return typeof object.constructor == 'function' && !isPrototype(object) ? baseCreate(getPrototype(object)) : {};
+    }
+    function isIndex(value, length) {
+        var type = typeof value;
+        length = length == null ? MAX_SAFE_INTEGER : length;
+        return !!length && (type == 'number' || type != 'symbol' && reIsUint.test(value)) && value > -1 && value % 1 == 0 && value < length;
+    }
+    function isIterateeCall(value, index, object) {
+        if (!isObject(object)) {
+            return false;
+        }
+        var type = typeof index;
+        if (type == 'number' ? isArrayLike(object) && isIndex(index, object.length) : type == 'string' && index in object) {
+            return eq(object[index], value);
+        }
+        return false;
+    }
+    function isKeyable(value) {
+        var type = typeof value;
+        return type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean' ? value !== '__proto__' : value === null;
+    }
+    function isMasked(func) {
+        return !!maskSrcKey && maskSrcKey in func;
+    }
+    function isPrototype(value) {
+        var Ctor = value && value.constructor, proto = typeof Ctor == 'function' && Ctor.prototype || objectProto;
+        return value === proto;
+    }
+    function nativeKeysIn(object) {
+        var result = [];
+        if (object != null) {
+            for(var key in Object(object)){
+                result.push(key);
+            }
+        }
+        return result;
+    }
+    function objectToString(value) {
+        return nativeObjectToString.call(value);
+    }
+    function overRest(func, start, transform) {
+        start = nativeMax(start === undefined ? func.length - 1 : start, 0);
+        return function() {
+            var args = arguments, index = -1, length = nativeMax(args.length - start, 0), array = Array(length);
+            while(++index < length){
+                array[index] = args[start + index];
+            }
+            index = -1;
+            var otherArgs = Array(start + 1);
+            while(++index < start){
+                otherArgs[index] = args[index];
+            }
+            otherArgs[start] = transform(array);
+            return apply(func, this, otherArgs);
+        };
+    }
+    function safeGet(object, key) {
+        if (key === 'constructor' && typeof object[key] === 'function') {
+            return;
+        }
+        if (key == '__proto__') {
+            return;
+        }
+        return object[key];
+    }
+    var setToString = shortOut(baseSetToString);
+    function shortOut(func) {
+        var count = 0, lastCalled = 0;
+        return function() {
+            var stamp = nativeNow(), remaining = HOT_SPAN - (stamp - lastCalled);
+            lastCalled = stamp;
+            if (remaining > 0) {
+                if (++count >= HOT_COUNT) {
+                    return arguments[0];
+                }
+            } else {
+                count = 0;
+            }
+            return func.apply(undefined, arguments);
+        };
+    }
+    function toSource(func) {
+        if (func != null) {
+            try {
+                return funcToString.call(func);
+            } catch (e) {}
+            try {
+                return func + '';
+            } catch (e) {}
+        }
+        return '';
+    }
+    function eq(value, other) {
+        return value === other || value !== value && other !== other;
+    }
+    var isArguments = baseIsArguments(function() {
+        return arguments;
+    }()) ? baseIsArguments : function(value) {
+        return isObjectLike(value) && hasOwnProperty.call(value, 'callee') && !propertyIsEnumerable.call(value, 'callee');
+    };
+    var isArray = Array.isArray;
+    function isArrayLike(value) {
+        return value != null && isLength(value.length) && !isFunction(value);
+    }
+    function isArrayLikeObject(value) {
+        return isObjectLike(value) && isArrayLike(value);
+    }
+    var isBuffer = nativeIsBuffer || stubFalse;
+    function isFunction(value) {
+        if (!isObject(value)) {
+            return false;
+        }
+        var tag = baseGetTag(value);
+        return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
+    }
+    function isLength(value) {
+        return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+    }
+    function isObject(value) {
+        var type = typeof value;
+        return value != null && (type == 'object' || type == 'function');
+    }
+    function isObjectLike(value) {
+        return value != null && typeof value == 'object';
+    }
+    function isPlainObject(value) {
+        if (!isObjectLike(value) || baseGetTag(value) != objectTag) {
+            return false;
+        }
+        var proto = getPrototype(value);
+        if (proto === null) {
+            return true;
+        }
+        var Ctor = hasOwnProperty.call(proto, 'constructor') && proto.constructor;
+        return typeof Ctor == 'function' && Ctor instanceof Ctor && funcToString.call(Ctor) == objectCtorString;
+    }
+    var isTypedArray = nodeIsTypedArray ? baseUnary(nodeIsTypedArray) : baseIsTypedArray;
+    function toPlainObject(value) {
+        return copyObject(value, keysIn(value));
+    }
+    function keysIn(object) {
+        return isArrayLike(object) ? arrayLikeKeys(object, true) : baseKeysIn(object);
+    }
+    var merge = createAssigner(function(object, source, srcIndex) {
+        baseMerge(object, source, srcIndex);
+    });
+    function constant(value) {
+        return function() {
+            return value;
+        };
+    }
+    function identity(value) {
+        return value;
+    }
+    function stubFalse() {
+        return false;
+    }
+    module.exports = merge;
+});
+var reboot = createCommonjsModule$1$1(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getGlobalStyles = getGlobalStyles;
+    exports.getGlobalStyleNoBootstrapProvider = getGlobalStyleNoBootstrapProvider;
+    exports.html = html;
+    exports.boxSizing = boxSizing;
+    exports.ie10FixViewport = ie10FixViewport;
+    exports.body = body;
+    exports.bodyUtils = bodyUtils;
+    exports.tabIndex = tabIndex;
+    exports.svg = svg;
+    exports.ie10FixHidden = ie10FixHidden;
+    exports.webkitFileUploadButton = webkitFileUploadButton;
+    exports.default = exports.defaultProps = void 0;
+    var defaultProps = {
+        '$font-family-base': '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+        '$font-size-base': '1rem',
+        '$font-weight-base': '1.5',
+        '$line-height-base': '1.5',
+        '$body-color': '#292b2c',
+        '$body-bg': '#fff'
+    };
+    exports.defaultProps = defaultProps;
+    function getGlobalStyles() {
+        return "\n    html {\n      ".concat(html(), "\n    }\n    *,\n    *::before,\n    *::after {\n      ").concat(boxSizing(), "\n    }\n    @-ms-viewport { \n      ").concat(ie10FixViewport(), " \n    }\n    body {\n      ").concat(bodyUtils(), "\n    }\n  ");
+    }
+    function getGlobalStyleNoBootstrapProvider() {
+        var fontFamilyBase = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$font-family-base'];
+        var fontSizeBase = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$font-size-base'];
+        var fontWeightBase = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : defaultProps['$font-weight-base'];
+        var lineHeightBase = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : defaultProps['$line-height-base'];
+        var bodyColor = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : defaultProps['$body-color'];
+        var bodyBg = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : defaultProps['$body-bg'];
+        return "\n  ".concat(getGlobalStyles(), "\n  body {\n  ").concat(body(fontFamilyBase, fontSizeBase, fontWeightBase, lineHeightBase, bodyColor, bodyBg), " \n}");
+    }
+    function html() {
+        return "\n    box-sizing: border-box;\n    font-family: sans-serif;\n    line-height: 1.15;\n    -ms-text-size-adjust: 100%;\n    -webkit-text-size-adjust: 100%;\n    -ms-overflow-style: scrollbar;\n    -webkit-tap-highlight-color: rgba(0,0,0,0);\n  ";
+    }
+    function boxSizing() {
+        return "\n    box-sizing: inherit;\n  ";
+    }
+    function ie10FixViewport() {
+        return "\n    width: device-width;\n  ";
+    }
+    function body() {
+        var fontFamilyBase = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$font-family-base'];
+        var fontSizeBase = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$font-size-base'];
+        var fontWeightBase = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : defaultProps['$font-weight-base'];
+        var lineHeightBase = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : defaultProps['$line-height-base'];
+        var bodyColor = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : defaultProps['$body-color'];
+        var bodyBg = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : defaultProps['$body-bg'];
+        return "\n    margin: 0;\n    font-family: ".concat(fontFamilyBase, ";\n    font-size: ").concat(fontSizeBase, ";\n    font-weight: ").concat(fontWeightBase, ";\n    line-height: ").concat(lineHeightBase, ";\n    color: ").concat(bodyColor, ";\n    background-color: ").concat(bodyBg, ";\n    \n    ").concat(bodyUtils(), "\n    \n    [tabindex=\"-1\"]:focus {\n      ").concat(tabIndex(), "\n    }\n    svg:not(:root) {\n      ").concat(svg(), "\n    }\n    [hidden] {\n      ").concat(ie10FixHidden(), "\n    }\n    ::-webkit-file-upload-button {\n      ").concat(webkitFileUploadButton(), "\n    }\n  ");
+    }
+    function bodyUtils() {
+        return "\n    &.overflow {\n      overflow: hidden;\n    }\n  ";
+    }
+    function tabIndex() {
+        return "\n    outline: none !important;\n  ";
+    }
+    function svg() {
+        return "\n    overflow: hidden;\n  ";
+    }
+    function ie10FixHidden() {
+        return "\n    display: none !important;\n  ";
+    }
+    function webkitFileUploadButton() {
+        return "\n    font: inherit;\n    -webkit-appearance: button;\n  ";
+    }
+    var _default = {
+        html: html,
+        boxSizing: boxSizing,
+        ie10FixViewport: ie10FixViewport,
+        body: body,
+        bodyUtils: bodyUtils,
+        tabIndex: tabIndex,
+        svg: svg,
+        ie10FixHidden: ie10FixHidden,
+        getGlobalStyles: getGlobalStyles,
+        getGlobalStyleNoBootstrapProvider: getGlobalStyleNoBootstrapProvider,
+        webkitFileUploadButton: webkitFileUploadButton
+    };
+    exports.default = _default;
+});
+unwrapExports$1(reboot);
+var reboot_1 = reboot.getGlobalStyles;
+var reboot_2 = reboot.getGlobalStyleNoBootstrapProvider;
+var reboot_3 = reboot.html;
+var reboot_4 = reboot.boxSizing;
+var reboot_5 = reboot.ie10FixViewport;
+var reboot_6 = reboot.body;
+var reboot_7 = reboot.bodyUtils;
+var reboot_8 = reboot.tabIndex;
+var reboot_9 = reboot.svg;
+var reboot_10 = reboot.ie10FixHidden;
+var reboot_11 = reboot.webkitFileUploadButton;
+var reboot_12 = reboot.defaultProps;
+var unitUtils$2 = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = void 0;
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+    var UnitUtils = function UnitUtils() {
+        var _this = this;
+        _classCallCheck(this, UnitUtils);
+        this.UNIT = {
+            EM: 'em',
+            REM: 'rem',
+            PX: 'px',
+            PERCENT: '%'
+        };
+        this.math = {
+            addition: (function addition(a, b) {
+                var unit = this.detectUnit(a) || this.detectUnit(b);
+                return this.rmUnit(a) + this.rmUnit(b) + unit;
+            }).bind(this),
+            subtract: (function subtract(a, b) {
+                var unit = this.detectUnit(a) || this.detectUnit(b);
+                return this.rmUnit(a) - this.rmUnit(b) + unit;
+            }).bind(this),
+            multiply: (function multiply(a, b) {
+                var unit = this.detectUnit(a) || this.detectUnit(b);
+                return this.rmUnit(a) * this.rmUnit(b) + unit;
+            }).bind(this),
+            divide: (function divide(a, b) {
+                var unit = this.detectUnit(a) || this.detectUnit(b);
+                return this.rmUnit(a) / this.rmUnit(b) + unit;
+            }).bind(this)
+        };
+        this.detectUnit = function(value) {
+            var ext;
+            var valueStr = value.toString();
+            if (valueStr.match(_this.UNIT.PX)) {
+                ext = _this.UNIT.PX;
+            } else if (valueStr.match(_this.UNIT.REM)) {
+                ext = _this.UNIT.REM;
+            } else if (valueStr.match(_this.UNIT.EM)) {
+                ext = _this.UNIT.EM;
+            } else if (valueStr.match(_this.UNIT.PERCENT)) {
+                ext = _this.UNIT.PERCENT;
+            } else if (!isNaN(value)) {
+                return null;
+            } else {
+                throw new Error("detectUnit can't find unit for ".concat(value));
+            }
+            return ext;
+        };
+        this.rmUnit = function(value, unit) {
+            var valueStr = value.toString();
+            var ext = unit || _this.detectUnit(valueStr);
+            var number = valueStr.replace(ext, '');
+            return parseFloat(number);
+        };
+        this.toPercent = function(value) {
+            var total = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
+            var decimal = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 2;
+            return "".concat(Math.floor(value / total * 100 * Math.pow(10, decimal)) / Math.pow(10, decimal)).concat(_this.UNIT.PERCENT);
+        };
+    };
+    var _default = new UnitUtils();
+    exports.default = _default;
+    module.exports = exports.default;
+});
+unwrapExports(unitUtils$2);
+var breakpoints = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.breakpointNext = breakpointNext;
+    exports.breakpointMin = breakpointMin;
+    exports.breakpointMax = breakpointMax;
+    exports.breakpointInfix = breakpointInfix;
+    exports.mediaBreakpointUp = mediaBreakpointUp;
+    exports.mediaBreakpointDown = mediaBreakpointDown;
+    exports.mediaBreakpointBetween = mediaBreakpointBetween;
+    exports.mediaBreakpointOnly = mediaBreakpointOnly;
+    exports.default = exports.defaultProps = void 0;
+    var _unitUtils = _interopRequireDefault(unitUtils$2);
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+    var defaultProps = {
+        '$grid-breakpoints': {
+            xs: '0',
+            sm: '576px',
+            md: '768px',
+            lg: '992px',
+            xl: '1200px'
+        }
+    };
+    exports.defaultProps = defaultProps;
+    function breakpointNext(name) {
+        var breakpoints = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$grid-breakpoints'];
+        var breakpointNames = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Object.keys(breakpoints);
+        var n = breakpointNames.indexOf(name);
+        if (n !== -1 && n + 1 < breakpointNames.length) {
+            return breakpointNames[n + 1];
+        }
+        return null;
+    }
+    function breakpointMin(name) {
+        var breakpoints = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$grid-breakpoints'];
+        var min = breakpoints[name];
+        return min !== '0' ? min : null;
+    }
+    function breakpointMax(name) {
+        var breakpoints = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$grid-breakpoints'];
+        var next = breakpointNext(name, breakpoints);
+        if (next) {
+            var min = _unitUtils.default.rmUnit(breakpointMin(next, breakpoints), _unitUtils.default.UNIT.PX);
+            return (min - 1).toString() + _unitUtils.default.UNIT.PX;
+        }
+        return null;
+    }
+    function breakpointInfix(name) {
+        var breakpoints = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$grid-breakpoints'];
+        return !name || breakpointMin(name, breakpoints) === null ? '' : "-".concat(name);
+    }
+    function mediaBreakpointUp(name) {
+        var breakpoints = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$grid-breakpoints'];
+        var content = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+        var min = breakpointMin(name, breakpoints);
+        if (min) {
+            return "\n      @media (min-width: ".concat(min, ") {\n        ").concat(content, "\n      }\n    ");
+        }
+        return content;
+    }
+    function mediaBreakpointDown(name) {
+        var breakpoints = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$grid-breakpoints'];
+        var content = arguments.length > 2 ? arguments[2] : undefined;
+        var max = breakpointMax(name, breakpoints);
+        if (max) {
+            return "\n      @media (max-width: ".concat(max, ") {\n        ").concat(content, "\n      }\n    ");
+        }
+        return content;
+    }
+    function mediaBreakpointBetween(lower, upper) {
+        var breakpoints = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : defaultProps['$grid-breakpoints'];
+        var content = arguments.length > 3 ? arguments[3] : undefined;
+        var min = breakpointMin(lower, breakpoints);
+        var max = breakpointMax(upper, breakpoints);
+        if (min && max) {
+            return "\n      @media (min-width: ".concat(min, ") and (max-width: ").concat(max, ") {\n        ").concat(content, "\n      }\n    ");
+        } else if (min) {
+            return "\n      @media (min-width: ".concat(min, ") {\n        ").concat(content, "\n      }\n    ");
+        } else if (max) {
+            return "\n      @media (max-width: ".concat(max, ") {\n        ").concat(content, "\n      }\n    ");
+        }
+        return content;
+    }
+    function mediaBreakpointOnly(name) {
+        var breakpoints = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$grid-breakpoints'];
+        var content = arguments.length > 2 ? arguments[2] : undefined;
+        return mediaBreakpointBetween(name, name, breakpoints, content);
+    }
+    var _default = {
+        defaultProps: defaultProps,
+        up: mediaBreakpointUp,
+        down: mediaBreakpointDown,
+        between: mediaBreakpointBetween,
+        only: mediaBreakpointOnly
+    };
+    exports.default = _default;
+});
+unwrapExports(breakpoints);
+var breakpoints_1 = breakpoints.breakpointNext;
+var breakpoints_2 = breakpoints.breakpointMin;
+var breakpoints_3 = breakpoints.breakpointMax;
+var breakpoints_4 = breakpoints.breakpointInfix;
+var breakpoints_5 = breakpoints.mediaBreakpointUp;
+var breakpoints_6 = breakpoints.mediaBreakpointDown;
+var breakpoints_7 = breakpoints.mediaBreakpointBetween;
+var breakpoints_8 = breakpoints.mediaBreakpointOnly;
+var breakpoints_9 = breakpoints.defaultProps;
+var utilities$1 = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.zip = zip;
+    exports.generateUtility = generateUtility;
+    function _slicedToArray(arr, i) {
+        return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+    }
+    function _nonIterableRest() {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+    }
+    function _iterableToArrayLimit(arr, i) {
+        if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+        var _arr = [];
+        var _n = true;
+        var _d = false;
+        var _e = undefined;
+        try {
+            for(var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true){
+                _arr.push(_s.value);
+                if (i && _arr.length === i) break;
+            }
+        } catch (err) {
+            _d = true;
+            _e = err;
+        } finally{
+            try {
+                if (!_n && _i["return"] != null) _i["return"]();
+            } finally{
+                if (_d) throw _e;
+            }
+        }
+        return _arr;
+    }
+    function _arrayWithHoles(arr) {
+        if (Array.isArray(arr)) return arr;
+    }
+    function _createForOfIteratorHelper(o) {
+        if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+            if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) {
+                var i = 0;
+                var F = function F() {};
+                return {
+                    s: F,
+                    n: function n() {
+                        if (i >= o.length) return {
+                            done: true
+                        };
+                        return {
+                            done: false,
+                            value: o[i++]
+                        };
+                    },
+                    e: function e(_e2) {
+                        throw _e2;
+                    },
+                    f: F
+                };
+            }
+            throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+        }
+        var it, normalCompletion = true, didErr = false, err;
+        return {
+            s: function s() {
+                it = o[Symbol.iterator]();
+            },
+            n: function n() {
+                var step = it.next();
+                normalCompletion = step.done;
+                return step;
+            },
+            e: function e(_e3) {
+                didErr = true;
+                err = _e3;
+            },
+            f: function f() {
+                try {
+                    if (!normalCompletion && it.return != null) it.return();
+                } finally{
+                    if (didErr) throw err;
+                }
+            }
+        };
+    }
+    function _unsupportedIterableToArray(o, minLen) {
+        if (!o) return;
+        if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+        var n = Object.prototype.toString.call(o).slice(8, -1);
+        if (n === "Object" && o.constructor) n = o.constructor.name;
+        if (n === "Map" || n === "Set") return Array.from(o);
+        if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+    }
+    function _arrayLikeToArray(arr, len) {
+        if (len == null || len > arr.length) len = arr.length;
+        for(var i = 0, arr2 = new Array(len); i < len; i++){
+            arr2[i] = arr[i];
+        }
+        return arr2;
+    }
+    function zip() {
+        var shortest = 0;
+        for(var _len = arguments.length, list = new Array(_len), _key = 0; _key < _len; _key++){
+            list[_key] = arguments[_key];
+        }
+        list.forEach(function(l) {
+            if (l instanceof Array) {
+                if (!shortest || l.length < shortest) {
+                    shortest = l.length;
+                }
+            }
+        });
+        var res = [];
+        var _loop = function _loop(i) {
+            res[i] = [];
+            var ind = 0;
+            list.forEach(function(l) {
+                res[i][ind] = l[i];
+                ind += 1;
+            });
+        };
+        for(var i = 0; i < shortest; i += 1){
+            _loop(i);
+        }
+        return res;
+    }
+    function generateUtility(utility) {
+        var infix = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+        var values = utility.values, properties = utility.property;
+        if (values instanceof Array) {
+            values = zip(values, values);
+        }
+        if (typeof properties === 'string') {
+            properties = [
+                properties
+            ];
+        }
+        var classList = [];
+        var _iterator = _createForOfIteratorHelper(values), _step;
+        try {
+            var _loop2 = function _loop2() {
+                var _step$value = _slicedToArray(_step.value, 2), key = _step$value[0], value = _step$value[1];
+                var propertyClass = utility.hasOwnProperty('class') ? utility.class : properties[0];
+                propertyClass = !propertyClass ? '' : propertyClass;
+                var infixFinal = propertyClass === '' && infix[0] === '-' ? infix.slice(1) : infix;
+                var propertyClassModifier = key !== null ? (propertyClass === '' && infixFinal === '' ? '' : '-') + key : '';
+                classList.push(".".concat(propertyClass).concat(infixFinal).concat(propertyClassModifier, " {\n      ").concat(properties.map(function(property) {
+                    return "".concat(property, ": ").concat(value, " !important;");
+                }).join('\n'), "\n    }"));
+            };
+            for(_iterator.s(); !(_step = _iterator.n()).done;){
+                _loop2();
+            }
+        } catch (err) {
+            _iterator.e(err);
+        } finally{
+            _iterator.f();
+        }
+        return classList.join('\n');
+    }
+});
+unwrapExports(utilities$1);
+var utilities_1$1 = utilities$1.zip;
+var utilities_2 = utilities$1.generateUtility;
+var _api = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.screenUtilities = screenUtilities;
+    exports.printUtilities = printUtilities;
+    function _slicedToArray(arr, i) {
+        return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+    }
+    function _nonIterableRest() {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+    }
+    function _iterableToArrayLimit(arr, i) {
+        if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+        var _arr = [];
+        var _n = true;
+        var _d = false;
+        var _e = undefined;
+        try {
+            for(var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true){
+                _arr.push(_s.value);
+                if (i && _arr.length === i) break;
+            }
+        } catch (err) {
+            _d = true;
+            _e = err;
+        } finally{
+            try {
+                if (!_n && _i["return"] != null) _i["return"]();
+            } finally{
+                if (_d) throw _e;
+            }
+        }
+        return _arr;
+    }
+    function _arrayWithHoles(arr) {
+        if (Array.isArray(arr)) return arr;
+    }
+    function _createForOfIteratorHelper(o) {
+        if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+            if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) {
+                var i = 0;
+                var F = function F() {};
+                return {
+                    s: F,
+                    n: function n() {
+                        if (i >= o.length) return {
+                            done: true
+                        };
+                        return {
+                            done: false,
+                            value: o[i++]
+                        };
+                    },
+                    e: function e(_e2) {
+                        throw _e2;
+                    },
+                    f: F
+                };
+            }
+            throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+        }
+        var it, normalCompletion = true, didErr = false, err;
+        return {
+            s: function s() {
+                it = o[Symbol.iterator]();
+            },
+            n: function n() {
+                var step = it.next();
+                normalCompletion = step.done;
+                return step;
+            },
+            e: function e(_e3) {
+                didErr = true;
+                err = _e3;
+            },
+            f: function f() {
+                try {
+                    if (!normalCompletion && it.return != null) it.return();
+                } finally{
+                    if (didErr) throw err;
+                }
+            }
+        };
+    }
+    function _unsupportedIterableToArray(o, minLen) {
+        if (!o) return;
+        if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+        var n = Object.prototype.toString.call(o).slice(8, -1);
+        if (n === "Object" && o.constructor) n = o.constructor.name;
+        if (n === "Map" || n === "Set") return Array.from(o);
+        if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+    }
+    function _arrayLikeToArray(arr, len) {
+        if (len == null || len > arr.length) len = arr.length;
+        for(var i = 0, arr2 = new Array(len); i < len; i++){
+            arr2[i] = arr[i];
+        }
+        return arr2;
+    }
+    function screenUtilities(gridBreakpoints, utilities) {
+        return Object.keys(gridBreakpoints).map(function(bp) {
+            var infix = (0, breakpoints.breakpointInfix)(bp, gridBreakpoints);
+            var utilityList = [];
+            var _iterator = _createForOfIteratorHelper(utilities), _step;
+            try {
+                for(_iterator.s(); !(_step = _iterator.n()).done;){
+                    var _step$value = _slicedToArray(_step.value, 2), key = _step$value[0], utility = _step$value[1];
+                    if (utility && (utility.responsive || infix === '')) {
+                        utilityList.push((0, utilities$1.generateUtility)(utility, infix));
+                    }
+                }
+            } catch (err) {
+                _iterator.e(err);
+            } finally{
+                _iterator.f();
+            }
+            return (0, breakpoints.mediaBreakpointUp)(bp, gridBreakpoints, utilityList.join('\n'));
+        }).join('\n');
+    }
+    function printUtilities(gridBreakpoints, utilities) {
+        var utilityList = [];
+        var _iterator2 = _createForOfIteratorHelper(utilities), _step2;
+        try {
+            for(_iterator2.s(); !(_step2 = _iterator2.n()).done;){
+                var _step2$value = _slicedToArray(_step2.value, 2), key = _step2$value[0], utility = _step2$value[1];
+                if (utility && utility.print === true) {
+                    utilityList.push((0, utilities$1.generateUtility)(utility, '-print'));
+                }
+            }
+        } catch (err) {
+            _iterator2.e(err);
+        } finally{
+            _iterator2.f();
+        }
+        return "@media print {\n    ".concat(utilityList.join('\n'), "\n  }");
+    }
+});
+unwrapExports(_api);
+var _api_1 = _api.screenUtilities;
+var _api_2 = _api.printUtilities;
+var conditional = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.ifThen = ifThen;
+    exports.ifElse = ifElse;
+    exports.default = void 0;
+    function ifThen(conditions, returnTrue) {
+        return ifElse(conditions, returnTrue, '');
+    }
+    function ifElse(conditions, returnTrue, returnFalse) {
+        return conditions ? returnTrue : returnFalse;
+    }
+    var _default = {
+        ifThen: ifThen,
+        ifElse: ifElse
+    };
+    exports.default = _default;
+});
+unwrapExports(conditional);
+var conditional_1 = conditional.ifThen;
+var conditional_2 = conditional.ifElse;
+var align = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getAlignUtilities = getAlignUtilities;
+    exports.alignBaseline = alignBaseline;
+    exports.alignTop = alignTop;
+    exports.alignMiddle = alignMiddle;
+    exports.alignBottom = alignBottom;
+    exports.alignTextBottom = alignTextBottom;
+    exports.alignTextTop = alignTextTop;
+    exports.default = void 0;
+    function getAlignUtilities() {
+        return "\n   ".concat(alignBaseline(), "\n   ").concat(alignTop(), "\n   ").concat(alignMiddle(), "\n   ").concat(alignBottom(), "\n   ").concat(alignTextBottom(), "\n   ").concat(alignTextTop(), "\n  ");
+    }
+    function alignBaseline() {
+        return "\n    .align-baseline { vertical-align: baseline !important; } /* Browser default */\n  ";
+    }
+    function alignTop() {
+        return "\n    .align-top { vertical-align: top !important; }\n  ";
+    }
+    function alignMiddle() {
+        return "\n    .align-middle { vertical-align: middle !important; }\n  ";
+    }
+    function alignBottom() {
+        return "\n    .align-bottom { vertical-align: bottom !important; }\n  ";
+    }
+    function alignTextBottom() {
+        return "\n    .align-text-bottom { vertical-align: text-bottom !important; }\n  ";
+    }
+    function alignTextTop() {
+        return "\n    .align-text-top { vertical-align: text-top !important; }\n  ";
+    }
+    var _default = {
+        getAlignUtilities: getAlignUtilities,
+        alignBaseline: alignBaseline,
+        alignTop: alignTop,
+        alignMiddle: alignMiddle,
+        alignBottom: alignBottom,
+        alignTextBottom: alignTextBottom,
+        alignTextTop: alignTextTop
+    };
+    exports.default = _default;
+});
+var alignUtils = unwrapExports(align);
+var align_1 = align.getAlignUtilities;
+var align_2 = align.alignBaseline;
+var align_3 = align.alignTop;
+var align_4 = align.alignMiddle;
+var align_5 = align.alignBottom;
+var align_6 = align.alignTextBottom;
+var align_7 = align.alignTextTop;
+function _classCallCheck$2(r, e) {
+    if (!(r instanceof e)) throw new TypeError("Cannot call a class as a function");
+}
+var classCallCheck$1 = _classCallCheck$2;
+function _defineProperty$2(r, e, n) {
+    return e in r ? Object.defineProperty(r, e, {
+        value: n,
+        enumerable: !0,
+        configurable: !0,
+        writable: !0
+    }) : r[e] = n, r;
+}
+var defineProperty$1 = _defineProperty$2;
+function createCommonjsModule$2(r, e) {
+    return r(e = {
+        exports: {}
+    }, e.exports), e.exports;
+}
+var colorName$1 = {
+    aliceblue: [
+        240,
+        248,
+        255
+    ],
+    antiquewhite: [
+        250,
+        235,
+        215
+    ],
+    aqua: [
+        0,
+        255,
+        255
+    ],
+    aquamarine: [
+        127,
+        255,
+        212
+    ],
+    azure: [
+        240,
+        255,
+        255
+    ],
+    beige: [
+        245,
+        245,
+        220
+    ],
+    bisque: [
+        255,
+        228,
+        196
+    ],
+    black: [
+        0,
+        0,
+        0
+    ],
+    blanchedalmond: [
+        255,
+        235,
+        205
+    ],
+    blue: [
+        0,
+        0,
+        255
+    ],
+    blueviolet: [
+        138,
+        43,
+        226
+    ],
+    brown: [
+        165,
+        42,
+        42
+    ],
+    burlywood: [
+        222,
+        184,
+        135
+    ],
+    cadetblue: [
+        95,
+        158,
+        160
+    ],
+    chartreuse: [
+        127,
+        255,
+        0
+    ],
+    chocolate: [
+        210,
+        105,
+        30
+    ],
+    coral: [
+        255,
+        127,
+        80
+    ],
+    cornflowerblue: [
+        100,
+        149,
+        237
+    ],
+    cornsilk: [
+        255,
+        248,
+        220
+    ],
+    crimson: [
+        220,
+        20,
+        60
+    ],
+    cyan: [
+        0,
+        255,
+        255
+    ],
+    darkblue: [
+        0,
+        0,
+        139
+    ],
+    darkcyan: [
+        0,
+        139,
+        139
+    ],
+    darkgoldenrod: [
+        184,
+        134,
+        11
+    ],
+    darkgray: [
+        169,
+        169,
+        169
+    ],
+    darkgreen: [
+        0,
+        100,
+        0
+    ],
+    darkgrey: [
+        169,
+        169,
+        169
+    ],
+    darkkhaki: [
+        189,
+        183,
+        107
+    ],
+    darkmagenta: [
+        139,
+        0,
+        139
+    ],
+    darkolivegreen: [
+        85,
+        107,
+        47
+    ],
+    darkorange: [
+        255,
+        140,
+        0
+    ],
+    darkorchid: [
+        153,
+        50,
+        204
+    ],
+    darkred: [
+        139,
+        0,
+        0
+    ],
+    darksalmon: [
+        233,
+        150,
+        122
+    ],
+    darkseagreen: [
+        143,
+        188,
+        143
+    ],
+    darkslateblue: [
+        72,
+        61,
+        139
+    ],
+    darkslategray: [
+        47,
+        79,
+        79
+    ],
+    darkslategrey: [
+        47,
+        79,
+        79
+    ],
+    darkturquoise: [
+        0,
+        206,
+        209
+    ],
+    darkviolet: [
+        148,
+        0,
+        211
+    ],
+    deeppink: [
+        255,
+        20,
+        147
+    ],
+    deepskyblue: [
+        0,
+        191,
+        255
+    ],
+    dimgray: [
+        105,
+        105,
+        105
+    ],
+    dimgrey: [
+        105,
+        105,
+        105
+    ],
+    dodgerblue: [
+        30,
+        144,
+        255
+    ],
+    firebrick: [
+        178,
+        34,
+        34
+    ],
+    floralwhite: [
+        255,
+        250,
+        240
+    ],
+    forestgreen: [
+        34,
+        139,
+        34
+    ],
+    fuchsia: [
+        255,
+        0,
+        255
+    ],
+    gainsboro: [
+        220,
+        220,
+        220
+    ],
+    ghostwhite: [
+        248,
+        248,
+        255
+    ],
+    gold: [
+        255,
+        215,
+        0
+    ],
+    goldenrod: [
+        218,
+        165,
+        32
+    ],
+    gray: [
+        128,
+        128,
+        128
+    ],
+    green: [
+        0,
+        128,
+        0
+    ],
+    greenyellow: [
+        173,
+        255,
+        47
+    ],
+    grey: [
+        128,
+        128,
+        128
+    ],
+    honeydew: [
+        240,
+        255,
+        240
+    ],
+    hotpink: [
+        255,
+        105,
+        180
+    ],
+    indianred: [
+        205,
+        92,
+        92
+    ],
+    indigo: [
+        75,
+        0,
+        130
+    ],
+    ivory: [
+        255,
+        255,
+        240
+    ],
+    khaki: [
+        240,
+        230,
+        140
+    ],
+    lavender: [
+        230,
+        230,
+        250
+    ],
+    lavenderblush: [
+        255,
+        240,
+        245
+    ],
+    lawngreen: [
+        124,
+        252,
+        0
+    ],
+    lemonchiffon: [
+        255,
+        250,
+        205
+    ],
+    lightblue: [
+        173,
+        216,
+        230
+    ],
+    lightcoral: [
+        240,
+        128,
+        128
+    ],
+    lightcyan: [
+        224,
+        255,
+        255
+    ],
+    lightgoldenrodyellow: [
+        250,
+        250,
+        210
+    ],
+    lightgray: [
+        211,
+        211,
+        211
+    ],
+    lightgreen: [
+        144,
+        238,
+        144
+    ],
+    lightgrey: [
+        211,
+        211,
+        211
+    ],
+    lightpink: [
+        255,
+        182,
+        193
+    ],
+    lightsalmon: [
+        255,
+        160,
+        122
+    ],
+    lightseagreen: [
+        32,
+        178,
+        170
+    ],
+    lightskyblue: [
+        135,
+        206,
+        250
+    ],
+    lightslategray: [
+        119,
+        136,
+        153
+    ],
+    lightslategrey: [
+        119,
+        136,
+        153
+    ],
+    lightsteelblue: [
+        176,
+        196,
+        222
+    ],
+    lightyellow: [
+        255,
+        255,
+        224
+    ],
+    lime: [
+        0,
+        255,
+        0
+    ],
+    limegreen: [
+        50,
+        205,
+        50
+    ],
+    linen: [
+        250,
+        240,
+        230
+    ],
+    magenta: [
+        255,
+        0,
+        255
+    ],
+    maroon: [
+        128,
+        0,
+        0
+    ],
+    mediumaquamarine: [
+        102,
+        205,
+        170
+    ],
+    mediumblue: [
+        0,
+        0,
+        205
+    ],
+    mediumorchid: [
+        186,
+        85,
+        211
+    ],
+    mediumpurple: [
+        147,
+        112,
+        219
+    ],
+    mediumseagreen: [
+        60,
+        179,
+        113
+    ],
+    mediumslateblue: [
+        123,
+        104,
+        238
+    ],
+    mediumspringgreen: [
+        0,
+        250,
+        154
+    ],
+    mediumturquoise: [
+        72,
+        209,
+        204
+    ],
+    mediumvioletred: [
+        199,
+        21,
+        133
+    ],
+    midnightblue: [
+        25,
+        25,
+        112
+    ],
+    mintcream: [
+        245,
+        255,
+        250
+    ],
+    mistyrose: [
+        255,
+        228,
+        225
+    ],
+    moccasin: [
+        255,
+        228,
+        181
+    ],
+    navajowhite: [
+        255,
+        222,
+        173
+    ],
+    navy: [
+        0,
+        0,
+        128
+    ],
+    oldlace: [
+        253,
+        245,
+        230
+    ],
+    olive: [
+        128,
+        128,
+        0
+    ],
+    olivedrab: [
+        107,
+        142,
+        35
+    ],
+    orange: [
+        255,
+        165,
+        0
+    ],
+    orangered: [
+        255,
+        69,
+        0
+    ],
+    orchid: [
+        218,
+        112,
+        214
+    ],
+    palegoldenrod: [
+        238,
+        232,
+        170
+    ],
+    palegreen: [
+        152,
+        251,
+        152
+    ],
+    paleturquoise: [
+        175,
+        238,
+        238
+    ],
+    palevioletred: [
+        219,
+        112,
+        147
+    ],
+    papayawhip: [
+        255,
+        239,
+        213
+    ],
+    peachpuff: [
+        255,
+        218,
+        185
+    ],
+    peru: [
+        205,
+        133,
+        63
+    ],
+    pink: [
+        255,
+        192,
+        203
+    ],
+    plum: [
+        221,
+        160,
+        221
+    ],
+    powderblue: [
+        176,
+        224,
+        230
+    ],
+    purple: [
+        128,
+        0,
+        128
+    ],
+    rebeccapurple: [
+        102,
+        51,
+        153
+    ],
+    red: [
+        255,
+        0,
+        0
+    ],
+    rosybrown: [
+        188,
+        143,
+        143
+    ],
+    royalblue: [
+        65,
+        105,
+        225
+    ],
+    saddlebrown: [
+        139,
+        69,
+        19
+    ],
+    salmon: [
+        250,
+        128,
+        114
+    ],
+    sandybrown: [
+        244,
+        164,
+        96
+    ],
+    seagreen: [
+        46,
+        139,
+        87
+    ],
+    seashell: [
+        255,
+        245,
+        238
+    ],
+    sienna: [
+        160,
+        82,
+        45
+    ],
+    silver: [
+        192,
+        192,
+        192
+    ],
+    skyblue: [
+        135,
+        206,
+        235
+    ],
+    slateblue: [
+        106,
+        90,
+        205
+    ],
+    slategray: [
+        112,
+        128,
+        144
+    ],
+    slategrey: [
+        112,
+        128,
+        144
+    ],
+    snow: [
+        255,
+        250,
+        250
+    ],
+    springgreen: [
+        0,
+        255,
+        127
+    ],
+    steelblue: [
+        70,
+        130,
+        180
+    ],
+    tan: [
+        210,
+        180,
+        140
+    ],
+    teal: [
+        0,
+        128,
+        128
+    ],
+    thistle: [
+        216,
+        191,
+        216
+    ],
+    tomato: [
+        255,
+        99,
+        71
+    ],
+    turquoise: [
+        64,
+        224,
+        208
+    ],
+    violet: [
+        238,
+        130,
+        238
+    ],
+    wheat: [
+        245,
+        222,
+        179
+    ],
+    white: [
+        255,
+        255,
+        255
+    ],
+    whitesmoke: [
+        245,
+        245,
+        245
+    ],
+    yellow: [
+        255,
+        255,
+        0
+    ],
+    yellowgreen: [
+        154,
+        205,
+        50
+    ]
+}, isArrayish$1 = function(r) {
+    return !(!r || "string" == typeof r) && (r instanceof Array || Array.isArray(r) || r.length >= 0 && (r.splice instanceof Function || Object.getOwnPropertyDescriptor(r, r.length - 1) && "String" !== r.constructor.name));
+}, simpleSwizzle$1 = createCommonjsModule$2(function(r) {
+    var e = Array.prototype.concat, n = Array.prototype.slice, t = r.exports = function(r) {
+        for(var t = [], o = 0, a = r.length; o < a; o++){
+            var i = r[o];
+            isArrayish$1(i) ? t = e.call(t, n.call(i)) : t.push(i);
+        }
+        return t;
+    };
+    t.wrap = function(r) {
+        return function() {
+            return r(t(arguments));
+        };
+    };
+}), colorString$1 = createCommonjsModule$2(function(r) {
+    var e = {};
+    for(var n in colorName$1)colorName$1.hasOwnProperty(n) && (e[colorName$1[n]] = n);
+    var t = r.exports = {
+        to: {},
+        get: {}
+    };
+    function o(r, e, n) {
+        return Math.min(Math.max(e, r), n);
+    }
+    function a(r) {
+        var e = r.toString(16).toUpperCase();
+        return e.length < 2 ? "0" + e : e;
+    }
+    t.get = function(r) {
+        var e, n;
+        switch(r.substring(0, 3).toLowerCase()){
+            case "hsl":
+                e = t.get.hsl(r), n = "hsl";
+                break;
+            case "hwb":
+                e = t.get.hwb(r), n = "hwb";
+                break;
+            default:
+                e = t.get.rgb(r), n = "rgb";
+        }
+        return e ? {
+            model: n,
+            value: e
+        } : null;
+    }, t.get.rgb = function(r) {
+        if (!r) return null;
+        var e, n, t, a = [
+            0,
+            0,
+            0,
+            1
+        ];
+        if (e = r.match(/^#([a-f0-9]{6})([a-f0-9]{2})?$/i)) {
+            for(t = e[2], e = e[1], n = 0; n < 3; n++){
+                var i = 2 * n;
+                a[n] = parseInt(e.slice(i, i + 2), 16);
+            }
+            t && (a[3] = Math.round(parseInt(t, 16) / 255 * 100) / 100);
+        } else if (e = r.match(/^#([a-f0-9]{3,4})$/i)) {
+            for(t = (e = e[1])[3], n = 0; n < 3; n++)a[n] = parseInt(e[n] + e[n], 16);
+            t && (a[3] = Math.round(parseInt(t + t, 16) / 255 * 100) / 100);
+        } else if (e = r.match(/^rgba?\(\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/)) {
+            for(n = 0; n < 3; n++)a[n] = parseInt(e[n + 1], 0);
+            e[4] && (a[3] = parseFloat(e[4]));
+        } else {
+            if (!(e = r.match(/^rgba?\(\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/))) return (e = r.match(/(\D+)/)) ? "transparent" === e[1] ? [
+                0,
+                0,
+                0,
+                0
+            ] : (a = colorName$1[e[1]]) ? (a[3] = 1, a) : null : null;
+            for(n = 0; n < 3; n++)a[n] = Math.round(2.55 * parseFloat(e[n + 1]));
+            e[4] && (a[3] = parseFloat(e[4]));
+        }
+        for(n = 0; n < 3; n++)a[n] = o(a[n], 0, 255);
+        return a[3] = o(a[3], 0, 1), a;
+    }, t.get.hsl = function(r) {
+        if (!r) return null;
+        var e = r.match(/^hsla?\(\s*([+-]?(?:\d*\.)?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/);
+        if (e) {
+            var n = parseFloat(e[4]);
+            return [
+                (parseFloat(e[1]) + 360) % 360,
+                o(parseFloat(e[2]), 0, 100),
+                o(parseFloat(e[3]), 0, 100),
+                o(isNaN(n) ? 1 : n, 0, 1)
+            ];
+        }
+        return null;
+    }, t.get.hwb = function(r) {
+        if (!r) return null;
+        var e = r.match(/^hwb\(\s*([+-]?\d*[\.]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/);
+        if (e) {
+            var n = parseFloat(e[4]);
+            return [
+                (parseFloat(e[1]) % 360 + 360) % 360,
+                o(parseFloat(e[2]), 0, 100),
+                o(parseFloat(e[3]), 0, 100),
+                o(isNaN(n) ? 1 : n, 0, 1)
+            ];
+        }
+        return null;
+    }, t.to.hex = function() {
+        var r = simpleSwizzle$1(arguments);
+        return "#" + a(r[0]) + a(r[1]) + a(r[2]) + (r[3] < 1 ? a(Math.round(255 * r[3])) : "");
+    }, t.to.rgb = function() {
+        var r = simpleSwizzle$1(arguments);
+        return r.length < 4 || 1 === r[3] ? "rgb(" + Math.round(r[0]) + ", " + Math.round(r[1]) + ", " + Math.round(r[2]) + ")" : "rgba(" + Math.round(r[0]) + ", " + Math.round(r[1]) + ", " + Math.round(r[2]) + ", " + r[3] + ")";
+    }, t.to.rgb.percent = function() {
+        var r = simpleSwizzle$1(arguments), e = Math.round(r[0] / 255 * 100), n = Math.round(r[1] / 255 * 100), t = Math.round(r[2] / 255 * 100);
+        return r.length < 4 || 1 === r[3] ? "rgb(" + e + "%, " + n + "%, " + t + "%)" : "rgba(" + e + "%, " + n + "%, " + t + "%, " + r[3] + ")";
+    }, t.to.hsl = function() {
+        var r = simpleSwizzle$1(arguments);
+        return r.length < 4 || 1 === r[3] ? "hsl(" + r[0] + ", " + r[1] + "%, " + r[2] + "%)" : "hsla(" + r[0] + ", " + r[1] + "%, " + r[2] + "%, " + r[3] + ")";
+    }, t.to.hwb = function() {
+        var r = simpleSwizzle$1(arguments), e = "";
+        return r.length >= 4 && 1 !== r[3] && (e = ", " + r[3]), "hwb(" + r[0] + ", " + r[1] + "%, " + r[2] + "%" + e + ")";
+    }, t.to.keyword = function(r) {
+        return e[r.slice(0, 3)];
+    };
+}), colorString_1$1 = colorString$1.to, colorString_2$1 = colorString$1.get, conversions$1 = createCommonjsModule$2(function(r) {
+    var e = {};
+    for(var n in colorName$1)colorName$1.hasOwnProperty(n) && (e[colorName$1[n]] = n);
+    var t = r.exports = {
+        rgb: {
+            channels: 3,
+            labels: "rgb"
+        },
+        hsl: {
+            channels: 3,
+            labels: "hsl"
+        },
+        hsv: {
+            channels: 3,
+            labels: "hsv"
+        },
+        hwb: {
+            channels: 3,
+            labels: "hwb"
+        },
+        cmyk: {
+            channels: 4,
+            labels: "cmyk"
+        },
+        xyz: {
+            channels: 3,
+            labels: "xyz"
+        },
+        lab: {
+            channels: 3,
+            labels: "lab"
+        },
+        lch: {
+            channels: 3,
+            labels: "lch"
+        },
+        hex: {
+            channels: 1,
+            labels: [
+                "hex"
+            ]
+        },
+        keyword: {
+            channels: 1,
+            labels: [
+                "keyword"
+            ]
+        },
+        ansi16: {
+            channels: 1,
+            labels: [
+                "ansi16"
+            ]
+        },
+        ansi256: {
+            channels: 1,
+            labels: [
+                "ansi256"
+            ]
+        },
+        hcg: {
+            channels: 3,
+            labels: [
+                "h",
+                "c",
+                "g"
+            ]
+        },
+        apple: {
+            channels: 3,
+            labels: [
+                "r16",
+                "g16",
+                "b16"
+            ]
+        },
+        gray: {
+            channels: 1,
+            labels: [
+                "gray"
+            ]
+        }
+    };
+    for(var o in t)if (t.hasOwnProperty(o)) {
+        if (!("channels" in t[o])) throw new Error("missing channels property: " + o);
+        if (!("labels" in t[o])) throw new Error("missing channel labels property: " + o);
+        if (t[o].labels.length !== t[o].channels) throw new Error("channel and label counts mismatch: " + o);
+        var a = t[o].channels, i = t[o].labels;
+        delete t[o].channels, delete t[o].labels, Object.defineProperty(t[o], "channels", {
+            value: a
+        }), Object.defineProperty(t[o], "labels", {
+            value: i
+        });
+    }
+    t.rgb.hsl = function(r) {
+        var e, n, t = r[0] / 255, o = r[1] / 255, a = r[2] / 255, i = Math.min(t, o, a), s = Math.max(t, o, a), l = s - i;
+        return s === i ? e = 0 : t === s ? e = (o - a) / l : o === s ? e = 2 + (a - t) / l : a === s && (e = 4 + (t - o) / l), (e = Math.min(60 * e, 360)) < 0 && (e += 360), n = (i + s) / 2, [
+            e,
+            100 * (s === i ? 0 : n <= .5 ? l / (s + i) : l / (2 - s - i)),
+            100 * n
+        ];
+    }, t.rgb.hsv = function(r) {
+        var e, n, t, o, a, i = r[0] / 255, s = r[1] / 255, l = r[2] / 255, c = Math.max(i, s, l), h = c - Math.min(i, s, l), u = function(r) {
+            return (c - r) / 6 / h + .5;
+        };
+        return 0 === h ? o = a = 0 : (a = h / c, e = u(i), n = u(s), t = u(l), i === c ? o = t - n : s === c ? o = 1 / 3 + e - t : l === c && (o = 2 / 3 + n - e), o < 0 ? o += 1 : o > 1 && (o -= 1)), [
+            360 * o,
+            100 * a,
+            100 * c
+        ];
+    }, t.rgb.hwb = function(r) {
+        var e = r[0], n = r[1], o = r[2];
+        return [
+            t.rgb.hsl(r)[0],
+            100 * (1 / 255 * Math.min(e, Math.min(n, o))),
+            100 * (o = 1 - 1 / 255 * Math.max(e, Math.max(n, o)))
+        ];
+    }, t.rgb.cmyk = function(r) {
+        var e, n = r[0] / 255, t = r[1] / 255, o = r[2] / 255;
+        return [
+            100 * ((1 - n - (e = Math.min(1 - n, 1 - t, 1 - o))) / (1 - e) || 0),
+            100 * ((1 - t - e) / (1 - e) || 0),
+            100 * ((1 - o - e) / (1 - e) || 0),
+            100 * e
+        ];
+    }, t.rgb.keyword = function(r) {
+        var n = e[r];
+        if (n) return n;
+        var t, o, a, i = 1 / 0;
+        for(var s in colorName$1)if (colorName$1.hasOwnProperty(s)) {
+            var l = colorName$1[s], c = (o = r, a = l, Math.pow(o[0] - a[0], 2) + Math.pow(o[1] - a[1], 2) + Math.pow(o[2] - a[2], 2));
+            c < i && (i = c, t = s);
+        }
+        return t;
+    }, t.keyword.rgb = function(r) {
+        return colorName$1[r];
+    }, t.rgb.xyz = function(r) {
+        var e = r[0] / 255, n = r[1] / 255, t = r[2] / 255;
+        return [
+            100 * (.4124 * (e = e > .04045 ? Math.pow((e + .055) / 1.055, 2.4) : e / 12.92) + .3576 * (n = n > .04045 ? Math.pow((n + .055) / 1.055, 2.4) : n / 12.92) + .1805 * (t = t > .04045 ? Math.pow((t + .055) / 1.055, 2.4) : t / 12.92)),
+            100 * (.2126 * e + .7152 * n + .0722 * t),
+            100 * (.0193 * e + .1192 * n + .9505 * t)
+        ];
+    }, t.rgb.lab = function(r) {
+        var e = t.rgb.xyz(r), n = e[0], o = e[1], a = e[2];
+        return o /= 100, a /= 108.883, n = (n /= 95.047) > .008856 ? Math.pow(n, 1 / 3) : 7.787 * n + 16 / 116, [
+            116 * (o = o > .008856 ? Math.pow(o, 1 / 3) : 7.787 * o + 16 / 116) - 16,
+            500 * (n - o),
+            200 * (o - (a = a > .008856 ? Math.pow(a, 1 / 3) : 7.787 * a + 16 / 116))
+        ];
+    }, t.hsl.rgb = function(r) {
+        var e, n, t, o, a, i = r[0] / 360, s = r[1] / 100, l = r[2] / 100;
+        if (0 === s) return [
+            a = 255 * l,
+            a,
+            a
+        ];
+        e = 2 * l - (n = l < .5 ? l * (1 + s) : l + s - l * s), o = [
+            0,
+            0,
+            0
+        ];
+        for(var c = 0; c < 3; c++)(t = i + 1 / 3 * -(c - 1)) < 0 && t++, t > 1 && t--, a = 6 * t < 1 ? e + 6 * (n - e) * t : 2 * t < 1 ? n : 3 * t < 2 ? e + (n - e) * (2 / 3 - t) * 6 : e, o[c] = 255 * a;
+        return o;
+    }, t.hsl.hsv = function(r) {
+        var e = r[0], n = r[1] / 100, t = r[2] / 100, o = n, a = Math.max(t, .01);
+        return n *= (t *= 2) <= 1 ? t : 2 - t, o *= a <= 1 ? a : 2 - a, [
+            e,
+            100 * (0 === t ? 2 * o / (a + o) : 2 * n / (t + n)),
+            100 * ((t + n) / 2)
+        ];
+    }, t.hsv.rgb = function(r) {
+        var e = r[0] / 60, n = r[1] / 100, t = r[2] / 100, o = Math.floor(e) % 6, a = e - Math.floor(e), i = 255 * t * (1 - n), s = 255 * t * (1 - n * a), l = 255 * t * (1 - n * (1 - a));
+        switch(t *= 255, o){
+            case 0:
+                return [
+                    t,
+                    l,
+                    i
+                ];
+            case 1:
+                return [
+                    s,
+                    t,
+                    i
+                ];
+            case 2:
+                return [
+                    i,
+                    t,
+                    l
+                ];
+            case 3:
+                return [
+                    i,
+                    s,
+                    t
+                ];
+            case 4:
+                return [
+                    l,
+                    i,
+                    t
+                ];
+            case 5:
+                return [
+                    t,
+                    i,
+                    s
+                ];
+        }
+    }, t.hsv.hsl = function(r) {
+        var e, n, t, o = r[0], a = r[1] / 100, i = r[2] / 100, s = Math.max(i, .01);
+        return t = (2 - a) * i, n = a * s, [
+            o,
+            100 * (n = (n /= (e = (2 - a) * s) <= 1 ? e : 2 - e) || 0),
+            100 * (t /= 2)
+        ];
+    }, t.hwb.rgb = function(r) {
+        var e, n, t, o, a, i, s, l = r[0] / 360, c = r[1] / 100, h = r[2] / 100, u = c + h;
+        switch(u > 1 && (c /= u, h /= u), t = 6 * l - (e = Math.floor(6 * l)), 0 != (1 & e) && (t = 1 - t), o = c + t * ((n = 1 - h) - c), e){
+            default:
+            case 6:
+            case 0:
+                a = n, i = o, s = c;
+                break;
+            case 1:
+                a = o, i = n, s = c;
+                break;
+            case 2:
+                a = c, i = n, s = o;
+                break;
+            case 3:
+                a = c, i = o, s = n;
+                break;
+            case 4:
+                a = o, i = c, s = n;
+                break;
+            case 5:
+                a = n, i = c, s = o;
+        }
+        return [
+            255 * a,
+            255 * i,
+            255 * s
+        ];
+    }, t.cmyk.rgb = function(r) {
+        var e = r[0] / 100, n = r[1] / 100, t = r[2] / 100, o = r[3] / 100;
+        return [
+            255 * (1 - Math.min(1, e * (1 - o) + o)),
+            255 * (1 - Math.min(1, n * (1 - o) + o)),
+            255 * (1 - Math.min(1, t * (1 - o) + o))
+        ];
+    }, t.xyz.rgb = function(r) {
+        var e, n, t, o = r[0] / 100, a = r[1] / 100, i = r[2] / 100;
+        return n = -.9689 * o + 1.8758 * a + .0415 * i, t = .0557 * o + -.204 * a + 1.057 * i, e = (e = 3.2406 * o + -1.5372 * a + -.4986 * i) > .0031308 ? 1.055 * Math.pow(e, 1 / 2.4) - .055 : 12.92 * e, n = n > .0031308 ? 1.055 * Math.pow(n, 1 / 2.4) - .055 : 12.92 * n, t = t > .0031308 ? 1.055 * Math.pow(t, 1 / 2.4) - .055 : 12.92 * t, [
+            255 * (e = Math.min(Math.max(0, e), 1)),
+            255 * (n = Math.min(Math.max(0, n), 1)),
+            255 * (t = Math.min(Math.max(0, t), 1))
+        ];
+    }, t.xyz.lab = function(r) {
+        var e = r[0], n = r[1], t = r[2];
+        return n /= 100, t /= 108.883, e = (e /= 95.047) > .008856 ? Math.pow(e, 1 / 3) : 7.787 * e + 16 / 116, [
+            116 * (n = n > .008856 ? Math.pow(n, 1 / 3) : 7.787 * n + 16 / 116) - 16,
+            500 * (e - n),
+            200 * (n - (t = t > .008856 ? Math.pow(t, 1 / 3) : 7.787 * t + 16 / 116))
+        ];
+    }, t.lab.xyz = function(r) {
+        var e, n, t, o = r[0];
+        e = r[1] / 500 + (n = (o + 16) / 116), t = n - r[2] / 200;
+        var a = Math.pow(n, 3), i = Math.pow(e, 3), s = Math.pow(t, 3);
+        return n = a > .008856 ? a : (n - 16 / 116) / 7.787, e = i > .008856 ? i : (e - 16 / 116) / 7.787, t = s > .008856 ? s : (t - 16 / 116) / 7.787, [
+            e *= 95.047,
+            n *= 100,
+            t *= 108.883
+        ];
+    }, t.lab.lch = function(r) {
+        var e, n = r[0], t = r[1], o = r[2];
+        return (e = 360 * Math.atan2(o, t) / 2 / Math.PI) < 0 && (e += 360), [
+            n,
+            Math.sqrt(t * t + o * o),
+            e
+        ];
+    }, t.lch.lab = function(r) {
+        var e, n = r[0], t = r[1];
+        return e = r[2] / 360 * 2 * Math.PI, [
+            n,
+            t * Math.cos(e),
+            t * Math.sin(e)
+        ];
+    }, t.rgb.ansi16 = function(r) {
+        var e = r[0], n = r[1], o = r[2], a = 1 in arguments ? arguments[1] : t.rgb.hsv(r)[2];
+        if (0 === (a = Math.round(a / 50))) return 30;
+        var i = 30 + (Math.round(o / 255) << 2 | Math.round(n / 255) << 1 | Math.round(e / 255));
+        return 2 === a && (i += 60), i;
+    }, t.hsv.ansi16 = function(r) {
+        return t.rgb.ansi16(t.hsv.rgb(r), r[2]);
+    }, t.rgb.ansi256 = function(r) {
+        var e = r[0], n = r[1], t = r[2];
+        return e === n && n === t ? e < 8 ? 16 : e > 248 ? 231 : Math.round((e - 8) / 247 * 24) + 232 : 16 + 36 * Math.round(e / 255 * 5) + 6 * Math.round(n / 255 * 5) + Math.round(t / 255 * 5);
+    }, t.ansi16.rgb = function(r) {
+        var e = r % 10;
+        if (0 === e || 7 === e) return r > 50 && (e += 3.5), [
+            e = e / 10.5 * 255,
+            e,
+            e
+        ];
+        var n = .5 * (1 + ~~(r > 50));
+        return [
+            (1 & e) * n * 255,
+            (e >> 1 & 1) * n * 255,
+            (e >> 2 & 1) * n * 255
+        ];
+    }, t.ansi256.rgb = function(r) {
+        if (r >= 232) {
+            var e = 10 * (r - 232) + 8;
+            return [
+                e,
+                e,
+                e
+            ];
+        }
+        var n;
+        return r -= 16, [
+            Math.floor(r / 36) / 5 * 255,
+            Math.floor((n = r % 36) / 6) / 5 * 255,
+            n % 6 / 5 * 255
+        ];
+    }, t.rgb.hex = function(r) {
+        var e = (((255 & Math.round(r[0])) << 16) + ((255 & Math.round(r[1])) << 8) + (255 & Math.round(r[2]))).toString(16).toUpperCase();
+        return "000000".substring(e.length) + e;
+    }, t.hex.rgb = function(r) {
+        var e = r.toString(16).match(/[a-f0-9]{6}|[a-f0-9]{3}/i);
+        if (!e) return [
+            0,
+            0,
+            0
+        ];
+        var n = e[0];
+        3 === e[0].length && (n = n.split("").map(function(r) {
+            return r + r;
+        }).join(""));
+        var t = parseInt(n, 16);
+        return [
+            t >> 16 & 255,
+            t >> 8 & 255,
+            255 & t
+        ];
+    }, t.rgb.hcg = function(r) {
+        var e, n = r[0] / 255, t = r[1] / 255, o = r[2] / 255, a = Math.max(Math.max(n, t), o), i = Math.min(Math.min(n, t), o), s = a - i;
+        return e = s <= 0 ? 0 : a === n ? (t - o) / s % 6 : a === t ? 2 + (o - n) / s : 4 + (n - t) / s + 4, e /= 6, [
+            360 * (e %= 1),
+            100 * s,
+            100 * (s < 1 ? i / (1 - s) : 0)
+        ];
+    }, t.hsl.hcg = function(r) {
+        var e = r[1] / 100, n = r[2] / 100, t = 1, o = 0;
+        return (t = n < .5 ? 2 * e * n : 2 * e * (1 - n)) < 1 && (o = (n - .5 * t) / (1 - t)), [
+            r[0],
+            100 * t,
+            100 * o
+        ];
+    }, t.hsv.hcg = function(r) {
+        var e = r[1] / 100, n = r[2] / 100, t = e * n, o = 0;
+        return t < 1 && (o = (n - t) / (1 - t)), [
+            r[0],
+            100 * t,
+            100 * o
+        ];
+    }, t.hcg.rgb = function(r) {
+        var e = r[0] / 360, n = r[1] / 100, t = r[2] / 100;
+        if (0 === n) return [
+            255 * t,
+            255 * t,
+            255 * t
+        ];
+        var o, a = [
+            0,
+            0,
+            0
+        ], i = e % 1 * 6, s = i % 1, l = 1 - s;
+        switch(Math.floor(i)){
+            case 0:
+                a[0] = 1, a[1] = s, a[2] = 0;
+                break;
+            case 1:
+                a[0] = l, a[1] = 1, a[2] = 0;
+                break;
+            case 2:
+                a[0] = 0, a[1] = 1, a[2] = s;
+                break;
+            case 3:
+                a[0] = 0, a[1] = l, a[2] = 1;
+                break;
+            case 4:
+                a[0] = s, a[1] = 0, a[2] = 1;
+                break;
+            default:
+                a[0] = 1, a[1] = 0, a[2] = l;
+        }
+        return o = (1 - n) * t, [
+            255 * (n * a[0] + o),
+            255 * (n * a[1] + o),
+            255 * (n * a[2] + o)
+        ];
+    }, t.hcg.hsv = function(r) {
+        var e = r[1] / 100, n = e + r[2] / 100 * (1 - e), t = 0;
+        return n > 0 && (t = e / n), [
+            r[0],
+            100 * t,
+            100 * n
+        ];
+    }, t.hcg.hsl = function(r) {
+        var e = r[1] / 100, n = r[2] / 100 * (1 - e) + .5 * e, t = 0;
+        return n > 0 && n < .5 ? t = e / (2 * n) : n >= .5 && n < 1 && (t = e / (2 * (1 - n))), [
+            r[0],
+            100 * t,
+            100 * n
+        ];
+    }, t.hcg.hwb = function(r) {
+        var e = r[1] / 100, n = e + r[2] / 100 * (1 - e);
+        return [
+            r[0],
+            100 * (n - e),
+            100 * (1 - n)
+        ];
+    }, t.hwb.hcg = function(r) {
+        var e = r[1] / 100, n = 1 - r[2] / 100, t = n - e, o = 0;
+        return t < 1 && (o = (n - t) / (1 - t)), [
+            r[0],
+            100 * t,
+            100 * o
+        ];
+    }, t.apple.rgb = function(r) {
+        return [
+            r[0] / 65535 * 255,
+            r[1] / 65535 * 255,
+            r[2] / 65535 * 255
+        ];
+    }, t.rgb.apple = function(r) {
+        return [
+            r[0] / 255 * 65535,
+            r[1] / 255 * 65535,
+            r[2] / 255 * 65535
+        ];
+    }, t.gray.rgb = function(r) {
+        return [
+            r[0] / 100 * 255,
+            r[0] / 100 * 255,
+            r[0] / 100 * 255
+        ];
+    }, t.gray.hsl = t.gray.hsv = function(r) {
+        return [
+            0,
+            0,
+            r[0]
+        ];
+    }, t.gray.hwb = function(r) {
+        return [
+            0,
+            100,
+            r[0]
+        ];
+    }, t.gray.cmyk = function(r) {
+        return [
+            0,
+            0,
+            0,
+            r[0]
+        ];
+    }, t.gray.lab = function(r) {
+        return [
+            r[0],
+            0,
+            0
+        ];
+    }, t.gray.hex = function(r) {
+        var e = 255 & Math.round(r[0] / 100 * 255), n = ((e << 16) + (e << 8) + e).toString(16).toUpperCase();
+        return "000000".substring(n.length) + n;
+    }, t.rgb.gray = function(r) {
+        return [
+            (r[0] + r[1] + r[2]) / 3 / 255 * 100
+        ];
+    };
+}), conversions_1$1 = conversions$1.rgb, conversions_2$1 = conversions$1.hsl, conversions_3$1 = conversions$1.hsv, conversions_4$1 = conversions$1.hwb, conversions_5$1 = conversions$1.cmyk, conversions_6$1 = conversions$1.xyz, conversions_7$1 = conversions$1.lab, conversions_8$1 = conversions$1.lch, conversions_9$1 = conversions$1.hex, conversions_10$1 = conversions$1.keyword, conversions_11$1 = conversions$1.ansi16, conversions_12$1 = conversions$1.ansi256, conversions_13$1 = conversions$1.hcg, conversions_14$1 = conversions$1.apple, conversions_15$1 = conversions$1.gray;
+function buildGraph$1() {
+    for(var r = {}, e = Object.keys(conversions$1), n = e.length, t = 0; t < n; t++)r[e[t]] = {
+        distance: -1,
+        parent: null
+    };
+    return r;
+}
+function deriveBFS$1(r) {
+    var e = buildGraph$1(), n = [
+        r
+    ];
+    for(e[r].distance = 0; n.length;)for(var t = n.pop(), o = Object.keys(conversions$1[t]), a = o.length, i = 0; i < a; i++){
+        var s = o[i], l = e[s];
+        -1 === l.distance && (l.distance = e[t].distance + 1, l.parent = t, n.unshift(s));
+    }
+    return e;
+}
+function link$1(r, e) {
+    return function(n) {
+        return e(r(n));
+    };
+}
+function wrapConversion$1(r, e) {
+    for(var n = [
+        e[r].parent,
+        r
+    ], t = conversions$1[e[r].parent][r], o = e[r].parent; e[o].parent;)n.unshift(e[o].parent), t = link$1(conversions$1[e[o].parent][o], t), o = e[o].parent;
+    return t.conversion = n, t;
+}
+var route$1 = function(r) {
+    for(var e = deriveBFS$1(r), n = {}, t = Object.keys(e), o = t.length, a = 0; a < o; a++){
+        var i = t[a];
+        null !== e[i].parent && (n[i] = wrapConversion$1(i, e));
+    }
+    return n;
+}, convert$1 = {}, models$1 = Object.keys(conversions$1);
+function wrapRaw$1(r) {
+    var e = function(e) {
+        return null == e ? e : (arguments.length > 1 && (e = Array.prototype.slice.call(arguments)), r(e));
+    };
+    return "conversion" in r && (e.conversion = r.conversion), e;
+}
+function wrapRounded$1(r) {
+    var e = function(e) {
+        if (null == e) return e;
+        arguments.length > 1 && (e = Array.prototype.slice.call(arguments));
+        var n = r(e);
+        if ("object" == typeof n) for(var t = n.length, o = 0; o < t; o++)n[o] = Math.round(n[o]);
+        return n;
+    };
+    return "conversion" in r && (e.conversion = r.conversion), e;
+}
+models$1.forEach(function(r) {
+    convert$1[r] = {}, Object.defineProperty(convert$1[r], "channels", {
+        value: conversions$1[r].channels
+    }), Object.defineProperty(convert$1[r], "labels", {
+        value: conversions$1[r].labels
+    });
+    var e = route$1(r);
+    Object.keys(e).forEach(function(n) {
+        var t = e[n];
+        convert$1[r][n] = wrapRounded$1(t), convert$1[r][n].raw = wrapRaw$1(t);
+    });
+});
+var colorConvert$1 = convert$1, _slice$1 = [].slice, skippedModels$1 = [
+    "keyword",
+    "gray",
+    "hex"
+], hashedModelKeys$1 = {};
+Object.keys(colorConvert$1).forEach(function(r) {
+    hashedModelKeys$1[_slice$1.call(colorConvert$1[r].labels).sort().join("")] = r;
+});
+var limiters$1 = {};
+function Color$1(r, e) {
+    if (!(this instanceof Color$1)) return new Color$1(r, e);
+    if (e && e in skippedModels$1 && (e = null), e && !(e in colorConvert$1)) throw new Error("Unknown model: " + e);
+    var n, t;
+    if (void 0 === r) this.model = "rgb", this.color = [
+        0,
+        0,
+        0
+    ], this.valpha = 1;
+    else if (r instanceof Color$1) this.model = r.model, this.color = r.color.slice(), this.valpha = r.valpha;
+    else if ("string" == typeof r) {
+        var o = colorString$1.get(r);
+        if (null === o) throw new Error("Unable to parse color from string: " + r);
+        this.model = o.model, t = colorConvert$1[this.model].channels, this.color = o.value.slice(0, t), this.valpha = "number" == typeof o.value[t] ? o.value[t] : 1;
+    } else if (r.length) {
+        this.model = e || "rgb", t = colorConvert$1[this.model].channels;
+        var a = _slice$1.call(r, 0, t);
+        this.color = zeroArray$1(a, t), this.valpha = "number" == typeof r[t] ? r[t] : 1;
+    } else if ("number" == typeof r) r &= 16777215, this.model = "rgb", this.color = [
+        r >> 16 & 255,
+        r >> 8 & 255,
+        255 & r
+    ], this.valpha = 1;
+    else {
+        this.valpha = 1;
+        var i = Object.keys(r);
+        "alpha" in r && (i.splice(i.indexOf("alpha"), 1), this.valpha = "number" == typeof r.alpha ? r.alpha : 0);
+        var s = i.sort().join("");
+        if (!(s in hashedModelKeys$1)) throw new Error("Unable to parse color from object: " + JSON.stringify(r));
+        this.model = hashedModelKeys$1[s];
+        var l = colorConvert$1[this.model].labels, c = [];
+        for(n = 0; n < l.length; n++)c.push(r[l[n]]);
+        this.color = zeroArray$1(c);
+    }
+    if (limiters$1[this.model]) for(t = colorConvert$1[this.model].channels, n = 0; n < t; n++){
+        var h = limiters$1[this.model][n];
+        h && (this.color[n] = h(this.color[n]));
+    }
+    this.valpha = Math.max(0, Math.min(1, this.valpha)), Object.freeze && Object.freeze(this);
+}
+function roundTo$1(r, e) {
+    return Number(r.toFixed(e));
+}
+function roundToPlace$1(r) {
+    return function(e) {
+        return roundTo$1(e, r);
+    };
+}
+function getset$1(r, e, n) {
+    return (r = Array.isArray(r) ? r : [
+        r
+    ]).forEach(function(r) {
+        (limiters$1[r] || (limiters$1[r] = []))[e] = n;
+    }), r = r[0], function(t) {
+        var o;
+        return arguments.length ? (n && (t = n(t)), (o = this[r]()).color[e] = t, o) : (o = this[r]().color[e], n && (o = n(o)), o);
+    };
+}
+function maxfn$1(r) {
+    return function(e) {
+        return Math.max(0, Math.min(r, e));
+    };
+}
+function assertArray$1(r) {
+    return Array.isArray(r) ? r : [
+        r
+    ];
+}
+function zeroArray$1(r, e) {
+    for(var n = 0; n < e; n++)"number" != typeof r[n] && (r[n] = 0);
+    return r;
+}
+Color$1.prototype = {
+    toString: function() {
+        return this.string();
+    },
+    toJSON: function() {
+        return this[this.model]();
+    },
+    string: function(r) {
+        var e = this.model in colorString$1.to ? this : this.rgb(), n = 1 === (e = e.round("number" == typeof r ? r : 1)).valpha ? e.color : e.color.concat(this.valpha);
+        return colorString$1.to[e.model](n);
+    },
+    percentString: function(r) {
+        var e = this.rgb().round("number" == typeof r ? r : 1), n = 1 === e.valpha ? e.color : e.color.concat(this.valpha);
+        return colorString$1.to.rgb.percent(n);
+    },
+    array: function() {
+        return 1 === this.valpha ? this.color.slice() : this.color.concat(this.valpha);
+    },
+    object: function() {
+        for(var r = {}, e = colorConvert$1[this.model].channels, n = colorConvert$1[this.model].labels, t = 0; t < e; t++)r[n[t]] = this.color[t];
+        return 1 !== this.valpha && (r.alpha = this.valpha), r;
+    },
+    unitArray: function() {
+        var r = this.rgb().color;
+        return r[0] /= 255, r[1] /= 255, r[2] /= 255, 1 !== this.valpha && r.push(this.valpha), r;
+    },
+    unitObject: function() {
+        var r = this.rgb().object();
+        return r.r /= 255, r.g /= 255, r.b /= 255, 1 !== this.valpha && (r.alpha = this.valpha), r;
+    },
+    round: function(r) {
+        return r = Math.max(r || 0, 0), new Color$1(this.color.map(roundToPlace$1(r)).concat(this.valpha), this.model);
+    },
+    alpha: function(r) {
+        return arguments.length ? new Color$1(this.color.concat(Math.max(0, Math.min(1, r))), this.model) : this.valpha;
+    },
+    red: getset$1("rgb", 0, maxfn$1(255)),
+    green: getset$1("rgb", 1, maxfn$1(255)),
+    blue: getset$1("rgb", 2, maxfn$1(255)),
+    hue: getset$1([
+        "hsl",
+        "hsv",
+        "hsl",
+        "hwb",
+        "hcg"
+    ], 0, function(r) {
+        return (r % 360 + 360) % 360;
+    }),
+    saturationl: getset$1("hsl", 1, maxfn$1(100)),
+    lightness: getset$1("hsl", 2, maxfn$1(100)),
+    saturationv: getset$1("hsv", 1, maxfn$1(100)),
+    value: getset$1("hsv", 2, maxfn$1(100)),
+    chroma: getset$1("hcg", 1, maxfn$1(100)),
+    gray: getset$1("hcg", 2, maxfn$1(100)),
+    white: getset$1("hwb", 1, maxfn$1(100)),
+    wblack: getset$1("hwb", 2, maxfn$1(100)),
+    cyan: getset$1("cmyk", 0, maxfn$1(100)),
+    magenta: getset$1("cmyk", 1, maxfn$1(100)),
+    yellow: getset$1("cmyk", 2, maxfn$1(100)),
+    black: getset$1("cmyk", 3, maxfn$1(100)),
+    x: getset$1("xyz", 0, maxfn$1(100)),
+    y: getset$1("xyz", 1, maxfn$1(100)),
+    z: getset$1("xyz", 2, maxfn$1(100)),
+    l: getset$1("lab", 0, maxfn$1(100)),
+    a: getset$1("lab", 1),
+    b: getset$1("lab", 2),
+    keyword: function(r) {
+        return arguments.length ? new Color$1(r) : colorConvert$1[this.model].keyword(this.color);
+    },
+    hex: function(r) {
+        return arguments.length ? new Color$1(r) : colorString$1.to.hex(this.rgb().round().color);
+    },
+    rgbNumber: function() {
+        var r = this.rgb().color;
+        return (255 & r[0]) << 16 | (255 & r[1]) << 8 | 255 & r[2];
+    },
+    luminosity: function() {
+        for(var r = this.rgb().color, e = [], n = 0; n < r.length; n++){
+            var t = r[n] / 255;
+            e[n] = t <= .03928 ? t / 12.92 : Math.pow((t + .055) / 1.055, 2.4);
+        }
+        return .2126 * e[0] + .7152 * e[1] + .0722 * e[2];
+    },
+    contrast: function(r) {
+        var e = this.luminosity(), n = r.luminosity();
+        return e > n ? (e + .05) / (n + .05) : (n + .05) / (e + .05);
+    },
+    level: function(r) {
+        var e = this.contrast(r);
+        return e >= 7.1 ? "AAA" : e >= 4.5 ? "AA" : "";
+    },
+    isDark: function() {
+        var r = this.rgb().color;
+        return (299 * r[0] + 587 * r[1] + 114 * r[2]) / 1e3 < 128;
+    },
+    isLight: function() {
+        return !this.isDark();
+    },
+    negate: function() {
+        for(var r = this.rgb(), e = 0; e < 3; e++)r.color[e] = 255 - r.color[e];
+        return r;
+    },
+    lighten: function(r) {
+        var e = this.hsl();
+        return e.color[2] += e.color[2] * r, e;
+    },
+    darken: function(r) {
+        var e = this.hsl();
+        return e.color[2] -= e.color[2] * r, e;
+    },
+    saturate: function(r) {
+        var e = this.hsl();
+        return e.color[1] += e.color[1] * r, e;
+    },
+    desaturate: function(r) {
+        var e = this.hsl();
+        return e.color[1] -= e.color[1] * r, e;
+    },
+    whiten: function(r) {
+        var e = this.hwb();
+        return e.color[1] += e.color[1] * r, e;
+    },
+    blacken: function(r) {
+        var e = this.hwb();
+        return e.color[2] += e.color[2] * r, e;
+    },
+    grayscale: function() {
+        var r = this.rgb().color, e = .3 * r[0] + .59 * r[1] + .11 * r[2];
+        return Color$1.rgb(e, e, e);
+    },
+    fade: function(r) {
+        return this.alpha(this.valpha - this.valpha * r);
+    },
+    opaquer: function(r) {
+        return this.alpha(this.valpha + this.valpha * r);
+    },
+    rotate: function(r) {
+        var e = this.hsl(), n = e.color[0];
+        return n = (n = (n + r) % 360) < 0 ? 360 + n : n, e.color[0] = n, e;
+    },
+    mix: function(r, e) {
+        var n = r.rgb(), t = this.rgb(), o = void 0 === e ? .5 : e, a = 2 * o - 1, i = n.alpha() - t.alpha(), s = ((a * i == -1 ? a : (a + i) / (1 + a * i)) + 1) / 2, l = 1 - s;
+        return Color$1.rgb(s * n.red() + l * t.red(), s * n.green() + l * t.green(), s * n.blue() + l * t.blue(), n.alpha() * o + t.alpha() * (1 - o));
+    }
+}, Object.keys(colorConvert$1).forEach(function(r) {
+    if (-1 === skippedModels$1.indexOf(r)) {
+        var e = colorConvert$1[r].channels;
+        Color$1.prototype[r] = function() {
+            if (this.model === r) return new Color$1(this);
+            if (arguments.length) return new Color$1(arguments, r);
+            var n = "number" == typeof arguments[e] ? e : this.valpha;
+            return new Color$1(assertArray$1(colorConvert$1[this.model][r].raw(this.color)).concat(n), r);
+        }, Color$1[r] = function(n) {
+            return "number" == typeof n && (n = zeroArray$1(_slice$1.call(arguments), e)), new Color$1(n, r);
+        };
+    }
+});
+var color$1 = Color$1, ColorMock$1 = function r(e) {
+    var n = this;
+    classCallCheck$1(this, r), defineProperty$1(this, "hsl", function() {
+        return n;
+    }), defineProperty$1(this, "isLight", function() {
+        return !1;
+    }), defineProperty$1(this, "isDark", function() {
+        return !1;
+    }), defineProperty$1(this, "negate", function() {
+        return n;
+    }), defineProperty$1(this, "lighten", function() {
+        return n;
+    }), defineProperty$1(this, "darken", function() {
+        return n;
+    }), defineProperty$1(this, "alpha", function() {
+        return n;
+    }), defineProperty$1(this, "saturate", function() {
+        return n;
+    }), defineProperty$1(this, "desaturate", function() {
+        return n;
+    }), defineProperty$1(this, "grayscale", function() {
+        return n;
+    }), defineProperty$1(this, "whiten", function() {
+        return n;
+    }), defineProperty$1(this, "blacken", function() {
+        return n;
+    }), defineProperty$1(this, "fade", function() {
+        return n;
+    }), defineProperty$1(this, "opaquer", function() {
+        return n;
+    }), defineProperty$1(this, "rotate", function() {
+        return n;
+    }), defineProperty$1(this, "contrast", function() {
+        return 10;
+    }), defineProperty$1(this, "luminosity", function() {
+        return .5;
+    }), defineProperty$1(this, "mix", function() {
+        return n;
+    }), defineProperty$1(this, "blue", function() {
+        return n.toString();
+    }), defineProperty$1(this, "green", function() {
+        return n.toString();
+    }), defineProperty$1(this, "red", function() {
+        return n.toString();
+    }), defineProperty$1(this, "hex", function() {
+        return n.toString();
+    }), defineProperty$1(this, "rgbNumber", function() {
+        return n.toString();
+    }), defineProperty$1(this, "rgb", function() {
+        return n.toString();
+    }), defineProperty$1(this, "toString", function() {
+        return n.color;
+    }), this.color = e;
+};
+function ColorWrapper$1(r) {
+    return "string" == typeof r && -1 !== r.indexOf("linear-gradient") ? new ColorMock$1(r) : color$1(r);
+}
+var MixinError_1 = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = void 0;
+    function _typeof(obj) {
+        "@babel/helpers - typeof";
+        if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+            _typeof = function _typeof(obj) {
+                return typeof obj;
+            };
+        } else {
+            _typeof = function _typeof(obj) {
+                return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+            };
+        }
+        return _typeof(obj);
+    }
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+    function _inherits(subClass, superClass) {
+        if (typeof superClass !== "function" && superClass !== null) {
+            throw new TypeError("Super expression must either be null or a function");
+        }
+        subClass.prototype = Object.create(superClass && superClass.prototype, {
+            constructor: {
+                value: subClass,
+                writable: true,
+                configurable: true
+            }
+        });
+        if (superClass) _setPrototypeOf(subClass, superClass);
+    }
+    function _createSuper(Derived) {
+        var hasNativeReflectConstruct = _isNativeReflectConstruct();
+        return function() {
+            var Super = _getPrototypeOf(Derived), result;
+            if (hasNativeReflectConstruct) {
+                var NewTarget = _getPrototypeOf(this).constructor;
+                result = Reflect.construct(Super, arguments, NewTarget);
+            } else {
+                result = Super.apply(this, arguments);
+            }
+            return _possibleConstructorReturn(this, result);
+        };
+    }
+    function _possibleConstructorReturn(self1, call) {
+        if (call && (_typeof(call) === "object" || typeof call === "function")) {
+            return call;
+        }
+        return _assertThisInitialized(self1);
+    }
+    function _assertThisInitialized(self1) {
+        if (self1 === void 0) {
+            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+        }
+        return self1;
+    }
+    function _wrapNativeSuper(Class) {
+        var _cache = typeof Map === "function" ? new Map() : undefined;
+        _wrapNativeSuper = function _wrapNativeSuper(Class) {
+            if (Class === null || !_isNativeFunction(Class)) return Class;
+            if (typeof Class !== "function") {
+                throw new TypeError("Super expression must either be null or a function");
+            }
+            if (typeof _cache !== "undefined") {
+                if (_cache.has(Class)) return _cache.get(Class);
+                _cache.set(Class, Wrapper);
+            }
+            function Wrapper() {
+                return _construct(Class, arguments, _getPrototypeOf(this).constructor);
+            }
+            Wrapper.prototype = Object.create(Class.prototype, {
+                constructor: {
+                    value: Wrapper,
+                    enumerable: false,
+                    writable: true,
+                    configurable: true
+                }
+            });
+            return _setPrototypeOf(Wrapper, Class);
+        };
+        return _wrapNativeSuper(Class);
+    }
+    function _construct(Parent, args, Class) {
+        if (_isNativeReflectConstruct()) {
+            _construct = Reflect.construct;
+        } else {
+            _construct = function _construct(Parent, args, Class) {
+                var a = [
+                    null
+                ];
+                a.push.apply(a, args);
+                var Constructor = Function.bind.apply(Parent, a);
+                var instance = new Constructor();
+                if (Class) _setPrototypeOf(instance, Class.prototype);
+                return instance;
+            };
+        }
+        return _construct.apply(null, arguments);
+    }
+    function _isNativeReflectConstruct() {
+        if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+        if (Reflect.construct.sham) return false;
+        if (typeof Proxy === "function") return true;
+        try {
+            Date.prototype.toString.call(Reflect.construct(Date, [], function() {}));
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
+    function _isNativeFunction(fn) {
+        return Function.toString.call(fn).indexOf("[native code]") !== -1;
+    }
+    function _setPrototypeOf(o, p) {
+        _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+            o.__proto__ = p;
+            return o;
+        };
+        return _setPrototypeOf(o, p);
+    }
+    function _getPrototypeOf(o) {
+        _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+            return o.__proto__ || Object.getPrototypeOf(o);
+        };
+        return _getPrototypeOf(o);
+    }
+    var MixinError = function(_Error) {
+        _inherits(MixinError, _Error);
+        var _super = _createSuper(MixinError);
+        function MixinError(args) {
+            var _this;
+            _classCallCheck(this, MixinError);
+            _this = _super.call(this, args);
+            Error.captureStackTrace(_assertThisInitialized(_this), MixinError);
+            return _this;
+        }
+        return MixinError;
+    }(_wrapNativeSuper(Error));
+    exports.default = MixinError;
+    module.exports = exports.default;
+});
+unwrapExports(MixinError_1);
+var hover_1 = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.hover = hover;
+    exports.hoverFocus = hoverFocus;
+    exports.plainHoverFocus = plainHoverFocus;
+    exports.hoverFocusActive = hoverFocusActive;
+    exports.default = exports.defaultProps = void 0;
+    var _MixinError = _interopRequireDefault(MixinError_1);
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+    var defaultProps = {
+        '$enable-hover-media-query': false
+    };
+    exports.defaultProps = defaultProps;
+    function hover(content) {
+        if (!content) throw new _MixinError.default('content is required');
+        return "&:hover, &.hover { ".concat(content, " }");
+    }
+    function hoverFocus() {
+        var enableHoverMediaQuery = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-hover-media-query'];
+        var content = arguments.length > 1 ? arguments[1] : undefined;
+        if (enableHoverMediaQuery) {
+            return " \n      &:focus, &.focus { ".concat(content, " }\n      ").concat(hover(content), "\n    ");
+        }
+        return "\n    &:focus,\n    &.focus,\n    &:hover,\n    &.hover {\n      ".concat(content, "\n    }\n  ");
+    }
+    function plainHoverFocus() {
+        var enableHoverMediaQuery = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-hover-media-query'];
+        var content = arguments.length > 1 ? arguments[1] : undefined;
+        if (enableHoverMediaQuery) {
+            return "\n      &, \n      &:focus, \n      &.focus {\n        ".concat(content, "\n      }\n      ").concat(hover(content), "\n    ");
+        }
+        return " \n    &, \n    &:focus, \n    &.focus, \n    &:hover, \n    &.hover {\n      ".concat(content, "\n    }\n  ");
+    }
+    function hoverFocusActive() {
+        var enableHoverMediaQuery = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-hover-media-query'];
+        var content = arguments.length > 1 ? arguments[1] : undefined;
+        if (enableHoverMediaQuery) {
+            return "\n      &:focus,\n      &.focus,\n      &:active,\n      &.active {\n        ".concat(content, "\n      }\n      ").concat(hover(content), "\n    ");
+        }
+        return "\n    &:focus, \n    &.focus, \n    &:active, \n    &.active,\n    &:hover,\n    &.hover {\n     ".concat(content, "\n    }\n  ");
+    }
+    hover.focus = hoverFocus;
+    hover.plainFocus = plainHoverFocus;
+    hover.activeFocus = hoverFocusActive;
+    var _default = {
+        defaultProps: defaultProps,
+        hover: hover,
+        hoverFocus: hoverFocus,
+        plainHoverFocus: plainHoverFocus,
+        hoverFocusActive: hoverFocusActive
+    };
+    exports.default = _default;
+});
+unwrapExports(hover_1);
+var hover_2 = hover_1.hover;
+var hover_3 = hover_1.hoverFocus;
+var hover_4 = hover_1.plainHoverFocus;
+var hover_5 = hover_1.hoverFocusActive;
+var hover_6 = hover_1.defaultProps;
+var backgroundVariant = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.bgVariant = bgVariant;
+    exports.default = exports.defaultProps = void 0;
+    var _color = _interopRequireDefault(ColorWrapper$1);
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+    var defaultProps = {
+        '$enable-hover-media-query': false
+    };
+    exports.defaultProps = defaultProps;
+    function bgVariant() {
+        var enableHoverMediaQuery = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-hover-media-query'];
+        var selector = arguments.length > 1 ? arguments[1] : undefined;
+        var bgColor = arguments.length > 2 ? arguments[2] : undefined;
+        return "\n    ".concat(selector, " {\n      background-color: ").concat(bgColor, " !important;\n    }\n    a").concat(selector, " {\n      ").concat((0, hover_1.hoverFocus)(enableHoverMediaQuery, "background-color: ".concat((0, _color.default)(bgColor).darken(0.2).rgb(), " !important;")), "\n    }\n  ");
+    }
+    var _default = {
+        bgVariant: bgVariant
+    };
+    exports.default = _default;
+});
+unwrapExports(backgroundVariant);
+var backgroundVariant_1 = backgroundVariant.bgVariant;
+var backgroundVariant_2 = backgroundVariant.defaultProps;
+var background = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getBackgroundUtilities = getBackgroundUtilities;
+    exports.default = exports.bgFaded = exports.bgInverse = exports.bgDanger = exports.bgWarning = exports.bgInfo = exports.bgSuccess = exports.bgPrimary = exports.defaultProps = void 0;
+    var defaultProps = {
+        '$enable-hover-media-query': false,
+        '$brand-primary': '#0275d8',
+        '$brand-success': '#5cb85c',
+        '$brand-info': '#5bc0de',
+        '$brand-warning': '#f0ad4e',
+        '$brand-danger': '#d9543f',
+        '$brand-inverse': '#373a3c',
+        '$gray-lightest': '#f7f7f9'
+    };
+    exports.defaultProps = defaultProps;
+    function getBackgroundUtilities() {
+        var $enableHoverMediaQuery = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-hover-media-query'];
+        var $brandPrimary = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$brand-primary'];
+        var $brandSuccess = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : defaultProps['$brand-success'];
+        var $brandInfo = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : defaultProps['$brand-info'];
+        var $brandWarning = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : defaultProps['$brand-warning'];
+        var $brandDanger = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : defaultProps['$brand-danger'];
+        var $brandInverse = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : defaultProps['$brand-inverse'];
+        var $grayLightest = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : defaultProps['$gray-lightest'];
+        return "\n    ".concat((0, backgroundVariant.bgVariant)($enableHoverMediaQuery, '.bg-primary', $brandPrimary), "\n    ").concat((0, backgroundVariant.bgVariant)($enableHoverMediaQuery, '.bg-success', $brandSuccess), "\n    ").concat((0, backgroundVariant.bgVariant)($enableHoverMediaQuery, '.bg-info', $brandInfo), "\n    ").concat((0, backgroundVariant.bgVariant)($enableHoverMediaQuery, '.bg-warning', $brandWarning), "\n    ").concat((0, backgroundVariant.bgVariant)($enableHoverMediaQuery, '.bg-danger', $brandDanger), "\n    ").concat((0, backgroundVariant.bgVariant)($enableHoverMediaQuery, '.bg-inverse', $brandInverse), "\n    ").concat((0, backgroundVariant.bgVariant)($enableHoverMediaQuery, '.bg-faded', $grayLightest), "\n  ");
+    }
+    var bgPrimary = function bgPrimary($enableHoverMediaQuery) {
+        var bgColor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$brand-primary'];
+        return (0, backgroundVariant.bgVariant)($enableHoverMediaQuery, '.bg-primary', bgColor);
+    };
+    exports.bgPrimary = bgPrimary;
+    var bgSuccess = function bgSuccess($enableHoverMediaQuery) {
+        var bgColor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$brand-success'];
+        return (0, backgroundVariant.bgVariant)($enableHoverMediaQuery, '.bg-success', bgColor);
+    };
+    exports.bgSuccess = bgSuccess;
+    var bgInfo = function bgInfo($enableHoverMediaQuery) {
+        var bgColor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$brand-info'];
+        return (0, backgroundVariant.bgVariant)($enableHoverMediaQuery, '.bg-info', bgColor);
+    };
+    exports.bgInfo = bgInfo;
+    var bgWarning = function bgWarning($enableHoverMediaQuery) {
+        var bgColor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$brand-warning'];
+        return (0, backgroundVariant.bgVariant)($enableHoverMediaQuery, '.bg-warning', bgColor);
+    };
+    exports.bgWarning = bgWarning;
+    var bgDanger = function bgDanger($enableHoverMediaQuery) {
+        var bgColor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$brand-danger'];
+        return (0, backgroundVariant.bgVariant)($enableHoverMediaQuery, '.bg-danger', bgColor);
+    };
+    exports.bgDanger = bgDanger;
+    var bgInverse = function bgInverse($enableHoverMediaQuery) {
+        var bgColor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$brand-inverse'];
+        return (0, backgroundVariant.bgVariant)($enableHoverMediaQuery, '.bg-inverse', bgColor);
+    };
+    exports.bgInverse = bgInverse;
+    var bgFaded = function bgFaded($enableHoverMediaQuery) {
+        var bgColor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$gray-lightest'];
+        return (0, backgroundVariant.bgVariant)($enableHoverMediaQuery, '.bg-faded', bgColor);
+    };
+    exports.bgFaded = bgFaded;
+    var _default = {
+        defaultProps: defaultProps,
+        getBackgroundUtilities: getBackgroundUtilities,
+        bgFaded: bgFaded,
+        bgPrimary: bgPrimary,
+        bgSuccess: bgSuccess,
+        bgInfo: bgInfo,
+        bgWarning: bgWarning,
+        bgDanger: bgDanger,
+        bgInverse: bgInverse
+    };
+    exports.default = _default;
+});
+var backgroundUtils = unwrapExports(background);
+var background_1 = background.getBackgroundUtilities;
+var background_2 = background.bgFaded;
+var background_3 = background.bgInverse;
+var background_4 = background.bgDanger;
+var background_5 = background.bgWarning;
+var background_6 = background.bgInfo;
+var background_7 = background.bgSuccess;
+var background_8 = background.bgPrimary;
+var background_9 = background.defaultProps;
+var borderRadius_1 = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.borderRadius = borderRadius;
+    exports.borderTopRadius = borderTopRadius;
+    exports.borderRightRadius = borderRightRadius;
+    exports.borderBottomRadius = borderBottomRadius;
+    exports.borderLeftRadius = borderLeftRadius;
+    exports.default = exports.defaultProps = void 0;
+    var defaultProps = {
+        '$border-radius': '.25rem',
+        '$enable-rounded': true
+    };
+    exports.defaultProps = defaultProps;
+    function borderRadius() {
+        var enableRounded = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-rounded'];
+        var radius = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$border-radius'];
+        if (enableRounded) {
+            return "\n      border-radius: ".concat(radius, ";\n    ");
+        }
+        return '';
+    }
+    function borderTopRadius() {
+        var enableRounded = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-rounded'];
+        var radius = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$border-radius'];
+        if (enableRounded) {
+            return "\n      border-top-right-radius: ".concat(radius, ";\n      border-top-left-radius: ").concat(radius, ";\n    ");
+        }
+        return '';
+    }
+    function borderRightRadius() {
+        var enableRounded = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-rounded'];
+        var radius = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$border-radius'];
+        if (enableRounded) {
+            return "\n      border-bottom-right-radius: ".concat(radius, ";\n      border-top-right-radius: ").concat(radius, ";\n    ");
+        }
+        return '';
+    }
+    function borderBottomRadius() {
+        var enableRounded = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-rounded'];
+        var radius = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$border-radius'];
+        if (enableRounded) {
+            return "\n      border-bottom-right-radius: ".concat(radius, ";\n      border-bottom-left-radius: ").concat(radius, ";\n    ");
+        }
+        return '';
+    }
+    function borderLeftRadius() {
+        var enableRounded = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-rounded'];
+        var radius = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$border-radius'];
+        if (enableRounded) {
+            return "\n      border-bottom-left-radius: ".concat(radius, ";\n      border-top-left-radius: ").concat(radius, ";\n    ");
+        }
+        return '';
+    }
+    var _default = {
+        defaultProps: defaultProps,
+        all: borderRadius,
+        top: borderTopRadius,
+        right: borderRightRadius,
+        bottom: borderBottomRadius,
+        left: borderLeftRadius
+    };
+    exports.default = _default;
+});
+unwrapExports(borderRadius_1);
+var borderRadius_2 = borderRadius_1.borderRadius;
+var borderRadius_3 = borderRadius_1.borderTopRadius;
+var borderRadius_4 = borderRadius_1.borderRightRadius;
+var borderRadius_5 = borderRadius_1.borderBottomRadius;
+var borderRadius_6 = borderRadius_1.borderLeftRadius;
+var borderRadius_7 = borderRadius_1.defaultProps;
+var borders = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getBordersUtilities = getBordersUtilities;
+    exports.rounded = rounded;
+    exports.roundedTop = roundedTop;
+    exports.roundedRight = roundedRight;
+    exports.roundedBottom = roundedBottom;
+    exports.roundedLeft = roundedLeft;
+    exports.roundedCircle = roundedCircle;
+    exports.resetBorder = resetBorder;
+    exports.resetBorderTop = resetBorderTop;
+    exports.resetBorderRight = resetBorderRight;
+    exports.resetBorderBottom = resetBorderBottom;
+    exports.resetBorderLeft = resetBorderLeft;
+    exports.resetRounded = resetRounded;
+    exports.resetRoundedTop = resetRoundedTop;
+    exports.resetRoundedBottom = resetRoundedBottom;
+    exports.resetRoundedLeft = resetRoundedLeft;
+    exports.resetRoundedRight = resetRoundedRight;
+    exports.default = exports.defaultProps = void 0;
+    var defaultProps = {
+        '$border-radius': '.25rem',
+        '$enable-rounded': true
+    };
+    exports.defaultProps = defaultProps;
+    function getBordersUtilities() {
+        var enableRounded = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-rounded'];
+        var radius = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$border-radius'];
+        return "\n    ".concat(rounded(enableRounded, radius), "\n    ").concat(roundedTop(enableRounded, radius), "\n    ").concat(roundedRight(enableRounded, radius), "\n    ").concat(roundedBottom(enableRounded, radius), "\n    ").concat(roundedLeft(enableRounded, radius), "\n    ").concat(roundedCircle(), "\n    ").concat(resetRounded(), "\n    ").concat(resetRoundedTop(), "\n    ").concat(resetRoundedRight(), "\n    ").concat(resetRoundedLeft(), "\n    ").concat(resetRoundedBottom(), "\n    ").concat(resetBorder(), "\n    ").concat(resetBorderTop(), "\n    ").concat(resetBorderRight(), "\n    ").concat(resetBorderLeft(), "\n    ").concat(resetBorderBottom(), "\n  ");
+    }
+    function rounded() {
+        var enableRounded = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-rounded'];
+        var radius = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$border-radius'];
+        return "\n    .rounded {\n      ".concat((0, borderRadius_1.borderRadius)(enableRounded, radius), "\n    }\n  ");
+    }
+    function roundedTop() {
+        var enableRounded = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-rounded'];
+        var radius = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$border-radius'];
+        return "\n    .rounded-top {\n      ".concat((0, borderRadius_1.borderTopRadius)(enableRounded, radius), "\n    }\n  ");
+    }
+    function roundedRight() {
+        var enableRounded = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-rounded'];
+        var radius = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$border-radius'];
+        return "\n    .rounded-right {\n      ".concat((0, borderRadius_1.borderRightRadius)(enableRounded, radius), "\n    }\n  ");
+    }
+    function roundedBottom() {
+        var enableRounded = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-rounded'];
+        var radius = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$border-radius'];
+        return "\n    .rounded-bottom {\n      ".concat((0, borderRadius_1.borderBottomRadius)(enableRounded, radius), "\n    }\n  ");
+    }
+    function roundedLeft() {
+        var enableRounded = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-rounded'];
+        var radius = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$border-radius'];
+        return "\n    .rounded-left {\n      ".concat((0, borderRadius_1.borderLeftRadius)(enableRounded, radius), "\n    }\n  ");
+    }
+    function roundedCircle() {
+        return "\n    .rounded-circle {\n      border-radius: 50%;\n    }\n  ";
+    }
+    function resetBorder() {
+        return "\n    .border-0 {\n      border: 0 !important;\n    }\n  ";
+    }
+    function resetBorderTop() {
+        return "\n    .border-top-0 {\n      border-top: 0 !important;\n    }\n  ";
+    }
+    function resetBorderRight() {
+        return "\n    .border-right-0 {\n      border-right: 0 !important;\n    }\n  ";
+    }
+    function resetBorderBottom() {
+        return "\n    .border-bottom-0 {\n      border-bottom: 0 !important;\n    }\n  ";
+    }
+    function resetBorderLeft() {
+        return "\n    .border-left-0 {\n      border-left: 0 !important;\n    }\n  ";
+    }
+    function resetRounded() {
+        return "\n    .rounded-0 {\n      border-radius: 0 !important;\n    }\n  ";
+    }
+    function resetRoundedTop() {
+        return "\n    .rounded-top-0 {\n      border-top-left-radius: 0 !important;\n      border-top-right-radius: 0 !important;\n    }\n  ";
+    }
+    function resetRoundedBottom() {
+        return "\n    .rounded-bottom-0 {\n      border-bottom-left-radius: 0 !important;\n      border-bottom-right-radius: 0 !important;\n    }\n  ";
+    }
+    function resetRoundedLeft() {
+        return "\n    .rounded-left-0 {\n      border-bottom-left-radius: 0 !important;\n      border-top-left-radius: 0 !important;\n    }\n  ";
+    }
+    function resetRoundedRight() {
+        return "\n    .rounded-right-0 {\n      border-bottom-right-radius: 0 !important;\n      border-top-right-radius: 0 !important;\n    }\n  ";
+    }
+    var _default = {
+        defaultProps: defaultProps,
+        getBordersUtilities: getBordersUtilities,
+        rounded: rounded,
+        roundedTop: roundedTop,
+        roundedRight: roundedRight,
+        roundedBottom: roundedBottom,
+        roundedLeft: roundedLeft,
+        roundedCircle: roundedCircle
+    };
+    exports.default = _default;
+});
+var bordersUtils = unwrapExports(borders);
+var borders_1 = borders.getBordersUtilities;
+var borders_2 = borders.rounded;
+var borders_3 = borders.roundedTop;
+var borders_4 = borders.roundedRight;
+var borders_5 = borders.roundedBottom;
+var borders_6 = borders.roundedLeft;
+var borders_7 = borders.roundedCircle;
+var borders_8 = borders.resetBorder;
+var borders_9 = borders.resetBorderTop;
+var borders_10 = borders.resetBorderRight;
+var borders_11 = borders.resetBorderBottom;
+var borders_12 = borders.resetBorderLeft;
+var borders_13 = borders.resetRounded;
+var borders_14 = borders.resetRoundedTop;
+var borders_15 = borders.resetRoundedBottom;
+var borders_16 = borders.resetRoundedLeft;
+var borders_17 = borders.resetRoundedRight;
+var borders_18 = borders.defaultProps;
+var clearfix_1 = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.clearfix = clearfix;
+    exports.default = void 0;
+    function clearfix() {
+        return "\n    &::after {\n      content: \"\";\n      display: table;\n      clear: both;\n    }\n  ";
+    }
+    var _default = {
+        clearfix: clearfix
+    };
+    exports.default = _default;
+});
+unwrapExports(clearfix_1);
+var clearfix_2 = clearfix_1.clearfix;
+var clearfix = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getClearfixUtilities = getClearfixUtilities;
+    exports.getClearfix = getClearfix;
+    exports.default = void 0;
+    function getClearfixUtilities() {
+        return "\n   ".concat(getClearfix(), "\n  ");
+    }
+    function getClearfix() {
+        return "\n    .clearfix {\n      ".concat((0, clearfix_1.clearfix)(), "\n    }\n  ");
+    }
+    var _default = {
+        getClearfixUtilities: getClearfixUtilities,
+        getClearfix: getClearfix
+    };
+    exports.default = _default;
+});
+var clearfixUtils = unwrapExports(clearfix);
+var clearfix_1$1 = clearfix.getClearfixUtilities;
+var clearfix_2$1 = clearfix.getClearfix;
+var cursor = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getCursorUtilities = getCursorUtilities;
+    exports.default = void 0;
+    function getCursorUtilities() {
+        return "\n    .cursor-alias {\n      cursor: alias;\n    }\n    \n    .cursor-all-scroll {\n      cursor: all-scroll;\n    }\n    \n    .cursor-auto {\n      cursor: auto;\n    }\n    \n    .cursor-cell {\n      cursor: cell;\n    }\n    \n    .cursor-context-menu {\n      cursor: context-menu;\n    }\n    \n    .cursor-col-resize {\n      cursor: col-resize;\n    }\n    \n    .cursor-copy {\n      cursor: copy;\n    }\n    \n    .cursor-crosshair {\n      cursor: crosshair;\n    }\n    \n    .cursor-default {\n      cursor: default;\n    }\n    \n    .cursor-e-resize {\n      cursor: e-resize;\n    }\n    \n    .cursor-ew-resize {\n      cursor: ew-resize;\n    }\n    \n    .cursor-grab {\n      cursor: grab;\n    }\n    \n    .cursor-grabbing {\n      cursor: grabbing;\n    }\n    \n    .cursor-help {\n      cursor: help;\n    }\n    \n    .cursor-move {\n      cursor: move;\n    }\n    \n    .cursor-n-resize {\n      cursor: n-resize;\n    }\n    \n    .cursor-ne-resize {\n      cursor: ne-resize;\n    }\n    \n    .cursor-nesw-resize {\n      cursor: nesw-resize;\n    }\n    \n    .cursor-ns-resize {\n      cursor: ns-resize;\n    }\n    \n    .cursor-nw-resize {\n      cursor: nw-resize;\n    }\n    \n    .cursor-nwse-resize {\n      cursor: nwse-resize;\n    }\n    \n    .cursor-no-drop {\n      cursor: no-drop;\n    }\n    \n    .cursor-none {\n      cursor: none;\n    }\n    \n    .cursor-not-allowed {\n      cursor: not-allowed;\n    }\n    \n    .cursor-pointer {\n      cursor: pointer;\n    }\n    \n    .cursor-progress {\n      cursor: progress;\n    }\n    \n    .cursor-row-resize {\n      cursor: row-resize;\n    }\n    \n    .cursor-s-resize {\n      cursor: s-resize;\n    }\n    \n    .cursor-se-resize {\n      cursor: se-resize;\n    }\n    \n    .cursor-sw-resize {\n      cursor: sw-resize;\n    }\n    \n    .cursor-text {\n      cursor: text;\n    }\n    \n    .cursor-vertical-text {\n      cursor: vertical-text;\n    }\n    \n    .cursor-w-resize {\n      cursor: w-resize;\n    }\n    \n    .cursor-wait {\n      cursor: wait;\n    }\n    \n    .cursor-zoom-in {\n      cursor: zoom-in;\n    }\n    \n    .cursor-zoom-out {\n      cursor: zoom-out;\n    }\n    \n    .cursor-initial {\n      cursor: initial;\n    }\n  ";
+    }
+    var _default = {
+        getCursorUtilities: getCursorUtilities
+    };
+    exports.default = _default;
+});
+var cursorUtils = unwrapExports(cursor);
+var cursor_1 = cursor.getCursorUtilities;
+var display = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getDisplayUtilities = getDisplayUtilities;
+    exports.default = exports.defaultProps = void 0;
+    var defaultProps = {
+        '$grid-breakpoints': {
+            xs: '0',
+            sm: '576px',
+            md: '768px',
+            lg: '992px',
+            xl: '1200px'
+        }
+    };
+    exports.defaultProps = defaultProps;
+    function getDisplayUtilities() {
+        var gridBreakpoints = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$grid-breakpoints'];
+        var utilityList = [];
+        Object.keys(gridBreakpoints).forEach(function(breakpoint) {
+            var infix = (0, breakpoints.breakpointInfix)(breakpoint, gridBreakpoints);
+            utilityList.push("\n      ".concat((0, breakpoints.mediaBreakpointUp)(breakpoint, gridBreakpoints, "\n        .d".concat(infix, "-none { display: none !important; }\n        .d").concat(infix, "-inline { display: inline !important; }\n        .d").concat(infix, "-inline-block { display: inline-block !important; }\n        .d").concat(infix, "-block { display: block !important; }\n        .d").concat(infix, "-table { display: table !important; }\n        .d").concat(infix, "-table-cell { display: table-cell !important; }\n        .d").concat(infix, "-flex { display: flex !important; }\n        .d").concat(infix, "-inline-flex { display: inline-flex !important; }\n      ")), "\n    "));
+        });
+        utilityList.push("\n    .d-print-block {\n      display: none !important;\n    \n      @media print {\n        display: block !important;\n      }\n    }\n    \n    .d-print-inline {\n      display: none !important;\n    \n      @media print {\n        display: inline !important;\n      }\n    }\n    \n    .d-print-inline-block {\n      display: none !important;\n    \n      @media print {\n        display: inline-block !important;\n      }\n    }\n    \n    .d-print-none {\n      @media print {\n        display: none !important;\n      }\n    }\n  ");
+        return utilityList.join('\n');
+    }
+    var _default = {
+        defaultProps: defaultProps,
+        getDisplayUtilities: getDisplayUtilities
+    };
+    exports.default = _default;
+});
+var displayUtils = unwrapExports(display);
+var display_1 = display.getDisplayUtilities;
+var display_2 = display.defaultProps;
+var flex = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getFlexUtilities = getFlexUtilities;
+    exports.default = exports.defaultProps = void 0;
+    var defaultProps = {
+        '$grid-breakpoints': {
+            xs: '0',
+            sm: '576px',
+            md: '768px',
+            lg: '992px',
+            xl: '1200px'
+        }
+    };
+    exports.defaultProps = defaultProps;
+    function getFlexUtilities() {
+        var gridBreakpoints = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$grid-breakpoints'];
+        var flexUtilityList = [];
+        Object.keys(gridBreakpoints).forEach(function(breakpoint) {
+            var infix = (0, breakpoints.breakpointInfix)(breakpoint, gridBreakpoints);
+            flexUtilityList.push("\n      /* Flex column reordering */\n      ".concat((0, breakpoints.mediaBreakpointUp)(breakpoint, gridBreakpoints, "\n        .flex".concat(infix, "-first { order: -1; }\n        .flex").concat(infix, "-last { order: 1; }\n        .flex").concat(infix, "-unordered { order: 0; }\n      ")), "\n  \n      /* Flex direction */ \n      ").concat((0, breakpoints.mediaBreakpointUp)(breakpoint, gridBreakpoints, "\n        .flex".concat(infix, "-row            { flex-direction: row !important; }\n        .flex").concat(infix, "-column         { flex-direction: column !important; }\n        .flex").concat(infix, "-row-reverse    { flex-direction: row-reverse !important; }\n        .flex").concat(infix, "-column-reverse { flex-direction: column-reverse !important; }\n      ")), "\n      \n      /* Flex wrap */ \n      ").concat((0, breakpoints.mediaBreakpointUp)(breakpoint, gridBreakpoints, "\n        .flex".concat(infix, "-wrap         { flex-wrap: wrap !important; }\n        .flex").concat(infix, "-nowrap       { flex-wrap: nowrap !important; }\n        .flex").concat(infix, "-wrap-reverse { flex-wrap: wrap-reverse !important; }\n      ")), "\n      /* Flex justify-content */ \n      ").concat((0, breakpoints.mediaBreakpointUp)(breakpoint, gridBreakpoints, "\n        .justify-content".concat(infix, "-start   { justify-content: flex-start !important; }\n        .justify-content").concat(infix, "-end     { justify-content: flex-end !important; }\n        .justify-content").concat(infix, "-center  { justify-content: center !important; }\n        .justify-content").concat(infix, "-between { justify-content: space-between !important; }\n        .justify-content").concat(infix, "-around  { justify-content: space-around !important; }\n        .justify-content").concat(infix, "-evenly  { justify-content: space-evenly !important; }\n      ")), "\n      /* Flex align-items */ \n      ").concat((0, breakpoints.mediaBreakpointUp)(breakpoint, gridBreakpoints, "\n        .align-items".concat(infix, "-start    { align-items: flex-start !important; }\n        .align-items").concat(infix, "-end      { align-items: flex-end !important; }\n        .align-items").concat(infix, "-center   { align-items: center !important; }\n        .align-items").concat(infix, "-baseline { align-items: baseline !important; }\n        .align-items").concat(infix, "-stretch  { align-items: stretch !important; }\n      ")), "\n      /* Flex align-content */ \n      ").concat((0, breakpoints.mediaBreakpointUp)(breakpoint, gridBreakpoints, "\n        .align-content".concat(infix, "-start   { align-content: flex-start !important; }\n        .align-content").concat(infix, "-end     { align-content: flex-end !important; }\n        .align-content").concat(infix, "-center  { align-content: center !important; }\n        .align-content").concat(infix, "-between { align-content: space-between !important; }\n        .align-content").concat(infix, "-around  { align-content: space-around !important; }\n        .align-content").concat(infix, "-stretch { align-content: stretch !important; }\n      ")), "\n      /* Flex align-self */ \n      ").concat((0, breakpoints.mediaBreakpointUp)(breakpoint, gridBreakpoints, "\n        .align-self".concat(infix, "-auto     { align-self: auto !important; }\n        .align-self").concat(infix, "-start    { align-self: flex-start !important; }\n        .align-self").concat(infix, "-end      { align-self: flex-end !important; }\n        .align-self").concat(infix, "-center   { align-self: center !important; }\n        .align-self").concat(infix, "-baseline { align-self: baseline !important; }\n        .align-self").concat(infix, "-stretch  { align-self: stretch !important; }\n      ")), " \n    "));
+        });
+        return flexUtilityList.join('\n');
+    }
+    var _default = {
+        defaultProps: defaultProps,
+        getFlexUtilities: getFlexUtilities
+    };
+    exports.default = _default;
+});
+var flexUtils = unwrapExports(flex);
+var flex_1 = flex.getFlexUtilities;
+var flex_2 = flex.defaultProps;
+var float_1 = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.floatLeft = floatLeft;
+    exports.floatRight = floatRight;
+    exports.floatNone = floatNone;
+    exports.default = void 0;
+    function floatLeft() {
+        return "\n    float: left !important;\n  ";
+    }
+    function floatRight() {
+        return "\n    float: right !important;\n  ";
+    }
+    function floatNone() {
+        return "\n    float: none !important;\n  ";
+    }
+    var _default = {
+        floatLeft: floatLeft,
+        floatRight: floatRight,
+        floatNone: floatNone
+    };
+    exports.default = _default;
+});
+unwrapExports(float_1);
+var float_2 = float_1.floatLeft;
+var float_3 = float_1.floatRight;
+var float_4 = float_1.floatNone;
+var float_1$1 = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getFloatUtilities = getFloatUtilities;
+    exports.default = exports.defaultProps = void 0;
+    var defaultProps = {
+        '$grid-breakpoints': {
+            xs: '0',
+            sm: '576px',
+            md: '768px',
+            lg: '992px',
+            xl: '1200px'
+        }
+    };
+    exports.defaultProps = defaultProps;
+    function getFloatUtilities() {
+        var gridBreakpoints = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$grid-breakpoints'];
+        var floatUtilityList = [];
+        Object.keys(gridBreakpoints).forEach(function(breakpoint) {
+            var infix = (0, breakpoints.breakpointInfix)(breakpoint, gridBreakpoints);
+            var floatUtility = (0, breakpoints.mediaBreakpointUp)(breakpoint, gridBreakpoints, "\n      .float".concat(infix, "-left {\n        ").concat((0, float_1.floatLeft)(), "\n      }\n      .float").concat(infix, "-right {\n        ").concat((0, float_1.floatRight)(), "\n      }\n      .float").concat(infix, "-none {\n        ").concat((0, float_1.floatNone)(), "\n      }\n    "));
+            floatUtilityList.push(floatUtility);
+        });
+        return floatUtilityList.join('\n');
+    }
+    var _default = {
+        defaultProps: defaultProps,
+        getFloatUtilities: getFloatUtilities
+    };
+    exports.default = _default;
+});
+var floatUtils = unwrapExports(float_1$1);
+var float_2$1 = float_1$1.getFloatUtilities;
+var float_3$1 = float_1$1.defaultProps;
+var position = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getPositionUtilities = getPositionUtilities;
+    exports.fixedTop = fixedTop;
+    exports.fixedBottom = fixedBottom;
+    exports.stickTop = stickTop;
+    exports.default = exports.defaultProps = void 0;
+    var defaultProps = {
+        '$zindex-fixed': '1030',
+        '$zindex-sticky': '1030'
+    };
+    exports.defaultProps = defaultProps;
+    function getPositionUtilities() {
+        var zindexFixed = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$zindex-fixed'];
+        var zindexSticky = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$zindex-sticky'];
+        return "\n    ".concat(fixedTop(zindexFixed), "\n    ").concat(fixedBottom(zindexFixed), "\n    ").concat(stickTop(zindexSticky), "\n  ");
+    }
+    function fixedTop() {
+        var zindexFixed = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$zindex-fixed'];
+        return "\n  .fixed-top {\n    position: fixed !important;\n    top: 0;\n    right: 0;\n    left: 0;\n    z-index: ".concat(zindexFixed, ";\n  }\n  ");
+    }
+    function fixedBottom() {
+        var zindexFixed = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$zindex-fixed'];
+        return "\n    .fixed-bottom {\n      position: fixed !important;\n      right: 0;\n      bottom: 0;\n      left: 0;\n      z-index: ".concat(zindexFixed, ";\n    }\n  ");
+    }
+    function stickTop() {
+        var zindexSticky = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$zindex-sticky'];
+        return "\n    .sticky-top {\n      position: sticky !important;\n      top: 0;\n      z-index: ".concat(zindexSticky, ";\n    }\n  ");
+    }
+    var _default = {
+        defaultProps: defaultProps,
+        getPositionUtilities: getPositionUtilities,
+        fixedTop: fixedTop,
+        fixedBottom: fixedBottom,
+        stickTop: stickTop
+    };
+    exports.default = _default;
+});
+var positionUtils = unwrapExports(position);
+var position_1 = position.getPositionUtilities;
+var position_2 = position.fixedTop;
+var position_3 = position.fixedBottom;
+var position_4 = position.stickTop;
+var position_5 = position.defaultProps;
+var reboot$1 = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getGlobalStyles = getGlobalStyles;
+    exports.getGlobalStyleNoBootstrapProvider = getGlobalStyleNoBootstrapProvider;
+    exports.html = html;
+    exports.boxSizing = boxSizing;
+    exports.ie10FixViewport = ie10FixViewport;
+    exports.body = body;
+    exports.bodyUtils = bodyUtils;
+    exports.tabIndex = tabIndex;
+    exports.svg = svg;
+    exports.ie10FixHidden = ie10FixHidden;
+    exports.webkitFileUploadButton = webkitFileUploadButton;
+    exports.default = exports.defaultProps = void 0;
+    var defaultProps = {
+        '$font-family-base': '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+        '$font-size-base': '1rem',
+        '$font-weight-base': '1.5',
+        '$line-height-base': '1.5',
+        '$body-color': '#292b2c',
+        '$body-bg': '#fff'
+    };
+    exports.defaultProps = defaultProps;
+    function getGlobalStyles() {
+        return "\n    html {\n      ".concat(html(), "\n    }\n    *,\n    *::before,\n    *::after {\n      ").concat(boxSizing(), "\n    }\n    @-ms-viewport { \n      ").concat(ie10FixViewport(), " \n    }\n    body {\n      ").concat(bodyUtils(), "\n    }\n  ");
+    }
+    function getGlobalStyleNoBootstrapProvider() {
+        var fontFamilyBase = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$font-family-base'];
+        var fontSizeBase = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$font-size-base'];
+        var fontWeightBase = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : defaultProps['$font-weight-base'];
+        var lineHeightBase = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : defaultProps['$line-height-base'];
+        var bodyColor = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : defaultProps['$body-color'];
+        var bodyBg = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : defaultProps['$body-bg'];
+        return "\n  ".concat(getGlobalStyles(), "\n  body {\n  ").concat(body(fontFamilyBase, fontSizeBase, fontWeightBase, lineHeightBase, bodyColor, bodyBg), " \n}");
+    }
+    function html() {
+        return "\n    box-sizing: border-box;\n    font-family: sans-serif;\n    line-height: 1.15;\n    -ms-text-size-adjust: 100%;\n    -webkit-text-size-adjust: 100%;\n    -ms-overflow-style: scrollbar;\n    -webkit-tap-highlight-color: rgba(0,0,0,0);\n  ";
+    }
+    function boxSizing() {
+        return "\n    box-sizing: inherit;\n  ";
+    }
+    function ie10FixViewport() {
+        return "\n    width: device-width;\n  ";
+    }
+    function body() {
+        var fontFamilyBase = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$font-family-base'];
+        var fontSizeBase = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$font-size-base'];
+        var fontWeightBase = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : defaultProps['$font-weight-base'];
+        var lineHeightBase = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : defaultProps['$line-height-base'];
+        var bodyColor = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : defaultProps['$body-color'];
+        var bodyBg = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : defaultProps['$body-bg'];
+        return "\n    margin: 0;\n    font-family: ".concat(fontFamilyBase, ";\n    font-size: ").concat(fontSizeBase, ";\n    font-weight: ").concat(fontWeightBase, ";\n    line-height: ").concat(lineHeightBase, ";\n    color: ").concat(bodyColor, ";\n    background-color: ").concat(bodyBg, ";\n    \n    ").concat(bodyUtils(), "\n    \n    [tabindex=\"-1\"]:focus {\n      ").concat(tabIndex(), "\n    }\n    svg:not(:root) {\n      ").concat(svg(), "\n    }\n    [hidden] {\n      ").concat(ie10FixHidden(), "\n    }\n    ::-webkit-file-upload-button {\n      ").concat(webkitFileUploadButton(), "\n    }\n  ");
+    }
+    function bodyUtils() {
+        return "\n    &.overflow {\n      overflow: hidden;\n    }\n  ";
+    }
+    function tabIndex() {
+        return "\n    outline: none !important;\n  ";
+    }
+    function svg() {
+        return "\n    overflow: hidden;\n  ";
+    }
+    function ie10FixHidden() {
+        return "\n    display: none !important;\n  ";
+    }
+    function webkitFileUploadButton() {
+        return "\n    font: inherit;\n    -webkit-appearance: button;\n  ";
+    }
+    var _default = {
+        html: html,
+        boxSizing: boxSizing,
+        ie10FixViewport: ie10FixViewport,
+        body: body,
+        bodyUtils: bodyUtils,
+        tabIndex: tabIndex,
+        svg: svg,
+        ie10FixHidden: ie10FixHidden,
+        getGlobalStyles: getGlobalStyles,
+        getGlobalStyleNoBootstrapProvider: getGlobalStyleNoBootstrapProvider,
+        webkitFileUploadButton: webkitFileUploadButton
+    };
+    exports.default = _default;
+});
+var rebootUtils = unwrapExports(reboot$1);
+var reboot_1$1 = reboot$1.getGlobalStyles;
+var reboot_2$1 = reboot$1.getGlobalStyleNoBootstrapProvider;
+var reboot_3$1 = reboot$1.html;
+var reboot_4$1 = reboot$1.boxSizing;
+var reboot_5$1 = reboot$1.ie10FixViewport;
+var reboot_6$1 = reboot$1.body;
+var reboot_7$1 = reboot$1.bodyUtils;
+var reboot_8$1 = reboot$1.tabIndex;
+var reboot_9$1 = reboot$1.svg;
+var reboot_10$1 = reboot$1.ie10FixHidden;
+var reboot_11$1 = reboot$1.webkitFileUploadButton;
+var reboot_12$1 = reboot$1.defaultProps;
+var screenReader = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.srOnly = srOnly;
+    exports.srOnlyFocusable = srOnlyFocusable;
+    exports.default = void 0;
+    function srOnly() {
+        return "\n    position: absolute !important;\n    width: 1px;\n    height: 1px;\n    padding: 0;\n    margin: -1px;\n    overflow: hidden;\n    clip: rect(0,0,0,0);\n    border: 0;\n  ";
+    }
+    function srOnlyFocusable() {
+        return "\n    &:active,\n    &:focus {\n      position: static;\n      width: auto;\n      height: auto;\n      margin: 0;\n      overflow: visible;\n      clip: auto;\n    }\n  ";
+    }
+    var _default = {
+        srOnly: srOnly,
+        srOnlyFocusable: srOnlyFocusable
+    };
+    exports.default = _default;
+});
+unwrapExports(screenReader);
+var screenReader_1 = screenReader.srOnly;
+var screenReader_2 = screenReader.srOnlyFocusable;
+var screenreaders = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getScreenReadersUtilities = getScreenReadersUtilities;
+    exports.default = void 0;
+    function getScreenReadersUtilities() {
+        return "\n    .sr-only {\n      ".concat((0, screenReader.srOnly)(), "\n    }\n    \n    .sr-only-focusable {\n      ").concat((0, screenReader.srOnlyFocusable)(), "\n    }\n  ");
+    }
+    var _default = {
+        getScreenReadersUtilities: getScreenReadersUtilities
+    };
+    exports.default = _default;
+});
+var screenreadersUtils = unwrapExports(screenreaders);
+var screenreaders_1 = screenreaders.getScreenReadersUtilities;
+var sizing = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getSizingUtilities = getSizingUtilities;
+    exports.default = exports.defaultProps = void 0;
+    var defaultProps = {
+        $sizes: {
+            25: '25%',
+            50: '50%',
+            75: '75%',
+            100: '100%'
+        }
+    };
+    exports.defaultProps = defaultProps;
+    function getSizingUtilities() {
+        var sizes = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$sizes'];
+        var abbrev = {
+            width: 'w',
+            height: 'h'
+        };
+        var sizingList = [];
+        Object.keys(abbrev).forEach(function(cssProp) {
+            Object.keys(sizes).forEach(function(size) {
+                sizingList.push("\n        .".concat(abbrev[cssProp], "-").concat(size, " { ").concat(cssProp, ": ").concat(sizes[size], " !important; }\n      "));
+            });
+        });
+        return "\n    ".concat(sizingList.join('\n'), "\n    .mw-100 { max-width: 100% !important; }\n    .mh-100 { max-height: 100% !important; }\n  ");
+    }
+    var _default = {
+        defaultProps: defaultProps,
+        getSizingUtilities: getSizingUtilities
+    };
+    exports.default = _default;
+});
+var sizingUtils = unwrapExports(sizing);
+var sizing_1 = sizing.getSizingUtilities;
+var sizing_2 = sizing.defaultProps;
+var spacing = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getSpacingUtilities = getSpacingUtilities;
+    exports.default = exports.defaultProps = void 0;
+    var defaultProps = {
+        '$grid-breakpoints': {
+            xs: '0',
+            sm: '576px',
+            md: '768px',
+            lg: '992px',
+            xl: '1200px'
+        },
+        '$spacers': {
+            0: {
+                x: 0,
+                y: 0
+            },
+            1: {
+                x: '0.25rem',
+                y: '0.25rem'
+            },
+            2: {
+                x: '0.5rem',
+                y: '0.5rem'
+            },
+            3: {
+                x: '1rem',
+                y: '1rem'
+            },
+            4: {
+                x: '1.5rem',
+                y: '1.5rem'
+            },
+            5: {
+                x: '3rem',
+                y: '3rem'
+            }
+        }
+    };
+    exports.defaultProps = defaultProps;
+    function getSpacingUtilities() {
+        var gridBreakpoints = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$grid-breakpoints'];
+        var spacers = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$spacers'];
+        var abbrevs = {
+            margin: 'm',
+            padding: 'p'
+        };
+        var spacingUtilityList = [];
+        var infixList = [];
+        Object.keys(gridBreakpoints).forEach(function(breakpoint) {
+            var infix = (0, breakpoints.breakpointInfix)(breakpoint, gridBreakpoints);
+            infixList.push(infix);
+            Object.keys(abbrevs).forEach(function(prop) {
+                var abbrev = abbrevs[prop];
+                Object.keys(spacers).forEach(function(size) {
+                    var lengths = spacers[size];
+                    spacingUtilityList.push((0, breakpoints.mediaBreakpointUp)(breakpoint, gridBreakpoints, "\n          .".concat(abbrev).concat(infix, "-").concat(size, " { ").concat(prop, ":        ").concat(lengths.y, " ").concat(lengths.x, " !important; } /* a = All sides */\n          .").concat(abbrev, "t").concat(infix, "-").concat(size, " { ").concat(prop, "-top:    ").concat(lengths.y, " !important; }\n          .").concat(abbrev, "r").concat(infix, "-").concat(size, " { ").concat(prop, "-right:  ").concat(lengths.x, " !important; }\n          .").concat(abbrev, "b").concat(infix, "-").concat(size, " { ").concat(prop, "-bottom: ").concat(lengths.y, " !important; }\n          .").concat(abbrev, "l").concat(infix, "-").concat(size, " { ").concat(prop, "-left:   ").concat(lengths.x, " !important; }\n          .").concat(abbrev, "x").concat(infix, "-").concat(size, " {\n            ").concat(prop, "-right:  ").concat(lengths.x, " !important;\n            ").concat(prop, "-left:   ").concat(lengths.x, " !important;\n          }\n          .").concat(abbrev, "y").concat(infix, "-").concat(size, " {\n            ").concat(prop, "-top:    ").concat(lengths.y, " !important;\n            ").concat(prop, "-bottom: ").concat(lengths.y, " !important;\n          }\n        ")));
+                });
+            });
+        });
+        var infixUtilityList = infixList.map(function(infix) {
+            return "\n    .m".concat(infix, "-auto  { margin:        auto !important; }\n    .mt").concat(infix, "-auto { margin-top:    auto !important; }\n    .mr").concat(infix, "-auto { margin-right:  auto !important; }\n    .mb").concat(infix, "-auto { margin-bottom: auto !important; }\n    .ml").concat(infix, "-auto { margin-left:   auto !important; }\n    .mx").concat(infix, "-auto {\n      margin-right: auto !important;\n      margin-left:  auto !important;\n    }\n    .my").concat(infix, "-auto {\n      margin-top:    auto !important;\n      margin-bottom: auto !important;\n    }\n  ");
+        });
+        return "\n    ".concat(infixUtilityList.join('\n'), "\n    ").concat(spacingUtilityList.join('\n'), "\n  ");
+    }
+    var _default = {
+        defaultProps: defaultProps,
+        getSpacingUtilities: getSpacingUtilities
+    };
+    exports.default = _default;
+});
+var spacingUtils = unwrapExports(spacing);
+var spacing_1 = spacing.getSpacingUtilities;
+var spacing_2 = spacing.defaultProps;
+var textTruncate_1 = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.textTruncate = textTruncate;
+    exports.default = void 0;
+    function textTruncate() {
+        return "\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n  ";
+    }
+    var _default = {
+        textTruncate: textTruncate
+    };
+    exports.default = _default;
+});
+unwrapExports(textTruncate_1);
+var textTruncate_2 = textTruncate_1.textTruncate;
+var textHide_1 = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.textHide = textHide;
+    exports.default = void 0;
+    function textHide() {
+        return "\n    font: 0/0 a;\n    color: transparent;\n    text-shadow: none;\n    background-color: transparent;\n    border: 0;\n  ";
+    }
+    var _default = {
+        textHide: textHide
+    };
+    exports.default = _default;
+});
+unwrapExports(textHide_1);
+var textHide_2 = textHide_1.textHide;
+var textEmphasis = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.textEmphasisVariant = textEmphasisVariant;
+    exports.default = exports.defaultProps = void 0;
+    var _color = _interopRequireDefault(ColorWrapper$1);
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+    var defaultProps = {
+        '$enable-hover-media-query': false
+    };
+    exports.defaultProps = defaultProps;
+    function textEmphasisVariant() {
+        var enableHoverMediaQuery = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-hover-media-query'];
+        var parent = arguments.length > 1 ? arguments[1] : undefined;
+        var textColor = arguments.length > 2 ? arguments[2] : undefined;
+        return "\n  ".concat(parent, " {\n    color: ").concat(textColor, " !important;\n  }\n  a").concat(parent, " {\n  ").concat((0, hover_1.hoverFocus)(enableHoverMediaQuery, "color: ".concat((0, _color.default)(textColor).darken(0.20).rgb(), " !important;")), "\n  }\n");
+    }
+    var _default = {
+        defaultProps: defaultProps,
+        textEmphasisVariant: textEmphasisVariant
+    };
+    exports.default = _default;
+});
+unwrapExports(textEmphasis);
+var textEmphasis_1 = textEmphasis.textEmphasisVariant;
+var textEmphasis_2 = textEmphasis.defaultProps;
+var text = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getTextUtilities = getTextUtilities;
+    exports.default = exports.defaultProps = void 0;
+    var defaultProps = {
+        '$grid-breakpoints': {
+            xs: '0',
+            sm: '576px',
+            md: '768px',
+            lg: '992px',
+            xl: '1200px'
+        },
+        '$enable-hover-media-query': false,
+        '$font-weight-normal': 'normal',
+        '$font-weight-bold': 'bold',
+        '$text-muted': '#818a91',
+        '$brand-primary': '#0275d8',
+        '$brand-success': '#5cb85c',
+        '$brand-info': '#5bc0de',
+        '$brand-warning': '#f0ad4e',
+        '$brand-danger': '#d9534f',
+        '$gray-dark': '#373a3c'
+    };
+    exports.defaultProps = defaultProps;
+    function getTextUtilities() {
+        var enableHoverMediaQuery = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-hover-media-query'];
+        var gridBreakpoints = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$grid-breakpoints'];
+        var fontWeightNormal = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : defaultProps['$font-weight-normal'];
+        var fontWeightBold = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : defaultProps['$font-weight-bold'];
+        var textMuted = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : defaultProps['$text-muted'];
+        var brandPrimary = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : defaultProps['$brand-primary'];
+        var brandSuccess = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : defaultProps['$brand-success'];
+        var brandInfo = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : defaultProps['$brand-info'];
+        var brandWarning = arguments.length > 8 && arguments[8] !== undefined ? arguments[8] : defaultProps['$brand-warning'];
+        var brandDanger = arguments.length > 9 && arguments[9] !== undefined ? arguments[9] : defaultProps['$brand-danger'];
+        var grayDark = arguments.length > 10 && arguments[10] !== undefined ? arguments[10] : defaultProps['$gray-dark'];
+        var responseAlignmentList = [];
+        Object.keys(gridBreakpoints).forEach(function(bp) {
+            var infix = (0, breakpoints.breakpointInfix)(bp, gridBreakpoints);
+            var responsiveAlignement = (0, breakpoints.mediaBreakpointUp)(bp, gridBreakpoints, "\n      .text".concat(infix, "-left { text-align: left !important; }\n      .text").concat(infix, "-right  { text-align: right !important; }\n      .text").concat(infix, "-center { text-align: center !important; }\n    "));
+            responseAlignmentList.push(responsiveAlignement);
+        });
+        return "\n    /* Text */\n\n    /* Alignment */\n\n    .text-justify        { text-align: justify !important; }\n    .text-nowrap         { white-space: nowrap !important; }\n    .text-truncate       { ".concat((0, textTruncate_1.textTruncate)(), " }\n\n    /* Responsive alignment */\n\n    ").concat(responseAlignmentList.join('\n'), "\n\n    /* Transformation */\n\n    .text-lowercase      { text-transform: lowercase !important; }\n    .text-uppercase      { text-transform: uppercase !important; }\n    .text-capitalize     { text-transform: capitalize !important; }\n\n    /* Weight and italics */\n\n    .font-weight-normal  { font-weight: ").concat(fontWeightNormal, "; }\n    .font-weight-bold    { font-weight: ").concat(fontWeightBold, "; }\n    .font-italic         { font-style: italic; }\n\n    /* Contextual colors */\n\n    .text-white {\n      color: #fff !important;\n    }\n\n    ").concat((0, textEmphasis.textEmphasisVariant)(enableHoverMediaQuery, '.text-muted', textMuted), "\n\n    ").concat((0, textEmphasis.textEmphasisVariant)(enableHoverMediaQuery, '.text-primary', brandPrimary), "\n\n    ").concat((0, textEmphasis.textEmphasisVariant)(enableHoverMediaQuery, '.text-success', brandSuccess), "\n\n    ").concat((0, textEmphasis.textEmphasisVariant)(enableHoverMediaQuery, '.text-info', brandInfo), "\n\n    ").concat((0, textEmphasis.textEmphasisVariant)(enableHoverMediaQuery, '.text-warning', brandWarning), "\n\n    ").concat((0, textEmphasis.textEmphasisVariant)(enableHoverMediaQuery, '.text-danger', brandDanger), "\n\n    /* Font color */\n\n    ").concat((0, textEmphasis.textEmphasisVariant)(enableHoverMediaQuery, '.text-gray-dark', grayDark), "\n\n    /* Misc */\n\n    .text-hide {\n      ").concat((0, textHide_1.textHide)(), "\n    }\n\n  ");
+    }
+    var _default = {
+        defaultProps: defaultProps,
+        getTextUtilities: getTextUtilities
+    };
+    exports.default = _default;
+});
+var textUtils = unwrapExports(text);
+var text_1 = text.getTextUtilities;
+var text_2 = text.defaultProps;
+var parseTransition_1 = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = void 0;
+    var parseTransition = function parseTransition(transitions) {
+        if (!transitions) {
+            return [];
+        }
+        var sample = transitions;
+        var RULE_DELIMITER = ',';
+        var PROPERTY_DELIMITER = ' ';
+        var MS_UNIT = 'ms';
+        var TMP_STR = 'TMP';
+        var DEFAULT_PROPERTY = 'all';
+        var DEFAULT_DURATION = 0;
+        var DEFAULT_TIMING_FUNCTION = 'ease';
+        var DEFAULT_DELAY = 0;
+        var BEZIER_REGEX = /cubic-bezier\([^\)]+\)/gi;
+        var cubicBezierList = transitions.match(BEZIER_REGEX);
+        if (cubicBezierList) {
+            sample = sample.replace(BEZIER_REGEX, TMP_STR);
+        }
+        var transitionList = sample.split(RULE_DELIMITER).map(function(rule) {
+            var properties = rule.trim().split(PROPERTY_DELIMITER);
+            return {
+                property: properties[0] || DEFAULT_PROPERTY,
+                duration: properties[1] && !(properties[1].indexOf(MS_UNIT) !== -1) ? parseFloat(properties[1]) * 1000 : parseFloat(properties[1]) || DEFAULT_DURATION,
+                timingFunction: properties[2] && properties[2] !== TMP_STR ? properties[2] : cubicBezierList ? cubicBezierList.shift() : DEFAULT_TIMING_FUNCTION,
+                delay: properties[3] && !(properties[3].indexOf(MS_UNIT) !== -1) ? parseFloat(properties[3]) * 1000 : parseFloat(properties[3]) || DEFAULT_DELAY
+            };
+        });
+        return transitionList;
+    };
+    var _default = parseTransition;
+    exports.default = _default;
+    module.exports = exports.default;
+});
+unwrapExports(parseTransition_1);
+var transition_1 = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.transition = transition;
+    exports.default = exports.defaultProps = void 0;
+    var defaultProps = {
+        '$enable-transitions': true
+    };
+    exports.defaultProps = defaultProps;
+    function transition() {
+        var enableTransitions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-transitions'];
+        for(var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++){
+            args[_key - 1] = arguments[_key];
+        }
+        if (enableTransitions && args.length) {
+            return "\n      transition: ".concat(args.join(' '), ";\n    ");
+        }
+        return '';
+    }
+    var _default = {
+        transition: transition
+    };
+    exports.default = _default;
+});
+unwrapExports(transition_1);
+var transition_2 = transition_1.transition;
+var transition_3 = transition_1.defaultProps;
+var transition = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getTransitionUtilities = getTransitionUtilities;
+    exports.fade = fade;
+    exports.collapse = collapse;
+    exports.getReactTransition = getReactTransition;
+    exports.default = exports.defaultProps = void 0;
+    var _parseTransition = _interopRequireDefault(parseTransition_1);
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+    var defaultProps = {
+        '$enable-transitions': true,
+        '$transition-fade': 'opacity .15s linear',
+        '$transition-collapse': 'height .35s ease'
+    };
+    exports.defaultProps = defaultProps;
+    function getTransitionUtilities() {
+        var enableTransitions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-transitions'];
+        var transitionFade = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$transition-fade'];
+        var transitionCollapse = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : defaultProps['$transition-collapse'];
+        return "\n    ".concat(fade(enableTransitions, transitionFade), "\n    ").concat(collapse(enableTransitions, transitionCollapse), "\n  ");
+    }
+    function fade() {
+        var enableTransitions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-transitions'];
+        var transitionFade = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$transition-fade'];
+        return "\n    .fade,\n     &.fade {\n      opacity: 0;\n      ".concat((0, transition_1.transition)(enableTransitions, transitionFade), "\n    \n      &.show {\n        opacity: 1;\n      }\n    }\n  ");
+    }
+    function collapse() {
+        var enableTransitions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultProps['$enable-transitions'];
+        var transitionCollapse = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultProps['$transition-collapse'];
+        return "\n    &.collapse, .collapse {\n      display: none;\n      &.show {\n        display: block;\n      }\n    }\n    \n    tr&, tr {\n      &.collapse.show {\n        display: table-row;\n      }\n    }\n    \n    tbody&, tbody {\n      &.collapse.show {\n        display: table-row-group;\n      }\n    }\n    \n    &.collapsing, .collapsing {\n      position: relative;\n      height: 0;\n      overflow: hidden;\n      ".concat((0, transition_1.transition)(enableTransitions, transitionCollapse), "\n    }\n  ");
+    }
+    function getReactTransition(enableTransition, transition) {
+        var transitionList = (0, _parseTransition.default)(transition);
+        var _transitionList$ = transitionList[0], property = _transitionList$.property, duration = _transitionList$.duration, timingFunction = _transitionList$.timingFunction, delay = _transitionList$.delay;
+        return (0, transition_1.transition)(enableTransition, "".concat(property, " ").concat(duration, "ms ").concat(timingFunction, " ").concat(delay, "ms"));
+    }
+    var _default = {
+        defaultProps: defaultProps,
+        getTransitionUtilities: getTransitionUtilities,
+        getReactTransition: getReactTransition,
+        fade: fade,
+        collapse: collapse
+    };
+    exports.default = _default;
+});
+var transitionUtils = unwrapExports(transition);
+var transition_1$1 = transition.getTransitionUtilities;
+var transition_2$1 = transition.fade;
+var transition_3$1 = transition.collapse;
+var transition_4 = transition.getReactTransition;
+var transition_5 = transition.defaultProps;
+var visibility = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.invisible = invisible;
+    exports.default = void 0;
+    function invisible(visibility) {
+        return "\n    visibility: ".concat(visibility, " !important;\n  ");
+    }
+    var _default = {
+        invisible: invisible
+    };
+    exports.default = _default;
+});
+unwrapExports(visibility);
+var visibility_1 = visibility.invisible;
+var visibility$1 = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getVisibilityUtilities = getVisibilityUtilities;
+    exports.default = void 0;
+    function getVisibilityUtilities() {
+        return "\n    .visible {\n      ".concat((0, visibility.invisible)('visible'), "\n    }\n    \n    .invisible {\n      ").concat((0, visibility.invisible)('hidden'), "\n    }\n   \n  ");
+    }
+    var _default = {
+        getVisibilityUtilities: getVisibilityUtilities
+    };
+    exports.default = _default;
+});
+var visibilityUtils = unwrapExports(visibility$1);
+var visibility_1$1 = visibility$1.getVisibilityUtilities;
+var utilities$2 = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.getUtilities = getUtilities;
+    function _toConsumableArray(arr) {
+        return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+    }
+    function _nonIterableSpread() {
+        throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+    }
+    function _unsupportedIterableToArray(o, minLen) {
+        if (!o) return;
+        if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+        var n = Object.prototype.toString.call(o).slice(8, -1);
+        if (n === "Object" && o.constructor) n = o.constructor.name;
+        if (n === "Map" || n === "Set") return Array.from(o);
+        if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+    }
+    function _iterableToArray(iter) {
+        if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+    }
+    function _arrayWithoutHoles(arr) {
+        if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+    }
+    function _arrayLikeToArray(arr, len) {
+        if (len == null || len > arr.length) len = arr.length;
+        for(var i = 0, arr2 = new Array(len); i < len; i++){
+            arr2[i] = arr[i];
+        }
+        return arr2;
+    }
+    function getUtilities(theme) {
+        var utilities = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Map();
+        if (!theme) {
+            throw new Error('getUtilities expect theme and should be called at the end of your makeTheme.');
+        }
+        var v = theme;
+        var spacersMap = new Map();
+        Object.keys(v.$spacers).forEach(function(key) {
+            return spacersMap.set(key, v.$spacers[key]);
+        });
+        var negativeSpacersMap = new Map();
+        Object.keys(v['$negative-spacers']).forEach(function(key) {
+            return negativeSpacersMap.set(key, v['$negative-spacers'][key]);
+        });
+        var themeColorsMap = new Map();
+        Object.keys(v['$theme-colors']).forEach(function(key) {
+            return themeColorsMap.set(key, v['$theme-colors'][key]);
+        });
+        return new Map([].concat(_toConsumableArray(new Map([
+            [
+                'align',
+                {
+                    property: 'vertical-align',
+                    class: 'align',
+                    values: [
+                        'baseline',
+                        'top',
+                        'middle',
+                        'bottom',
+                        'text-bottom',
+                        'text-top'
+                    ]
+                }
+            ],
+            [
+                'float',
+                {
+                    responsive: true,
+                    property: 'float',
+                    values: [
+                        'left',
+                        'right',
+                        'none'
+                    ]
+                }
+            ],
+            [
+                'overflow',
+                {
+                    property: 'overflow',
+                    values: [
+                        'auto',
+                        'hidden'
+                    ]
+                }
+            ],
+            [
+                'display',
+                {
+                    responsive: true,
+                    print: true,
+                    property: 'display',
+                    class: 'd',
+                    values: [
+                        'none',
+                        'inline',
+                        'inline-block',
+                        'block',
+                        'table',
+                        'table-row',
+                        'table-cell',
+                        'flex',
+                        'inline-flex'
+                    ]
+                }
+            ],
+            [
+                'shadow',
+                {
+                    property: 'box-shadow',
+                    class: 'shadow',
+                    values: new Map([
+                        [
+                            'sm',
+                            v['$box-shadow-sm']
+                        ],
+                        [
+                            null,
+                            v['$box-shadow']
+                        ],
+                        [
+                            'lg',
+                            v['$box-shadow-lg']
+                        ],
+                        [
+                            'none',
+                            'none'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'position',
+                {
+                    property: 'position',
+                    values: [
+                        'static',
+                        'relative',
+                        'absolute',
+                        'fixed',
+                        'sticky'
+                    ]
+                }
+            ],
+            [
+                'border',
+                {
+                    property: 'border',
+                    values: new Map([
+                        [
+                            null,
+                            "".concat(v['$border-width'], " solid ").concat(v['$border-color'])
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ])
+                }
+            ],
+            [
+                'border-top',
+                {
+                    property: 'border-top',
+                    values: new Map([
+                        [
+                            null,
+                            "".concat(v['$border-width'], " solid ").concat(v['$border-color'])
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ])
+                }
+            ],
+            [
+                'border-right',
+                {
+                    property: 'border-right',
+                    values: new Map([
+                        [
+                            null,
+                            "".concat(v['$border-width'], " solid ").concat(v['$border-color'])
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ])
+                }
+            ],
+            [
+                'border-bottom',
+                {
+                    property: 'border-bottom',
+                    values: new Map([
+                        [
+                            null,
+                            "".concat(v['$border-width'], " solid ").concat(v['$border-color'])
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ])
+                }
+            ],
+            [
+                'border-left',
+                {
+                    property: 'border-left',
+                    values: new Map([
+                        [
+                            null,
+                            "".concat(v['$border-width'], " solid ").concat(v['$border-color'])
+                        ],
+                        [
+                            0,
+                            0
+                        ]
+                    ])
+                }
+            ],
+            [
+                'border-color',
+                {
+                    property: 'border-color',
+                    class: 'border',
+                    values: new Map([].concat(_toConsumableArray(themeColorsMap), _toConsumableArray(new Map([
+                        [
+                            'white',
+                            v.$white
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'width',
+                {
+                    property: 'width',
+                    class: 'w',
+                    values: new Map([
+                        [
+                            '25',
+                            '25%'
+                        ],
+                        [
+                            '50',
+                            '50%'
+                        ],
+                        [
+                            '75',
+                            '75%'
+                        ],
+                        [
+                            '100',
+                            '100%'
+                        ],
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'max-width',
+                {
+                    property: 'max-width',
+                    class: 'mw',
+                    values: new Map([
+                        [
+                            '100',
+                            '100%'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'viewport-width',
+                {
+                    property: 'width',
+                    class: 'vw',
+                    values: new Map([
+                        [
+                            '100',
+                            '100vw'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'min-viewport-width',
+                {
+                    property: 'min-width',
+                    class: 'min-vw',
+                    values: new Map([
+                        [
+                            '100',
+                            '100vw'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'height',
+                {
+                    property: 'height',
+                    class: 'h',
+                    values: new Map([
+                        [
+                            '25',
+                            '25%'
+                        ],
+                        [
+                            '50',
+                            '50%'
+                        ],
+                        [
+                            '75',
+                            '75%'
+                        ],
+                        [
+                            '100',
+                            '100%'
+                        ],
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'max-height',
+                {
+                    property: 'max-height',
+                    class: 'mh',
+                    values: new Map([
+                        [
+                            '100',
+                            '100%'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'viewport-height',
+                {
+                    property: 'height',
+                    class: 'vh',
+                    values: new Map([
+                        [
+                            '100',
+                            '100vh'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'min-viewport-height',
+                {
+                    property: 'min-height',
+                    class: 'min-vh',
+                    values: new Map([
+                        [
+                            '100',
+                            '100vh'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'flex',
+                {
+                    responsive: true,
+                    property: 'flex',
+                    values: new Map([
+                        [
+                            'fill',
+                            '1 1 auto'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'flex-direction',
+                {
+                    responsive: true,
+                    property: 'flex-direction',
+                    class: 'flex',
+                    values: [
+                        'row',
+                        'column',
+                        'row-reverse',
+                        'column-reverse'
+                    ]
+                }
+            ],
+            [
+                'flex-grow',
+                {
+                    responsive: true,
+                    property: 'flex-grow',
+                    class: 'flex',
+                    values: new Map([
+                        [
+                            'grow-0',
+                            '0'
+                        ],
+                        [
+                            'grow-1',
+                            '1'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'flex-shrink',
+                {
+                    responsive: true,
+                    property: 'flex-shrink',
+                    class: 'flex',
+                    values: new Map([
+                        [
+                            'shrink-0',
+                            '0'
+                        ],
+                        [
+                            'shrink-1',
+                            '1'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'flex-wrap',
+                {
+                    responsive: true,
+                    property: 'flex-wrap',
+                    class: 'flex',
+                    values: [
+                        'wrap',
+                        'nowrap',
+                        'wrap-reverse'
+                    ]
+                }
+            ],
+            [
+                'justify-content',
+                {
+                    responsive: true,
+                    property: 'justify-content',
+                    values: new Map([
+                        [
+                            'start',
+                            'flex-start'
+                        ],
+                        [
+                            'end',
+                            'flex-end'
+                        ],
+                        [
+                            'center',
+                            'center'
+                        ],
+                        [
+                            'between',
+                            'space-between'
+                        ],
+                        [
+                            'around',
+                            'space-around'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'align-items',
+                {
+                    responsive: true,
+                    property: 'align-items',
+                    values: new Map([
+                        [
+                            'start',
+                            'flex-start'
+                        ],
+                        [
+                            'end',
+                            'flex-end'
+                        ],
+                        [
+                            'center',
+                            'center'
+                        ],
+                        [
+                            'baseline',
+                            'baseline'
+                        ],
+                        [
+                            'stretch',
+                            'stretch'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'align-content',
+                {
+                    responsive: true,
+                    property: 'align-content',
+                    values: new Map([
+                        [
+                            'start',
+                            'flex-start'
+                        ],
+                        [
+                            'end',
+                            'flex-end'
+                        ],
+                        [
+                            'center',
+                            'center'
+                        ],
+                        [
+                            'between',
+                            'space-between'
+                        ],
+                        [
+                            'around',
+                            'space-around'
+                        ],
+                        [
+                            'stretch',
+                            'stretch'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'align-self',
+                {
+                    responsive: true,
+                    property: 'align-self',
+                    values: new Map([
+                        [
+                            'auto',
+                            'auto'
+                        ],
+                        [
+                            'start',
+                            'flex-start'
+                        ],
+                        [
+                            'end',
+                            'flex-end'
+                        ],
+                        [
+                            'center',
+                            'center'
+                        ],
+                        [
+                            'baseline',
+                            'baseline'
+                        ],
+                        [
+                            'stretch',
+                            'stretch'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'order',
+                {
+                    responsive: true,
+                    property: 'order',
+                    values: new Map([
+                        [
+                            'first',
+                            '-1'
+                        ],
+                        [
+                            '0',
+                            '0'
+                        ],
+                        [
+                            '1',
+                            '1'
+                        ],
+                        [
+                            '2',
+                            '2'
+                        ],
+                        [
+                            '3',
+                            '3'
+                        ],
+                        [
+                            '4',
+                            '4'
+                        ],
+                        [
+                            '5',
+                            '5'
+                        ],
+                        [
+                            'last',
+                            '6'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'margin',
+                {
+                    responsive: true,
+                    property: 'margin',
+                    class: 'm',
+                    values: new Map([].concat(_toConsumableArray(spacersMap), _toConsumableArray(new Map([
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'margin-x',
+                {
+                    responsive: true,
+                    property: [
+                        'margin-right',
+                        'margin-left'
+                    ],
+                    class: 'mx',
+                    values: new Map([].concat(_toConsumableArray(spacersMap), _toConsumableArray(new Map([
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'margin-y',
+                {
+                    responsive: true,
+                    property: [
+                        'margin-top',
+                        'margin-bottom'
+                    ],
+                    class: 'my',
+                    values: new Map([].concat(_toConsumableArray(spacersMap), _toConsumableArray(new Map([
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'margin-top',
+                {
+                    responsive: true,
+                    property: 'margin-top',
+                    class: 'mt',
+                    values: new Map([].concat(_toConsumableArray(spacersMap), _toConsumableArray(new Map([
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'margin-right',
+                {
+                    responsive: true,
+                    property: 'margin-right',
+                    class: 'mr',
+                    values: new Map([].concat(_toConsumableArray(spacersMap), _toConsumableArray(new Map([
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'margin-bottom',
+                {
+                    responsive: true,
+                    property: 'margin-bottom',
+                    class: 'mb',
+                    values: new Map([].concat(_toConsumableArray(spacersMap), _toConsumableArray(new Map([
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'margin-left',
+                {
+                    responsive: true,
+                    property: 'margin-left',
+                    class: 'ml',
+                    values: new Map([].concat(_toConsumableArray(spacersMap), _toConsumableArray(new Map([
+                        [
+                            'auto',
+                            'auto'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'negative-margin',
+                {
+                    responsive: true,
+                    property: 'margin',
+                    class: 'm',
+                    values: negativeSpacersMap
+                }
+            ],
+            [
+                'negative-margin-x',
+                {
+                    responsive: true,
+                    property: [
+                        'margin-right',
+                        'margin-left'
+                    ],
+                    class: 'mx',
+                    values: negativeSpacersMap
+                }
+            ],
+            [
+                'negative-margin-y',
+                {
+                    responsive: true,
+                    property: [
+                        'margin-top',
+                        'margin-bottom'
+                    ],
+                    class: 'my',
+                    values: negativeSpacersMap
+                }
+            ],
+            [
+                'negative-margin-top',
+                {
+                    responsive: true,
+                    property: [
+                        'margin-top'
+                    ],
+                    class: 'mt',
+                    values: negativeSpacersMap
+                }
+            ],
+            [
+                'negative-margin-right',
+                {
+                    responsive: true,
+                    property: 'margin-right',
+                    class: 'mr',
+                    values: negativeSpacersMap
+                }
+            ],
+            [
+                'negative-margin-bottom',
+                {
+                    responsive: true,
+                    property: 'margin-bottom',
+                    class: 'mb',
+                    values: negativeSpacersMap
+                }
+            ],
+            [
+                'negative-margin-left',
+                {
+                    responsive: true,
+                    property: 'margin-left',
+                    class: 'ml',
+                    values: negativeSpacersMap
+                }
+            ],
+            [
+                'padding',
+                {
+                    responsive: true,
+                    property: 'padding',
+                    class: 'p',
+                    values: spacersMap
+                }
+            ],
+            [
+                'padding-x',
+                {
+                    responsive: true,
+                    property: [
+                        'padding-right',
+                        'padding-left'
+                    ],
+                    class: 'px',
+                    values: spacersMap
+                }
+            ],
+            [
+                'padding-y',
+                {
+                    responsive: true,
+                    property: [
+                        'padding-top',
+                        'padding-bottom'
+                    ],
+                    class: 'py',
+                    values: spacersMap
+                }
+            ],
+            [
+                'padding-top',
+                {
+                    responsive: true,
+                    property: 'padding-top',
+                    class: 'pt',
+                    values: spacersMap
+                }
+            ],
+            [
+                'padding-right',
+                {
+                    responsive: true,
+                    property: 'padding-right',
+                    class: 'pr',
+                    values: spacersMap
+                }
+            ],
+            [
+                'padding-bottom',
+                {
+                    responsive: true,
+                    property: 'padding-bottom',
+                    class: 'pb',
+                    values: spacersMap
+                }
+            ],
+            [
+                'padding-left',
+                {
+                    responsive: true,
+                    property: 'padding-left',
+                    class: 'pl',
+                    values: spacersMap
+                }
+            ],
+            [
+                'font-weight',
+                {
+                    property: 'font-weight',
+                    values: new Map([
+                        [
+                            'light',
+                            v['$font-weight-light']
+                        ],
+                        [
+                            'lighter',
+                            v['$font-weight-lighter']
+                        ],
+                        [
+                            'normal',
+                            v['$font-weight-normal']
+                        ],
+                        [
+                            'bold',
+                            v['$font-weight-bold']
+                        ],
+                        [
+                            'bolder',
+                            v['$font-weight-bolder']
+                        ]
+                    ])
+                }
+            ],
+            [
+                'text-transform',
+                {
+                    property: 'text-transform',
+                    class: 'text',
+                    values: [
+                        'lowercase',
+                        'uppercase',
+                        'capitalize'
+                    ]
+                }
+            ],
+            [
+                'text-align',
+                {
+                    responsive: true,
+                    property: 'text-align',
+                    class: 'text',
+                    values: [
+                        'left',
+                        'right',
+                        'center',
+                        'justify'
+                    ]
+                }
+            ],
+            [
+                'color',
+                {
+                    property: 'color',
+                    class: 'text',
+                    values: new Map([].concat(_toConsumableArray(themeColorsMap), _toConsumableArray(new Map([
+                        [
+                            'white',
+                            v.$white
+                        ],
+                        [
+                            'body',
+                            v['$body-color']
+                        ],
+                        [
+                            'muted',
+                            v['$text-muted']
+                        ],
+                        [
+                            'black-50',
+                            "rgba(".concat(v.$black, ", .5)")
+                        ],
+                        [
+                            'white-50',
+                            "rgba(".concat(v.$white, ", .5)")
+                        ],
+                        [
+                            'reset',
+                            'inherit'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'line-height',
+                {
+                    property: 'line-height',
+                    class: 'lh',
+                    values: new Map([
+                        [
+                            '1',
+                            '1'
+                        ],
+                        [
+                            'sm',
+                            v['$line-height-sm']
+                        ],
+                        [
+                            'base',
+                            v['$line-height-base']
+                        ],
+                        [
+                            'lg',
+                            v['$line-height-lg']
+                        ]
+                    ])
+                }
+            ],
+            [
+                'background-color',
+                {
+                    property: 'background-color',
+                    class: 'bg',
+                    values: new Map([].concat(_toConsumableArray(themeColorsMap), _toConsumableArray(new Map([
+                        [
+                            'body',
+                            v['$body-bg']
+                        ],
+                        [
+                            'white',
+                            v.$white
+                        ],
+                        [
+                            'transparent',
+                            'transparent'
+                        ]
+                    ]))))
+                }
+            ],
+            [
+                'white-space',
+                {
+                    property: 'white-space',
+                    class: 'text',
+                    values: new Map([
+                        [
+                            'wrap',
+                            'normal'
+                        ],
+                        [
+                            'nowrap',
+                            'nowrap'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'text-decoration',
+                {
+                    property: 'text-decoration',
+                    values: [
+                        'none',
+                        'underline',
+                        'line-through'
+                    ]
+                }
+            ],
+            [
+                'font-style',
+                {
+                    property: 'font-style',
+                    class: 'font',
+                    values: [
+                        'italic'
+                    ]
+                }
+            ],
+            [
+                'overflow-wrap',
+                {
+                    property: [
+                        'overflow-wrap',
+                        'word-break'
+                    ],
+                    class: 'text',
+                    values: new Map([
+                        [
+                            'break',
+                            'break-word'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'font-family',
+                {
+                    property: 'font-family',
+                    class: 'font',
+                    values: new Map([
+                        [
+                            'monospace',
+                            v['$font-family-monospace']
+                        ]
+                    ])
+                }
+            ],
+            [
+                'rounded',
+                {
+                    property: 'border-radius',
+                    class: 'rounded',
+                    values: new Map([
+                        [
+                            null,
+                            v['$border-radius']
+                        ],
+                        [
+                            'sm',
+                            v['$border-radius-sm']
+                        ],
+                        [
+                            'lg',
+                            v['$border-radius-lg']
+                        ],
+                        [
+                            'circle',
+                            '50%'
+                        ],
+                        [
+                            'pill',
+                            v['$rounded-pill']
+                        ],
+                        [
+                            '0',
+                            '0'
+                        ]
+                    ])
+                }
+            ],
+            [
+                'rounded-top',
+                {
+                    property: [
+                        'border-top-left-radius',
+                        'border-top-right-radius'
+                    ],
+                    class: 'rounded-top',
+                    values: new Map([
+                        [
+                            null,
+                            v['$border-radius']
+                        ]
+                    ])
+                }
+            ],
+            [
+                'rounded-right',
+                {
+                    property: [
+                        'border-top-right-radius',
+                        'border-bottom-right-radius'
+                    ],
+                    class: 'rounded-right',
+                    values: new Map([
+                        [
+                            null,
+                            v['$border-radius']
+                        ]
+                    ])
+                }
+            ],
+            [
+                'rounded-bottom',
+                {
+                    property: [
+                        'border-bottom-right-radius',
+                        'border-bottom-left-radius'
+                    ],
+                    class: 'rounded-bottom',
+                    values: new Map([
+                        [
+                            null,
+                            v['$border-radius']
+                        ]
+                    ])
+                }
+            ],
+            [
+                'rounded-left',
+                {
+                    property: [
+                        'border-bottom-left-radius',
+                        'border-top-left-radius'
+                    ],
+                    class: 'rounded-left',
+                    values: new Map([
+                        [
+                            null,
+                            v['$border-radius']
+                        ]
+                    ])
+                }
+            ],
+            [
+                'visibility',
+                {
+                    property: 'visibility',
+                    class: null,
+                    values: new Map([
+                        [
+                            'visible',
+                            'visible'
+                        ],
+                        [
+                            'invisible',
+                            'hidden'
+                        ]
+                    ])
+                }
+            ]
+        ])), _toConsumableArray(utilities)));
+    }
+});
+unwrapExports(utilities$2);
+var utilities_1$2 = utilities$2.getUtilities;
+var utils = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.allowFalseValue = allowFalseValue;
+    exports.assertAscending = assertAscending;
+    exports.assertStartAtZero = assertStartAtZero;
+    exports.comparable = comparable;
+    exports.negativifyMap = negativifyMap;
+    exports.default = void 0;
+    var _unitUtils = _interopRequireDefault(unitUtils$2);
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+    function ownKeys(object, enumerableOnly) {
+        var keys = Object.keys(object);
+        if (Object.getOwnPropertySymbols) {
+            var symbols = Object.getOwnPropertySymbols(object);
+            if (enumerableOnly) symbols = symbols.filter(function(sym) {
+                return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+            });
+            keys.push.apply(keys, symbols);
+        }
+        return keys;
+    }
+    function _objectSpread(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i] != null ? arguments[i] : {};
+            if (i % 2) {
+                ownKeys(Object(source), true).forEach(function(key) {
+                    _defineProperty(target, key, source[key]);
+                });
+            } else if (Object.getOwnPropertyDescriptors) {
+                Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+            } else {
+                ownKeys(Object(source)).forEach(function(key) {
+                    Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+                });
+            }
+        }
+        return target;
+    }
+    function _defineProperty(obj, key, value) {
+        if (key in obj) {
+            Object.defineProperty(obj, key, {
+                value: value,
+                enumerable: true,
+                configurable: true,
+                writable: true
+            });
+        } else {
+            obj[key] = value;
+        }
+        return obj;
+    }
+    function _toConsumableArray(arr) {
+        return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+    }
+    function _nonIterableSpread() {
+        throw new TypeError("Invalid attempt to spread non-iterable instance");
+    }
+    function _iterableToArray(iter) {
+        if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+    }
+    function _arrayWithoutHoles(arr) {
+        if (Array.isArray(arr)) {
+            for(var i = 0, arr2 = new Array(arr.length); i < arr.length; i++){
+                arr2[i] = arr[i];
+            }
+            return arr2;
+        }
+    }
+    function _slicedToArray(arr, i) {
+        return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
+    }
+    function _nonIterableRest() {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+    }
+    function _iterableToArrayLimit(arr, i) {
+        if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
+            return;
+        }
+        var _arr = [];
+        var _n = true;
+        var _d = false;
+        var _e = undefined;
+        try {
+            for(var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true){
+                _arr.push(_s.value);
+                if (i && _arr.length === i) break;
+            }
+        } catch (err) {
+            _d = true;
+            _e = err;
+        } finally{
+            try {
+                if (!_n && _i["return"] != null) _i["return"]();
+            } finally{
+                if (_d) throw _e;
+            }
+        }
+        return _arr;
+    }
+    function _arrayWithHoles(arr) {
+        if (Array.isArray(arr)) return arr;
+    }
+    var detectUnit = _unitUtils.default.detectUnit, rmUnit = _unitUtils.default.rmUnit;
+    function allowFalseValue(userValue, defaultValue) {
+        return userValue === false ? userValue : userValue || defaultValue;
+    }
+    function assertAscending(map, mapName) {
+        var prevKey;
+        var prevNum;
+        var asserted = true;
+        Object.keys(map).forEach(function(key) {
+            var num = map[key];
+            if (prevNum == null) ;
+            else if (!comparable(rmUnit(prevNum), rmUnit(num))) {
+                {
+                    console.warn("Potentially invalid value for ".concat(mapName, ": This map must be in ascending order, but key '").concat(key, "' has value ").concat(num, " whose unit makes it incomparable to ").concat(prevNum, ", the value of the previous key '").concat(prevKey, "' !"));
+                }
+                asserted = false;
+            } else if (rmUnit(prevNum) >= rmUnit(num)) {
+                {
+                    console.warn("Invalid value for ".concat(mapName, ": This map must be in ascending order, but key '").concat(key, "' has value ").concat(num, " which isn't greater than ").concat(prevNum, ", the value of the previous key '").concat(prevKey, "' !"));
+                }
+                asserted = false;
+            }
+            prevKey = key;
+            prevNum = num;
+        });
+        return asserted;
+    }
+    function assertStartAtZero(map) {
+        var values = Object.keys(map).map(function(key) {
+            return map[key];
+        });
+        var firstValue = rmUnit(values[0]);
+        var asserted = true;
+        if (firstValue !== 0) {
+            {
+                console.warn("First breakpoint in $grid-breakpoints must start at 0, but starts at ".concat(firstValue, "."));
+            }
+            asserted = false;
+        }
+        return asserted;
+    }
+    function comparable(a, b) {
+        return !isNaN(a + b);
+    }
+    function negativifyMap(map) {
+        if (map instanceof Map) {
+            var _result = new Map();
+            var _iteratorNormalCompletion = true;
+            var _didIteratorError = false;
+            var _iteratorError = undefined;
+            try {
+                for(var _iterator = map[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true){
+                    var _step$value = _slicedToArray(_step.value, 2), key = _step$value[0], value = _step$value[1];
+                    if (key !== 0 && key !== '0') {
+                        var detectedUnit = detectUnit(value);
+                        var newValue = rmUnit(value) * -1 + detectedUnit;
+                        _result = new Map([].concat(_toConsumableArray(_result), _toConsumableArray(new Map([
+                            [
+                                "n".concat(key),
+                                newValue
+                            ]
+                        ]))));
+                    }
+                }
+            } catch (err) {
+                _didIteratorError = true;
+                _iteratorError = err;
+            } finally{
+                try {
+                    if (!_iteratorNormalCompletion && _iterator.return != null) {
+                        _iterator.return();
+                    }
+                } finally{
+                    if (_didIteratorError) {
+                        throw _iteratorError;
+                    }
+                }
+            }
+            return _result;
+        }
+        var result = {};
+        Object.keys(map).forEach(function(key) {
+            if (key !== 0 && key !== '0') {
+                var _detectedUnit = detectUnit(map[key]);
+                var _newValue = rmUnit(map[key]) * -1 + _detectedUnit;
+                result = _objectSpread({}, result, {}, _defineProperty({}, "n".concat(key), _newValue));
+            }
+        });
+        return result;
+    }
+    var _default = {
+        assertAscending: assertAscending,
+        assertStartAtZero: assertStartAtZero,
+        comparable: comparable,
+        negativifyMap: negativifyMap
+    };
+    exports.default = _default;
+});
+unwrapExports(utils);
+var utils_1 = utils.allowFalseValue;
+var utils_2 = utils.assertAscending;
+var utils_3 = utils.assertStartAtZero;
+var utils_4 = utils.comparable;
+var utils_5 = utils.negativifyMap;
+var regex = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.linearGradientRe = void 0;
+    var linearGradientRe = /#[0-9a-fA-F]{3,6}|rgb ?\([ 0-9.%,]+?\)/g;
+    exports.linearGradientRe = linearGradientRe;
+});
+unwrapExports(regex);
+var regex_1 = regex.linearGradientRe;
+var theme = createCommonjsModule(function(module, exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = exports.makeTheme = void 0;
+    var _color = _interopRequireDefault(ColorWrapper$1);
+    var _unitUtils = _interopRequireDefault(unitUtils$2);
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+    function ownKeys(object, enumerableOnly) {
+        var keys = Object.keys(object);
+        if (Object.getOwnPropertySymbols) {
+            var symbols = Object.getOwnPropertySymbols(object);
+            if (enumerableOnly) symbols = symbols.filter(function(sym) {
+                return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+            });
+            keys.push.apply(keys, symbols);
+        }
+        return keys;
+    }
+    function _objectSpread(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i] != null ? arguments[i] : {};
+            if (i % 2) {
+                ownKeys(Object(source), true).forEach(function(key) {
+                    _defineProperty(target, key, source[key]);
+                });
+            } else if (Object.getOwnPropertyDescriptors) {
+                Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+            } else {
+                ownKeys(Object(source)).forEach(function(key) {
+                    Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+                });
+            }
+        }
+        return target;
+    }
+    function _defineProperty(obj, key, value) {
+        if (key in obj) {
+            Object.defineProperty(obj, key, {
+                value: value,
+                enumerable: true,
+                configurable: true,
+                writable: true
+            });
+        } else {
+            obj[key] = value;
+        }
+        return obj;
+    }
+    var detectUnit = _unitUtils.default.detectUnit, rmUnit = _unitUtils.default.rmUnit;
+    function makeOriginal() {
+        var userTheme = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+        var v = {};
+        var u = userTheme;
+        var detectedUnit;
+        v._name = u._name || 'bootstrap-styled';
+        v['$white'] = u['$white'] || '#fff';
+        v['$gray-100'] = v['$gray-100'] || '#f8f9fa';
+        v['$gray-200'] = v['$gray-200'] || '#e9ecef';
+        v['$gray-300'] = v['$gray-300'] || '#dee2e6';
+        v['$gray-400'] = v['$gray-400'] || '#ced4da';
+        v['$gray-500'] = v['$gray-500'] || '#adb5bd';
+        v['$gray-600'] = v['$gray-600'] || '#6c757d';
+        v['$gray-700'] = v['$gray-700'] || '#495057';
+        v['$gray-800'] = v['$gray-800'] || '#343a40';
+        v['$gray-900'] = v['$gray-900'] || '#212529';
+        v['$black'] = u['$black'] || '#000';
+        v['$grays'] = u['$grays'] || {
+            100: v['$gray-100'],
+            200: v['$gray-200'],
+            300: v['$gray-300'],
+            400: v['$gray-400'],
+            500: v['$gray-500'],
+            600: v['$gray-600'],
+            700: v['$gray-700'],
+            800: v['$gray-800'],
+            900: v['$gray-900']
+        };
+        v['$blue'] = u['$blue'] || '#0275d8';
+        v['$indigo'] = u['$indigo'] || '#0275d8';
+        v['$purple'] = u['$purple'] || '#613d7c';
+        v['$pink'] = u['$pink'] || '#ff5b77';
+        v['$red'] = u['$red'] || '#d9534f';
+        v['$orange'] = u['$orange'] || '#f0ad4e';
+        v['$yellow'] = u['$yellow'] || '#ffd500';
+        v['$green'] = u['$green'] || '#5cb85c';
+        v['$teal'] = u['$teal'] || '#5bc0de';
+        v['$cyan'] = u['$cyan'] || '#17a2b8';
+        v['$light'] = u['$light'] || v['$gray-100'];
+        v['$dark'] = u['$dark'] || v['$gray-800'];
+        v['$colors'] = _objectSpread({}, {
+            blue: v['$blue'],
+            indigo: v['$indigo'],
+            purple: v['$purple'],
+            pink: v['$pink'],
+            red: v['$red'],
+            orange: v['$orange'],
+            yellow: v['$yellow'],
+            green: v['$green'],
+            teal: v['$teal'],
+            cyan: v['$cyan'],
+            white: v['$white'],
+            gray: v['$gray-600'],
+            'gray-dark': v['$gray-800']
+        }, {}, u['$colors'] || {});
+        v['$primary'] = u['$primary'] || v['$blue'];
+        v['$secondary'] = u['$secondary'] || v['$gray-600'];
+        v['$success'] = u['$success'] || v['$green'];
+        v['$info'] = u['$info'] || v['$cyan'];
+        v['$warning'] = u['$warning'] || v['$yellow'];
+        v['$danger'] = u['$danger'] || v['$red'];
+        v['$light'] = u['$light'] || v['$gray-100'];
+        v['$dark'] = u['$dark'] || v['$gray-800'];
+        v['$gray-dark'] = u['$gray-dark'] || '#292b2c';
+        v['$gray'] = u['$gray'] || '#464a4c';
+        v['$gray-light'] = u['$gray-light'] || '#636c72';
+        v['$gray-lighter'] = u['$gray-lighter'] || '#eceeef';
+        v['$gray-lightest'] = u['$gray-lightest'] || '#f7f7f9';
+        v['$brand-primary'] = u['$brand-primary'] || v['$primary'];
+        v['$brand-success'] = u['$brand-success'] || v['$success'];
+        v['$brand-info'] = u['$brand-info'] || v['$info'];
+        v['$brand-warning'] = u['$brand-warning'] || v['$warning'];
+        v['$brand-danger'] = u['$brand-danger'] || v['$danger'];
+        v['$brand-inverse'] = u['$brand-inverse'] || v['$gray-dark'];
+        v['$theme-colors'] = _objectSpread({}, {
+            primary: v['$primary'],
+            secondary: v['$secondary'],
+            success: v['$success'],
+            info: v['$info'],
+            warning: v['$warning'],
+            danger: v['$danger'],
+            light: v['$light'],
+            dark: v['$dark']
+        }, {}, u['$theme-colors'] || {});
+        v['$enable-rounded'] = (0, utils.allowFalseValue)(u['$enable-rounded'], true);
+        v['$enable-shadows'] = (0, utils.allowFalseValue)(u['$enable-shadows'], false);
+        v['$enable-gradients'] = (0, utils.allowFalseValue)(u['$enable-gradients'], false);
+        v['$enable-transitions'] = (0, utils.allowFalseValue)(u['$enable-transitions'], true);
+        v['$enable-hover-media-query'] = (0, utils.allowFalseValue)(u['$enable-hover-media-query'], false);
+        v['$enable-grid-classes'] = (0, utils.allowFalseValue)(u['$enable-grid-classes'], true);
+        v['$enable-print-styles'] = (0, utils.allowFalseValue)(u['$enable-print-styles'], true);
+        v['$spacer'] = u['$spacer'] || '1rem';
+        detectedUnit = detectUnit(v['$spacer']);
+        v['$spacer-halved'] = u['$spacer-halved'] || rmUnit(v['$spacer'], detectedUnit) / 2 + detectedUnit;
+        v['$spacer-x'] = u['$spacer-x'] || v['$spacer'];
+        v['$spacer-y'] = u['$spacer-y'] || v['$spacer'];
+        v['$spacers'] = u['$spacers'] || {
+            0: 0,
+            1: rmUnit(v['$spacer']) * 0.25 + detectedUnit,
+            2: rmUnit(v['$spacer']) * 0.5 + detectedUnit,
+            3: v['$spacer'],
+            4: rmUnit(v['$spacer']) * 1.5 + detectedUnit,
+            5: rmUnit(v['$spacer']) * 3 + detectedUnit
+        };
+        v['$negative-spacers'] = u['$negative-spacers'] || (0, utils.negativifyMap)(v['$spacers']);
+        v['$border-width'] = u['$border-width'] || '1px';
+        v['$border-color'] = u['$border-color'] || v['$gray-300'];
+        v['$sizes'] = u['$sizes'] || {
+            25: '25%',
+            50: '50%',
+            75: '75%',
+            100: '100%'
+        };
+        v['$body-bg'] = u['$body-bg'] || v['$white'];
+        v['$body-color'] = u['$body-color'] || v['$gray-dark'];
+        v['$link-color'] = u['$link-color'] || v['$brand-primary'];
+        v['$link-decoration'] = u['$link-decoration'] || 'none';
+        v['$link-hover-color'] = u['$link-hover-color'] || (0, _color.default)(v['$link-color']).darken(0.35).toString();
+        v['$link-hover-decoration'] = u['$link-hover-decoration'] || 'underline';
+        v['$grid-breakpoints'] = u['$grid-breakpoints'] || {
+            xs: '0',
+            sm: '576px',
+            md: '768px',
+            lg: '992px',
+            xl: '1200px',
+            xxl: '1452px'
+        };
+        (0, utils.assertAscending)(v['$grid-breakpoints'], '$grid-breakpoints');
+        (0, utils.assertStartAtZero)(v['$grid-breakpoints']);
+        v['$container-max-widths'] = u['$container-max-widths'] || {
+            sm: '540px',
+            md: '720px',
+            lg: '960px',
+            xl: '1140px'
+        };
+        (0, utils.assertAscending)(v['$container-max-widths'], '$container-max-widths');
+        v['$grid-columns'] = u['$grid-columns'] || '12';
+        v['$grid-gutter-width'] = u['$grid-gutter-width'] || '30px';
+        v['$font-family-sans-serif'] = u['$font-family-sans-serif'] || '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
+        v['$font-family-monospace'] = u['$font-family-monospace'] || 'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+        v['$font-family-base'] = u['$font-family-base'] || v['$font-family-sans-serif'];
+        v['$font-size-base'] = u['$font-size-base'] || '1rem';
+        v['$font-size-lg'] = u['$font-size-lg'] || '1.25rem';
+        v['$font-size-sm'] = u['$font-size-sm'] || '.875rem';
+        v['$font-size-xs'] = u['$font-size-xs'] || '.75rem';
+        v['$font-weight-light'] = u['$font-weight-light'] || '300';
+        v['$font-weight-lighter'] = u['$font-weight-lighter'] || 'lighter';
+        v['$font-weight-bolder'] = u['$font-weight-bolder'] || 'bolder';
+        v['$font-weight-normal'] = u['$font-weight-normal'] || '400';
+        v['$font-weight-bold'] = u['$font-weight-bold'] || '700';
+        v['$font-weight-base'] = u['$font-weight-base'] || v['$font-weight-normal'];
+        v['$line-height-base'] = u['$line-height-base'] || '1.5';
+        v['$font-size-h1'] = u['$font-size-h1'] || '2.5rem';
+        v['$font-size-h2'] = u['$font-size-h2'] || '2rem';
+        v['$font-size-h3'] = u['$font-size-h3'] || '1.75rem';
+        v['$font-size-h4'] = u['$font-size-h4'] || '1.5rem';
+        v['$font-size-h5'] = u['$font-size-h5'] || '1.25rem';
+        v['$font-size-h6'] = u['$font-size-h6'] || '1rem';
+        detectedUnit = detectUnit(v['$spacer']);
+        v['$headings-margin-bottom'] = u['$headings-margin-bottom'] || rmUnit(v['$spacer'], detectedUnit) / 2 + detectedUnit;
+        v['$headings-font-family'] = u['$headings-font-family'] || 'inherit';
+        v['$headings-font-weight'] = u['$headings-font-weight'] || '500';
+        v['$headings-line-height'] = u['$headings-line-height'] || '1.1';
+        v['$headings-color'] = u['$headings-color'] || 'inherit';
+        v['$display1-size'] = u['$display1-size'] || '6rem';
+        v['$display2-size'] = u['$display2-size'] || '5.5rem';
+        v['$display3-size'] = u['$display3-size'] || '4.5rem';
+        v['$display4-size'] = u['$display4-size'] || '3.5rem';
+        v['$display1-weight'] = u['$display1-weight'] || '300';
+        v['$display2-weight'] = u['$display2-weight'] || '300';
+        v['$display3-weight'] = u['$display3-weight'] || '300';
+        v['$display4-weight'] = u['$display4-weight'] || '300';
+        v['$display-line-height'] = u['$display-line-height'] || v['$headings-line-height'];
+        v['$lead-font-size'] = u['$lead-font-size'] || '1.25rem';
+        v['$lead-font-weight'] = u['$lead-font-weight'] || '300';
+        v['$small-font-size'] = u['$small-font-size'] || '80%';
+        v['$text-muted'] = u['$text-muted'] || v['$gray-light'];
+        v['$blockquote-small-color'] = u['$blockquote-small-color'] || v['$gray-light'];
+        detectedUnit = detectUnit(v['$font-size-base']);
+        v['$blockquote-font-size'] = u['$blockquote-font-size'] || rmUnit(v['$font-size-base'], detectedUnit) * 1.25 + detectedUnit;
+        v['$blockquote-border-color'] = u['$blockquote-border-color'] || v['$gray-lighter'];
+        v['$blockquote-border-width'] = u['$blockquote-border-width'] || '.25rem';
+        v['$hr-border-color'] = u['$hr-border-color'] || (0, _color.default)(v['$black']).alpha(0.1).toString();
+        v['$hr-border-width'] = u['$hr-border-width'] || v['$border-width'];
+        v['$mark-padding'] = u['$mark-padding'] || '.2em';
+        v['$dt-font-weight'] = u['$dt-font-weight'] || v['$font-weight-bold'];
+        v['$list-inline-padding'] = u['$list-inline-padding'] || '5px';
+        v['$line-height-lg'] = u['$line-height-lg'] || '1.6';
+        v['$line-height-sm'] = u['$line-height-sm'] || '1.3';
+        v['$border-radius'] = u['$border-radius'] || '.25rem';
+        v['$border-radius-lg'] = u['$border-radius-lg'] || '.3rem';
+        v['$border-radius-sm'] = u['$border-radius-sm'] || '.2rem';
+        v['$rounded-pill'] = u['$rounded-pill'] || '50rem';
+        v['$box-shadow-sm'] = u['$box-shadow-sm'] || "0 .125rem .25rem ".concat((0, _color.default)(v.$black).alpha(0.075).toString());
+        v['$box-shadow'] = u['$box-shadow'] || "0 .5rem 1rem ".concat((0, _color.default)(v.$black).alpha(0.15).toString());
+        v['$box-shadow-lg'] = u['$box-shadow-lg'] || "0 1rem 3rem ".concat((0, _color.default)(v.$black).alpha(0.175).toString());
+        v['$box-shadow-inset'] = u['$box-shadow-inset'] || "inset 0 1px 2px ".concat((0, _color.default)(v.$black).alpha(0.075).toString());
+        v['$component-active-color'] = u['$component-active-color'] || v['$white'];
+        v['$component-active-bg'] = u['$component-active-bg'] || v['$brand-primary'];
+        v['$caret-width'] = u['$caret-width'] || '.3em';
+        v['$transition-base'] = u['$transition-base'] || 'all .2s ease-in-out';
+        v['$transition-fade'] = u['$transition-fade'] || 'opacity .15s linear';
+        v['$transition-collapse'] = u['$transition-collapse'] || 'height .35s ease';
+        v['$table-cell-padding'] = u['$table-cell-padding'] || '.75rem';
+        v['$table-sm-cell-padding'] = u['$table-sm-cell-padding'] || '.3rem';
+        v['$table-bg'] = u['$table-bg'] || 'transparent';
+        v['$table-inverse-bg'] = u['$table-inverse-bg'] || v['$gray-dark'];
+        v['$table-inverse-bg-accent'] = u['$table-inverse-bg-accent'] || (0, _color.default)(v['$white']).alpha(0.05).toString();
+        v['$table-inverse-bg-hover'] = u['$table-inverse-bg-hover'] || (0, _color.default)(v['$white']).alpha(0.075).toString();
+        v['$table-inverse-color'] = u['$table-inverse-color'] || v['$body-bg'];
+        v['$table-inverse-border'] = u['$table-inverse-border'] || (0, _color.default)(v['$gray-dark']).lighten(0.075).toString();
+        v['$table-bg-accent'] = u['$table-bg-accent'] || (0, _color.default)(v['$black']).alpha(0.05).toString();
+        v['$table-bg-hover'] = u['$table-bg-hover'] || (0, _color.default)(v['$black']).alpha(0.075).toString();
+        v['$table-bg-active'] = u['$table-bg-active'] || v['$table-bg-hover'];
+        v['$table-head-bg'] = u['$table-head-bg'] || v['$gray-lighter'];
+        v['$table-head-color'] = u['$table-head-color'] || v['$gray'];
+        v['$table-border-width'] = u['$table-border-width'] || v['$border-width'];
+        v['$table-border-color'] = u['$table-border-color'] || v['$gray-lighter'];
+        v['$btn-padding-x'] = u['$btn-padding-x'] || '1rem';
+        v['$btn-padding-y'] = u['$btn-padding-y'] || '.5rem';
+        v['$btn-line-height'] = u['$btn-line-height'] || '1.25';
+        v['$btn-font-weight'] = u['$btn-font-weight'] || v['$font-weight-normal'];
+        v['$btn-box-shadow'] = u['$btn-box-shadow'] || "inset 0 1px 0 ".concat((0, _color.default)(v['$white']).alpha(0.15).toString(), ", 0 1px 1px ").concat((0, _color.default)(v['$black']).alpha(0.075).toString());
+        v['$btn-focus-box-shadow'] = u['$btn-focus-box-shadow'] || "0 0 0 2px ".concat((0, _color.default)(v['$brand-primary']).alpha(0.25).toString());
+        v['$btn-disabled-opacity'] = u['$btn-disabled-opacity'] || '.65';
+        v['$btn-active-box-shadow'] = u['$btn-active-box-shadow'] || "inset 0 3px 5px ".concat((0, _color.default)(v['$black']).alpha(0.125).toString());
+        v['$btn-primary-color'] = u['$btn-primary-color'] || v['$white'];
+        v['$btn-primary-bg'] = u['$btn-primary-bg'] || v['$brand-primary'];
+        v['$btn-secondary-color'] = u['$btn-secondary-color'] || v['$gray-dark'];
+        v['$btn-secondary-bg'] = u['$btn-secondary-bg'] || v['$white'];
+        v['$btn-info-color'] = u['$btn-info-color'] || v['$white'];
+        v['$btn-info-bg'] = u['$btn-info-bg'] || v['$brand-info'];
+        v['$btn-success-color'] = u['$btn-success-color'] || v['$white'];
+        v['$btn-success-bg'] = u['$btn-success-bg'] || v['$brand-success'];
+        v['$btn-warning-color'] = u['$btn-warning-color'] || v['$white'];
+        v['$btn-warning-bg'] = u['$btn-warning-bg'] || v['$brand-warning'];
+        v['$btn-danger-color'] = u['$btn-danger-color'] || v['$white'];
+        v['$btn-danger-bg'] = u['$btn-danger-bg'] || v['$brand-danger'];
+        [
+            'primary',
+            'secondary',
+            'info',
+            'success',
+            'warning',
+            'danger'
+        ].forEach(function(type) {
+            if (v["$btn-".concat(type, "-bg")].includes('linear-gradient')) {
+                v["$btn-".concat(type, "-border")] = v["$btn-".concat(type, "-bg")].match(regex.linearGradientRe)[1];
+            } else if (type === 'secondary') {
+                v['$btn-secondary-border'] = u['$btn-secondary-border'] || '#ccc';
+            } else {
+                v["$btn-".concat(type, "-border")] = u["$btn-".concat(type, "-border")] || v["$btn-".concat(type, "-bg")];
+            }
+        });
+        v['$btn-link-disabled-color'] = u['$btn-link-disabled-color'] || v['$gray-light'];
+        v['$btn-padding-x-sm'] = u['$btn-padding-x-sm'] || '.5rem';
+        v['$btn-padding-y-sm'] = u['$btn-padding-y-sm'] || '.25rem';
+        v['$btn-padding-x-lg'] = u['$btn-padding-x-lg'] || '1.5rem';
+        v['$btn-padding-y-lg'] = u['$btn-padding-y-lg'] || '.75rem';
+        v['$btn-block-spacing-y'] = u['$btn-block-spacing-y'] || '.5rem';
+        v['$btn-border-radius'] = u['$btn-border-radius'] || v['$border-radius'];
+        v['$btn-border-radius-lg'] = u['$btn-border-radius-lg'] || v['$border-radius-lg'];
+        v['$btn-border-radius-sm'] = u['$btn-border-radius-sm'] || v['$border-radius-sm'];
+        v['$btn-border-width'] = u['$btn-border-width'] || '1px';
+        v['$btn-transition'] = u['$btn-transition'] || v['$transition-base'];
+        v['$input-padding-x'] = u['$input-padding-x'] || '.75rem';
+        v['$input-padding-y'] = u['$input-padding-y'] || '.5rem';
+        v['$input-line-height'] = u['$input-line-height'] || '1.25';
+        v['$input-bg'] = u['$input-bg'] || v['$white'];
+        v['$input-bg-disabled'] = u['$input-bg-disabled'] || v['$gray-lighter'];
+        v['$input-color'] = u['$input-color'] || v['$gray'];
+        v['$input-border-color'] = u['$input-border-color'] || (0, _color.default)(v['$black']).alpha(0.15).toString();
+        v['$input-btn-border-width'] = u['$input-btn-border-width'] || v['$border-width'];
+        v['$input-box-shadow'] = u['$input-box-shadow'] || "inset 0 1px 1px ".concat((0, _color.default)(v['$black']).alpha(0.075).toString());
+        v['$input-border-radius'] = u['$input-border-radius'] || v['$border-radius'];
+        v['$input-border-radius-lg'] = u['$input-border-radius-lg'] || v['$border-radius-lg'];
+        v['$input-border-radius-sm'] = u['$input-border-radius-sm'] || v['$border-radius-sm'];
+        v['$input-bg-focus'] = u['$input-bg-focus'] || v['$input-bg'];
+        v['$input-border-focus'] = u['$input-border-focus'] || (0, _color.default)(v['$brand-primary']).lighten(0.25).toString();
+        v['$input-box-shadow-focus'] = u['$input-box-shadow-focus'] || "".concat(v['$input-box-shadow'], ", 0 0 8px ").concat((0, _color.default)(v['$input-border-focus']).alpha(0.6).toString());
+        v['$input-color-focus'] = u['$input-color-focus'] || v['$input-color'];
+        v['$input-color-placeholder'] = u['$input-color-placeholder'] || v['$gray-light'];
+        v['$input-padding-x-sm'] = u['$input-padding-x-sm'] || '.5rem';
+        v['$input-padding-y-sm'] = u['$input-padding-y-sm'] || '.25rem';
+        v['$input-padding-x-lg'] = u['$input-padding-x-lg'] || '1.5rem';
+        v['$input-padding-y-lg'] = u['$input-padding-y-lg'] || '.75rem';
+        detectedUnit = detectUnit(v['$font-size-base']);
+        v['$input-height'] = u['$input-height'] || rmUnit(v['$font-size-base'], detectedUnit) * v['$line-height-base'] + rmUnit(v['$input-padding-y'], detectedUnit) * 2 + detectedUnit;
+        v['$input-height-sm'] = u['$input-height-sm'] || rmUnit(v['$font-size-sm'], detectedUnit) * v['$line-height-sm'] + rmUnit(v['$input-padding-y-sm'], detectedUnit) * 2 + detectedUnit;
+        v['$input-height-lg'] = u['$input-height-lg'] || rmUnit(v['$font-size-lg'], detectedUnit) * v['$line-height-lg'] + rmUnit(v['$input-padding-y-lg'], detectedUnit) * 2 + detectedUnit;
+        v['$input-transition'] = u['$input-transition'] || 'border-color ease-in-out .15s, box-shadow ease-in-out .15s';
+        v['$label-margin-bottom'] = u['$label-margin-bottom'] || '.5rem';
+        v['$form-text-margin-top'] = u['$form-text-margin-top'] || '.25rem';
+        v['$form-feedback-margin-top'] = u['$form-feedback-margin-top'] || v['$form-text-margin-top'];
+        v['$form-check-margin-bottom'] = u['$form-check-margin-bottom'] || '.5rem';
+        v['$form-check-input-gutter'] = u['$form-check-input-gutter'] || '1.25rem';
+        v['$form-check-input-margin-y'] = u['$form-check-input-margin-y'] || '.25rem';
+        v['$form-check-input-margin-x'] = u['$form-check-input-margin-x'] || '.25rem';
+        v['$form-check-inline-margin-x'] = u['$form-check-inline-margin-x'] || '.75rem';
+        v['$form-group-margin-bottom'] = u['$form-group-margin-bottom'] || v['$spacer-y'];
+        v['$input-group-addon-bg'] = u['$input-group-addon-bg'] || v['$gray-lighter'];
+        v['$input-group-addon-border-color'] = u['$input-group-addon-border-color'] || v['$input-border-color'];
+        v['$cursor-disabled'] = u['$cursor-disabled'] || 'not-allowed';
+        v['$custom-control-gutter'] = u['$custom-control-gutter'] || '1.5rem';
+        v['$custom-control-spacer-x'] = u['$custom-control-spacer-x'] || '1rem';
+        v['$custom-control-spacer-y'] = u['$custom-control-spacer-y'] || '.25rem';
+        v['$custom-control-indicator-size'] = u['$custom-control-indicator-size'] || '1rem';
+        v['$custom-control-indicator-bg'] = u['$custom-control-indicator-bg'] || '#ddd';
+        v['$custom-control-indicator-bg-size'] = u['$custom-control-indicator-bg-size'] || '50% 50%';
+        v['$custom-control-indicator-box-shadow'] = u['$custom-control-indicator-box-shadow'] || "inset 0 .25rem .25rem ".concat((0, _color.default)(v['$black']).alpha(0.1).toString());
+        v['$custom-control-disabled-cursor'] = u['$custom-control-disabled-cursor'] || v['$cursor-disabled'];
+        v['$custom-control-disabled-indicator-bg'] = u['$custom-control-disabled-indicator-bg'] || v['$gray-lighter'];
+        v['$custom-control-disabled-description-color'] = u['$custom-control-disabled-description-color'] || v['$gray-light'];
+        v['$custom-control-checked-indicator-color'] = u['$custom-control-checked-indicator-color'] || v['$white'];
+        v['$custom-control-checked-indicator-bg'] = u['$custom-control-checked-indicator-bg'] || v['$brand-primary'];
+        v['$custom-control-checked-indicator-box-shadow'] = u['$custom-control-checked-indicator-box-shadow'] || 'none';
+        v['$custom-control-focus-indicator-box-shadow'] = u['$custom-control-focus-indicator-box-shadow'] || "0 0 0 1px ".concat(v['$body-bg'], ", 0 0 0 3px ").concat(v['$brand-primary']);
+        v['$custom-control-active-indicator-color'] = u['$custom-control-active-indicator-color'] || v['$white'];
+        v['$custom-control-active-indicator-bg'] = u['$custom-control-active-indicator-bg'] || (0, _color.default)(v['$brand-primary']).lighten(0.35).toString();
+        v['$custom-control-active-indicator-box-shadow'] = u['$custom-control-active-indicator-box-shadow'] || 'none';
+        v['$custom-checkbox-radius'] = u['$custom-checkbox-radius'] || v['$border-radius'];
+        v['$custom-checkbox-checked-icon'] = u['$custom-checkbox-checked-icon'] || "url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 8 8\"%3E%3Cpath fill=\"".concat(v['$custom-control-checked-indicator-color'], "\" d=\"M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z\"/%3E%3C/svg%3E')");
+        v['$custom-checkbox-indeterminate-bg'] = u['$custom-checkbox-indeterminate-bg'] || v['$brand-primary'];
+        v['$custom-checkbox-indeterminate-indicator-color'] = u['$custom-checkbox-indeterminate-indicator-color'] || v['$custom-control-checked-indicator-color'];
+        v['$custom-checkbox-indeterminate-icon'] = u['$custom-checkbox-indeterminate-icon'] || "url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 4 4\"%3E%3Cpath stroke=\"".concat(v['$custom-checkbox-indeterminate-indicator-color'], "\" d=\"M0 2h4\"/%3E%3C/svg%3E')");
+        v['$custom-checkbox-indeterminate-box-shadow'] = u['$custom-checkbox-indeterminate-box-shadow'] || 'none';
+        v['$custom-radio-radius'] = u['$custom-radio-radius'] || '50%';
+        v['$custom-radio-checked-icon'] = u['$custom-radio-checked-icon'] || "url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 8 8\"%3E%3Ccircle r=\"3\" fill=\"".concat(v['$custom-control-checked-indicator-color'], "\"/%3E%3C/svg%3E')");
+        v['$custom-select-padding-x'] = u['$custom-select-padding-x'] || '.75rem ';
+        v['$custom-select-padding-y'] = u['$custom-select-padding-y'] || '.375rem';
+        v['$custom-select-indicator-padding'] = u['$custom-select-indicator-padding'] || '1rem';
+        v['$custom-select-line-height'] = u['$custom-select-line-height'] || v['$input-line-height'];
+        v['$custom-select-color'] = u['$custom-select-color'] || v['$input-color'];
+        v['$custom-select-disabled-color'] = u['$custom-select-disabled-color'] || v['$gray-light'];
+        v['$custom-select-bg'] = u['$custom-select-bg'] || v['$white'];
+        v['$custom-select-disabled-bg'] = u['$custom-select-disabled-bg'] || v['$gray-lighter'];
+        v['$custom-select-bg-size'] = u['$custom-select-bg-size'] || '8px 10px';
+        v['$custom-select-indicator-color'] = u['$custom-select-indicator-color'] || '#333';
+        v['$custom-select-indicator'] = u['$custom-select-indicator'] || "url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 4 5\"%3E%3Cpath fill=\"".concat(v['$custom-select-indicator-color'], "\" d=\"M2 0L0 2h4zm0 5L0 3h4z\"/%3E%3C/svg%3E')");
+        v['$custom-select-border-width'] = u['$custom-select-border-width'] || v['$input-btn-border-width'];
+        v['$custom-select-border-color'] = u['$custom-select-border-color'] || v['$input-border-color'];
+        v['$custom-select-border-radius'] = u['$custom-select-border-radius'] || v['$border-radius'];
+        v['$custom-select-focus-border-color'] = u['$custom-select-focus-border-color'] || (0, _color.default)(v['$brand-primary']).lighten(0.25).toString();
+        v['$custom-select-focus-box-shadow'] = u['$custom-select-focus-box-shadow'] || "inset 0 1px 2px ".concat((0, _color.default)(v['$black']).alpha(0.75).toString(), ", 0 0 5px ").concat((0, _color.default)(v['$custom-select-focus-border-color']).alpha(0.5).toString());
+        v['$custom-select-sm-font-size'] = u['$custom-select-sm-font-size'] || '75%';
+        v['$custom-file-height'] = u['$custom-file-height'] || '2.5rem';
+        v['$custom-file-width'] = u['$custom-file-width'] || '14rem';
+        v['$custom-file-focus-box-shadow'] = u['$custom-file-focus-box-shadow'] || "0 0 0 .075rem ".concat(v['$white'], ", 0 0 0 .2rem ").concat(v['$brand-primary']);
+        v['$custom-file-padding-x'] = u['$custom-file-padding-x'] || '.5rem';
+        v['$custom-file-padding-y'] = u['$custom-file-padding-y'] || '1rem';
+        v['$custom-file-line-height'] = u['$custom-file-line-height'] || '1.5';
+        v['$custom-file-color'] = u['$custom-file-color'] || v['$gray'];
+        v['$custom-file-bg'] = u['$custom-file-bg'] || v['$white'];
+        v['$custom-file-border-width'] = u['$custom-file-border-width'] || v['$border-width'];
+        v['$custom-file-border-color'] = u['$custom-file-border-color'] || v['$input-border-color'];
+        v['$custom-file-border-radius'] = u['$custom-file-border-radius'] || v['$border-radius'];
+        v['$custom-file-box-shadow'] = u['$custom-file-box-shadow'] || "inset 0 .2rem .4rem ".concat((0, _color.default)(v['$black']).alpha(0.05).toString());
+        v['$custom-file-button-color'] = u['$custom-file-button-color'] || v['$custom-file-color'];
+        v['$custom-file-button-bg'] = u['$custom-file-button-bg'] || v['$gray-lighter'];
+        v['$custom-file-text'] = u['$custom-file-text'] || {
+            placeholder: {
+                en: 'Choose file...'
+            },
+            'button-label': {
+                en: 'Browse'
+            }
+        };
+        v['$form-icon-success-color'] = u['$form-icon-success-color'] || v['$brand-success'];
+        v['$form-icon-success'] = u['$form-icon-success'] || "url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 8 8\"%3E%3Cpath fill=\"".concat(v['$form-icon-success-color'], "\" d=\"M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z\"/%3E%3C/svg%3E')");
+        v['$form-icon-warning-color'] = u['$form-icon-warning-color'] || v['$brand-warning'];
+        v['$form-icon-warning'] = u['$form-icon-warning'] || "url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 8 8\"%3E%3Cpath fill=\"".concat(v['$form-icon-warning-color'], "\" d=\"M4.4 5.324h-.8v-2.46h.8zm0 1.42h-.8V5.89h.8zM3.76.63L.04 7.075c-.115.2.016.425.26.426h7.397c.242 0 .372-.226.258-.426C6.726 4.924 5.47 2.79 4.253.63c-.113-.174-.39-.174-.494 0z\"/%3E%3C/svg%3E')");
+        v['$form-icon-danger-color'] = u['$form-icon-danger-color'] || v['$brand-danger'];
+        v['$form-icon-danger'] = u['$form-icon-danger'] || "url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" fill=\"".concat(v['$form-icon-danger-color'], "\" viewBox=\"-2 -2 7 7\"%3E%3Cpath stroke=\"%23d9534f\" d=\"M0 0l3 3m0-3L0 3\"/%3E%3Ccircle r=\".5\"/%3E%3Ccircle cx=\"3\" r=\".5\"/%3E%3Ccircle cy=\"3\" r=\".5\"/%3E%3Ccircle cx=\"3\" cy=\"3\" r=\".5\"/%3E%3C/svg%3E')");
+        v['$dropdown-min-width'] = u['$dropdown-min-width'] || '10rem';
+        v['$dropdown-padding-y'] = u['$dropdown-padding-y'] || '.5rem';
+        v['$dropdown-margin-top'] = u['$dropdown-margin-top'] || '.125rem';
+        v['$dropdown-bg'] = u['$dropdown-bg'] || v['$white'];
+        v['$dropdown-border-color'] = u['$dropdown-border-color'] || (0, _color.default)(v['$black']).alpha(0.15).toString();
+        v['$dropdown-border-width'] = u['$dropdown-border-width'] || v['$border-width'];
+        v['$dropdown-divider-bg'] = u['$dropdown-divider-bg'] || v['$gray-lighter'];
+        v['$dropdown-box-shadow'] = u['$dropdown-box-shadow'] || "0 .5rem 1rem ".concat((0, _color.default)(v['$black']).alpha(0.175).toString());
+        v['$dropdown-link-color'] = u['$dropdown-link-color'] || v['$gray-dark'];
+        v['$dropdown-link-hover-color'] = u['$dropdown-link-hover-color'] || (0, _color.default)(v['$gray-dark']).darken(0.05).toString();
+        v['$dropdown-link-hover-bg'] = u['$dropdown-link-hover-bg'] || v['$gray-lightest'];
+        v['$dropdown-link-active-color'] = u['$dropdown-link-active-color'] || v['$component-active-color'];
+        v['$dropdown-link-active-bg'] = u['$dropdown-link-active-bg'] || v['$component-active-bg'];
+        v['$dropdown-link-disabled-color'] = u['$dropdown-link-disabled-color'] || v['$gray-light'];
+        v['$dropdown-item-padding-x'] = u['$dropdown-item-padding-x'] || '1.5rem';
+        v['$dropdown-header-color'] = u['$dropdown-header-color'] || v['$gray-light'];
+        v['$zindex-dropdown-backdrop'] = u['$zindex-dropdown-backdrop'] || '990';
+        v['$zindex-dropdown'] = u['$zindex-dropdown'] || '1000';
+        v['$zindex-modal-backdrop'] = u['$zindex-modal-backdrop'] || '2040';
+        v['$zindex-modal'] = u['$zindex-modal'] || '2050';
+        v['$zindex-popover'] = u['$zindex-popover'] || '1060';
+        v['$zindex-tooltip'] = u['$zindex-tooltip'] || '1070';
+        v['$zindex-navbar'] = u['$zindex-navbar'] || '1000';
+        v['$zindex-navbar-fixed'] = u['$zindex-navbar-fixed'] || '1030';
+        v['$zindex-navbar-sticky'] = u['$zindex-navbar-sticky'] || '1030';
+        v['$navbar-padding-x'] = u['$navbar-padding-x'] || v['$spacer'];
+        v['$navbar-padding-y'] = u['$navbar-padding-y'] || v['$spacer-halved'];
+        v['$navbar-brand-padding-y'] = u['$navbar-brand-padding-y'] || '.25rem';
+        v['$navbar-divider-padding-y'] = u['$navbar-divider-padding-y'] || '.425rem';
+        v['$navbar-toggler-padding-x'] = u['$navbar-toggler-padding-x'] || '.75rem';
+        v['$navbar-toggler-padding-y'] = u['$navbar-toggler-padding-y'] || '.25rem';
+        v['$navbar-toggler-font-size'] = u['$navbar-toggler-font-size'] || v['$font-size-lg'];
+        v['$navbar-toggler-border-radius'] = u['$navbar-toggler-border-radius'] || v['$btn-border-radius'];
+        v['$navbar-inverse-color'] = u['$navbar-inverse-color'] || (0, _color.default)(v['$white']).alpha(0.5).toString();
+        v['$navbar-inverse-hover-color'] = u['$navbar-inverse-hover-color'] || (0, _color.default)(v['$white']).alpha(0.75).toString();
+        v['$navbar-inverse-active-color'] = u['$navbar-inverse-active-color'] || (0, _color.default)(v['$white']).alpha(1).toString();
+        v['$navbar-inverse-disabled-color'] = u['$navbar-inverse-disabled-color'] || (0, _color.default)(v['$white']).alpha(0.25).toString();
+        v['$navbar-inverse-toggler-bg'] = u['$navbar-inverse-toggler-bg'] || "url('data:image/svg+xml;charset=utf8,%3Csvg viewBox=\"0 0 30 30\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath stroke=\"".concat(v['$navbar-inverse-color'], "\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-miterlimit=\"10\" d=\"M4 7h22M4 15h22M4 23h22\"/%3E%3C/svg%3E')");
+        v['$navbar-inverse-toggler-border'] = u['$navbar-inverse-toggler-border'] || (0, _color.default)(v['$white']).alpha(0.1).toString();
+        v['$navbar-light-color'] = u['$navbar-light-color'] || (0, _color.default)(v['$black']).alpha(0.5).toString();
+        v['$navbar-light-hover-color'] = u['$navbar-light-hover-color'] || (0, _color.default)(v['$black']).alpha(0.7).toString();
+        v['$navbar-light-active-color'] = u['$navbar-light-active-color'] || (0, _color.default)(v['$black']).alpha(0.9).toString();
+        v['$navbar-light-disabled-color'] = u['$navbar-light-disabled-color'] || (0, _color.default)(v['$black']).alpha(0.3).toString();
+        v['$navbar-light-toggler-bg'] = u['$navbar-light-toggler-bg'] || "url('data:image/svg+xml;charset=utf8,%3Csvg viewBox=\"0 0 30 30\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath stroke=\"".concat(v['$navbar-light-color'], "\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-miterlimit=\"10\" d=\"M4 7h22M4 15h22M4 23h22\"/%3E%3C/svg%3E')");
+        v['$navbar-light-toggler-border'] = u['$navbar-light-toggler-border'] || (0, _color.default)(v['$black']).alpha(0.1).toString();
+        v['$nav-link-padding'] = u['$nav-link-padding'] || '.5em 1em';
+        v['$nav-disabled-link-color'] = u['$nav-disabled-link-color'] || v['$gray-light'];
+        v['$nav-tabs-border-color'] = u['$nav-tabs-border-color'] || '#ddd';
+        v['$nav-tabs-border-width'] = u['$nav-tabs-border-width'] || v['$border-width'];
+        v['$nav-tabs-border-radius'] = u['$nav-tabs-border-radius'] || v['$border-radius'];
+        v['$nav-tabs-link-hover-border-color'] = u['$nav-tabs-link-hover-border-color'] || v['$gray-lighter'];
+        v['$nav-tabs-active-link-hover-color'] = u['$nav-tabs-active-link-hover-color'] || v['$gray'];
+        v['$nav-tabs-active-link-hover-bg'] = u['$nav-tabs-active-link-hover-bg'] || v['$body-bg'];
+        v['$nav-tabs-active-link-hover-border-color'] = u['$nav-tabs-active-link-hover-border-color'] || '#ddd';
+        v['$nav-pills-border-radius'] = u['$nav-pills-border-radius'] || v['$border-radius'];
+        v['$nav-pills-active-link-color'] = u['$nav-pills-active-link-color'] || v['$component-active-color'];
+        v['$nav-pills-active-link-bg'] = u['$nav-pills-active-link-bg'] || v['$component-active-bg'];
+        v['$pagination-padding-x'] = u['$pagination-padding-x'] || '.75rem';
+        v['$pagination-padding-y'] = u['$pagination-padding-y'] || '.5rem';
+        v['$pagination-padding-x-sm'] = u['$pagination-padding-x-sm'] || '.5rem';
+        v['$pagination-padding-y-sm'] = u['$pagination-padding-y-sm'] || '.25rem';
+        v['$pagination-padding-x-lg'] = u['$pagination-padding-x-lg'] || '1.5rem';
+        v['$pagination-padding-y-lg'] = u['$pagination-padding-y-lg'] || '.75rem';
+        v['$pagination-line-height'] = u['$pagination-line-height'] || '1.25';
+        v['$pagination-color'] = u['$pagination-color'] || v['$link-color'];
+        v['$pagination-bg'] = u['$pagination-bg'] || v['$white'];
+        v['$pagination-border-width'] = u['$pagination-border-width'] || v['$border-width'];
+        v['$pagination-border-color'] = u['$pagination-border-color'] || '#ddd';
+        v['$pagination-hover-color'] = u['$pagination-hover-color'] || v['$link-hover-color'];
+        v['$pagination-hover-bg'] = u['$pagination-hover-bg'] || v['$gray-lighter'];
+        v['$pagination-hover-border'] = u['$pagination-hover-border'] || '#ddd';
+        v['$pagination-active-color'] = u['$pagination-active-color'] || v['$white'];
+        v['$pagination-active-bg'] = u['$pagination-active-bg'] || v['$brand-primary'];
+        v['$pagination-active-border'] = u['$pagination-active-border'] || v['$brand-primary'];
+        v['$pagination-disabled-color'] = u['$pagination-disabled-color'] || v['$gray-light'];
+        v['$pagination-disabled-bg'] = u['$pagination-disabled-bg'] || v['$white'];
+        v['$pagination-disabled-border'] = u['$pagination-disabled-border'] || '#ddd';
+        v['$jumbotron-padding'] = u['$jumbotron-padding'] || '2rem';
+        v['$jumbotron-bg'] = u['$jumbotron-bg'] || v['$gray-lighter'];
+        v['$state-success-text'] = u['$state-success-text'] || '#3c763d';
+        v['$state-success-bg'] = u['$state-success-bg'] || '#dff0d8';
+        v['$state-success-border'] = u['$state-success-border'] || (0, _color.default)(v['$state-success-bg']).darken(0.05).toString();
+        v['$state-info-text'] = u['$state-info-text'] || '#31708f';
+        v['$state-info-bg'] = u['$state-info-bg'] || '#d9edf7';
+        v['$state-info-border'] = u['$state-info-border'] || (0, _color.default)(v['$state-info-bg']).darken(0.07).toString();
+        v['$state-warning-text'] = u['$state-warning-text'] || '#8a6d3b';
+        v['$state-warning-bg'] = u['$state-warning-bg'] || '#fcf8e3';
+        v['$state-warning-border'] = u['$state-warning-border'] || (0, _color.default)(v['$state-warning-bg']).darken(0.05).toString();
+        v['$mark-bg'] = u['$mark-bg'] || v['$state-warning-bg'];
+        v['$state-danger-text'] = u['$state-danger-text'] || '#a94442';
+        v['$state-danger-bg'] = u['$state-danger-bg'] || '#f2dede';
+        v['$state-danger-border'] = u['$state-danger-border'] || (0, _color.default)(v['$state-danger-bg']).darken(0.05).toString();
+        v['$card-spacer-x'] = u['$card-spacer-x'] || '1.25rem';
+        v['$card-spacer-y'] = u['$card-spacer-y'] || '.75rem';
+        v['$card-border-width'] = u['$card-border-width'] || '1px';
+        v['$card-border-radius'] = u['$card-border-radius'] || v['$border-radius'];
+        v['$card-border-color'] = u['$card-border-color'] || (0, _color.default)(v['$black']).alpha(0.125).toString();
+        v['$card-border-radius-inner'] = u['$card-border-radius-inner'] || "calc(".concat(v['$card-border-radius'], " - ").concat(v['$card-border-width'], ")");
+        v['$card-cap-bg'] = u['$card-cap-bg'] || v['$gray-lightest'];
+        v['$card-bg'] = u['$card-bg'] || v['$white'];
+        v['$card-link-hover-color'] = u['$card-link-hover-color'] || v['$white'];
+        v['$card-img-overlay-padding'] = u['$card-img-overlay-padding'] || '1.25rem';
+        detectedUnit = detectUnit(v['$grid-gutter-width']);
+        v['$card-group-margin'] = u['$card-group-margin'] || rmUnit(v['$grid-gutter-width'], detectedUnit) / 2 + detectedUnit;
+        v['$card-deck-margin'] = u['$card-deck-margin'] || v['$card-group-margin'];
+        v['$card-columns-count-md'] = u['$card-columns-count-md'] || '2';
+        v['$card-columns-gap-md'] = u['$card-columns-gap-md'] || '1rem';
+        v['$card-columns-margin-md'] = u['$card-columns-margin-md'] || v['$card-spacer-y'];
+        v['$card-columns-count-lg'] = u['$card-columns-count-lg'] || '2';
+        v['$card-columns-gap-lg'] = u['$card-columns-gap-lg'] || '1.15rem';
+        v['$card-columns-margin-lg'] = u['$card-columns-margin-lg'] || v['$card-spacer-y'];
+        v['$card-columns-count-xl'] = u['$card-columns-count-xl'] || '3';
+        v['$card-columns-gap-xl'] = u['$card-columns-gap-xl'] || '1.25rem';
+        v['$card-columns-margin-xl'] = u['$card-columns-margin-xl'] || v['$card-spacer-y'];
+        v['$card-columns-count-xxl'] = u['$card-columns-count-xxl'] || '4';
+        v['$card-columns-gap-xxl'] = u['$card-columns-gap-xxl'] || '1.25rem';
+        v['$card-columns-margin-xxl'] = u['$card-columns-margin-xxl'] || v['$card-spacer-y'];
+        v['$tooltip-font-family'] = u['$tooltip-font-family'] || v['$font-family-base'];
+        v['$tooltip-font-size'] = u['$tooltip-font-size'] || '.875rem';
+        v['$tooltip-font-weight'] = u['$tooltip-font-weight'] || '400';
+        v['$tooltip-max-width'] = u['$tooltip-max-width'] || '200px';
+        v['$tooltip-color'] = u['$tooltip-color'] || v['$white'];
+        v['$tooltip-bg'] = u['$tooltip-bg'] || v['$black'];
+        v['$tooltip-border-radius'] = u['$tooltip-border-radius'] || v['$border-radius'];
+        v['$tooltip-opacity'] = u['$tooltip-opacity'] || '.9';
+        v['$tooltip-padding-y'] = u['$tooltip-padding-y'] || '.25rem';
+        v['$tooltip-padding-x'] = u['$tooltip-padding-x'] || '.5rem';
+        v['$tooltip-margin'] = u['$tooltip-margin'] || '0';
+        v['$tooltip-line-height'] = u['$tooltip-line-height'] || '1.5';
+        v['$tooltip-arrow-width'] = u['$tooltip-arrow-width'] || '.8rem';
+        v['$tooltip-arrow-height'] = u['$tooltip-arrow-height'] || '.4rem';
+        v['$tooltip-arrow-color'] = u['$tooltip-arrow-color'] || v['$tooltip-bg'];
+        v['$popover-inner-padding'] = u['$popover-inner-padding'] || '1px';
+        v['$popover-bg'] = u['$popover-bg'] || v['$white'];
+        v['$popover-max-width'] = u['$popover-max-width'] || '276px';
+        v['$popover-border-width'] = u['$popover-border-width'] || v['$border-width'];
+        v['$popover-border-color'] = u['$popover-border-color'] || (0, _color.default)(v['$black']).alpha(0.2).toString();
+        v['$popover-box-shadow'] = u['$popover-box-shadow'] || "0 5px 10px ".concat((0, _color.default)(v['$black']).alpha(0.2).toString());
+        v['$popover-title-bg'] = u['$popover-title-bg'] || (0, _color.default)(v['$popover-bg']).darken(0.03).toString();
+        v['$popover-title-padding-x'] = u['$popover-title-padding-x'] || '14px';
+        v['$popover-title-padding-y'] = u['$popover-title-padding-y'] || '8px';
+        v['$popover-content-padding-x'] = u['$popover-content-padding-x'] || '14px';
+        v['$popover-content-padding-y'] = u['$popover-content-padding-y'] || '9px';
+        v['$popover-arrow-width'] = u['$popover-arrow-width'] || '10px';
+        v['$popover-arrow-color'] = u['$popover-arrow-color'] || v['$popover-bg'];
+        detectedUnit = detectUnit(v['$popover-arrow-width']);
+        v['$popover-arrow-outer-width'] = u['$popover-arrow-outer-width'] || rmUnit(v['$popover-arrow-width'], detectedUnit) + 1 + detectedUnit;
+        v['$popover-arrow-outer-color'] = u['$popover-arrow-outer-color'] || (0, _color.default)(v['$popover-border-color']).fade(0.5).toString();
+        v['$badge-default-bg'] = u['$badge-default-bg'] || v['$gray-light'];
+        v['$badge-primary-bg'] = u['$badge-primary-bg'] || v['$brand-primary'];
+        v['$badge-success-bg'] = u['$badge-success-bg'] || v['$brand-success'];
+        v['$badge-info-bg'] = u['$badge-info-bg'] || v['$brand-info'];
+        v['$badge-warning-bg'] = u['$badge-warning-bg'] || v['$brand-warning'];
+        v['$badge-danger-bg'] = u['$badge-danger-bg'] || v['$brand-danger'];
+        v['$badge-color'] = u['$badge-color'] || v['$white'];
+        v['$badge-link-hover-color'] = u['$badge-link-hover-color'] || v['$white'];
+        v['$badge-font-size'] = u['$badge-font-size'] || '75%';
+        v['$badge-font-weight'] = u['$badge-font-weight'] || v['$font-weight-bold'];
+        v['$badge-padding-x'] = u['$badge-padding-x'] || '.4em';
+        v['$badge-padding-y'] = u['$badge-padding-y'] || '.25em';
+        v['$badge-pill-padding-x'] = u['$badge-pill-padding-x'] || '.6em';
+        v['$badge-pill-border-radius'] = u['$badge-pill-border-radius'] || '10rem';
+        v['$modal-inner-padding'] = u['$modal-inner-padding'] || '15px';
+        v['$modal-dialog-margin'] = u['$modal-dialog-margin'] || '10px';
+        v['$modal-dialog-sm-up-margin-y'] = u['$modal-dialog-sm-up-margin-y'] || '30px';
+        v['$modal-title-line-height'] = u['$modal-title-line-height'] || v['$line-height-base'];
+        v['$modal-content-bg'] = u['$modal-content-bg'] || v['$white'];
+        v['$modal-content-border-color'] = u['$modal-content-border-color'] || (0, _color.default)(v['$black']).alpha(0.2).toString();
+        v['$modal-content-border-width'] = u['$modal-content-border-width'] || v['$border-width'];
+        v['$modal-content-xs-box-shadow'] = u['$modal-content-xs-box-shadow'] || "0 3px 9px ".concat((0, _color.default)(v['$black']).alpha(0.5).toString());
+        v['$modal-content-sm-up-box-shadow'] = u['$modal-content-sm-up-box-shadow'] || "0 5px 15px ".concat((0, _color.default)(v['$black']).alpha(0.5).toString());
+        v['$modal-backdrop-bg'] = u['$modal-backdrop-bg'] || v['$black'];
+        v['$modal-backdrop-opacity'] = u['$modal-backdrop-opacity'] || '.5';
+        v['$modal-header-border-color'] = u['$modal-header-border-color'] || v['$gray-lighter'];
+        v['$modal-footer-border-color'] = u['$modal-footer-border-color'] || v['$modal-header-border-color'];
+        v['$modal-header-border-width'] = u['$modal-header-border-width'] || v['$modal-content-border-width'];
+        v['$modal-footer-border-width'] = u['$modal-footer-border-width'] || v['$modal-header-border-width'];
+        v['$modal-header-padding'] = u['$modal-header-padding'] || '15px';
+        v['$modal-lg'] = u['$modal-lg'] || '800px';
+        v['$modal-md'] = u['$modal-md'] || '500px';
+        v['$modal-sm'] = u['$modal-sm'] || '300px';
+        v['$modal-transition'] = u['$modal-transition'] || 'transform .3s ease-out';
+        v['$alert-padding-x'] = u['$alert-padding-x'] || '1.25rem';
+        v['$alert-padding-y'] = u['$alert-padding-y'] || '.75rem';
+        v['$alert-margin-bottom'] = u['$alert-margin-bottom'] || v['$spacer-y'];
+        v['$alert-border-radius'] = u['$alert-border-radius'] || v['$border-radius'];
+        v['$alert-link-font-weight'] = u['$alert-link-font-weight'] || v['$font-weight-bold'];
+        v['$alert-border-width'] = u['$alert-border-width'] || v['$border-width'];
+        v['$alert-success-bg'] = u['$alert-success-bg'] || v['$state-success-bg'];
+        v['$alert-success-text'] = u['$alert-success-text'] || v['$state-success-text'];
+        v['$alert-success-border'] = u['$alert-success-border'] || v['$state-success-border'];
+        v['$alert-info-bg'] = u['$alert-info-bg'] || v['$state-info-bg'];
+        v['$alert-info-text'] = u['$alert-info-text'] || v['$state-info-text'];
+        v['$alert-info-border'] = u['$alert-info-border'] || v['$state-info-border'];
+        v['$alert-warning-bg'] = u['$alert-warning-bg'] || v['$state-warning-bg'];
+        v['$alert-warning-text'] = u['$alert-warning-text'] || v['$state-warning-text'];
+        v['$alert-warning-border'] = u['$alert-warning-border'] || v['$state-warning-border'];
+        v['$alert-danger-bg'] = u['$alert-danger-bg'] || v['$state-danger-bg'];
+        v['$alert-danger-text'] = u['$alert-danger-text'] || v['$state-danger-text'];
+        v['$alert-danger-border'] = u['$alert-danger-border'] || v['$state-danger-border'];
+        v['$progress-height'] = u['$progress-height'] || '1rem';
+        v['$progress-font-size'] = u['$progress-font-size'] || '.75rem';
+        v['$progress-bg'] = u['$progress-bg'] || v['$gray-lighter'];
+        v['$progress-border-radius'] = u['$progress-border-radius'] || v['$border-radius'];
+        v['$progress-box-shadow'] = u['$progress-box-shadow'] || "inset 0 .1rem .1rem ".concat((0, _color.default)(v['$black']).alpha(0.1).toString());
+        v['$progress-bar-color'] = u['$progress-bar-color'] || v['$white'];
+        v['$progress-bar-bg'] = u['$progress-bar-bg'] || v['$brand-primary'];
+        v['$progress-bar-animation-timing'] = u['$progress-bar-animation-timing'] || '1s linear infinite';
+        v['$list-group-color'] = u['$list-group-color'] || v['$body-color'];
+        v['$list-group-bg'] = u['$list-group-bg'] || v['$white'];
+        v['$list-group-border-color'] = u['$list-group-border-color'] || (0, _color.default)(v['$black']).alpha(0.125).toString();
+        v['$list-group-border-width'] = u['$list-group-border-width'] || v['$border-width'];
+        v['$list-group-border-radius'] = u['$list-group-border-radius'] || v['$border-radius'];
+        v['$list-group-item-padding-x'] = u['$list-group-item-padding-x'] || '1.25rem';
+        v['$list-group-item-padding-y'] = u['$list-group-item-padding-y'] || '.75rem';
+        v['$list-group-hover-bg'] = u['$list-group-hover-bg'] || v['$gray-lightest'];
+        v['$list-group-active-color'] = u['$list-group-active-color'] || v['$component-active-color'];
+        v['$list-group-active-bg'] = u['$list-group-active-bg'] || v['$component-active-bg'];
+        v['$list-group-active-border'] = u['$list-group-active-border'] || v['$list-group-active-bg'];
+        v['$list-group-disabled-color'] = u['$list-group-disabled-color'] || v['$gray-light'];
+        v['$list-group-disabled-bg'] = u['$list-group-disabled-bg'] || v['$list-group-bg'];
+        v['$list-group-link-color'] = u['$list-group-link-color'] || v['$gray'];
+        v['$list-group-link-hover-color'] = u['$list-group-link-hover-color'] || v['$list-group-link-color'];
+        v['$list-group-link-active-color'] = u['$list-group-link-active-color'] || v['$list-group-color'];
+        v['$list-group-link-active-bg'] = u['$list-group-link-active-bg'] || v['$gray-lighter'];
+        v['$thumbnail-padding'] = u['$thumbnail-padding'] || '.25rem';
+        v['$thumbnail-bg'] = u['$thumbnail-bg'] || v['$body-bg'];
+        v['$thumbnail-border-width'] = u['$thumbnail-border-width'] || v['$border-width'];
+        v['$thumbnail-border-color'] = u['$thumbnail-border-color'] || '#ddd';
+        v['$thumbnail-border-radius'] = u['$thumbnail-border-radius'] || v['$border-radius'];
+        v['$thumbnail-box-shadow'] = u['$thumbnail-box-shadow'] || "0 1px 2px ".concat((0, _color.default)(v['$black']).alpha(0.75).toString());
+        v['$thumbnail-transition'] = u['$thumbnail-transition'] || 'all .2s ease-in-out';
+        v['$figure-caption-font-size'] = u['$figure-caption-font-size'] || '90%';
+        v['$figure-caption-color'] = u['$figure-caption-color'] || v['$gray-light'];
+        v['$breadcrumb-padding-y'] = u['$breadcrumb-padding-y'] || '.75rem';
+        v['$breadcrumb-padding-x'] = u['$breadcrumb-padding-x'] || '1rem';
+        v['$breadcrumb-item-padding'] = u['$breadcrumb-item-padding'] || '.5rem';
+        v['$breadcrumb-bg'] = u['$breadcrumb-bg'] || v['$gray-lighter'];
+        v['$breadcrumb-divider-color'] = u['$breadcrumb-divider-color'] || v['$gray-light'];
+        v['$breadcrumb-active-color'] = u['$breadcrumb-active-color'] || v['$gray-light'];
+        v['$breadcrumb-divider'] = u['$breadcrumb-divider'] || '"/"';
+        v['$close-font-size'] = u['$close-font-size'] || rmUnit(v['$font-size-base']) * 1.5 + detectUnit(v['$font-size-base']);
+        v['$close-font-weight'] = u['$close-font-weight'] || v['$font-weight-bold'];
+        v['$close-color'] = u['$close-color'] || v['$black'];
+        v['$close-text-shadow'] = u['$close-text-shadow'] || "0 1px 0 ".concat(v['$white']);
+        v['$code-font-size'] = u['$code-font-size'] || '90%';
+        v['$code-padding-x'] = u['$code-padding-x'] || '.4rem';
+        v['$code-padding-y'] = u['$code-padding-y'] || '.2rem';
+        v['$code-color'] = u['$code-color'] || '#bd4147';
+        v['$code-bg'] = u['$code-bg'] || v['$gray-lightest'];
+        v['$kbd-color'] = u['$kbd-color'] || v['$white'];
+        v['$kbd-bg'] = u['$kbd-bg'] || v['$gray-dark'];
+        v['$kbd-box-shadow'] = u['$kbd-box-shadow'] || "inset 0 -.1rem 0 ".concat((0, _color.default)(v['$black']).alpha(0.25).toString());
+        v['$nested-kbd-font-weight'] = u['$nested-kbd-font-weight'] || v['$font-weight-bold'];
+        v['$pre-color'] = u['$pre-color'] || v['$gray-dark'];
+        v['$pre-scrollable-max-height'] = u['$pre-scrollable-max-height'] || '340px';
+        v['$utilities'] = (0, utilities$2.getUtilities)(v, u['$utilities']);
+        return _objectSpread({}, u, {}, v);
+    }
+    var makeTheme = makeOriginal;
+    exports.makeTheme = makeTheme;
+    var _default = makeOriginal();
+    exports.default = _default;
+});
+var themeBs = unwrapExports(theme);
+var theme_1 = theme.makeTheme;
+function _templateObject() {
+    var data = _taggedTemplateLiteral([
+        "\n  ",
+        "\n"
+    ]);
+    _templateObject = function _templateObject() {
+        return data;
+    };
+    return data;
+}
+var defaultProps = {
+    theme: themeBs,
+    utils: {
+        screen: true,
+        print: true,
+        align: false,
+        background: false,
+        border: false,
+        display: false,
+        flex: false,
+        float: false,
+        position: false,
+        screenreaders: false,
+        sizing: false,
+        spacing: false,
+        text: false,
+        visibility: false,
+        clearfix: true,
+        cursor: true,
+        transition: true
+    }
+};
+var propTypes$1 = {
+    children: propTypes.node,
+    theme: propTypes.object,
+    utils: propTypes.shape({
+        screen: propTypes.bool,
+        print: propTypes.bool,
+        align: propTypes.bool,
+        background: propTypes.bool,
+        border: propTypes.bool,
+        display: propTypes.bool,
+        flex: propTypes.bool,
+        float: propTypes.bool,
+        position: propTypes.bool,
+        screenreaders: propTypes.bool,
+        sizing: propTypes.bool,
+        spacing: propTypes.bool,
+        text: propTypes.bool,
+        visibility: propTypes.bool,
+        clearfix: propTypes.bool,
+        cursor: propTypes.bool,
+        transition: propTypes.bool
+    })
+};
+var UtilityProvider = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].div(_templateObject(), function(props) {
+    return "\n    ".concat(!props.utils.screen ? console.warn('UtilityProvider: utilities have been replaced in bootstrap 4.4.0, to switch to 4.4.0 behavior, visit @bootstrap-styled/provider documentation') || '' : '', "\n    ").concat(rebootUtils.body(props.theme['$font-family-base'], props.theme['$font-size-base'], props.theme['$font-weight-base'], props.theme['$line-height-base'], props.theme['$body-color'], props.theme['$body-bg']), "\n    ").concat(conditional_1(props.utils.align, alignUtils.getAlignUtilities()), "\n    ").concat(conditional_1(props.utils.background, backgroundUtils.getBackgroundUtilities(props.theme['$enable-hover-media-query'], props.theme['$brand-primary'], props.theme['$brand-success'], props.theme['$brand-info'], props.theme['$brand-warning'], props.theme['$brand-danger'], props.theme['$brand-inverse'], props.theme['$gray-lightest'])), "\n    ").concat(conditional_1(props.utils.border, bordersUtils.getBordersUtilities(props.theme['$enable-rounded'], props.theme['$border-radius'])), "\n      ").concat(conditional_1(props.utils.clearfix, clearfixUtils.getClearfixUtilities()), "\n      ").concat(conditional_1(props.utils.cursor, cursorUtils.getCursorUtilities()), "\n      ").concat(conditional_1(props.utils.display, displayUtils.getDisplayUtilities(props.theme['$grid-breakpoints'])), "\n    ").concat(conditional_1(props.utils.flex, flexUtils.getFlexUtilities(props.theme['$grid-breakpoints'])), "\n    ").concat(conditional_1(props.utils.float, floatUtils.getFloatUtilities(props.theme['$grid-breakpoints'])), "\n    ").concat(conditional_1(props.utils.screenreaders, screenreadersUtils.getScreenReadersUtilities()), "\n    ").concat(conditional_1(props.utils.spacing, spacingUtils.getSpacingUtilities(props.theme['$grid-breakpoints'], props.theme['$spacers'])), "\n    ").concat(conditional_1(props.utils.text, textUtils.getTextUtilities(props.theme['$enable-hover-media-query'], props.theme['$grid-breakpoints'], props.theme['$font-weight-normal'], props.theme['$font-weight-bold'], props.theme['$text-muted'], props.theme['$brand-primary'], props.theme['$brand-success'], props.theme['$brand-info'], props.theme['$brand-warning'], props.theme['$brand-danger'], props.theme['$gray-dark'])), "\n    ").concat(conditional_1(props.utils.transition, transitionUtils.getTransitionUtilities(props.theme['$enable-transitions'], props.theme['$transition-fade'], props.theme['$transition-collapse'])), "\n    ").concat(conditional_1(props.utils.visibility, visibilityUtils.getVisibilityUtilities(props.theme['$grid-breakpoints'])), "\n    ").concat(conditional_1(props.utils.position, positionUtils.getPositionUtilities(props.theme['$zindex-fixed'], props.theme['$zindex-sticky'])), "\n    ").concat(conditional_1(props.utils.sizing, sizingUtils.getSizingUtilities(props.theme.$sizes)), " // eslint-disable-line dot-notation\n    ").concat(conditional_1(props.utils.screen && props.theme.$utilities, _api_1(props.theme['$grid-breakpoints'], props.theme.$utilities)), "\n    ").concat(conditional_1(props.utils.print && props.theme.$utilities, _api_2(props.theme['$grid-breakpoints'], props.theme.$utilities)), "\n  ");
+});
+UtilityProvider.defaultProps = defaultProps;
+UtilityProvider.propTypes = propTypes$1;
+var meyerwebReset = "\n/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block;\n}\nbody {\n  line-height: 1;\n}\nol, ul {\n  list-style: none;\n}\nblockquote, q {\n  quotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n";
+function _templateObject$1() {
+    var data = _taggedTemplateLiteral([
+        "\n  ",
+        "\n"
+    ]);
+    _templateObject$1 = function _templateObject() {
+        return data;
+    };
+    return data;
+}
+var GlobalStyle = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["createGlobalStyle"])(_templateObject$1(), function(props) {
+    return "\n    ".concat(props.reset ? meyerwebReset : '', "\n    ").concat(props.injectGlobal ? reboot_2$1(props.theme['$font-family-base'] || themeBs['$font-family-base'], props.theme['$font-size-base'] || themeBs['$font-size-base'], props.theme['$font-weight-base'] || themeBs['$font-weight-base'], props.theme['$line-height-base'] || themeBs['$line-height-base'], props.theme['$body-color'] || themeBs['$body-color'], props.theme['$body-bg'] || themeBs['$body-bg']) : '', "\n  ");
+});
+var defaultProps$1 = {
+    theme: index,
+    injectGlobal: false,
+    reset: false,
+    utils: defaultProps.utils
+};
+var propTypes$2 = {
+    children: propTypes.node.isRequired,
+    injectGlobal: propTypes.bool,
+    reset: propTypes.bool,
+    theme: propTypes.object,
+    utils: propTypes.shape({
+        screen: propTypes.bool,
+        print: propTypes.bool,
+        align: propTypes.bool,
+        background: propTypes.bool,
+        border: propTypes.bool,
+        display: propTypes.bool,
+        flex: propTypes.bool,
+        float: propTypes.bool,
+        position: propTypes.bool,
+        screenreaders: propTypes.bool,
+        sizing: propTypes.bool,
+        spacing: propTypes.bool,
+        text: propTypes.bool,
+        visibility: propTypes.bool,
+        clearfix: propTypes.bool,
+        cursor: propTypes.bool,
+        transition: propTypes.bool
+    })
+};
+var BootstrapProvider = function(_React$Component) {
+    _inherits(BootstrapProvider, _React$Component);
+    var _super = _createSuper(BootstrapProvider);
+    function BootstrapProvider() {
+        var _this;
+        _classCallCheck(this, BootstrapProvider);
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+            args[_key] = arguments[_key];
+        }
+        _this = _super.call.apply(_super, [
+            this
+        ].concat(args));
+        _defineProperty(_assertThisInitialized(_this), "state", {
+            theme: {},
+            isWindowPhone8Fixed: null
+        });
+        _defineProperty(_assertThisInitialized(_this), "setTheme", function(_ref, cb) {
+            var userTheme = _ref.theme;
+            var theme = _this.makeTheme({
+                theme: userTheme
+            });
+            _this.setState({
+                theme: theme
+            }, cb);
+        });
+        _defineProperty(_assertThisInitialized(_this), "makeTheme", function(_ref2) {
+            var userTheme = _ref2.theme;
+            var theme = makeTheme(userTheme);
+            var metaKeyList = Object.keys(theme).filter(function(f) {
+                return f[0] === '_';
+            });
+            metaKeyList.forEach(function(k) {
+                delete theme[k];
+            });
+            return theme;
+        });
+        return _this;
+    }
+    _createClass(BootstrapProvider, [
+        {
+            key: "UNSAFE_componentWillMount",
+            value: function UNSAFE_componentWillMount() {
+                this.setTheme(this.props, this.injectGlobal);
+            }
+        },
+        {
+            key: "componentDidMount",
+            value: function componentDidMount() {
+                this.windowPhone8Fix();
+            }
+        },
+        {
+            key: "UNSAFE_componentWillReceiveProps",
+            value: function UNSAFE_componentWillReceiveProps(nextProps) {
+                if (JSON.stringify(this.makeTheme(this.props)) !== JSON.stringify(nextProps.theme)) {
+                    this.setTheme(nextProps);
+                }
+            }
+        },
+        {
+            key: "windowPhone8Fix",
+            value: function windowPhone8Fix() {
+                if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                    var msViewportStyle = document.createElement('style');
+                    msViewportStyle.appendChild(document.createTextNode('@-ms-viewport{width:auto!important}'));
+                    document.head.appendChild(msViewportStyle);
+                    this.setState({
+                        isWindowPhone8Fixed: true
+                    });
+                }
+            }
+        },
+        {
+            key: "render",
+            value: function render() {
+                var _this$props = this.props, children = _this$props.children, utils = _this$props.utils, reset = _this$props.reset, injectGlobal = _this$props.injectGlobal;
+                var theme = this.state.theme;
+                return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].createElement(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["ThemeProvider"], {
+                    theme: theme
+                }, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].createElement(UtilityProvider, {
+                    utils: utils
+                }, (reset || injectGlobal) && __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].createElement(GlobalStyle, {
+                    reset: reset,
+                    injectGlobal: injectGlobal
+                }), children));
+            }
+        }
+    ]);
+    return BootstrapProvider;
+}(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].Component);
+_defineProperty(BootstrapProvider, "propTypes", propTypes$2);
+_defineProperty(BootstrapProvider, "defaultProps", defaultProps$1);
+BootstrapProvider.defaultProps = defaultProps$1;
+BootstrapProvider.propTypes = propTypes$2;
+const __TURBOPACK__default__export__ = BootstrapProvider;
+;
+ //# sourceMappingURL=provider.esm.js.map
+}),
+]);
+
+//# sourceMappingURL=d4b1c_modules_%40bootstrap-styled_provider_dist_%40bootstrap-styled_provider_esm_754d40d0.js.map
