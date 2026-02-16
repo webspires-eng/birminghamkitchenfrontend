@@ -1457,3 +1457,42 @@ Import traces:
 [00:14:45.577] Server  LOG     ✓ Compiled in 62ms
 [00:15:06.055] Server  LOG     ✓ Compiled in 30ms
 [00:16:20.540] Server  LOG     ✓ Compiled in 43ms
+[00:16:59.639] Server  WARN    ⚠ [externals]/@bootstrap-styled/v4
+unexpected export *
+export * used with module [externals]/@bootstrap-styled/v4 [external] (@bootstrap-styled/v4, cjs, [project]/node_modules/@bootstrap-styled/v4) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/pages/index.jsx [SSR]
+
+  #2 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/styled/bootstrap.jsx [SSR]
+    ./src/pages/_app.jsx [SSR]
+
+
+[00:16:59.641] Server  WARN    ⚠ [externals]/styled-system
+unexpected export *
+export * used with module [externals]/styled-system [external] (styled-system, cjs, [project]/node_modules/styled-system) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/styled-system [external]
+    ./src/components/ui/button/index.jsx [SSR]
+    ./src/pages/index.jsx [SSR]
+
+  #2 [external]:
+    [externals]/styled-system [external]
+    ./src/styled/index.jsx [SSR]
+    ./src/pages/_document.jsx [SSR]
+
+
+[00:16:59.900] Server  ERROR   redux-persist failed to create sync storage. falling back to noop storage.
+[00:17:00.034] Server  WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:17:00.036] Server  WARN    Shopify not configured, using mock data.
+[00:17:00.039] Server  WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:17:00.045] Server  WARN    Shopify not configured, using mock data.
+[00:17:00.602] Browser LOG     Refreshing page data due to server-side change

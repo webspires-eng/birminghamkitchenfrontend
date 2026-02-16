@@ -10,16 +10,16 @@ import Features from "@components/features";
 import BrandShowcase from "@components/brand-showcase";
 import SectionTitle from "@components/ui/section-title";
 import { client, productsQuery, collectionsQuery } from "@graphql";
-import styled, { themeGet, devices, keyframes } from "@styled";
+import styled, { themeGet, devices } from "@styled";
 import Button from "@components/ui/button";
 import { Container } from "@bootstrap";
 
 const CollectionSection = styled.section`
-    padding: 80px 0 40px;
+    padding: 80px 0 0;
     background: #fff;
 
     ${devices.md} {
-        padding: 50px 0 20px;
+        padding: 50px 0 0;
     }
 `;
 
@@ -59,19 +59,12 @@ const ViewAllWrap = styled.div`
 `;
 
 const CTASection = styled.section`
-    position: relative;
-    overflow: hidden;
     background: #111;
-
-    ${devices.md} {
-        display: flex;
-        flex-direction: column;
-    }
 `;
 
 const CTAInner = styled.div`
     display: flex;
-    min-height: 500px;
+    min-height: 460px;
     
     ${devices.md} {
         flex-direction: column;
@@ -84,30 +77,31 @@ const CTAContent = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 80px 60px;
+    padding: 80px 60px 80px 0;
     
     ${devices.lg} {
-        padding: 60px 40px;
+        padding: 60px 40px 60px 0;
     }
     
     ${devices.md} {
-        padding: 50px 24px;
+        padding: 50px 0;
         text-align: center;
         align-items: center;
     }
 
     h2 {
-        font-size: 44px;
+        font-size: 40px;
         font-weight: 700;
         color: #fff;
         line-height: 1.1;
         letter-spacing: -1.5px;
         margin-bottom: 20px;
-        max-width: 480px;
+        max-width: 420px;
 
         ${devices.md} {
-            font-size: 32px;
+            font-size: 30px;
             letter-spacing: -0.5px;
+            max-width: 100%;
         }
     }
 
@@ -116,10 +110,9 @@ const CTAContent = styled.div`
         line-height: 1.8;
         color: rgba(255, 255, 255, 0.55);
         margin-bottom: 36px;
-        max-width: 420px;
+        max-width: 400px;
 
         ${devices.md} {
-            font-size: 15px;
             max-width: 100%;
         }
     }
@@ -170,22 +163,26 @@ const HomeTwo = ({ products, collections }) => {
             <Features />
 
             <CollectionSection>
-                <SectionTitle
-                    label="Our Collections"
-                    title="Curated for Your Home"
-                    content="Explore our signature ranges, designed to bring elegance and functionality to every corner of your home."
-                />
+                <Container>
+                    <SectionTitle
+                        label="Our Collections"
+                        title="Curated for Your Home"
+                        content="Explore our signature ranges, designed to bring elegance and functionality to every corner of your home."
+                    />
+                </Container>
                 <Categories categories={displayCollections} pt={0} pb={0} />
             </CollectionSection>
 
             <BrandShowcase />
 
             <ProductsSection>
-                <SectionTitle
-                    label="Top Picks"
-                    title="Best Sellers"
-                    content="Discover the pieces our customers love most. Timeless quality meets modern design."
-                />
+                <Container>
+                    <SectionTitle
+                        label="Top Picks"
+                        title="Best Sellers"
+                        content="Discover the pieces our customers love most. Timeless quality meets modern design."
+                    />
+                </Container>
                 <ProductsTab products={products} limit={8} />
 
                 <ViewAllWrap>
@@ -194,41 +191,43 @@ const HomeTwo = ({ products, collections }) => {
             </ProductsSection>
 
             <CTASection>
-                <CTAInner>
-                    <CTAContent>
-                        <h2>Let's Create Your Dream Space</h2>
-                        <p>
-                            Book a free design consultation and let our experts help you
-                            transform your home with bespoke kitchens and bedrooms.
-                        </p>
-                        <div>
-                            <Button
-                                tag="a"
-                                href="/contact"
-                                color="white"
-                                bg="primary"
-                                hvrBg="white"
-                                hvrColor="black"
-                                style={{
-                                    padding: '16px 44px',
-                                    fontSize: '12px',
-                                    letterSpacing: '3px',
-                                    textTransform: 'uppercase',
-                                    fontWeight: 700,
-                                    borderRadius: '0',
-                                }}
-                            >
-                                Book Consultation
-                            </Button>
-                        </div>
-                    </CTAContent>
-                    <CTAImage>
-                        <img
-                            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
-                            alt="Modern kitchen design consultation"
-                        />
-                    </CTAImage>
-                </CTAInner>
+                <Container>
+                    <CTAInner>
+                        <CTAContent>
+                            <h2>Let's Create Your Dream Space</h2>
+                            <p>
+                                Book a free design consultation and let our experts help you
+                                transform your home with bespoke kitchens and bedrooms.
+                            </p>
+                            <div>
+                                <Button
+                                    tag="a"
+                                    href="/contact"
+                                    color="white"
+                                    bg="primary"
+                                    hvrBg="white"
+                                    hvrColor="black"
+                                    style={{
+                                        padding: '16px 44px',
+                                        fontSize: '12px',
+                                        letterSpacing: '3px',
+                                        textTransform: 'uppercase',
+                                        fontWeight: 700,
+                                        borderRadius: '0',
+                                    }}
+                                >
+                                    Book Consultation
+                                </Button>
+                            </div>
+                        </CTAContent>
+                        <CTAImage>
+                            <img
+                                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
+                                alt="Modern kitchen design consultation"
+                            />
+                        </CTAImage>
+                    </CTAInner>
+                </Container>
             </CTASection>
         </Layout>
     );

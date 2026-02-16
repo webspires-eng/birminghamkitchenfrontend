@@ -11853,6 +11853,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$graphql$2f$query$2f$c
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/styled/index.jsx [ssr] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/button/index.jsx [ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$bootstrap$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/styled/bootstrap.jsx [ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$externals$5d2f40$bootstrap$2d$styled$2f$v4__$5b$external$5d$__$2840$bootstrap$2d$styled$2f$v4$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$bootstrap$2d$styled$2f$v4$29$__ = __turbopack_context__.i("[externals]/@bootstrap-styled/v4 [external] (@bootstrap-styled/v4, cjs, [project]/node_modules/@bootstrap-styled/v4)");
 var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
     __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__,
     __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$categories$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__,
@@ -11877,11 +11878,11 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
 ;
 ;
 const CollectionSection = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].section`
-    padding: 80px 0 40px;
+    padding: 80px 0 0;
     background: #fff;
 
     ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
-        padding: 50px 0 20px;
+        padding: 50px 0 0;
     }
 `;
 const ProductsSection = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].section`
@@ -11918,18 +11919,11 @@ const ViewAllWrap = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$style
     }
 `;
 const CTASection = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].section`
-    position: relative;
-    overflow: hidden;
     background: #111;
-
-    ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
-        display: flex;
-        flex-direction: column;
-    }
 `;
 const CTAInner = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
     display: flex;
-    min-height: 500px;
+    min-height: 460px;
     
     ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
         flex-direction: column;
@@ -11941,30 +11935,31 @@ const CTAContent = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 80px 60px;
+    padding: 80px 60px 80px 0;
     
     ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].lg} {
-        padding: 60px 40px;
+        padding: 60px 40px 60px 0;
     }
     
     ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
-        padding: 50px 24px;
+        padding: 50px 0;
         text-align: center;
         align-items: center;
     }
 
     h2 {
-        font-size: 44px;
+        font-size: 40px;
         font-weight: 700;
         color: #fff;
         line-height: 1.1;
         letter-spacing: -1.5px;
         margin-bottom: 20px;
-        max-width: 480px;
+        max-width: 420px;
 
         ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
-            font-size: 32px;
+            font-size: 30px;
             letter-spacing: -0.5px;
+            max-width: 100%;
         }
     }
 
@@ -11973,10 +11968,9 @@ const CTAContent = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled
         line-height: 1.8;
         color: rgba(255, 255, 255, 0.55);
         margin-bottom: 36px;
-        max-width: 420px;
+        max-width: 400px;
 
         ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
-            font-size: 15px;
             max-width: 100%;
         }
     }
@@ -12010,7 +12004,7 @@ const HomeTwo = ({ products, collections })=>{
                         children: "Birmingham Kitchen & Bedroom | Bespoke Design"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 152,
+                        lineNumber: 145,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
@@ -12018,13 +12012,13 @@ const HomeTwo = ({ products, collections })=>{
                         content: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$settings$2e$json__$28$json$29$__["default"]?.description
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 153,
+                        lineNumber: 146,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 151,
+                lineNumber: 144,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$slider$2f$home$2d$2$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__SliderTwo$3e$__["SliderTwo"], {
@@ -12041,23 +12035,29 @@ const HomeTwo = ({ products, collections })=>{
                 }
             }, void 0, false, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 156,
+                lineNumber: 149,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$features$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 170,
+                lineNumber: 163,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(CollectionSection, {
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$section$2d$title$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        label: "Our Collections",
-                        title: "Curated for Your Home",
-                        content: "Explore our signature ranges, designed to bring elegance and functionality to every corner of your home."
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f40$bootstrap$2d$styled$2f$v4__$5b$external$5d$__$2840$bootstrap$2d$styled$2f$v4$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$bootstrap$2d$styled$2f$v4$29$__["Container"], {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$section$2d$title$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                            label: "Our Collections",
+                            title: "Curated for Your Home",
+                            content: "Explore our signature ranges, designed to bring elegance and functionality to every corner of your home."
+                        }, void 0, false, {
+                            fileName: "[project]/src/pages/index.jsx",
+                            lineNumber: 167,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 173,
+                        lineNumber: 166,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$categories$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -12066,29 +12066,35 @@ const HomeTwo = ({ products, collections })=>{
                         pb: 0
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 178,
+                        lineNumber: 173,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 172,
+                lineNumber: 165,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$brand$2d$showcase$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 181,
+                lineNumber: 176,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(ProductsSection, {
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$section$2d$title$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        label: "Top Picks",
-                        title: "Best Sellers",
-                        content: "Discover the pieces our customers love most. Timeless quality meets modern design."
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f40$bootstrap$2d$styled$2f$v4__$5b$external$5d$__$2840$bootstrap$2d$styled$2f$v4$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$bootstrap$2d$styled$2f$v4$29$__["Container"], {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$section$2d$title$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                            label: "Top Picks",
+                            title: "Best Sellers",
+                            content: "Discover the pieces our customers love most. Timeless quality meets modern design."
+                        }, void 0, false, {
+                            fileName: "[project]/src/pages/index.jsx",
+                            lineNumber: 180,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 184,
+                        lineNumber: 179,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$product$2f$feed$2f$products$2d$tab$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ProductsTab$3e$__["ProductsTab"], {
@@ -12096,7 +12102,7 @@ const HomeTwo = ({ products, collections })=>{
                         limit: 8
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 189,
+                        lineNumber: 186,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(ViewAllWrap, {
@@ -12105,101 +12111,107 @@ const HomeTwo = ({ products, collections })=>{
                             children: "View All Products →"
                         }, void 0, false, {
                             fileName: "[project]/src/pages/index.jsx",
-                            lineNumber: 192,
+                            lineNumber: 189,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 191,
+                        lineNumber: 188,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 183,
+                lineNumber: 178,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(CTASection, {
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(CTAInner, {
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(CTAContent, {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h2", {
-                                    children: "Let's Create Your Dream Space"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/pages/index.jsx",
-                                    lineNumber: 199,
-                                    columnNumber: 25
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                                    children: "Book a free design consultation and let our experts help you transform your home with bespoke kitchens and bedrooms."
-                                }, void 0, false, {
-                                    fileName: "[project]/src/pages/index.jsx",
-                                    lineNumber: 200,
-                                    columnNumber: 25
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                        tag: "a",
-                                        href: "/contact",
-                                        color: "white",
-                                        bg: "primary",
-                                        hvrBg: "white",
-                                        hvrColor: "black",
-                                        style: {
-                                            padding: '16px 44px',
-                                            fontSize: '12px',
-                                            letterSpacing: '3px',
-                                            textTransform: 'uppercase',
-                                            fontWeight: 700,
-                                            borderRadius: '0'
-                                        },
-                                        children: "Book Consultation"
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f40$bootstrap$2d$styled$2f$v4__$5b$external$5d$__$2840$bootstrap$2d$styled$2f$v4$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$bootstrap$2d$styled$2f$v4$29$__["Container"], {
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(CTAInner, {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(CTAContent, {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h2", {
+                                        children: "Let's Create Your Dream Space"
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/index.jsx",
-                                        lineNumber: 205,
+                                        lineNumber: 197,
+                                        columnNumber: 29
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                        children: "Book a free design consultation and let our experts help you transform your home with bespoke kitchens and bedrooms."
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/pages/index.jsx",
+                                        lineNumber: 198,
+                                        columnNumber: 29
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                            tag: "a",
+                                            href: "/contact",
+                                            color: "white",
+                                            bg: "primary",
+                                            hvrBg: "white",
+                                            hvrColor: "black",
+                                            style: {
+                                                padding: '16px 44px',
+                                                fontSize: '12px',
+                                                letterSpacing: '3px',
+                                                textTransform: 'uppercase',
+                                                fontWeight: 700,
+                                                borderRadius: '0'
+                                            },
+                                            children: "Book Consultation"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/pages/index.jsx",
+                                            lineNumber: 203,
+                                            columnNumber: 33
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/pages/index.jsx",
+                                        lineNumber: 202,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/pages/index.jsx",
+                                lineNumber: 196,
+                                columnNumber: 25
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(CTAImage, {
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
+                                    src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",
+                                    alt: "Modern kitchen design consultation"
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/index.jsx",
-                                    lineNumber: 204,
-                                    columnNumber: 25
+                                    lineNumber: 224,
+                                    columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/pages/index.jsx",
-                            lineNumber: 198,
-                            columnNumber: 21
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(CTAImage, {
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
-                                src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",
-                                alt: "Modern kitchen design consultation"
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/index.jsx",
-                                lineNumber: 226,
+                                lineNumber: 223,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
-                        }, void 0, false, {
-                            fileName: "[project]/src/pages/index.jsx",
-                            lineNumber: 225,
-                            columnNumber: 21
-                        }, ("TURBOPACK compile-time value", void 0))
-                    ]
-                }, void 0, true, {
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/pages/index.jsx",
+                        lineNumber: 195,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0))
+                }, void 0, false, {
                     fileName: "[project]/src/pages/index.jsx",
-                    lineNumber: 197,
+                    lineNumber: 194,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 196,
+                lineNumber: 193,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/pages/index.jsx",
-        lineNumber: 150,
+        lineNumber: 143,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
