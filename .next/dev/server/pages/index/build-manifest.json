@@ -6,7 +6,7 @@
   "rootMainFiles": [],
   "pages": {
     "/": [
-      "static/chunks/[root-of-the-server]__ced7b7be._.js",
+      "static/chunks/[root-of-the-server]__4ca8d5c7._.js",
       "static/chunks/node_modules_next_dist_compiled_12c15cb1._.js",
       "static/chunks/node_modules_next_dist_shared_lib_d5f79ea0._.js",
       "static/chunks/node_modules_next_dist_client_8dd97e7a._.js",
@@ -31,7 +31,7 @@
       "static/chunks/node_modules_@emotion_6abb62b9._.js",
       "static/chunks/node_modules_e462531b._.js",
       "static/chunks/src_pages_index_2da965e7._.js",
-      "static/chunks/turbopack-src_pages_index_b2a0a091._.js"
+      "static/chunks/turbopack-src_pages_index_c94db6ea._.js"
     ]
   },
   "ampFirstPages": []

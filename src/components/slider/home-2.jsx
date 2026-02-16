@@ -1,21 +1,22 @@
 import PropTypes from "prop-types";
-import Slider, {Slide} from "@components/ui/swiper";
-import {SlideTwo as SlideItem} from "@components/slider/slide/slide-two";
+import Slider, { Slide } from "@components/ui/swiper";
+import { SlideTwo as SlideItem } from "@components/slider/slide/slide-two";
 
-const SliderTwo = ({data, animate, settings, className}) => {
+const SliderTwo = ({ data, animate, settings, className }) => {
     return (
         <Slider
             animate={animate}
             settings={settings}
             className={className}
         >
-            {data.map(slide => (
+            {data.map((slide, index) => (
                 <Slide key={slide.id}>
                     <SlideItem
                         title={slide.title}
                         thumb={slide.thumb}
                         content={slide.content}
                         subTitle={slide.subtitle}
+                        priority={index === 0}
                     />
                 </Slide>
             ))}

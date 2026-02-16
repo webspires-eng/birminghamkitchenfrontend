@@ -1609,3 +1609,52 @@ Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
 [00:13:10.234] Server  LOG     ✓ Compiled in 197ms
 [00:16:59.637] Server  LOG     ✓ Compiled in 482ms
 [00:19:27.941] Server  LOG     ✓ Compiled in 366ms
+[00:25:30.200] Browser LOG     Refreshing page data due to server-side change
+[00:25:34.089] Server  WARN    ⚠ [externals]/@bootstrap-styled/v4
+unexpected export *
+export * used with module [externals]/@bootstrap-styled/v4 [external] (@bootstrap-styled/v4, cjs, [project]/node_modules/@bootstrap-styled/v4) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/components/features/index.jsx [SSR]
+    ./src/pages/index.jsx [SSR]
+
+  #2 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/styled/bootstrap.jsx [SSR]
+    ./src/pages/_app.jsx [SSR]
+
+
+[00:25:34.090] Server  WARN    ⚠ [externals]/styled-system
+unexpected export *
+export * used with module [externals]/styled-system [external] (styled-system, cjs, [project]/node_modules/styled-system) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/styled-system [external]
+    ./src/styled/index.jsx [SSR]
+    ./src/pages/_document.jsx [SSR]
+
+  #2 [external]:
+    [externals]/styled-system [external]
+    ./src/components/categories/categories.style.jsx [SSR]
+    ./src/components/categories/index.jsx [SSR]
+    ./src/pages/index.jsx [SSR]
+
+
+[00:25:35.121] Server  ERROR   redux-persist failed to create sync storage. falling back to noop storage.
+[00:25:35.354] Server  WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:25:35.354] Server  WARN    Shopify not configured, using mock data.
+[00:25:35.354] Server  WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:25:35.355] Server  WARN    Shopify not configured, using mock data.
+[00:25:35.497] Browser LOG     50
+[00:25:35.498] Browser LOG     -Infinity
+[00:25:35.498] Browser LOG     NaN
+[00:25:36.298] Browser LOG     50
+[00:25:36.299] Browser LOG     -Infinity
+[00:25:36.299] Browser LOG     NaN
+[00:25:54.465] Server  LOG     ✓ Finished writing to filesystem cache in 19.1s
+[00:27:09.316] Server  LOG     ✓ Compiled in 2.5s
