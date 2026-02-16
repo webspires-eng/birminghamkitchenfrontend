@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "subtitle": "Modern Living",
+    "title": "Contemporary Kitchens",
+    "content": "Minimalist designs paired with high-end appliances for the ultimate culinary experience.",
+    "thumb": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1920&q=80"
+  },
+  {
+    "id": 2,
+    "subtitle": "Elegant Rest",
+    "title": "Sophisticated Bedrooms",
+    "content": "Create your dream escape with our range of luxury bedding and custom furniture.",
+    "thumb": "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?auto=format&fit=crop&w=1920&q=80"
+  },
+  {
+    "id": 3,
+    "subtitle": "Organization Redefined",
+    "title": "Custom Built-In Storage",
+    "content": "Sleek and efficient storage solutions for every room in your home.",
+    "thumb": "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1920&q=80"
+  }
+]

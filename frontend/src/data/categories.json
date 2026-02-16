@@ -1,0 +1,62 @@
+[
+    {
+        "node": {
+            "id": "1",
+            "title": "Modern Kitchens",
+            "handle": "modern-kitchens",
+            "image": {
+                "originalSrc": "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=300&q=80"
+            }
+        }
+    },
+    {
+        "node": {
+            "id": "2",
+            "title": "Luxury Bedrooms",
+            "handle": "luxury-bedrooms",
+            "image": {
+                "originalSrc": "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=300&q=80"
+            }
+        }
+    },
+    {
+        "node": {
+            "id": "3",
+            "title": "Bespoke Wardrobes",
+            "handle": "bespoke-wardrobes",
+            "image": {
+                "originalSrc": "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=300&q=80"
+            }
+        }
+    },
+    {
+        "node": {
+            "id": "4",
+            "title": "Dining Sets",
+            "handle": "dining-sets",
+            "image": {
+                "originalSrc": "https://images.unsplash.com/photo-1617806118233-f8e137bc7288?auto=format&fit=crop&w=300&q=80"
+            }
+        }
+    },
+    {
+        "node": {
+            "id": "5",
+            "title": "Home Office",
+            "handle": "home-office",
+            "image": {
+                "originalSrc": "https://images.unsplash.com/photo-1593062096033-9a26b09da705?auto=format&fit=crop&w=300&q=80"
+            }
+        }
+    },
+    {
+        "node": {
+            "id": "6",
+            "title": "Kitchen Appliances",
+            "handle": "kitchen-appliances",
+            "image": {
+                "originalSrc": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=300&q=80"
+            }
+        }
+    }
+]
