@@ -45,7 +45,7 @@ export const CatItemInner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 20px;
   position: relative;
   overflow: hidden;
