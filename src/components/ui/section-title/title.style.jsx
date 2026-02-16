@@ -39,7 +39,7 @@ export const Title = styled.h2`
 `
 
 export const SectionLabel = styled.span`
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 12px;
   font-size: 12px;

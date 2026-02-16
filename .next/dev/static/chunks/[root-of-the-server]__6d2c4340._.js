@@ -11641,7 +11641,7 @@ const Title = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$i
   }
 `;
 const SectionLabel = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].span`
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 12px;
   font-size: 12px;
