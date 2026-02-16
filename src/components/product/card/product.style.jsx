@@ -192,10 +192,7 @@ export const ProductActionsMobile = styled.div`
   display: none;
 
   ${devices.sm} {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 10px;
+    display: none;
   }
 
   ${ActionButton} {

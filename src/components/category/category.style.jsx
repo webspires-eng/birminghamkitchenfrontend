@@ -10,6 +10,7 @@ export const CatName = styled.h4`
   z-index: 2;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  text-align: center;
 
   ${devices.xs} {
     font-size: 18px;
@@ -45,7 +46,8 @@ export const CatItemInner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  text-align: center;
   padding: 20px;
   position: relative;
   overflow: hidden;
