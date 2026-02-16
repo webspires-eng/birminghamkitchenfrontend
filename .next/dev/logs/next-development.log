@@ -1452,3 +1452,8 @@ Import traces:
 [00:13:08.716] Server  WARN    GraphQL request failed, returning mock data to prevent crash.
 [00:13:08.717] Server  WARN    Shopify not configured, using mock data.
 [00:13:08.748] Browser LOG     Refreshing page data due to server-side change
+[00:13:33.202] Server  LOG     ✓ Compiled in 83ms
+[00:13:51.190] Server  LOG     ✓ Compiled in 29ms
+[00:14:45.577] Server  LOG     ✓ Compiled in 62ms
+[00:15:06.055] Server  LOG     ✓ Compiled in 30ms
+[00:16:20.540] Server  LOG     ✓ Compiled in 43ms

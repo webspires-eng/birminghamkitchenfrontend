@@ -1,11 +1,12 @@
-import styled, {space, themeGet, devices} from "@styled";
+import styled, { space, themeGet, devices } from "@styled";
 
 export const WidgetBody = styled.div`
   ${space}
   .about-text {
-    font-size: ${themeGet('fontSizes.standard')};
-    max-width: 290px;
-    line-height: 24px;
+    font-size: 15px;
+    max-width: 320px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.55);
 
     ${devices.sm} {
       max-width: 454px;
@@ -13,7 +14,7 @@ export const WidgetBody = styled.div`
   }
 
   p {
-    color: ${themeGet('colors.white')};
+    color: rgba(255, 255, 255, 0.55);
   }
 
   .widget-list {
@@ -21,19 +22,21 @@ export const WidgetBody = styled.div`
     
     li {
       &:not(:last-child) {
-        margin-bottom: 8px;
+        margin-bottom: 10px;
       }
 
       a {
-        font-size: ${themeGet('fontSizes.standard')};
+        font-size: 14px;
         line-height: 24px;
         padding: 0;
-        color: ${themeGet('colors.white')};
-        transition: ${themeGet('transition')};
+        color: rgba(255, 255, 255, 0.55);
+        transition: all 0.3s ease;
 
         &:hover {
-          padding-left: 6px;
-          color: ${themeGet('colors.primary')};
+          color: #fff;
+          padding-left: 0;
+          transform: translateX(4px);
+          display: inline-block;
         }
       }
     }
@@ -41,12 +44,23 @@ export const WidgetBody = styled.div`
 `
 
 export const WidgetTitle = styled.h4`
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 700;
   position: relative;
-  margin-bottom: 15px;
-  letter-spacing: 1.2px;
-  color: ${themeGet('colors.white')};
+  margin-bottom: 24px;
+  letter-spacing: 2px;
+  color: #fff;
+  padding-bottom: 16px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 28px;
+    height: 2px;
+    background: ${themeGet('colors.primary')};
+  }
 `
 
 export const WidgetItem = styled.div`

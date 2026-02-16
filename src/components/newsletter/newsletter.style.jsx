@@ -3,27 +3,27 @@ import styled, { space, themeGet } from "@styled";
 export const Input = styled.input`
   display: inline-block;
   vertical-align: top;
-  line-height: 50px;
-  height: 50px;
-  color: ${themeGet('colors.white')};
-  font-size: ${themeGet('fontSizes.standard')};
+  line-height: 48px;
+  height: 48px;
+  color: #fff;
+  font-size: 14px;
   width: 100%;
-  text-transform: capitalize;
   border: none;
-  background: transparent;
-  border: 1px solid ${themeGet('colors.borderDark')};
-  border-radius: 0;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
   text-align: left;
   box-shadow: none;
-  padding-left: 20px;
+  padding-left: 16px;
   padding-right: 10px;
-  transition: ${themeGet('transition')};
+  transition: all 0.3s ease;
   
   &::placeholder {
-      color: ${themeGet('colors.white')};
+      color: rgba(255, 255, 255, 0.35);
   }
   &:focus {
     border-color: ${themeGet('colors.primary')};
+    background: rgba(255, 255, 255, 0.05);
   }
 `
 
@@ -43,15 +43,17 @@ export const FormNewsletter = styled.div`
   }
   
   button {
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 700;
     border: 0;
-    margin-top: 20px;
-    margin-left: auto;
-    display: flex;
+    margin-top: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: 12px 24px;
     svg {
       font-size: ${themeGet('fontSizes.body')};
-      margin-right: 3px;
+      margin-right: 4px;
       vertical-align: text-top;
     }
   }

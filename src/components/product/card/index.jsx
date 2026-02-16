@@ -78,11 +78,6 @@ const ProductCard = ({ product, className }) => {
                         onQuickViewHandler={onQuickViewHandler}
                     />
                 </ProductActionsMobile>
-
-                <AddToCartButton
-                    product={product}
-                    isShowInMobile={true}
-                />
             </Product>
 
             {isShowQuickView && (
