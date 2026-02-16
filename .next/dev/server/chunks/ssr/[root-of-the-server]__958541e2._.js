@@ -7405,28 +7405,24 @@ const SlideSubTitle = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$sty
   }
 `;
 const SlideTitle = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].h2`
-  font-size: 68px;
-  margin-bottom: 20px;
+  font-size: 48px;
+  margin-bottom: 14px;
   font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -2px;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
   text-shadow: 0 4px 30px rgba(0,0,0,0.3);
   animation: ${fadeInUp} 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: 0.5s;
   opacity: 0;
 
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
-    font-size: 48px;
+    font-size: 36px;
     letter-spacing: -1px;
   }
 
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].sm} {
-    font-size: 36px;
+    font-size: 28px;
     letter-spacing: -0.5px;
-  }
-
-  ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].xs} {
-    font-size: 30px;
   }
 `;
 const SlideContent = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
@@ -7459,42 +7455,10 @@ const SlideContent = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
   `}
 `;
 const ScrollIndicator = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  animation: ${fadeIn} 1s ease forwards;
-  animation-delay: 2s;
-  opacity: 0;
-
-  ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].sm} {
-    display: none;
-  }
-
-  span {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
-  }
-
-  &::after {
-    content: '';
-    width: 1px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.3);
-    animation: ${scrollBounce} 2s ease infinite;
-  }
+  display: none;
 `;
 const SlideItem = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
-  height: 92vh;
-  min-height: 550px;
-  max-height: 920px;
+  height: 100%;
   display: flex;
   background-color: #000;
   position: relative;
@@ -7514,16 +7478,6 @@ const SlideItem = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$
       rgba(0, 0, 0, 0.45) 100%
     );
     z-index: 0;
-  }
-
-  ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
-    height: 75vh;
-    min-height: 450px;
-  }
-
-  ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].sm} {
-    height: 65vh;
-    min-height: 400px;
   }
 
   & > div {
@@ -7549,17 +7503,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$slider$
 const SliderWrap = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
   position: relative;
   transition: ${(0, __TURBOPACK__imported__module__$5b$externals$5d2f40$styled$2d$system$2f$theme$2d$get__$5b$external$5d$__$2840$styled$2d$system$2f$theme$2d$get$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$29$__["themeGet"])('transition')};
-
-  /* Force hero slider to respect slide height */
-  &:has(.hero-slider-one),
-  & {
-    .swiper {
-      height: auto;
-    }
-    .swiper-slide {
-      height: auto;
-    }
-  }
 
   ${({ arrows })=>arrows && __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$components__$5b$external$5d$__$28$styled$2d$components$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$styled$2d$components$29$__["css"]`
     .swiper-button {

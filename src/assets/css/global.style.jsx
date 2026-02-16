@@ -87,9 +87,7 @@ export const GlobalStyle = createGlobalStyle`
   .hero-slider-one {
     &.swiper-container,
     &.swiper {
-      height: 92vh;
-      min-height: 550px;
-      max-height: 920px;
+      height: 600px;
     }
 
     .swiper-wrapper {
@@ -101,23 +99,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .swiper-pagination {
-        bottom: 40px !important;
-        z-index: 20 !important;
-        
-        .swiper-pagination-bullet {
-            width: 8px;
-            height: 8px;
-            background: rgba(255,255,255,0.3);
-            opacity: 1;
-            margin: 0 5px !important;
-            border-radius: 4px;
-            transition: all 0.4s ease;
-            
-            &-active {
-                background: #fff;
-                width: 24px;
-            }
-        }
+        display: none !important;
     }
   }
 

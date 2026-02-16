@@ -61,7 +61,7 @@ export const SectionLabel = styled.span`
 export const SectionTitleWrap = styled.div`
   ${space};
   text-align: ${props => props.align ? props.align : 'center'};
-  margin-bottom: 50px;
+  margin-bottom: 28px;
   position: relative;
   width: 100%;
   

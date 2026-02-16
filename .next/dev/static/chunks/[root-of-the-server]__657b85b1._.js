@@ -642,7 +642,7 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-hot-toast/dist/index.mjs [client] (ecmascript)");
 ;
 const PREFIX = "ht";
-const CURRENCY = "$";
+const CURRENCY = "£";
 const placeholder = "https://cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c_380x.gif";
 const previewModeNotification = (e)=>{
     e.preventDefault();
@@ -1021,9 +1021,7 @@ const GlobalStyle = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules
   .hero-slider-one {
     &.swiper-container,
     &.swiper {
-      height: 92vh;
-      min-height: 550px;
-      max-height: 920px;
+      height: 600px;
     }
 
     .swiper-wrapper {
@@ -1035,23 +1033,7 @@ const GlobalStyle = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules
     }
 
     .swiper-pagination {
-        bottom: 40px !important;
-        z-index: 20 !important;
-        
-        .swiper-pagination-bullet {
-            width: 8px;
-            height: 8px;
-            background: rgba(255,255,255,0.3);
-            opacity: 1;
-            margin: 0 5px !important;
-            border-radius: 4px;
-            transition: all 0.4s ease;
-            
-            &-active {
-                background: #fff;
-                width: 24px;
-            }
-        }
+        display: none !important;
     }
   }
 

@@ -34,7 +34,7 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
 [__TURBOPACK__imported__module__$5b$externals$5d2f$react$2d$hot$2d$toast__$5b$external$5d$__$28$react$2d$hot$2d$toast$2c$__esm_import$2c$__$5b$project$5d2f$node_modules$2f$react$2d$hot$2d$toast$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
 ;
 const PREFIX = "ht";
-const CURRENCY = "$";
+const CURRENCY = "£";
 const placeholder = "https://cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c_380x.gif";
 const previewModeNotification = (e)=>{
     e.preventDefault();
@@ -412,9 +412,7 @@ const GlobalStyle = __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$
   .hero-slider-one {
     &.swiper-container,
     &.swiper {
-      height: 92vh;
-      min-height: 550px;
-      max-height: 920px;
+      height: 600px;
     }
 
     .swiper-wrapper {
@@ -426,23 +424,7 @@ const GlobalStyle = __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$
     }
 
     .swiper-pagination {
-        bottom: 40px !important;
-        z-index: 20 !important;
-        
-        .swiper-pagination-bullet {
-            width: 8px;
-            height: 8px;
-            background: rgba(255,255,255,0.3);
-            opacity: 1;
-            margin: 0 5px !important;
-            border-radius: 4px;
-            transition: all 0.4s ease;
-            
-            &-active {
-                background: #fff;
-                width: 24px;
-            }
-        }
+        display: none !important;
     }
   }
 

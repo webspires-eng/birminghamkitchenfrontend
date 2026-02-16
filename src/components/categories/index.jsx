@@ -32,7 +32,6 @@ const Categories = ({ categories, className, ...props }) => {
 
     return (
         <CategoriesWrap
-            py={[60, 60, 100]}
             className={cn(className)}
             {...props}
         >

@@ -71,28 +71,24 @@ export const SlideSubTitle = styled.h4`
 `
 
 export const SlideTitle = styled.h2`
-  font-size: 68px;
-  margin-bottom: 20px;
+  font-size: 48px;
+  margin-bottom: 14px;
   font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -2px;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
   text-shadow: 0 4px 30px rgba(0,0,0,0.3);
   animation: ${fadeInUp} 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: 0.5s;
   opacity: 0;
 
   ${devices.md} {
-    font-size: 48px;
+    font-size: 36px;
     letter-spacing: -1px;
   }
 
   ${devices.sm} {
-    font-size: 36px;
+    font-size: 28px;
     letter-spacing: -0.5px;
-  }
-
-  ${devices.xs} {
-    font-size: 30px;
   }
 `
 
@@ -127,37 +123,7 @@ export const SlideContent = styled.div`
 `
 
 export const ScrollIndicator = styled.div`
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  animation: ${fadeIn} 1s ease forwards;
-  animation-delay: 2s;
-  opacity: 0;
-
-  ${devices.sm} {
-    display: none;
-  }
-
-  span {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
-  }
-
-  &::after {
-    content: '';
-    width: 1px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.3);
-    animation: ${scrollBounce} 2s ease infinite;
-  }
+  display: none;
 `;
 
 export const SlideItem = styled.div`
