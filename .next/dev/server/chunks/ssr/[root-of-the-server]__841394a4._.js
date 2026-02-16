@@ -10787,6 +10787,7 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/react/jsx-dev-runtime [external] (react/jsx-dev-runtime, cjs)");
 var __TURBOPACK__imported__module__$5b$externals$5d2f$prop$2d$types__$5b$external$5d$__$28$prop$2d$types$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$prop$2d$types$29$__ = __turbopack_context__.i("[externals]/prop-types [external] (prop-types, cjs, [project]/node_modules/prop-types)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2f$index$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/button/index.jsx [ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$bootstrap$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/styled/bootstrap.jsx [ssr] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$externals$5d2f40$bootstrap$2d$styled$2f$v4__$5b$external$5d$__$2840$bootstrap$2d$styled$2f$v4$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$bootstrap$2d$styled$2f$v4$29$__ = __turbopack_context__.i("[externals]/@bootstrap-styled/v4 [external] (@bootstrap-styled/v4, cjs, [project]/node_modules/@bootstrap-styled/v4)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$slider$2f$slider$2e$style$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/slider/slider.style.jsx [ssr] (ecmascript)");
@@ -10795,22 +10796,30 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$slider$
 ;
 ;
 ;
-const SlideTwo = ({ subTitle, title, content, thumb })=>{
+;
+const SlideTwo = ({ subTitle, title, content, thumb, priority })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$slider$2f$slider$2e$style$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["SlideItem"], {
         children: [
             thumb && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$slider$2f$slider$2e$style$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["SliderThumb"], {
                 className: "style-2",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                     src: thumb,
-                    alt: title
+                    alt: title,
+                    fill: true,
+                    priority: priority,
+                    sizes: "100vw",
+                    style: {
+                        objectFit: "cover",
+                        objectPosition: "center"
+                    }
                 }, void 0, false, {
                     fileName: "[project]/src/components/slider/slide/slide-two.jsx",
-                    lineNumber: 11,
+                    lineNumber: 12,
                     columnNumber: 21
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/slider/slide/slide-two.jsx",
-                lineNumber: 10,
+                lineNumber: 11,
                 columnNumber: 17
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f40$bootstrap$2d$styled$2f$v4__$5b$external$5d$__$2840$bootstrap$2d$styled$2f$v4$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$bootstrap$2d$styled$2f$v4$29$__["Container"], {
@@ -10828,21 +10837,21 @@ const SlideTwo = ({ subTitle, title, content, thumb })=>{
                                     children: subTitle
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/slider/slide/slide-two.jsx",
-                                    lineNumber: 19,
+                                    lineNumber: 27,
                                     columnNumber: 42
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 title && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$slider$2f$slider$2e$style$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["SlideTitle"], {
                                     children: title
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/slider/slide/slide-two.jsx",
-                                    lineNumber: 20,
+                                    lineNumber: 28,
                                     columnNumber: 39
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 content && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
                                     children: content
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/slider/slide/slide-two.jsx",
-                                    lineNumber: 21,
+                                    lineNumber: 29,
                                     columnNumber: 41
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -10870,33 +10879,33 @@ const SlideTwo = ({ subTitle, title, content, thumb })=>{
                                         children: "Explore Collection"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/slider/slide/slide-two.jsx",
-                                        lineNumber: 23,
+                                        lineNumber: 31,
                                         columnNumber: 33
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/slider/slide/slide-two.jsx",
-                                    lineNumber: 22,
+                                    lineNumber: 30,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/slider/slide/slide-two.jsx",
-                            lineNumber: 18,
+                            lineNumber: 26,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/slider/slide/slide-two.jsx",
-                        lineNumber: 17,
+                        lineNumber: 25,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/components/slider/slide/slide-two.jsx",
-                    lineNumber: 16,
+                    lineNumber: 24,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/slider/slide/slide-two.jsx",
-                lineNumber: 15,
+                lineNumber: 23,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$slider$2f$slider$2e$style$2e$jsx__$5b$ssr$5d$__$28$ecmascript$29$__["ScrollIndicator"], {
@@ -10904,18 +10913,18 @@ const SlideTwo = ({ subTitle, title, content, thumb })=>{
                     children: "Scroll"
                 }, void 0, false, {
                     fileName: "[project]/src/components/slider/slide/slide-two.jsx",
-                    lineNumber: 49,
+                    lineNumber: 57,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/slider/slide/slide-two.jsx",
-                lineNumber: 48,
+                lineNumber: 56,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/slider/slide/slide-two.jsx",
-        lineNumber: 8,
+        lineNumber: 9,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -10923,7 +10932,8 @@ SlideTwo.propTypes = {
     subTitle: __TURBOPACK__imported__module__$5b$externals$5d2f$prop$2d$types__$5b$external$5d$__$28$prop$2d$types$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$prop$2d$types$29$__["default"].string,
     title: __TURBOPACK__imported__module__$5b$externals$5d2f$prop$2d$types__$5b$external$5d$__$28$prop$2d$types$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$prop$2d$types$29$__["default"].string,
     content: __TURBOPACK__imported__module__$5b$externals$5d2f$prop$2d$types__$5b$external$5d$__$28$prop$2d$types$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$prop$2d$types$29$__["default"].string,
-    thumb: __TURBOPACK__imported__module__$5b$externals$5d2f$prop$2d$types__$5b$external$5d$__$28$prop$2d$types$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$prop$2d$types$29$__["default"].string
+    thumb: __TURBOPACK__imported__module__$5b$externals$5d2f$prop$2d$types__$5b$external$5d$__$28$prop$2d$types$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$prop$2d$types$29$__["default"].string,
+    priority: __TURBOPACK__imported__module__$5b$externals$5d2f$prop$2d$types__$5b$external$5d$__$28$prop$2d$types$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$prop$2d$types$29$__["default"].bool
 };
 ;
 }),

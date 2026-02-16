@@ -1,14 +1,22 @@
 import PropTypes from "prop-types";
 import Button from "@components/ui/button";
+import Image from "next/image";
 import { Col, Container, Row } from "@bootstrap";
 import { SlideContent, SlideItem, SlideSubTitle, SlideTitle, SliderThumb, ScrollIndicator } from "@components/slider/slider.style";
 
-const SlideTwo = ({ subTitle, title, content, thumb }) => {
+const SlideTwo = ({ subTitle, title, content, thumb, priority }) => {
     return (
         <SlideItem>
             {thumb && (
                 <SliderThumb className="style-2">
-                    <img src={thumb} alt={title} />
+                    <Image
+                        src={thumb}
+                        alt={title}
+                        fill
+                        priority={priority}
+                        sizes="100vw"
+                        style={{ objectFit: "cover", objectPosition: "center" }}
+                    />
                 </SliderThumb>
             )}
 
@@ -56,7 +64,8 @@ SlideTwo.propTypes = {
     subTitle: PropTypes.string,
     title: PropTypes.string,
     content: PropTypes.string,
-    thumb: PropTypes.string
+    thumb: PropTypes.string,
+    priority: PropTypes.bool
 };
 
 

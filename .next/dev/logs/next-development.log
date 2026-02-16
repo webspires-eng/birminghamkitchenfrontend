@@ -1658,3 +1658,7 @@ Import traces:
 [00:25:36.299] Browser LOG     NaN
 [00:25:54.465] Server  LOG     ✓ Finished writing to filesystem cache in 19.1s
 [00:27:09.316] Server  LOG     ✓ Compiled in 2.5s
+[00:27:59.595] Server  LOG     ✓ Compiled in 5.7s
+[00:28:02.339] Browser WARN    Image with src "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1920&q=80" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:28:02.339] Browser WARN    Image with src "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1920&q=80" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:28:02.339] Browser WARN    Image with src "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?auto=format&fit=crop&w=1920&q=80" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
