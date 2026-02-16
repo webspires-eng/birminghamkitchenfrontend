@@ -43,7 +43,7 @@ const FooterWidget = (props) => {
                         </Widget>
                     </Col>
 
-                    <Col sm={6} lg={2} className="mb-4 mb-lg-0">
+                    <Col xs={6} sm={6} lg={2} className="mb-4 mb-lg-0">
                         <Widget
                             title="QUICK LINKS"
                             mb={[30, null, null, 0]}
@@ -57,7 +57,7 @@ const FooterWidget = (props) => {
                         </Widget>
                     </Col>
 
-                    <Col sm={6} lg={2} className="mb-4 mb-lg-0">
+                    <Col xs={6} sm={6} lg={2} className="mb-4 mb-lg-0">
                         <Widget
                             title="SUPPORT"
                             mb={[30, null, null, 0]}
