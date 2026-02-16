@@ -87,7 +87,15 @@ export const GlobalStyle = createGlobalStyle`
   .hero-slider-one {
     &.swiper-container,
     &.swiper {
-      height: 600px;
+      height: 400px;
+
+      @media screen and (max-width: 991px) {
+        height: 350px;
+      }
+
+      @media screen and (max-width: 575px) {
+        height: 300px;
+      }
     }
 
     .swiper-wrapper {

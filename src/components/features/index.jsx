@@ -38,11 +38,15 @@ const FeatureItem = styled.div`
   ${devices.md} {
     justify-content: flex-start;
     text-align: left;
-    padding: 24px 16px;
+    padding: 20px 12px;
     
     &::after {
       display: none;
     }
+  }
+
+  ${devices.xs} {
+    padding: 16px 8px;
   }
 
   &:hover {
@@ -55,33 +59,49 @@ const FeatureItem = styled.div`
 `;
 
 const IconWrap = styled.div`
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: 10px;
   background: #f5f5f5;
   color: ${themeGet('colors.primary')};
-  font-size: 22px;
-  margin-right: 16px;
+  font-size: 20px;
+  margin-right: 12px;
   flex-shrink: 0;
   transition: all 0.3s ease;
+
+  ${devices.xs} {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    margin-right: 8px;
+    border-radius: 8px;
+  }
 `
 
 const FeatureInfo = styled.div`
   h4 {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
     color: #111;
     letter-spacing: -0.2px;
+
+    ${devices.xs} {
+      font-size: 11px;
+    }
   }
   p {
     margin: 0;
-    font-size: 13px;
+    font-size: 12px;
     color: #999;
     line-height: 1.4;
+
+    ${devices.xs} {
+      font-size: 11px;
+    }
   }
 `;
 

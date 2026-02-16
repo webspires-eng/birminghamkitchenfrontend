@@ -15,20 +15,20 @@ import Button from "@components/ui/button";
 import { Container } from "@bootstrap";
 
 const CollectionSection = styled.section`
-    padding: 80px 0 0;
+    padding: 60px 0 0;
     background: #fff;
 
-    ${devices.md} {
-        padding: 50px 0 0;
+    ${devices.sm} {
+        padding: 40px 0 0;
     }
 `;
 
 const ProductsSection = styled.section`
-    padding: 80px 0 40px;
+    padding: 60px 0 40px;
     background: #f9f9f7;
 
-    ${devices.md} {
-        padding: 50px 0 20px;
+    ${devices.sm} {
+        padding: 40px 0 20px;
     }
 `;
 
@@ -133,7 +133,11 @@ const CTAImage = styled.div`
     }
 
     ${devices.md} {
-        min-height: 300px;
+        min-height: 280px;
+    }
+
+    ${devices.xs} {
+        min-height: 220px;
     }
 `;
 
