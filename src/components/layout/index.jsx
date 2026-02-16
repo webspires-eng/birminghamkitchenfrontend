@@ -1,16 +1,16 @@
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import Header from "@components/layout/header";
 import Footer from "@components/layout/footer";
 import SearchForm from "@components/ui/search";
 import CartButton from "@components/cart/button";
-import {Fragment, useState, useEffect} from "react";
-import {Main} from "@components/layout/header/style";
+import { Fragment, useState, useEffect } from "react";
+import { Main } from "@components/layout/header/style";
 import MiniCartSidebar from "@components/cart/minicart-sidebar";
 import SettingsSidebar from "@components/layout/settings";
 import MobileFooter from "@components/layout/mobile-footer";
 import MobileNavbar from "@components/layout/navbar/mobile-nav";
 
-const Layout = ({children, bg, ...props}) => {
+const Layout = ({ children, bg, ...props }) => {
     const router = useRouter();
     const [isShowConfig, setIsShowConfig] = useState(false);
     const [isShowMiniCart, setShowMiniCart] = useState(false);
@@ -79,7 +79,7 @@ const Layout = ({children, bg, ...props}) => {
 
             <Main {...props}>
                 {children}
-                <Footer mt={[60, null, 100]}/>
+                <Footer />
             </Main>
 
             <MobileFooter
