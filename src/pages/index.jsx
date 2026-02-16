@@ -14,32 +14,27 @@ import styled, { themeGet, devices, keyframes } from "@styled";
 import Button from "@components/ui/button";
 import { Container } from "@bootstrap";
 
-const fadeInUp = keyframes`
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-`;
-
 const CollectionSection = styled.section`
-    padding: 100px 0 80px;
+    padding: 80px 0 40px;
     background: #fff;
 
     ${devices.md} {
-        padding: 60px 0 40px;
+        padding: 50px 0 20px;
     }
 `;
 
 const ProductsSection = styled.section`
-    padding: 100px 0 60px;
-    background: #fafaf8;
+    padding: 80px 0 40px;
+    background: #f9f9f7;
 
     ${devices.md} {
-        padding: 60px 0 30px;
+        padding: 50px 0 20px;
     }
 `;
 
 const ViewAllWrap = styled.div`
     text-align: center;
-    margin-top: 20px;
+    margin-top: 16px;
     padding-bottom: 20px;
 
     a {
@@ -54,77 +49,98 @@ const ViewAllWrap = styled.div`
         text-decoration: none;
         padding: 14px 36px;
         border: 2px solid #111;
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: all 0.4s ease;
 
         &:hover {
             background: #111;
             color: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
     }
 `;
 
 const CTASection = styled.section`
-    padding: 120px 20px;
-    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-    text-align: center;
     position: relative;
     overflow: hidden;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(
-            circle at 30% 50%,
-            rgba(212, 5, 17, 0.08) 0%,
-            transparent 50%
-        );
-    }
+    background: #111;
 
     ${devices.md} {
-        padding: 80px 20px;
+        display: flex;
+        flex-direction: column;
+    }
+`;
+
+const CTAInner = styled.div`
+    display: flex;
+    min-height: 500px;
+    
+    ${devices.md} {
+        flex-direction: column;
+        min-height: auto;
     }
 `;
 
 const CTAContent = styled.div`
-    position: relative;
-    z-index: 1;
-    max-width: 640px;
-    margin: 0 auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px;
+    
+    ${devices.lg} {
+        padding: 60px 40px;
+    }
+    
+    ${devices.md} {
+        padding: 50px 24px;
+        text-align: center;
+        align-items: center;
+    }
 
     h2 {
-        font-size: 48px;
+        font-size: 44px;
         font-weight: 700;
         color: #fff;
         line-height: 1.1;
         letter-spacing: -1.5px;
-        margin-bottom: 24px;
+        margin-bottom: 20px;
+        max-width: 480px;
 
         ${devices.md} {
-            font-size: 36px;
+            font-size: 32px;
             letter-spacing: -0.5px;
-        }
-
-        ${devices.sm} {
-            font-size: 30px;
         }
     }
 
     p {
-        font-size: 17px;
+        font-size: 16px;
         line-height: 1.8;
         color: rgba(255, 255, 255, 0.55);
-        margin-bottom: 40px;
-        font-weight: 400;
+        margin-bottom: 36px;
+        max-width: 420px;
 
-        ${devices.sm} {
+        ${devices.md} {
             font-size: 15px;
+            max-width: 100%;
         }
+    }
+`;
+
+const CTAImage = styled.div`
+    flex: 1;
+    position: relative;
+    min-height: 400px;
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    ${devices.md} {
+        min-height: 300px;
     }
 `;
 
@@ -178,31 +194,41 @@ const HomeTwo = ({ products, collections }) => {
             </ProductsSection>
 
             <CTASection>
-                <CTAContent>
-                    <h2>Let's Create Your Dream Space</h2>
-                    <p>
-                        Book a free design consultation and let our experts help you
-                        transform your home with bespoke kitchens and bedrooms.
-                    </p>
-                    <Button
-                        tag="a"
-                        href="/contact"
-                        color="white"
-                        bg="primary"
-                        hvrBg="white"
-                        hvrColor="black"
-                        style={{
-                            padding: '18px 48px',
-                            fontSize: '12px',
-                            letterSpacing: '3px',
-                            textTransform: 'uppercase',
-                            fontWeight: 600,
-                            borderRadius: '0',
-                        }}
-                    >
-                        Book Consultation
-                    </Button>
-                </CTAContent>
+                <CTAInner>
+                    <CTAContent>
+                        <h2>Let's Create Your Dream Space</h2>
+                        <p>
+                            Book a free design consultation and let our experts help you
+                            transform your home with bespoke kitchens and bedrooms.
+                        </p>
+                        <div>
+                            <Button
+                                tag="a"
+                                href="/contact"
+                                color="white"
+                                bg="primary"
+                                hvrBg="white"
+                                hvrColor="black"
+                                style={{
+                                    padding: '16px 44px',
+                                    fontSize: '12px',
+                                    letterSpacing: '3px',
+                                    textTransform: 'uppercase',
+                                    fontWeight: 700,
+                                    borderRadius: '0',
+                                }}
+                            >
+                                Book Consultation
+                            </Button>
+                        </div>
+                    </CTAContent>
+                    <CTAImage>
+                        <img
+                            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
+                            alt="Modern kitchen design consultation"
+                        />
+                    </CTAImage>
+                </CTAInner>
             </CTASection>
         </Layout>
     );

@@ -7600,12 +7600,7 @@ __turbopack_context__.s([
     ()=>CategoryItem
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/styled/index.jsx [client] (ecmascript) <locals>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/styled-components/dist/styled-components.browser.esm.js [client] (ecmascript)");
 ;
-const reveal = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["keyframes"]`
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-`;
 const CatName = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].h4`
   margin: 0;
   color: #fff;
@@ -7615,7 +7610,7 @@ const CatName = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f
   position: relative;
   z-index: 2;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
 
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].xs} {
     font-size: 18px;
@@ -7624,18 +7619,18 @@ const CatName = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f
 const CatSubtext = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].span`
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   color: rgba(255, 255, 255, 0.9);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-top: 12px;
+  margin-top: 10px;
   position: relative;
   z-index: 2;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(10px);
 
   &::after {
     content: '→';
@@ -7650,21 +7645,25 @@ const CatItemInner = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding: 0 24px 32px;
+  padding: 0 20px 28px;
   position: relative;
   overflow: hidden;
 
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  /* Next/Image with fill creates a span wrapper */
+  > span, > img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
     object-fit: cover !important;
-    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* Gradient Overlay */
+  img {
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  /* Dark gradient overlay */
   &::after {
     content: '';
     position: absolute;
@@ -7675,53 +7674,53 @@ const CatItemInner = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
     background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.05) 40%,
-      rgba(0, 0, 0, 0.65) 100%
+      rgba(0, 0, 0, 0.1) 50%,
+      rgba(0, 0, 0, 0.7) 100%
     );
-    transition: all 0.5s ease;
+    transition: all 0.4s ease;
     z-index: 1;
   }
 `;
 const CategoryItem = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].a`
   display: block;
   width: 100%;
-  height: 420px;
+  height: 380px;
   position: relative;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
   text-decoration: none !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  background: #f0f0f0;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #e0e0e0;
 
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].sm} {
-    height: 340px;
+    height: 300px;
   }
 
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].xs} {
-    height: 280px;
+    height: 260px;
   }
 
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 
     ${CatItemInner} {
       img {
-        transform: scale(1.1);
+        transform: scale(1.08) !important;
       }
       &::after {
         background: linear-gradient(
           180deg,
           rgba(0, 0, 0, 0) 0%,
-          rgba(0, 0, 0, 0.15) 35%,
+          rgba(0, 0, 0, 0.2) 40%,
           rgba(0, 0, 0, 0.8) 100%
         );
       }
     }
 
     ${CatName} {
-      transform: translateY(-6px);
+      transform: translateY(-4px);
     }
 
     ${CatSubtext} {
@@ -13123,7 +13122,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$feature
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$brand$2d$showcase$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/brand-showcase/index.jsx [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$section$2d$title$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/section-title/index.jsx [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/styled/index.jsx [client] (ecmascript) <locals>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/styled-components/dist/styled-components.browser.esm.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/button/index.jsx [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$bootstrap$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/styled/bootstrap.jsx [client] (ecmascript) <locals>");
 ;
@@ -13141,31 +13139,27 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$bootstrap$2
 ;
 ;
 ;
-const fadeInUp = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["keyframes"]`
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-`;
 const CollectionSection = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].section`
-    padding: 100px 0 80px;
+    padding: 80px 0 40px;
     background: #fff;
 
     ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
-        padding: 60px 0 40px;
+        padding: 50px 0 20px;
     }
 `;
 _c = CollectionSection;
 const ProductsSection = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].section`
-    padding: 100px 0 60px;
-    background: #fafaf8;
+    padding: 80px 0 40px;
+    background: #f9f9f7;
 
     ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
-        padding: 60px 0 30px;
+        padding: 50px 0 20px;
     }
 `;
 _c1 = ProductsSection;
 const ViewAllWrap = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
     text-align: center;
-    margin-top: 20px;
+    margin-top: 16px;
     padding-bottom: 20px;
 
     a {
@@ -13180,80 +13174,101 @@ const ViewAllWrap = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$style
         text-decoration: none;
         padding: 14px 36px;
         border: 2px solid #111;
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: all 0.4s ease;
 
         &:hover {
             background: #111;
             color: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
     }
 `;
 _c2 = ViewAllWrap;
 const CTASection = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].section`
-    padding: 120px 20px;
-    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-    text-align: center;
     position: relative;
     overflow: hidden;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(
-            circle at 30% 50%,
-            rgba(212, 5, 17, 0.08) 0%,
-            transparent 50%
-        );
-    }
+    background: #111;
 
     ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
-        padding: 80px 20px;
+        display: flex;
+        flex-direction: column;
     }
 `;
 _c3 = CTASection;
+const CTAInner = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
+    display: flex;
+    min-height: 500px;
+    
+    ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
+        flex-direction: column;
+        min-height: auto;
+    }
+`;
+_c4 = CTAInner;
 const CTAContent = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
-    position: relative;
-    z-index: 1;
-    max-width: 640px;
-    margin: 0 auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px;
+    
+    ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].lg} {
+        padding: 60px 40px;
+    }
+    
+    ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
+        padding: 50px 24px;
+        text-align: center;
+        align-items: center;
+    }
 
     h2 {
-        font-size: 48px;
+        font-size: 44px;
         font-weight: 700;
         color: #fff;
         line-height: 1.1;
         letter-spacing: -1.5px;
-        margin-bottom: 24px;
+        margin-bottom: 20px;
+        max-width: 480px;
 
         ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
-            font-size: 36px;
+            font-size: 32px;
             letter-spacing: -0.5px;
-        }
-
-        ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].sm} {
-            font-size: 30px;
         }
     }
 
     p {
-        font-size: 17px;
+        font-size: 16px;
         line-height: 1.8;
         color: rgba(255, 255, 255, 0.55);
-        margin-bottom: 40px;
-        font-weight: 400;
+        margin-bottom: 36px;
+        max-width: 420px;
 
-        ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].sm} {
+        ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
             font-size: 15px;
+            max-width: 100%;
         }
     }
 `;
-_c4 = CTAContent;
+_c5 = CTAContent;
+const CTAImage = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
+    flex: 1;
+    position: relative;
+    min-height: 400px;
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
+        min-height: 300px;
+    }
+`;
+_c6 = CTAImage;
 const HomeTwo = ({ products, collections })=>{
     const displayCollections = collections?.length > 0 ? collections : __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$categories$2e$json__$28$json$29$__["default"];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -13265,7 +13280,7 @@ const HomeTwo = ({ products, collections })=>{
                         children: "Birmingham Kitchen & Bedroom | Bespoke Design"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 136,
+                        lineNumber: 152,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
@@ -13273,13 +13288,13 @@ const HomeTwo = ({ products, collections })=>{
                         content: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$settings$2e$json__$28$json$29$__["default"]?.description
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 137,
+                        lineNumber: 153,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 135,
+                lineNumber: 151,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$slider$2f$home$2d$2$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__SliderTwo$3e$__["SliderTwo"], {
@@ -13296,12 +13311,12 @@ const HomeTwo = ({ products, collections })=>{
                 }
             }, void 0, false, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 140,
+                lineNumber: 156,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$features$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 154,
+                lineNumber: 170,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CollectionSection, {
@@ -13312,7 +13327,7 @@ const HomeTwo = ({ products, collections })=>{
                         content: "Explore our signature ranges, designed to bring elegance and functionality to every corner of your home."
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 157,
+                        lineNumber: 173,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$categories$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -13321,18 +13336,18 @@ const HomeTwo = ({ products, collections })=>{
                         pb: 0
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 162,
+                        lineNumber: 178,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 156,
+                lineNumber: 172,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$brand$2d$showcase$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 165,
+                lineNumber: 181,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ProductsSection, {
@@ -13343,7 +13358,7 @@ const HomeTwo = ({ products, collections })=>{
                         content: "Discover the pieces our customers love most. Timeless quality meets modern design."
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 168,
+                        lineNumber: 184,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$product$2f$feed$2f$products$2d$tab$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ProductsTab$3e$__["ProductsTab"], {
@@ -13351,7 +13366,7 @@ const HomeTwo = ({ products, collections })=>{
                         limit: 8
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 173,
+                        lineNumber: 189,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ViewAllWrap, {
@@ -13360,86 +13375,116 @@ const HomeTwo = ({ products, collections })=>{
                             children: "View All Products →"
                         }, void 0, false, {
                             fileName: "[project]/src/pages/index.jsx",
-                            lineNumber: 176,
+                            lineNumber: 192,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 175,
+                        lineNumber: 191,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 167,
+                lineNumber: 183,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CTASection, {
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CTAContent, {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CTAInner, {
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            children: "Let's Create Your Dream Space"
-                        }, void 0, false, {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CTAContent, {
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                    children: "Let's Create Your Dream Space"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/pages/index.jsx",
+                                    lineNumber: 199,
+                                    columnNumber: 25
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    children: "Book a free design consultation and let our experts help you transform your home with bespoke kitchens and bedrooms."
+                                }, void 0, false, {
+                                    fileName: "[project]/src/pages/index.jsx",
+                                    lineNumber: 200,
+                                    columnNumber: 25
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                                        tag: "a",
+                                        href: "/contact",
+                                        color: "white",
+                                        bg: "primary",
+                                        hvrBg: "white",
+                                        hvrColor: "black",
+                                        style: {
+                                            padding: '16px 44px',
+                                            fontSize: '12px',
+                                            letterSpacing: '3px',
+                                            textTransform: 'uppercase',
+                                            fontWeight: 700,
+                                            borderRadius: '0'
+                                        },
+                                        children: "Book Consultation"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/pages/index.jsx",
+                                        lineNumber: 205,
+                                        columnNumber: 29
+                                    }, ("TURBOPACK compile-time value", void 0))
+                                }, void 0, false, {
+                                    fileName: "[project]/src/pages/index.jsx",
+                                    lineNumber: 204,
+                                    columnNumber: 25
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/src/pages/index.jsx",
-                            lineNumber: 182,
+                            lineNumber: 198,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            children: "Book a free design consultation and let our experts help you transform your home with bespoke kitchens and bedrooms."
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CTAImage, {
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",
+                                alt: "Modern kitchen design consultation"
+                            }, void 0, false, {
+                                fileName: "[project]/src/pages/index.jsx",
+                                lineNumber: 226,
+                                columnNumber: 25
+                            }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/pages/index.jsx",
-                            lineNumber: 183,
-                            columnNumber: 21
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                            tag: "a",
-                            href: "/contact",
-                            color: "white",
-                            bg: "primary",
-                            hvrBg: "white",
-                            hvrColor: "black",
-                            style: {
-                                padding: '18px 48px',
-                                fontSize: '12px',
-                                letterSpacing: '3px',
-                                textTransform: 'uppercase',
-                                fontWeight: 600,
-                                borderRadius: '0'
-                            },
-                            children: "Book Consultation"
-                        }, void 0, false, {
-                            fileName: "[project]/src/pages/index.jsx",
-                            lineNumber: 187,
+                            lineNumber: 225,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/pages/index.jsx",
-                    lineNumber: 181,
+                    lineNumber: 197,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 180,
+                lineNumber: 196,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/pages/index.jsx",
-        lineNumber: 134,
+        lineNumber: 150,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
-_c5 = HomeTwo;
+_c7 = HomeTwo;
 var __N_SSG = true;
 const __TURBOPACK__default__export__ = HomeTwo;
-var _c, _c1, _c2, _c3, _c4, _c5;
+var _c, _c1, _c2, _c3, _c4, _c5, _c6, _c7;
 __turbopack_context__.k.register(_c, "CollectionSection");
 __turbopack_context__.k.register(_c1, "ProductsSection");
 __turbopack_context__.k.register(_c2, "ViewAllWrap");
 __turbopack_context__.k.register(_c3, "CTASection");
-__turbopack_context__.k.register(_c4, "CTAContent");
-__turbopack_context__.k.register(_c5, "HomeTwo");
+__turbopack_context__.k.register(_c4, "CTAInner");
+__turbopack_context__.k.register(_c5, "CTAContent");
+__turbopack_context__.k.register(_c6, "CTAImage");
+__turbopack_context__.k.register(_c7, "HomeTwo");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

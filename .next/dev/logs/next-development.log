@@ -1410,3 +1410,45 @@ See this log for the ancestor stack trace. a <a>
 [00:11:50.849] Server  LOG     ✓ Compiled in 59ms
 [00:12:08.216] Server  LOG     ✓ Compiled in 125ms
 [00:12:09.244] Server  ERROR   ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1617806118233-f8e137bc7288?auto=format&fit=crop&w=300&q=80" 404
+[00:12:31.536] Server  LOG     ✓ Compiled in 30ms
+[00:13:07.924] Server  LOG     ✓ Compiled in 39ms
+[00:13:08.405] Server  WARN    ⚠ [externals]/@bootstrap-styled/v4
+unexpected export *
+export * used with module [externals]/@bootstrap-styled/v4 [external] (@bootstrap-styled/v4, cjs, [project]/node_modules/@bootstrap-styled/v4) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/components/features/index.jsx [SSR]
+    ./src/pages/index.jsx [SSR]
+
+  #2 [external]:
+    [externals]/@bootstrap-styled/v4 [external]
+    ./src/styled/bootstrap.jsx [SSR]
+    ./src/pages/_app.jsx [SSR]
+
+
+[00:13:08.408] Server  WARN    ⚠ [externals]/styled-system
+unexpected export *
+export * used with module [externals]/styled-system [external] (styled-system, cjs, [project]/node_modules/styled-system) which is a CommonJS module with exports only available at runtime
+List all export names manually (`export { a, b, c } from "...") or rewrite the module to ESM, to avoid the additional runtime code.`
+
+Import traces:
+  #1 [external]:
+    [externals]/styled-system [external]
+    ./src/components/ui/button/index.jsx [SSR]
+    ./src/pages/index.jsx [SSR]
+
+  #2 [external]:
+    [externals]/styled-system [external]
+    ./src/styled/index.jsx [SSR]
+    ./src/pages/_document.jsx [SSR]
+
+
+[00:13:08.648] Server  ERROR   redux-persist failed to create sync storage. falling back to noop storage.
+[00:13:08.716] Server  WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:13:08.716] Server  WARN    Shopify not configured, using mock data.
+[00:13:08.716] Server  WARN    GraphQL request failed, returning mock data to prevent crash.
+[00:13:08.717] Server  WARN    Shopify not configured, using mock data.
+[00:13:08.748] Browser LOG     Refreshing page data due to server-side change
