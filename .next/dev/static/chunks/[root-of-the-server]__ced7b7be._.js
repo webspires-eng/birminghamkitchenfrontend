@@ -12938,43 +12938,60 @@ const float = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$st
   50% { transform: translateY(-6px); }
 `;
 const FeatureWrapper = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
-  background: #111;
+  background: transparent;
   position: relative;
   z-index: 10;
-  margin-top: -60px;
+  margin-top: -80px; /* Pull up more into hero */
+  margin-bottom: 60px;
 
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
     margin-top: 0;
+    margin-bottom: 30px;
+    background: #fff;
   }
 `;
 _c = FeatureWrapper;
 const FeatureInner = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
   background: #fff;
-  border-radius: 16px;
-  padding: 10px 0;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 5px 0;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 10;
+  border: 1px solid rgba(0,0,0,0.03);
 
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
     border-radius: 0;
     box-shadow: none;
-    padding: 10px 0 0;
+    border: none;
+    padding: 20px 0;
+    margin-top: -20px; /* Slight overlap on mobile or none */
+    background: transparent;
   }
 `;
 _c1 = FeatureInner;
 const FeatureItem = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
   display: flex;
   align-items: center;
-  padding: 32px 20px;
+  padding: 35px 25px;
   transition: all 0.3s ease;
-  border-radius: 12px;
+  border-right: 1px solid #f0f0f0;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].lg} {
+      padding: 30px 15px;
+  }
 
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    padding: 24px 15px;
+    padding: 30px 15px;
+    border-right: none;
+    border-bottom: 1px solid #f0f0f0;
   }
 
   &:hover {
@@ -12985,37 +13002,39 @@ const FeatureItem = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$style
 `;
 _c2 = FeatureItem;
 const IconWrap = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 14px;
-  background: linear-gradient(135deg, ${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$2f$dist$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["themeGet"])('colors.primary')}, #ff4444);
-  color: #fff;
-  font-size: 26px;
-  margin-right: 18px;
+  border-radius: 50%;
+  background: rgba(212, 5, 17, 0.08); /* Light red tint */
+  color: ${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$2f$dist$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["themeGet"])('colors.primary')};
+  font-size: 28px;
+  margin-right: 20px;
   flex-shrink: 0;
-  box-shadow: 0 6px 20px rgba(212, 5, 17, 0.25);
+  transition: all 0.3s ease;
 
   ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].md} {
     margin-right: 0;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
+    width: 70px;
+    height: 70px;
   }
 `;
 _c3 = IconWrap;
 const FeatureInfo = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
   h4 {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
     color: #191919;
-    letter-spacing: 0.3px;
+    letter-spacing: -0.2px;
   }
   p {
     margin: 0;
-    font-size: 13px;
-    color: #888;
+    font-size: 14px;
+    color: #666;
     line-height: 1.5;
   }
 `;
@@ -13028,7 +13047,7 @@ const Features = ()=>{
             content: "On all orders across the UK",
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$hi$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["HiOutlineTruck"], {}, void 0, false, {
                 fileName: "[project]/src/components/features/index.jsx",
-                lineNumber: 99,
+                lineNumber: 118,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -13038,7 +13057,7 @@ const Features = ()=>{
             content: "Spread the cost easily",
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$hi$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["HiOutlineCreditCard"], {}, void 0, false, {
                 fileName: "[project]/src/components/features/index.jsx",
-                lineNumber: 105,
+                lineNumber: 124,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -13048,7 +13067,7 @@ const Features = ()=>{
             content: "Artisan quality guarantee",
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$hi$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["HiOutlineClock"], {}, void 0, false, {
                 fileName: "[project]/src/components/features/index.jsx",
-                lineNumber: 111,
+                lineNumber: 130,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -13058,7 +13077,7 @@ const Features = ()=>{
             content: "100% secure checkouts",
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$hi$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["HiOutlineShieldCheck"], {}, void 0, false, {
                 fileName: "[project]/src/components/features/index.jsx",
-                lineNumber: 117,
+                lineNumber: 136,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         }
@@ -13067,9 +13086,9 @@ const Features = ()=>{
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$bootstrap$2d$styled$2f$v4$2f$dist$2f40$bootstrap$2d$styled$2f$v4$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["Container"], {
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FeatureInner, {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$bootstrap$2d$styled$2f$v4$2f$dist$2f40$bootstrap$2d$styled$2f$v4$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["Row"], {
-                    className: "justify-content-center align-items-center",
+                    className: "g-0 justify-content-center align-items-center",
                     children: featureData.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$bootstrap$2d$styled$2f$v4$2f$dist$2f40$bootstrap$2d$styled$2f$v4$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["Col"], {
-                            xs: 6,
+                            xs: 12,
                             sm: 6,
                             lg: 3,
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FeatureItem, {
@@ -13079,7 +13098,7 @@ const Features = ()=>{
                                         children: item.icon
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/index.jsx",
-                                        lineNumber: 129,
+                                        lineNumber: 148,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FeatureInfo, {
@@ -13088,51 +13107,51 @@ const Features = ()=>{
                                                 children: item.title
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/features/index.jsx",
-                                                lineNumber: 131,
+                                                lineNumber: 150,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 children: item.content
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/features/index.jsx",
-                                                lineNumber: 132,
+                                                lineNumber: 151,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/features/index.jsx",
-                                        lineNumber: 130,
+                                        lineNumber: 149,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/features/index.jsx",
-                                lineNumber: 128,
+                                lineNumber: 147,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0))
                         }, item.id, false, {
                             fileName: "[project]/src/components/features/index.jsx",
-                            lineNumber: 127,
+                            lineNumber: 146,
                             columnNumber: 15
                         }, ("TURBOPACK compile-time value", void 0)))
                 }, void 0, false, {
                     fileName: "[project]/src/components/features/index.jsx",
-                    lineNumber: 125,
+                    lineNumber: 144,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/features/index.jsx",
-                lineNumber: 124,
+                lineNumber: 143,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/src/components/features/index.jsx",
-            lineNumber: 123,
+            lineNumber: 142,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/features/index.jsx",
-        lineNumber: 122,
+        lineNumber: 141,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

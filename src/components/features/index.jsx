@@ -8,43 +8,60 @@ const float = keyframes`
 `;
 
 const FeatureWrapper = styled.div`
-  background: #111;
+  background: transparent;
   position: relative;
   z-index: 10;
-  margin-top: -60px;
+  margin-top: -80px; /* Pull up more into hero */
+  margin-bottom: 60px;
 
   ${devices.md} {
     margin-top: 0;
+    margin-bottom: 30px;
+    background: #fff;
   }
 `;
 
 const FeatureInner = styled.div`
   background: #fff;
-  border-radius: 16px;
-  padding: 10px 0;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 5px 0;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 10;
+  border: 1px solid rgba(0,0,0,0.03);
 
   ${devices.md} {
     border-radius: 0;
     box-shadow: none;
-    padding: 10px 0 0;
+    border: none;
+    padding: 20px 0;
+    margin-top: -20px; /* Slight overlap on mobile or none */
+    background: transparent;
   }
 `;
 
 const FeatureItem = styled.div`
   display: flex;
   align-items: center;
-  padding: 32px 20px;
+  padding: 35px 25px;
   transition: all 0.3s ease;
-  border-radius: 12px;
+  border-right: 1px solid #f0f0f0;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  ${devices.lg} {
+      padding: 30px 15px;
+  }
 
   ${devices.md} {
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    padding: 24px 15px;
+    padding: 30px 15px;
+    border-right: none;
+    border-bottom: 1px solid #f0f0f0;
   }
 
   &:hover {
@@ -55,37 +72,39 @@ const FeatureItem = styled.div`
 `;
 
 const IconWrap = styled.div`
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 14px;
-  background: linear-gradient(135deg, ${themeGet('colors.primary')}, #ff4444);
-  color: #fff;
-  font-size: 26px;
-  margin-right: 18px;
+  border-radius: 50%;
+  background: rgba(212, 5, 17, 0.08); /* Light red tint */
+  color: ${themeGet('colors.primary')};
+  font-size: 28px;
+  margin-right: 20px;
   flex-shrink: 0;
-  box-shadow: 0 6px 20px rgba(212, 5, 17, 0.25);
+  transition: all 0.3s ease;
 
   ${devices.md} {
     margin-right: 0;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
+    width: 70px;
+    height: 70px;
   }
 `
 
 const FeatureInfo = styled.div`
   h4 {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
     color: #191919;
-    letter-spacing: 0.3px;
+    letter-spacing: -0.2px;
   }
   p {
     margin: 0;
-    font-size: 13px;
-    color: #888;
+    font-size: 14px;
+    color: #666;
     line-height: 1.5;
   }
 `;
@@ -122,9 +141,9 @@ const Features = () => {
     <FeatureWrapper>
       <Container>
         <FeatureInner>
-          <Row className="justify-content-center align-items-center">
+          <Row className="g-0 justify-content-center align-items-center">
             {featureData.map(item => (
-              <Col key={item.id} xs={6} sm={6} lg={3}>
+              <Col key={item.id} xs={12} sm={6} lg={3}>
                 <FeatureItem>
                   <IconWrap className="feature-icon">{item.icon}</IconWrap>
                   <FeatureInfo>
