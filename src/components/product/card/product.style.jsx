@@ -7,7 +7,7 @@ const hvrVisible = css`
 `
 
 export const ProductPrice = styled.div`
-  font-size: 15px;
+  font-size: 16px; /* Increased from 15px */
   line-height: 1;
   font-family: ${themeGet('fonts.montserrat')};
   display: flex;
@@ -15,7 +15,7 @@ export const ProductPrice = styled.div`
   justify-content: center;
   color: ${themeGet('colors.heading')};
   font-weight: 700;
-  margin-top: 8px;
+  margin-top: 10px;
 
   .price {
     &.old {
@@ -32,25 +32,22 @@ export const ProductPrice = styled.div`
 `
 
 export const ProductTitle = styled.h2`
-  font-size: 15px;
+  font-size: 16px; /* Increased from 15px */
   font-family: ${themeGet('fonts.body')};
-  font-weight: 500;
+  font-weight: 600; /* Increased weight slightly */
   margin-bottom: 5px;
   line-height: 1.4;
-  letter-spacing: 0.2px;
+  letter-spacing: 0;
   text-align: center;
 
   a {
     text-decoration: none;
     color: #191919;
-    /* white-space: nowrap; */
-    /* overflow: hidden; */
-    /* text-overflow: ellipsis; */
     display: block;
     transition: color 0.2s ease;
 
     ${devices.sm} {
-      font-size: 14px;
+      font-size: 15px;
     }
 
     &:hover {
@@ -64,7 +61,7 @@ export const ProductMeta = styled.div`
   z-index: 10;
   display: flex;
   flex-direction: column;
-  padding: 15px 0 0;
+  padding: 18px 0 0;
   text-align: center;
   transition: ${themeGet('transition')};
   background-color: transparent;
@@ -291,9 +288,6 @@ export const ProductThumb = styled.figure`
   border-radius: 12px;
   background-color: #f7f7f7;
   
-  /* Aspect ratio fix via padding approach or assume consistent images */
-  /* padding-bottom: 125%; */ /* Example vertical rect */ 
-  
   img {
     width: 100%;
     height: auto;
@@ -316,11 +310,11 @@ export const ProductThumb = styled.figure`
 
 export const Product = styled.div`
   position: relative;
-  margin-bottom: 40px; /* More spacing */
+  margin-bottom: 40px; 
 
   &:hover {
     ${ProductThumb} img {
-      transform: scale(1.05); /* Slight zoom */
+      transform: scale(1.05);
     }
 
     ${ProductThumb} .hover-image {

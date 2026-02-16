@@ -2046,3 +2046,5 @@ Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
 [00:31:15.306] Browser LOG     50
 [00:31:15.312] Browser LOG     -Infinity
 [00:31:15.312] Browser LOG     NaN
+[00:31:46.674] Server  LOG     ✓ Compiled in 414ms
+[00:33:57.045] Server  LOG     ✓ Compiled in 434ms

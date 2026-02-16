@@ -8458,7 +8458,7 @@ const hvrVisible = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$
   opacity: 1;
 `;
 const ProductPrice = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
-  font-size: 15px;
+  font-size: 16px; /* Increased from 15px */
   line-height: 1;
   font-family: ${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$2f$dist$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["themeGet"])('fonts.montserrat')};
   display: flex;
@@ -8466,7 +8466,7 @@ const ProductPrice = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
   justify-content: center;
   color: ${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$2f$dist$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["themeGet"])('colors.heading')};
   font-weight: 700;
-  margin-top: 8px;
+  margin-top: 10px;
 
   .price {
     &.old {
@@ -8482,25 +8482,22 @@ const ProductPrice = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
   }
 `;
 const ProductTitle = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].h2`
-  font-size: 15px;
+  font-size: 16px; /* Increased from 15px */
   font-family: ${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$2f$dist$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["themeGet"])('fonts.body')};
-  font-weight: 500;
+  font-weight: 600; /* Increased weight slightly */
   margin-bottom: 5px;
   line-height: 1.4;
-  letter-spacing: 0.2px;
+  letter-spacing: 0;
   text-align: center;
 
   a {
     text-decoration: none;
     color: #191919;
-    /* white-space: nowrap; */
-    /* overflow: hidden; */
-    /* text-overflow: ellipsis; */
     display: block;
     transition: color 0.2s ease;
 
     ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["devices"].sm} {
-      font-size: 14px;
+      font-size: 15px;
     }
 
     &:hover {
@@ -8513,7 +8510,7 @@ const ProductMeta = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$style
   z-index: 10;
   display: flex;
   flex-direction: column;
-  padding: 15px 0 0;
+  padding: 18px 0 0;
   text-align: center;
   transition: ${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$2f$dist$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["themeGet"])('transition')};
   background-color: transparent;
@@ -8730,9 +8727,6 @@ const ProductThumb = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
   border-radius: 12px;
   background-color: #f7f7f7;
   
-  /* Aspect ratio fix via padding approach or assume consistent images */
-  /* padding-bottom: 125%; */ /* Example vertical rect */ 
-  
   img {
     width: 100%;
     height: auto;
@@ -8754,11 +8748,11 @@ const ProductThumb = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
 `;
 const Product = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
   position: relative;
-  margin-bottom: 40px; /* More spacing */
+  margin-bottom: 40px; 
 
   &:hover {
     ${ProductThumb} img {
-      transform: scale(1.05); /* Slight zoom */
+      transform: scale(1.05);
     }
 
     ${ProductThumb} .hover-image {

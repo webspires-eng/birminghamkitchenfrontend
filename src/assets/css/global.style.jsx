@@ -1,4 +1,4 @@
-import styled, {createGlobalStyle, devices, themeGet} from "@styled";
+import styled, { createGlobalStyle, devices, themeGet } from "@styled";
 
 export const GlobalStyle = createGlobalStyle`
   *,
@@ -64,6 +64,27 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     box-shadow: none;
     outline: 0;
+  }
+  
+  /* Hero Slider Pagination Fix */
+  .hero-slider-one {
+    .swiper-pagination {
+        bottom: 80px !important;
+        z-index: 20 !important;
+        
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: rgba(255,255,255,0.4);
+            opacity: 1;
+            margin: 0 6px !important;
+            
+            &-active {
+                background: #fff;
+                transform: scale(1.2);
+            }
+        }
+    }
   }
 
   textarea {

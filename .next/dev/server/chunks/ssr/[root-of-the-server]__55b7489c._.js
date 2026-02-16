@@ -556,6 +556,27 @@ const GlobalStyle = __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$
     box-shadow: none;
     outline: 0;
   }
+  
+  /* Hero Slider Pagination Fix */
+  .hero-slider-one {
+    .swiper-pagination {
+        bottom: 80px !important;
+        z-index: 20 !important;
+        
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: rgba(255,255,255,0.4);
+            opacity: 1;
+            margin: 0 6px !important;
+            
+            &-active {
+                background: #fff;
+                transform: scale(1.2);
+            }
+        }
+    }
+  }
 
   textarea {
     width: 100%;
