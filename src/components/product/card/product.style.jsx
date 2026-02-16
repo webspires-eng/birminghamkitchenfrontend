@@ -12,7 +12,7 @@ export const ProductPrice = styled.div`
   font-family: ${themeGet('fonts.montserrat')};
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   color: ${themeGet('colors.heading')};
   font-weight: 700;
   margin-top: 8px;
@@ -35,9 +35,10 @@ export const ProductTitle = styled.h2`
   font-size: 15px;
   font-family: ${themeGet('fonts.body')};
   font-weight: 500;
-  margin-bottom: 0;
+  margin-bottom: 5px;
   line-height: 1.4;
   letter-spacing: 0.2px;
+  text-align: center;
 
   a {
     text-decoration: none;
@@ -63,8 +64,8 @@ export const ProductMeta = styled.div`
   z-index: 10;
   display: flex;
   flex-direction: column;
-  padding: 18px 0;
-  text-align: left;
+  padding: 15px 0 0;
+  text-align: center;
   transition: ${themeGet('transition')};
   background-color: transparent;
 
@@ -76,7 +77,7 @@ export const ProductMeta = styled.div`
 
 const buttonStyle = css`
   border: 0;
-  width: 100%;
+  width: calc(100% - 30px);
   z-index: 11;
   height: 40px;
   display: flex;
@@ -91,6 +92,7 @@ const buttonStyle = css`
   font-family: ${themeGet('fonts.heading')};
   background-color: ${themeGet('colors.black')};
   border-radius: 4px;
+  margin: 0 auto;
   
   svg {
     margin-right: 6px;
@@ -111,10 +113,9 @@ const buttonStyle = css`
 export const AddToCartButton = styled.button`
   ${buttonStyle}
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  transform: translateY(100%);
+  bottom: 15px;
+  left: 15px;
+  transform: translateY(20px);
   opacity: 0;
   visibility: hidden;
 
@@ -124,16 +125,17 @@ export const AddToCartButton = styled.button`
     opacity: 1;
     visibility: visible;
     margin-top: 15px;
+    width: 100%;
+    margin-left: 0;
   }
 `
 
 export const SelectOptionButton = styled.span`
   ${buttonStyle}
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  transform: translateY(100%);
+  bottom: 15px;
+  left: 15px;
+  transform: translateY(20px);
   opacity: 0;
   visibility: hidden;
   cursor: pointer;
@@ -144,6 +146,8 @@ export const SelectOptionButton = styled.span`
     opacity: 1;
     visibility: visible;
     margin-top: 15px;
+    width: 100%;
+    margin-left: 0;
   }
 `
 
@@ -284,14 +288,17 @@ export const ProductThumb = styled.figure`
   position: relative;
   overflow: hidden;
   margin: 0;
-  border-radius: 8px;
+  border-radius: 12px;
   background-color: #f7f7f7;
   
-  /* Aspect ratio fix if needed, or rely on image size */
+  /* Aspect ratio fix via padding approach or assume consistent images */
+  /* padding-bottom: 125%; */ /* Example vertical rect */ 
+  
   img {
     width: 100%;
     height: auto;
     display: block;
+    mix-blend-mode: multiply; /* Helps transparent PNG products look integrated */
     transition: transform 0.6s cubic-bezier(0.2, 0, 0.2, 1);
   }
 
@@ -303,16 +310,17 @@ export const ProductThumb = styled.figure`
     height: 100%;
     opacity: 0;
     transition: opacity 0.4s ease;
+    mix-blend-mode: multiply;
   }
 `
 
 export const Product = styled.div`
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 40px; /* More spacing */
 
   &:hover {
     ${ProductThumb} img {
-      transform: scale(1.06);
+      transform: scale(1.05); /* Slight zoom */
     }
 
     ${ProductThumb} .hover-image {

@@ -1606,3 +1606,4 @@ Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
 [00:08:28.262] Browser LOG     NaN
 [00:08:28.294] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/assets/images/products/sofia_pink.png" "received" null
 [00:11:07.867] Server  LOG     ✓ Compiled in 1621ms
+[00:13:10.234] Server  LOG     ✓ Compiled in 197ms

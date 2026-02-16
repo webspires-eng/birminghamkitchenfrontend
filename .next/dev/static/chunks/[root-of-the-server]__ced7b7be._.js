@@ -9316,7 +9316,7 @@ const ProductPrice = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
   font-family: ${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$2f$dist$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["themeGet"])('fonts.montserrat')};
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   color: ${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$2f$dist$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["themeGet"])('colors.heading')};
   font-weight: 700;
   margin-top: 8px;
@@ -9338,9 +9338,10 @@ const ProductTitle = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
   font-size: 15px;
   font-family: ${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$2f$dist$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["themeGet"])('fonts.body')};
   font-weight: 500;
-  margin-bottom: 0;
+  margin-bottom: 5px;
   line-height: 1.4;
   letter-spacing: 0.2px;
+  text-align: center;
 
   a {
     text-decoration: none;
@@ -9365,8 +9366,8 @@ const ProductMeta = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$style
   z-index: 10;
   display: flex;
   flex-direction: column;
-  padding: 18px 0;
-  text-align: left;
+  padding: 15px 0 0;
+  text-align: center;
   transition: ${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$2f$dist$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["themeGet"])('transition')};
   background-color: transparent;
 
@@ -9377,7 +9378,7 @@ const ProductMeta = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$style
 `;
 const buttonStyle = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["css"]`
   border: 0;
-  width: 100%;
+  width: calc(100% - 30px);
   z-index: 11;
   height: 40px;
   display: flex;
@@ -9392,6 +9393,7 @@ const buttonStyle = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules
   font-family: ${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$2f$dist$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["themeGet"])('fonts.heading')};
   background-color: ${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$styled$2d$system$2f$theme$2d$get$2f$dist$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["themeGet"])('colors.black')};
   border-radius: 4px;
+  margin: 0 auto;
   
   svg {
     margin-right: 6px;
@@ -9411,10 +9413,9 @@ const buttonStyle = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules
 const AddToCartButton = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].button`
   ${buttonStyle}
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  transform: translateY(100%);
+  bottom: 15px;
+  left: 15px;
+  transform: translateY(20px);
   opacity: 0;
   visibility: hidden;
 
@@ -9424,15 +9425,16 @@ const AddToCartButton = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$s
     opacity: 1;
     visibility: visible;
     margin-top: 15px;
+    width: 100%;
+    margin-left: 0;
   }
 `;
 const SelectOptionButton = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].span`
   ${buttonStyle}
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  transform: translateY(100%);
+  bottom: 15px;
+  left: 15px;
+  transform: translateY(20px);
   opacity: 0;
   visibility: hidden;
   cursor: pointer;
@@ -9443,6 +9445,8 @@ const SelectOptionButton = __TURBOPACK__imported__module__$5b$project$5d2f$src$2
     opacity: 1;
     visibility: visible;
     margin-top: 15px;
+    width: 100%;
+    margin-left: 0;
   }
 `;
 const ActionButton = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].button`
@@ -9576,14 +9580,17 @@ const ProductThumb = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
   position: relative;
   overflow: hidden;
   margin: 0;
-  border-radius: 8px;
+  border-radius: 12px;
   background-color: #f7f7f7;
   
-  /* Aspect ratio fix if needed, or rely on image size */
+  /* Aspect ratio fix via padding approach or assume consistent images */
+  /* padding-bottom: 125%; */ /* Example vertical rect */ 
+  
   img {
     width: 100%;
     height: auto;
     display: block;
+    mix-blend-mode: multiply; /* Helps transparent PNG products look integrated */
     transition: transform 0.6s cubic-bezier(0.2, 0, 0.2, 1);
   }
 
@@ -9595,15 +9602,16 @@ const ProductThumb = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styl
     height: 100%;
     opacity: 0;
     transition: opacity 0.4s ease;
+    mix-blend-mode: multiply;
   }
 `;
 const Product = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$styled$2f$index$2e$jsx__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].div`
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 40px; /* More spacing */
 
   &:hover {
     ${ProductThumb} img {
-      transform: scale(1.06);
+      transform: scale(1.05); /* Slight zoom */
     }
 
     ${ProductThumb} .hover-image {
