@@ -13,8 +13,6 @@ const ContactPage = () => {
             </Head>
 
             <Breadcrumb
-                py={[30, 50]}
-                mb={[20, null, 40]}
                 pageTitle="Contact"
             />
 

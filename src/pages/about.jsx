@@ -25,8 +25,6 @@ const AboutPage = () => {
             </Head>
 
             <Breadcrumb
-                py={[30, 50]}
-                mb={[30, null, 50]}
                 pageTitle="About Us"
             />
 

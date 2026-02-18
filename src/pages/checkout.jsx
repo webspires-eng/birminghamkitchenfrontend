@@ -25,7 +25,15 @@ const CheckoutPage = () => {
             <Head>
                 <title>Checkout</title>
             </Head>
-            <Container className="pt-5 pb-5 mt-5 mt-md-0">
+            <Container style={{ paddingTop: '60px', paddingBottom: '60px' }} className="standard-page-padding">
+                <style jsx>{`
+                    @media (max-width: 768px) {
+                        .standard-page-padding {
+                            padding-top: 40px !important;
+                            padding-bottom: 40px !important;
+                        }
+                    }
+                `}</style>
                 <Row>
                     <Col lg={7}>
                         <SectionTitle

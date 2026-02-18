@@ -72,8 +72,14 @@ export const BreadcrumbWrap = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 160px;
+  min-height: 120px;
   position: relative;
+  padding: 30px 0;
+
+  ${devices.md} {
+    min-height: 100px;
+    padding: 20px 0;
+  }
 
   ${space}
 `

@@ -11,13 +11,9 @@ const ShowcaseWrap = styled.section`
   overflow: hidden;
   position: relative;
   background-color: #fafaf8;
-  padding: 100px 0;
+  padding: 60px 0;
 
-  ${devices.md} {
-    padding: 60px 0;
-  }
-
-  ${devices.xs} {
+  ${devices.sm} {
     padding: 40px 0;
   }
 `;

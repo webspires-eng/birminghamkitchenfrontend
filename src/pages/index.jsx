@@ -15,20 +15,20 @@ import Button from "@components/ui/button";
 import { Container } from "@bootstrap";
 
 const CollectionSection = styled.section`
-    padding: 60px 0 0;
+    padding: 60px 0;
     background: #fff;
 
     ${devices.sm} {
-        padding: 40px 0 0;
+        padding: 40px 0;
     }
 `;
 
 const ProductsSection = styled.section`
-    padding: 60px 0 40px;
+    padding: 60px 0;
     background: #f9f9f7;
 
     ${devices.sm} {
-        padding: 40px 0 20px;
+        padding: 40px 0;
     }
 `;
 
@@ -77,14 +77,14 @@ const CTAContent = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 80px 60px 80px 0;
+    padding: 60px 60px 60px 0;
     
     ${devices.lg} {
         padding: 60px 40px 60px 0;
     }
     
     ${devices.md} {
-        padding: 50px 0;
+        padding: 40px 0;
         text-align: center;
         align-items: center;
     }

@@ -3,6 +3,7 @@ import Layout from "@components/layout";
 import settings from "@data/settings.json";
 import Category from "@components/category";
 import { Container, Row, Col } from "@bootstrap";
+import Breadcrumb from "@components/ui/breadcrumb";
 import categoriesData from "@data/categories.json";
 import { client, collectionsQuery } from "@graphql";
 
@@ -16,12 +17,21 @@ const CollectionsPage = ({ collections }) => {
                 <meta name="description" content={settings?.description} />
             </Head>
 
-            <div className="page-header text-center" style={{ padding: '80px 0', background: '#f8f8f8' }}>
-                <h1 style={{ fontSize: '40px', fontWeight: '700', color: '#191919' }}>All Collections</h1>
-                <p style={{ color: '#666', marginTop: '10px' }}>Explore our range of premium kitchens, bedrooms, and more.</p>
-            </div>
+            <Breadcrumb pageTitle="All Collections" />
 
-            <Container className="py-5">
+            <Container className="standard-page-padding">
+                <style jsx>{`
+                    .standard-page-padding {
+                        padding-top: 60px;
+                        padding-bottom: 60px;
+                    }
+                    @media (max-width: 768px) {
+                        .standard-page-padding {
+                            padding-top: 40px !important;
+                            padding-bottom: 40px !important;
+                        }
+                    }
+                `}</style>
                 <Row>
                     {displayCollections?.map(({ node: category }) => (
                         <Col key={category?.id} md={6} lg={4} className="mb-4">
