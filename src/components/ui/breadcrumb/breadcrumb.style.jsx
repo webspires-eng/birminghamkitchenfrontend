@@ -68,7 +68,7 @@ export const BreadcrumbTitle = styled.h1`
 export const BreadcrumbWrap = styled.section`
   text-align: center;
   background-color: #111;
-  background-image: ${props => props.thumb ? `url(${props.thumb})` : 'url("https://images.unsplash.com/photo-1616594197247-b6956620242c?auto=format&fit=crop&q=80&w=2000")'};
+  background-image: ${props => props.thumb ? `url("${props.thumb}")` : 'url("https://images.unsplash.com/photo-1616594197247-b6956620242c?auto=format&fit=crop&q=80&w=2000")'};
   background-size: cover;
   background-position: center;
   display: flex;
