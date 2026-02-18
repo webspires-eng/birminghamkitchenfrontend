@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Container, Col, Row } from "@bootstrap";
 import { BreadcrumbWrap, BreadcrumbTitle, BreadcrumbNav, BreadcrumbNavItem, BreadcrumbNavLink } from "./breadcrumb.style";
 
-const Breadcrumb = ({ pageTitle, ...props }) => {
+const Breadcrumb = ({ pageTitle, thumb, ...props }) => {
     const router = useRouter();
     const [breadcrumbs, setBreadcrumbs] = useState(null);
 
@@ -27,7 +27,7 @@ const Breadcrumb = ({ pageTitle, ...props }) => {
     }
 
     return (
-        <BreadcrumbWrap {...props}>
+        <BreadcrumbWrap thumb={thumb} {...props}>
             <Container>
                 {pageTitle && (
                     <BreadcrumbTitle>

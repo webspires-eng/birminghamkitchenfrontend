@@ -2,12 +2,13 @@ import styled, { themeGet, space, devices } from "@styled";
 
 export const BreadcrumbNavLink = styled.span`
   position: relative;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 
   &:hover {
     color: #fff;
+    text-decoration: underline;
   }
 `
 
@@ -47,18 +48,16 @@ export const BreadcrumbNav = styled.ul`
 
 export const BreadcrumbTitle = styled.h1`
   margin: 0;
-  font-size: 36px;
-  overflow: hidden;
-  line-height: 1.2;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  text-transform: none;
+  font-size: 56px;
+  line-height: 1.1;
   font-weight: 700;
   color: #fff;
-  letter-spacing: -0.5px;
+  letter-spacing: -2px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
 
   ${devices.md} {
-    font-size: 28px;
+    font-size: 42px;
+    letter-spacing: -1px;
   }
 
   ${devices.sm} {
@@ -68,17 +67,41 @@ export const BreadcrumbTitle = styled.h1`
 
 export const BreadcrumbWrap = styled.section`
   text-align: center;
-  background: #111;
+  background-color: #111;
+  background-image: ${props => props.thumb ? `url(${props.thumb})` : 'url("https://images.unsplash.com/photo-1616594197247-b6956620242c?auto=format&fit=crop&q=80&w=2000")'};
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 120px;
+  min-height: 480px;
   position: relative;
-  padding: 30px 0;
+  padding: 80px 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
+    z-index: 1;
+  }
+
+  & > div {
+    position: relative;
+    z-index: 2;
+  }
 
   ${devices.md} {
-    min-height: 100px;
-    padding: 20px 0;
+    min-height: 350px;
+    padding: 60px 0;
+  }
+
+  ${devices.sm} {
+    min-height: 280px;
+    padding: 40px 0;
   }
 
   ${space}

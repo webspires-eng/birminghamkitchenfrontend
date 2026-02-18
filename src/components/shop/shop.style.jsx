@@ -21,6 +21,10 @@ export const ShopTopBarRight = styled.div`
       &:hover {
         border-color: #ccc;
       }
+
+      ${devices.sm} {
+        font-size: 16px; /* Prevents auto-zoom on iOS */
+      }
     }
     
     &__indicator-separator {
@@ -51,10 +55,11 @@ export const ShopTopBar = styled.div`
   font-size: ${themeGet("fontSizes.standard")};
 
   ${devices.xs} {
-    display: block;
-    padding-top: 12px;
-    text-align: center;
-    padding-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    gap: 15px;
   }
 `;
 
@@ -69,7 +74,17 @@ export const ProductsFeedWrap = styled.div`
   ${space}
   
   .products-grid-mobile {
-    row-gap: 32px;
+    row-gap: 24px;
+    
+    ${devices.xs} {
+        margin-left: -8px;
+        margin-right: -8px;
+        
+        > div {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+    }
   }
 
   .seo-text {

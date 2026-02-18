@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { CURRENCY } from "@utils/constant";
 import { getProductStock } from "@utils/product";
 import { Quantity } from "@components/cart/cart.style";
-import { CgMathPlus, CgMathMinus } from "react-icons/cg";
+import { CgMathPlus, CgMathMinus, CgTrash } from "react-icons/cg";
 import {
     PriceAmount,
     RemoveButton,
@@ -38,10 +38,8 @@ const MiniCartProduct = ({ product }) => {
         <MiniCartProductItem>
             <Link href={`/product/${handle}`}>
                 <MiniCartProThumb>
-                    <Image
+                    <img
                         alt={title}
-                        width={110}
-                        height={120}
                         src={imageSrc}
                     />
                 </MiniCartProThumb>
@@ -81,7 +79,7 @@ const MiniCartProduct = ({ product }) => {
                 </div>
 
                 <RemoveButton onClick={() => dispatch(removeCartAction(product))}>
-                    x
+                    <CgTrash />
                 </RemoveButton>
             </MiniCartProContent>
         </MiniCartProductItem>

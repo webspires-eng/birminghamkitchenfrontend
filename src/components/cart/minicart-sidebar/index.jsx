@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types';
-import {useSelector} from "react-redux";
-import {CURRENCY} from "@utils/constant";
+import { useSelector } from "react-redux";
+import { CURRENCY } from "@utils/constant";
 import EmptyProduct from "@components/ui/empty";
 import OffCanvas from "@components/ui/offCanvas";
-import {getCartTotalPrice} from "@utils/product";
+import { getCartTotalPrice } from "@utils/product";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import MiniCartProduct from "@components/cart/minicart-sidebar/single-item";
-import {OffCanvasCloseBtn, OffCanvasHead, OffCanvasTitle} from "@components/ui/offCanvas/style";
-import {MiniCartList, MiniCartFooter, BtnCheckout, TotalPrice} from "@components/cart/minicart-sidebar/style";
+import { OffCanvasCloseBtn, OffCanvasHead, OffCanvasTitle } from "@components/ui/offCanvas/style";
+import { MiniCartList, MiniCartFooter, BtnCheckout, TotalPrice } from "@components/cart/minicart-sidebar/style";
 
-const MiniCartSidebar = ({isOpen, onHandler}) => {
+import { IoClose } from "react-icons/io5";
+
+const MiniCartSidebar = ({ isOpen, onHandler }) => {
     const shoppingCart = useSelector(state => state.shoppingCart);
     const cartTotalPrice = getCartTotalPrice(shoppingCart);
 
@@ -17,18 +19,18 @@ const MiniCartSidebar = ({isOpen, onHandler}) => {
         <OffCanvas open={isOpen} onHandler={onHandler}>
             <OffCanvasHead>
                 <OffCanvasTitle>Cart</OffCanvasTitle>
-                <OffCanvasCloseBtn onClick={() => onHandler()}>x</OffCanvasCloseBtn>
+                <OffCanvasCloseBtn onClick={() => onHandler()}><IoClose /></OffCanvasCloseBtn>
             </OffCanvasHead>
 
             <MiniCartList>
                 {shoppingCart.length > 0 ? (
                     <PerfectScrollbar>
                         {shoppingCart?.map(product => (
-                            <MiniCartProduct product={product} key={product?.cartId}/>
+                            <MiniCartProduct product={product} key={product?.cartId} />
                         ))}
                     </PerfectScrollbar>
                 ) : (
-                    <EmptyProduct/>
+                    <EmptyProduct />
                 )}
             </MiniCartList>
 
