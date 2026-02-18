@@ -38,6 +38,7 @@ export const AboutHero = styled.div`
       letter-spacing: -1px;
       line-height: 1.1;
       text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      color: #FFFFFF;
       
       ${devices.md} {
         font-size: 42px;
@@ -47,7 +48,7 @@ export const AboutHero = styled.div`
     p {
       font-size: 20px;
       line-height: 1.6;
-      opacity: 0.95;
+      color: #FFFFFF;
       text-shadow: 0 1px 5px rgba(0,0,0,0.2);
       max-width: 700px;
       margin: 0 auto;
@@ -269,6 +270,7 @@ export const CTASection = styled.section`
       font-size: 48px;
       margin-bottom: 25px;
       font-family: ${themeGet('fonts.heading')};
+      color: white;
       
       ${devices.md} { font-size: 32px; }
     }
@@ -276,6 +278,7 @@ export const CTASection = styled.section`
     p {
       font-size: 20px;
       margin-bottom: 40px;
+      color: white;
       opacity: 0.9;
       max-width: 600px;
       margin-left: auto;

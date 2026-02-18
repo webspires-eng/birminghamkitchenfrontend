@@ -76,6 +76,13 @@ const AboutPage = () => {
 
                     <Row className="row-item">
                         <Col lg={6}>
+                            <div className="text-content">
+                                <h2>The Bespoke Difference</h2>
+                                <p>Unlike mass-produced furniture, our pieces are built to order. This allows us to offer an unprecedented level of customization, from fabric selection and color matching to specific dimensions that fit your living space perfectly.</p>
+                                <p>We source only the finest UK-certified materials, from sustainably grown wood to premium plush velvets and Coniston fabrics, ensuring longevity and luxury in every thread.</p>
+                            </div>
+                        </Col>
+                        <Col lg={6}>
                             <div className="image-wrap">
                                 <Image
                                     width={800}
@@ -83,13 +90,6 @@ const AboutPage = () => {
                                     src="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&q=80&w=1000"
                                     alt="Design Process"
                                 />
-                            </div>
-                        </Col>
-                        <Col lg={6}>
-                            <div className="text-content">
-                                <h2>The Bespoke Difference</h2>
-                                <p>Unlike mass-produced furniture, our pieces are built to order. This allows us to offer an unprecedented level of customization, from fabric selection and color matching to specific dimensions that fit your living space perfectly.</p>
-                                <p>We source only the finest UK-certified materials, from sustainably grown wood to premium plush velvets and Coniston fabrics, ensuring longevity and luxury in every thread.</p>
                             </div>
                         </Col>
                     </Row>
