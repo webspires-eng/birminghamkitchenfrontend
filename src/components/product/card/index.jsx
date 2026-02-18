@@ -39,7 +39,11 @@ const ProductCard = ({ product, className }) => {
         <Fragment>
             <Product className={cn(className)}>
                 <ProductThumb>
-                    <ProductThumbnail product={product} />
+                    <Link href={`/product/${handle}`}>
+                        <div style={{ cursor: 'pointer' }}>
+                            <ProductThumbnail product={product} />
+                        </div>
+                    </Link>
                     <ProductBadges>
                         {isDiscounted && percentage > 0 && <Badge type="sale">{'-' + Math.round(percentage) + '%'}</Badge>}
                         {isDiscounted && <Badge type="winter">Winter Sale</Badge>}
@@ -56,21 +60,21 @@ const ProductCard = ({ product, className }) => {
                     <AddToCartButton product={product} />
                 </ProductThumb>
 
-                <ProductMeta>
-                    <ProductTitle>
-                        <Link href={`/product/${handle}`}>{title}</Link>
-                    </ProductTitle>
-                    <ProductPrice>
-                        {isDiscounted ? (
-                            <>
-                                <del className="price old">{CURRENCY + compareAtPrice} </del>
+                <Link href={`/product/${handle}`}>
+                    <ProductMeta style={{ cursor: 'pointer' }}>
+                        <ProductTitle>{title}</ProductTitle>
+                        <ProductPrice>
+                            {isDiscounted ? (
+                                <>
+                                    <del className="price old">{CURRENCY + compareAtPrice} </del>
+                                    <span className="price new">{product?.variants?.edges?.length > 1 ? 'From ' : ''}{CURRENCY + price}</span>
+                                </>
+                            ) : (
                                 <span className="price new">{product?.variants?.edges?.length > 1 ? 'From ' : ''}{CURRENCY + price}</span>
-                            </>
-                        ) : (
-                            <span className="price new">{product?.variants?.edges?.length > 1 ? 'From ' : ''}{CURRENCY + price}</span>
-                        )}
-                    </ProductPrice>
-                </ProductMeta>
+                            )}
+                        </ProductPrice>
+                    </ProductMeta>
+                </Link>
 
                 <ProductActionsMobile>
                     <ProductActions

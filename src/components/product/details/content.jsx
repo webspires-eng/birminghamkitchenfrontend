@@ -52,6 +52,7 @@ const ProductDetailsContent = ({
     isAssemblyAdded,
     setSelectedMattress,
     setIsAssemblyAdded,
+    setShowMattressModal,
     ...props
 }) => {
     let { title, description, variants, options } = product;
@@ -293,6 +294,49 @@ const ProductDetailsContent = ({
                     </Button>
                 </div>
 
+                <BundleSection>
+                    <BundleItem active={!!selectedMattress}>
+                        <div className="bundle-label">
+                            <div className="bundle-icons">
+                                <img src="https://cdn-icons-png.flaticon.com/512/3232/3232147.png" alt="mattress" />
+                            </div>
+                            <div className="bundle-text">
+                                <span>Add Mattress & Save</span>
+                                <p>Get a discount when you buy together</p>
+                            </div>
+                        </div>
+                        <div className="bundle-action">
+                            <BundleButton
+                                className={selectedMattress ? 'active' : ''}
+                                onClick={() => setShowMattressModal(true)}
+                            >
+                                {selectedMattress ? `Selected` : 'Choose Mattress'} {selectedMattress && <IoCheckmark />}
+                            </BundleButton>
+                        </div>
+                    </BundleItem>
+
+                    <BundleItem active={isAssemblyAdded}>
+                        <div className="bundle-label">
+                            <div className="bundle-icons">
+                                <MdBuild />
+                            </div>
+                            <div className="bundle-text">
+                                <span>Professional Assembly</span>
+                                <p>Let us take your new bed to your room, assemble and take away packaging.</p>
+                            </div>
+                        </div>
+                        <div className="bundle-action">
+                            <div className="bundle-price">£39.99</div>
+                            <BundleButton
+                                className={isAssemblyAdded ? 'active' : ''}
+                                onClick={() => setIsAssemblyAdded(!isAssemblyAdded)}
+                            >
+                                {isAssemblyAdded ? 'Added' : 'Add'}
+                            </BundleButton>
+                        </div>
+                    </BundleItem>
+                </BundleSection>
+
                 <PaymentIcons>
                     <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Visa" />
                     <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="Amex" />
@@ -320,7 +364,7 @@ const ProductDetailsContent = ({
                     0% Interest Rate
                 </div>
                 <div className="badge-item">
-                    <span className="icon">🚚</span>
+                    <span className="icon">🌙</span>
                     Fast Free Delivery
                 </div>
             </TrustBadges>

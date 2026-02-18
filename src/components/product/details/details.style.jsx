@@ -634,33 +634,57 @@ export const TrustPilot = styled.div`
   }
 `;
 export const BundleSection = styled.div`
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
+    width: 100%;
 `;
 
 export const BundleItem = styled.div`
-    background: #FFFAF6;
+    background: #FEFBF9;
     border: 1px solid ${props => props.active ? '#7E2D67' : '#F1EBE6'};
-    border-radius: 12px;
-    padding: 20px;
+    border-radius: 15px;
+    padding: 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: all 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
+    ${devices.sm} {
+        padding: 15px;
+    }
+
     .bundle-label {
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 20px;
         
+        ${devices.sm} {
+            gap: 10px;
+        }
+
         .bundle-icons {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 28px;
-            color: #333;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            font-size: 32px;
+            color: #7E2D67;
+
+            ${devices.sm} {
+                display: none;
+            }
+
+            img {
+                width: 45px !important;
+                height: 45px !important;
+                object-fit: contain;
+            }
         }
         
         .bundle-text {
@@ -669,12 +693,18 @@ export const BundleItem = styled.div`
                 font-size: 18px;
                 font-weight: 700;
                 color: #333;
+                margin-bottom: 4px;
+
+                ${devices.sm} {
+                    font-size: 16px;
+                }
             }
             p {
                 margin: 0;
-                font-size: 14px;
+                font-size: 13px;
                 color: #666;
-                line-height: 1.4;
+                line-height: 1.5;
+                max-width: 300px;
             }
         }
     }
@@ -682,12 +712,20 @@ export const BundleItem = styled.div`
     .bundle-action {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 25px;
+
+        ${devices.sm} {
+            gap: 12px;
+        }
         
         .bundle-price {
             font-size: 20px;
             font-weight: 700;
             color: #7E2D67;
+
+            ${devices.sm} {
+                font-size: 18px;
+            }
         }
     }
 `;
@@ -695,18 +733,28 @@ export const BundleItem = styled.div`
 export const BundleButton = styled.button`
     background: #fff;
     border: 1.5px solid #7E2D67;
-    color: #333;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: 600;
+    color: #7E2D67;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-weight: 700;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 8px;
     cursor: pointer;
     transition: all 0.3s;
+    min-width: 140px;
+    font-size: 14px;
+
+    ${devices.sm} {
+        padding: 8px 15px;
+        min-width: 100px;
+        font-size: 13px;
+    }
     
     &:hover {
         background: #F9F4F0;
+        transform: translateY(-2px);
     }
     
     &.active {
@@ -801,8 +849,8 @@ export const MattressGrid = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   
-  ${devices.sm} {
-    grid-template-columns: 1fr;
+  ${devices.xs} {
+    gap: 10px;
   }
 `;
 
@@ -815,6 +863,10 @@ export const MattressCard = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+
+  ${devices.sm} {
+    padding: 10px;
+  }
   
   &:hover {
     border-color: #7E2D67;
@@ -835,6 +887,11 @@ export const MattressCard = styled.div`
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
+
+    ${devices.sm} {
+      height: 100px;
+      margin-bottom: 8px;
+    }
   }
   
   .m-title {
@@ -842,6 +899,10 @@ export const MattressCard = styled.div`
     font-weight: 700;
     margin-bottom: 5px;
     color: #333;
+
+    ${devices.sm} {
+      font-size: 14px;
+    }
   }
   
   .m-desc {
@@ -849,6 +910,11 @@ export const MattressCard = styled.div`
     color: #666;
     margin-bottom: 10px;
     flex-grow: 1;
+
+    ${devices.sm} {
+      font-size: 11px;
+      margin-bottom: 5px;
+    }
   }
   
   .m-price {

@@ -11,6 +11,12 @@ export const ProductPrice = styled.div`
   font-weight: 700;
   margin-top: 10px;
 
+  ${devices.sm} {
+    justify-content: center;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
   .price {
     &.old {
       margin-right: 10px;
@@ -18,12 +24,16 @@ export const ProductPrice = styled.div`
       text-decoration: line-through;
       font-weight: 400;
       font-size: 14px;
+      
+      ${devices.sm} {
+        font-size: 12px;
+      }
     }
     &.new {
       color: #111;
     }
   }
-`
+`;
 
 export const ProductTitle = styled.h2`
   font-size: 15px;
@@ -34,21 +44,22 @@ export const ProductTitle = styled.h2`
   letter-spacing: 0;
   text-align: center;
 
+  ${devices.sm} {
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+
   a {
     text-decoration: none;
     color: #222;
     display: block;
     transition: color 0.3s ease;
 
-    ${devices.sm} {
-      font-size: 14px;
-    }
-
     &:hover {
       color: ${themeGet('colors.primary')};
     }
   }
-`
+`;
 
 export const ProductMeta = styled.div`
   position: relative;
@@ -111,15 +122,9 @@ export const AddToCartButton = styled.button`
   visibility: hidden;
 
   ${devices.md} {
-    position: static;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    margin-top: 12px;
-    width: 100%;
-    margin-left: 0;
+    display: none;
   }
-`
+`;
 
 export const SelectOptionButton = styled.span`
   ${buttonStyle}
@@ -132,15 +137,9 @@ export const SelectOptionButton = styled.span`
   cursor: pointer;
 
   ${devices.md} {
-    position: static;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    margin-top: 12px;
-    width: 100%;
-    margin-left: 0;
+    display: none;
   }
-`
+`;
 
 export const ActionButton = styled.button`
   display: flex;
@@ -172,7 +171,16 @@ export const ActionButton = styled.button`
     background-color: ${themeGet('colors.primary')};
     color: #fff;
   }
-`
+
+  ${devices.sm} {
+    width: 32px;
+    height: 32px;
+    
+    svg {
+      font-size: 14px;
+    }
+  }
+`;
 
 export const ProductActions = styled.div`
   position: absolute;
@@ -184,9 +192,11 @@ export const ProductActions = styled.div`
   gap: 8px;
 
   ${devices.sm} {
-    display: none;
+    top: 8px;
+    right: 8px;
+    gap: 5px;
   }
-`
+`;
 
 export const ProductActionsMobile = styled.div`
   display: none;
@@ -219,6 +229,11 @@ export const Badge = styled.span`
 
   & + span {
     margin-top: 6px;
+  }
+
+  ${devices.sm} {
+    font-size: 9px;
+    padding: 3px 8px;
   }
 
   ${props => props.type === 'new' && css`
