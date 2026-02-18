@@ -29,6 +29,9 @@
       "@public/*": [
         "public/*"
       ],
+      "@styled/*": [
+        "src/styled/*"
+      ],
       "@styled": [
         "src/styled"
       ],
