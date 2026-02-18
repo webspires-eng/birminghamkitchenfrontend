@@ -270,9 +270,12 @@ export const QuantityIncDecButton = styled.div`
 
 export const ProductActionButton = styled.div`
   margin-top: 30px;
+  display: flex;
+  flex-direction: column;
 
   .quantity-cart-button {
     display: flex;
+    order: 1;
 
     .btn-cart {
       border: 1px solid transparent;
@@ -639,6 +642,11 @@ export const BundleSection = styled.div`
     flex-direction: column;
     gap: 12px;
     width: 100%;
+    order: 2;
+
+    ${devices.sm} {
+        order: 3;
+    }
 `;
 
 export const BundleItem = styled.div`
@@ -764,6 +772,16 @@ export const BundleButton = styled.button`
     
     svg {
         font-size: 18px;
+    }
+`;
+
+export const CheckoutInfo = styled.div`
+    order: 3;
+    padding-top: 10px;
+    
+    ${devices.sm} {
+        order: 2;
+        padding-bottom: 20px;
     }
 `;
 

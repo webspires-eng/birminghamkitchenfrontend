@@ -38,6 +38,7 @@ import {
     BundleItem,
     BundleButton,
     PaymentIcons,
+    CheckoutInfo,
     TrustBadges,
     TrustPilot
 } from "@components/product/details/details.style";
@@ -335,17 +336,19 @@ const ProductDetailsContent = ({
                     </BundleItem>
                 </BundleSection>
 
-                <PaymentIcons>
-                    <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Visa" />
-                    <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="Amex" />
-                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968199.png" alt="Apple Pay" />
-                    <img src="https://cdn-icons-png.flaticon.com/512/888/888871.png" alt="Google Pay" />
-                    <img src="https://cdn-icons-png.flaticon.com/512/196/196052.png" alt="PayPal" />
-                </PaymentIcons>
+                <CheckoutInfo>
+                    <PaymentIcons>
+                        <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Visa" />
+                        <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="Amex" />
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968199.png" alt="Apple Pay" />
+                        <img src="https://cdn-icons-png.flaticon.com/512/196/196052.png" alt="PayPal" />
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968382.png" alt="Klarna" />
+                    </PaymentIcons>
 
-                <div className="mt-3 text-center" style={{ fontSize: '13px', color: '#555' }}>
-                    <p>Order today for <strong>FREE delivery</strong> between <strong>Feb 25</strong> and <strong>Mar 6</strong></p>
-                </div>
+                    <div className="mt-3 text-center" style={{ fontSize: '13px', color: '#555' }}>
+                        <p>Order today for <strong>FREE delivery</strong> between <strong>Feb 25</strong> and <strong>Mar 6</strong></p>
+                    </div>
+                </CheckoutInfo>
             </ProductActionButton>
 
             <TrustBadges>
