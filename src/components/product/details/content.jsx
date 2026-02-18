@@ -10,9 +10,7 @@ import { excerpt, toCapitalize } from "@utils/method";
 import {
     IoLogoTwitter,
     IoLogoLinkedin,
-    IoLogoFacebook,
-    IoIosHeartEmpty,
-    IoIosGitCompare
+    IoLogoFacebook
 } from "react-icons/io";
 import { AiFillStar } from "react-icons/ai";
 import { IoCheckmark, IoAddOutline, IoRemoveOutline } from "react-icons/io5";

@@ -84,13 +84,6 @@ const ProductCard = ({ product, className }) => {
                 </ProductActionsMobile>
             </Product>
 
-            {isShowQuickView && (
-                <QuickView
-                    product={product}
-                    isOpen={isShowQuickView}
-                    onHandler={onQuickViewHandler}
-                />
-            )}
         </Fragment>
     );
 };
