@@ -2,9 +2,9 @@ import Head from "next/head";
 import settings from "@data/settings";
 import Layout from "@components/layout";
 import Image from "@components/ui/image";
+import Breadcrumb from "@components/ui/breadcrumb";
 import { Container, Row, Col } from "@bootstrap";
 import {
-    AboutHero,
     StatsSection,
     StorySection,
     ValuesGrid,
@@ -24,12 +24,11 @@ const AboutPage = () => {
                 <meta name="description" content="Birmingham Kitchen & Bedrooms - Crafting premium bespoke beds and furniture for over 15 years." />
             </Head>
 
-            <AboutHero>
-                <div className="content">
-                    <h1>Crafting Comfort, Personalizing Luxury</h1>
-                    <p>At Birmingham Kitchen & Bedrooms, we don't just sell furniture; we create the foundation for your best night's sleep and your most stylish home.</p>
-                </div>
-            </AboutHero>
+            <Breadcrumb
+                py={[30, 50]}
+                mb={[30, null, 50]}
+                pageTitle="About Us"
+            />
 
             <Container>
                 <StatsSection>
@@ -75,14 +74,14 @@ const AboutPage = () => {
                     </Row>
 
                     <Row className="row-item">
-                        <Col lg={6}>
+                        <Col lg={6} className="order-2 order-lg-1">
                             <div className="text-content">
                                 <h2>The Bespoke Difference</h2>
                                 <p>Unlike mass-produced furniture, our pieces are built to order. This allows us to offer an unprecedented level of customization, from fabric selection and color matching to specific dimensions that fit your living space perfectly.</p>
                                 <p>We source only the finest UK-certified materials, from sustainably grown wood to premium plush velvets and Coniston fabrics, ensuring longevity and luxury in every thread.</p>
                             </div>
                         </Col>
-                        <Col lg={6}>
+                        <Col lg={6} className="order-1 order-lg-2">
                             <div className="image-wrap">
                                 <Image
                                     width={800}

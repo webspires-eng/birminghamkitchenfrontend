@@ -498,12 +498,12 @@ export const OptionGrid = styled.div`
 
   ${devices.md} {
     grid-template-columns: repeat(3, 1fr);
-    max-height: 400px;
+    max-height: 350px;
   }
 
   ${devices.sm} {
     grid-template-columns: repeat(2, 1fr);
-    max-height: 320px; /* More compact view */
+    max-height: 260px; /* Ultra-compact */
   }
 `;
 
@@ -549,6 +549,13 @@ export const OptionItem = styled.div`
         font-size: 50px;
         color: #555;
     }
+
+    ${devices.sm} {
+      padding: 10px 0 5px;
+      svg {
+        font-size: 30px;
+      }
+    }
   }
 
   .option-text {
@@ -563,6 +570,11 @@ export const OptionItem = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    ${devices.sm} {
+      padding: 8px 5px;
+      font-size: 12px;
+    }
   }
 
   .option-price {

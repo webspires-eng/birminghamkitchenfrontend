@@ -9,16 +9,16 @@ const ContactPage = () => {
         <Layout>
             <Head>
                 <title>{"Contact Us :: " + settings?.title}</title>
-                <meta name="description" content={settings?.description}/>
+                <meta name="description" content={settings?.description} />
             </Head>
 
             <Breadcrumb
-                py={[40, 80]}
-                mb={[60, null, 100]}
+                py={[30, 50]}
+                mb={[20, null, 40]}
                 pageTitle="Contact"
             />
 
-            <Contact/>
+            <Contact />
         </Layout>
     );
 };
