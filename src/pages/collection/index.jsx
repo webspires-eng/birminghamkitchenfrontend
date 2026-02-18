@@ -17,7 +17,10 @@ const CollectionsPage = ({ collections }) => {
                 <meta name="description" content={settings?.description} />
             </Head>
 
-            <Breadcrumb pageTitle="All Collections" />
+            <Breadcrumb
+                pageTitle="All Collections"
+                thumb="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=2000"
+            />
 
             <Container className="standard-page-padding">
                 <style jsx>{`

@@ -18,6 +18,7 @@ const CartPage = () => {
 
             <Breadcrumb
                 pageTitle="Cart"
+                thumb="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&q=80&w=2000"
             />
 
             {cart.length > 0 && (

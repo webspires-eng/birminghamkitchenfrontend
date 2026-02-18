@@ -16,6 +16,7 @@ const CollectionPage = ({ collection }) => {
 
             <Breadcrumb
                 pageTitle={collection?.title}
+                thumb="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=2000"
             />
 
             {collection?.products?.length ? (

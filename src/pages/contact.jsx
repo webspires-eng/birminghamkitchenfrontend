@@ -14,6 +14,7 @@ const ContactPage = () => {
 
             <Breadcrumb
                 pageTitle="Contact"
+                thumb="https://images.unsplash.com/photo-1583847268964-b28dc2f51ac9?auto=format&fit=crop&q=80&w=2000"
             />
 
             <Contact />
