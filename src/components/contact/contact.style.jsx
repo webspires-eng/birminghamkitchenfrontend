@@ -2,7 +2,7 @@ import styled, { devices, space, themeGet } from "@styled";
 
 export const ContactWrapper = styled.section`
   ${space};
-  padding: 80px 0;
+  padding: 40px 0;
   background: white;
 
   .section-title {

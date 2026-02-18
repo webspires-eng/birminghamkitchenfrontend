@@ -117,9 +117,15 @@ export const StorySection = styled.section`
     overflow: hidden;
     box-shadow: 0 30px 60px rgba(0,0,0,0.12);
     transition: transform 0.5s ease;
+    max-height: 400px;
 
     &:hover {
       transform: scale(1.02);
+    }
+
+    ${devices.sm} {
+      max-height: 250px;
+      margin-bottom: 20px;
     }
   }
 `;
