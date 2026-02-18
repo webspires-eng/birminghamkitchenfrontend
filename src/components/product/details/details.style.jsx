@@ -476,13 +476,34 @@ export const OptionGrid = styled.div`
   gap: 12px;
   margin-top: 15px;
   margin-bottom: 30px;
+  max-height: 450px;
+  overflow-y: auto;
+  padding-right: 8px;
+
+  /* Custom scrollbar */
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #7E2D67;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #5A1F4A;
+  }
 
   ${devices.md} {
     grid-template-columns: repeat(3, 1fr);
+    max-height: 400px;
   }
 
   ${devices.sm} {
     grid-template-columns: repeat(2, 1fr);
+    max-height: 320px; /* More compact view */
   }
 `;
 
