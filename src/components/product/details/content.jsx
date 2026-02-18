@@ -309,7 +309,9 @@ const ProductDetailsContent = ({
                                 className={selectedMattress ? 'active' : ''}
                                 onClick={() => setShowMattressModal(true)}
                             >
-                                {selectedMattress ? `Selected` : 'Choose Mattress'} {selectedMattress && <IoCheckmark />}
+                                {selectedMattress ? (
+                                    <>Selected <span className="ml-1 d-md-none" style={{ fontSize: '12px', opacity: 0.9 }}>£{selectedMattress.price}</span></>
+                                ) : 'Choose Mattress'} {selectedMattress && <IoCheckmark />}
                             </BundleButton>
                         </div>
                     </BundleItem>
@@ -330,7 +332,11 @@ const ProductDetailsContent = ({
                                 className={isAssemblyAdded ? 'active' : ''}
                                 onClick={() => setIsAssemblyAdded(!isAssemblyAdded)}
                             >
-                                {isAssemblyAdded ? 'Added' : 'Add'}
+                                {isAssemblyAdded ? (
+                                    <>Added <span className="ml-1 d-md-none" style={{ fontSize: '12px', opacity: 0.9 }}>£39.99</span></>
+                                ) : (
+                                    <>Add <span className="ml-1 d-md-none" style={{ fontSize: '12px', opacity: 0.9 }}>£39.99</span></>
+                                )}
                             </BundleButton>
                         </div>
                     </BundleItem>

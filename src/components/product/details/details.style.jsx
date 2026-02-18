@@ -732,7 +732,7 @@ export const BundleItem = styled.div`
             color: #7E2D67;
 
             ${devices.sm} {
-                font-size: 18px;
+                display: none;
             }
         }
     }
@@ -755,8 +755,8 @@ export const BundleButton = styled.button`
     font-size: 14px;
 
     ${devices.sm} {
-        padding: 8px 15px;
-        min-width: 100px;
+        padding: 10px 15px;
+        min-width: 110px;
         font-size: 13px;
     }
     
