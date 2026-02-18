@@ -17,7 +17,7 @@ const Category = ({ category, icon, slug }) => {
                         style={{ objectFit: 'cover' }}
                     />
                     <CatName>{category}</CatName>
-                    <CatSubtext>View Collection</CatSubtext>
+
                 </CatItemInner>
             </CategoryItem>
         </Link>
