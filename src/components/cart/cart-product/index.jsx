@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Td } from "@bootstrap";
-import Image from "next/image";
+import Image from "@components/ui/image";
 import PropTypes from 'prop-types';
 import { FiEdit } from "react-icons/fi";
 import { AiOutlineCloseCircle } from "react-icons/ai";
@@ -21,8 +21,10 @@ import {
     CartProPrice,
     CartActionBtn,
     CartProAction,
+
     SingleCartItem
 } from "@components/cart/cart-product/style";
+import { placeholder } from "@utils/constant";
 
 const CartItem = ({ product }) => {
     const { title, images, price, variations, quantity, handle, variants } = product;
@@ -31,6 +33,14 @@ const CartItem = ({ product }) => {
     const cart = useSelector(state => state.shoppingCart);
     const cartProductSubTotal = getCartProductTotalPrice(cart, product);
 
+
+
+    const imageSrc = images?.edges?.[0]?.node?.originalSrc ||
+        images?.[0]?.node?.originalSrc ||
+        images?.[0]?.originalSrc ||
+        product?.image?.originalSrc ||
+        placeholder;
+
     return (
         <SingleCartItem>
             <CartProThumb>
@@ -38,7 +48,7 @@ const CartItem = ({ product }) => {
                     <Image
                         width={150}
                         height={150}
-                        src={images?.edges[0]?.node?.originalSrc}
+                        src={imageSrc}
                         alt={title}
                     />
                 </Link>

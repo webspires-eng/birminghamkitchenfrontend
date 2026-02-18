@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image from "@components/ui/image";
 import PropTypes from 'prop-types';
 import { useDispatch } from "react-redux";
 import { CURRENCY } from "@utils/constant";
@@ -21,11 +21,18 @@ import {
     incrementCartQuantityAction,
     decrementCartQuantityAction
 } from "@global/actions/cartAction";
+import { placeholder } from "@utils/constant";
 
 const MiniCartProduct = ({ product }) => {
     const { title, handle, images, quantity, price, variations, variants } = product;
     const stock = getProductStock(product, variations);
     const dispatch = useDispatch();
+
+    const imageSrc = images?.edges?.[0]?.node?.originalSrc ||
+        images?.[0]?.node?.originalSrc ||
+        images?.[0]?.originalSrc ||
+        product?.image?.originalSrc ||
+        placeholder;
 
     return (
         <MiniCartProductItem>
@@ -35,7 +42,7 @@ const MiniCartProduct = ({ product }) => {
                         alt={title}
                         width={110}
                         height={120}
-                        src={images?.edges[0]?.node?.originalSrc}
+                        src={imageSrc}
                     />
                 </MiniCartProThumb>
             </Link>

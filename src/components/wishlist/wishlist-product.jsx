@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Td } from "@bootstrap";
-import Image from "next/image";
+import Image from "@components/ui/image";
 import { useProduct } from "@hooks";
 import PropTypes from 'prop-types';
 import toast from "react-hot-toast";
@@ -18,6 +18,7 @@ import {
     CartProAction,
     SingleCartItem
 } from "@components/cart/cart-product/style";
+import { placeholder } from "@utils/constant";
 
 const WishlistItem = ({ product }) => {
     const { title, images, slug } = product;
@@ -31,6 +32,12 @@ const WishlistItem = ({ product }) => {
         isInWishlist // Added isInWishlist
     } = useProduct(product);
 
+    const imageSrc = images?.edges?.[0]?.node?.originalSrc ||
+        images?.[0]?.node?.originalSrc ||
+        images?.[0]?.originalSrc ||
+        product?.image?.originalSrc ||
+        placeholder;
+
     const onAddToCart = (rest) => {
         !isInWishlist ? dispatch(addToWishlistAction(product)) : dispatch(removeWishlistAction(product));
         !isInWishlist ? toast.success(`"${product?.title}" is successfully added.`) : toast.error(`"${product?.title}" is removed.`);
@@ -43,7 +50,7 @@ const WishlistItem = ({ product }) => {
                     <Image
                         width={150}
                         height={150}
-                        src={images?.edges[0].node?.originalSrc}
+                        src={imageSrc}
                         alt={title}
                     />
                 </Link>
