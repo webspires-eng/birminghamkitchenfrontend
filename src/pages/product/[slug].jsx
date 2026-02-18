@@ -41,6 +41,7 @@ const ProductDetailsPage = ({ products, product }) => {
                         products={products}
                         tags={product?.tags}
                         mt={[48, null, 85]}
+                        pb={[60, null, 100]}
                         categories={product?.collections?.edges}
                     />
                 </Fragment>

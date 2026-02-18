@@ -311,7 +311,7 @@ const ProductDetailsContent = ({
                             >
                                 {selectedMattress ? (
                                     <>Selected <span className="ml-1 d-md-none" style={{ fontSize: '12px', opacity: 0.9 }}>£{selectedMattress.price}</span></>
-                                ) : 'Choose Mattress'} {selectedMattress && <IoCheckmark />}
+                                ) : 'Choose Mattress'}
                             </BundleButton>
                         </div>
                     </BundleItem>

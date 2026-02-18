@@ -1,14 +1,14 @@
 import cn from "classnames";
 import PropTypes from 'prop-types';
 import Loader from "@components/ui/loader";
-import {Col, Container, Row} from "@bootstrap";
+import { Col, Container, Row } from "@bootstrap";
 import EmptyProduct from "@components/ui/empty";
-import {getRelatedProducts} from "@utils/product";
+import { getRelatedProducts } from "@utils/product";
 import ProductCard from "@components/product/card";
 import SectionTitle from "@components/ui/section-title";
-import {RelatedProductsWrapper} from "@components/product/feed/style";
+import { RelatedProductsWrapper } from "@components/product/feed/style";
 
-const RelatedProducts = ({products, categories, tags, limit, className, ...props}) => {
+const RelatedProducts = ({ products, categories, tags, limit, className, ...props }) => {
     const relatedProducts = getRelatedProducts(categories, tags, products, limit);
 
     return (
@@ -28,21 +28,21 @@ const RelatedProducts = ({products, categories, tags, limit, className, ...props
                         </Col>
                     </Row>
 
-                    {(!relatedProducts) && <Loader className="mt-5"/>}
+                    {(!relatedProducts) && <Loader className="mt-5" />}
 
                     <Row className="products-grid-mobile mtn-30">
                         {relatedProducts.map(product => (
                             <Col xs={6} md={4} lg={3} key={product?.id}>
-                                <ProductCard product={product}/>
+                                <ProductCard product={product} />
                             </Col>
                         ))}
                     </Row>
                 </Container>
             </RelatedProductsWrapper>
         ) : (
-            <div className="w-100">
-                <EmptyProduct message="Related products not found!"/>
-            </div>
+            <RelatedProductsWrapper {...props} className="w-100">
+                <EmptyProduct message="Related products not found!" />
+            </RelatedProductsWrapper>
         )
     );
 };
