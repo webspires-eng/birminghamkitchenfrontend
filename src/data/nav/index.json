@@ -18,10 +18,5 @@
     "text": "Contact",
     "link": "/contact",
     "mega_menu": false
-  },
-  {
-    "text": "Cart",
-    "link": "/cart",
-    "mega_menu": false
   }
 ]

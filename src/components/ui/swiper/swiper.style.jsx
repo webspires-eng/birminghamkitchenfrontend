@@ -1,4 +1,4 @@
-import styled, { css, themeGet } from "@styled";
+import styled, { css, themeGet, devices } from "@styled";
 import { fadeInUp, fadeOutUp } from "@assets/css/keyframes";
 import { SlideContent, SliderThumb } from "@components/slider/slider.style";
 
@@ -76,6 +76,13 @@ export const SliderWrap = styled.div`
         }
       }
     }
+
+    ${devices.sm} {
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none !important;
+      }
+    }
   `}
 
   ${({ dots }) => dots && css`
@@ -97,6 +104,12 @@ export const SliderWrap = styled.div`
           background-color: ${themeGet('colors.primary')};
           border-color: ${themeGet('colors.primary')};
         }
+      }
+    }
+
+    ${devices.sm} {
+      .swiper-pagination {
+        display: none !important;
       }
     }
   `};

@@ -177,8 +177,6 @@ const HomeTwo = ({ products, collections }) => {
                 <Categories categories={displayCollections} pt={0} pb={0} />
             </CollectionSection>
 
-            <BrandShowcase />
-
             <ProductsSection>
                 <Container>
                     <SectionTitle
@@ -193,6 +191,8 @@ const HomeTwo = ({ products, collections }) => {
                     <a href="/shop">View All Products →</a>
                 </ViewAllWrap>
             </ProductsSection>
+
+            <BrandShowcase />
 
             <CTASection>
                 <Container>
