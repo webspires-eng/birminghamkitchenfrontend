@@ -5,9 +5,13 @@ export const AboutHero = styled.div`
 `;
 
 export const StatsSection = styled.section`
-  padding: 40px 0;
+  padding: 60px 0;
   background-color: white;
-  margin-bottom: 40px;
+  
+  ${devices.md} {
+    padding: 40px 0;
+  }
+  
   border-bottom: 1px solid ${themeGet('colors.borderLight')};
 
   .stats-grid {
@@ -73,7 +77,11 @@ export const StatsSection = styled.section`
 `;
 
 export const StorySection = styled.section`
-  margin-bottom: 120px;
+  padding: 60px 0;
+
+  ${devices.md} {
+    padding: 40px 0;
+  }
 
   .row-item {
     align-items: center;
@@ -118,6 +126,16 @@ export const StorySection = styled.section`
     box-shadow: 0 30px 60px rgba(0,0,0,0.12);
     transition: transform 0.5s ease;
     max-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
 
     &:hover {
       transform: scale(1.02);
@@ -131,12 +149,16 @@ export const StorySection = styled.section`
 `;
 
 export const ValuesGrid = styled.section`
-  padding: 100px 0;
+  padding: 60px 0;
   background: ${themeGet('colors.offWhiteLight')};
+
+  ${devices.md} {
+    padding: 40px 0;
+  }
 
   .section-title {
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
     
     h2 { 
       font-size: 42px; 
@@ -211,12 +233,16 @@ export const ValuesGrid = styled.section`
 `;
 
 export const CTASection = styled.section`
-  padding: 120px 0;
+  padding: 60px 0;
   text-align: center;
   background-color: #7e2d67;
   color: white;
   position: relative;
   overflow: hidden;
+
+  ${devices.md} {
+    padding: 50px 0;
+  }
 
   &::before {
     content: '';
