@@ -70,7 +70,7 @@ const CartList = (props) => {
                     </CartListTable>
                 </TableResponsive>
 
-                <CartCouponActions mt={20}>
+                <CartCouponActions mt={20} mb={[60, null, 100]}>
                     <Row className="align-items-lg-center">
                         <Col lg={6}>
                             <Coupon />
