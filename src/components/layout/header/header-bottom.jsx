@@ -93,9 +93,6 @@ const HeaderBottom = ({
                   <li>
                     <Link href="/cart">Cart</Link>
                   </li>
-                  <li>
-                    <Link href="/wishlist">Wishlist</Link>
-                  </li>
                   {isLoggedIn && (
                     <li>
                       <Link href="/logout">Logout</Link>
