@@ -120,8 +120,7 @@ const MiniCartProduct = ({ product }) => {
             <RemoveButton onClick={() => dispatch(removeCartAction(product))}>
                 <CgTrash />
             </RemoveButton>
-        </MiniCartProContent>
-        </MiniCartProductItem >
+        </MiniCartProductItem>
     );
 };
 

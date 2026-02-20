@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, Row, Col } from "@bootstrap";
 import Layout from "@components/layout";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import { useSettings } from "@context/SettingsContext";
 import { CURRENCY } from "@utils/constant";
 import { getCartProductTotalPrice, getCartTotalPrice } from "@utils/product";
-import { IoLockClosed, IoShieldCheckmark, IoCard, IoCash, IoChevronDown, IoChevronUp, IoWarning } from "react-icons/io5";
+import { IoLockClosed, IoShieldCheckmark, IoCard, IoCash, IoChevronDown, IoChevronUp, IoWarning, IoClose, IoPricetagOutline } from "react-icons/io5";
 import { MdLocalShipping, MdStorefront } from "react-icons/md";
 
 const CheckoutPage = () => {
@@ -33,6 +33,13 @@ const CheckoutPage = () => {
     const [deliveryMethod, setDeliveryMethod] = useState(enableDelivery ? 'delivery' : 'pickup');
     const [showOrderSummary, setShowOrderSummary] = useState(false);
 
+    // Coupon state
+    const [couponCode, setCouponCode] = useState('');
+    const [appliedCoupon, setAppliedCoupon] = useState(null);
+    const [couponError, setCouponError] = useState('');
+    const [couponLoading, setCouponLoading] = useState(false);
+    const [couponSuccess, setCouponSuccess] = useState('');
+
     const [form, setForm] = useState({
         firstName: '', lastName: '', email: '', phone: '',
         address: '', city: '', county: '', postcode: '', notes: ''
@@ -46,9 +53,96 @@ const CheckoutPage = () => {
     const isPickup = deliveryMethod === 'pickup';
     const isFreeShipping = isPickup || (freeDeliveryAbove > 0 ? subtotal >= freeDeliveryAbove : deliveryCharges === 0);
     const shipping = isFreeShipping ? 0 : deliveryCharges;
-    const taxAmount = taxPercentage > 0 ? ((subtotal + shipping) * taxPercentage) / 100 : 0;
-    const total = subtotal + shipping + taxAmount;
+
+    // Coupon discount calculation
+    let discountAmount = 0;
+    if (appliedCoupon) {
+        if (appliedCoupon.type === 'percentage') {
+            discountAmount = (subtotal * parseFloat(appliedCoupon.value)) / 100;
+            if (appliedCoupon.max_discount) {
+                discountAmount = Math.min(discountAmount, parseFloat(appliedCoupon.max_discount));
+            }
+        } else {
+            discountAmount = parseFloat(appliedCoupon.value);
+        }
+        discountAmount = Math.min(discountAmount, subtotal);
+    }
+
+    const discountedSubtotal = subtotal - discountAmount;
+    const taxAmount = taxPercentage > 0 ? ((discountedSubtotal + shipping) * taxPercentage) / 100 : 0;
+    const total = discountedSubtotal + shipping + taxAmount;
     const isBelowMinOrder = minOrderAmount > 0 && subtotal < minOrderAmount;
+
+    // Validate coupon
+    const handleApplyCoupon = async () => {
+        if (!couponCode.trim()) {
+            setCouponError('Please enter a coupon code');
+            return;
+        }
+        setCouponLoading(true);
+        setCouponError('');
+        setCouponSuccess('');
+        try {
+            const res = await fetch('/api/coupons');
+            if (!res.ok) throw new Error('Failed to fetch coupons');
+            const coupons = await res.json();
+            const coupon = coupons.find(c => c.code.toUpperCase() === couponCode.trim().toUpperCase());
+
+            if (!coupon) {
+                setCouponError('Invalid coupon code');
+                setCouponLoading(false);
+                return;
+            }
+            if (!coupon.is_active) {
+                setCouponError('This coupon is no longer active');
+                setCouponLoading(false);
+                return;
+            }
+            const now = new Date();
+            if (coupon.start_date && new Date(coupon.start_date) > now) {
+                setCouponError('This coupon is not yet valid');
+                setCouponLoading(false);
+                return;
+            }
+            if (coupon.end_date && new Date(coupon.end_date) < now) {
+                setCouponError('This coupon has expired');
+                setCouponLoading(false);
+                return;
+            }
+            if (coupon.usage_limit && coupon.used_count >= coupon.usage_limit) {
+                setCouponError('This coupon has reached its usage limit');
+                setCouponLoading(false);
+                return;
+            }
+            if (coupon.min_order_amount && subtotal < parseFloat(coupon.min_order_amount)) {
+                setCouponError(`Minimum order of ${currencySymbol}${parseFloat(coupon.min_order_amount).toFixed(2)} required`);
+                setCouponLoading(false);
+                return;
+            }
+
+            setAppliedCoupon(coupon);
+            let disc = 0;
+            if (coupon.type === 'percentage') {
+                disc = (subtotal * parseFloat(coupon.value)) / 100;
+                if (coupon.max_discount) disc = Math.min(disc, parseFloat(coupon.max_discount));
+                setCouponSuccess(`${coupon.code} applied! ${parseFloat(coupon.value)}% off (−${currencySymbol}${Math.min(disc, subtotal).toFixed(2)})`);
+            } else {
+                disc = parseFloat(coupon.value);
+                setCouponSuccess(`${coupon.code} applied! ${currencySymbol}${disc.toFixed(2)} off`);
+            }
+            setCouponError('');
+        } catch (err) {
+            setCouponError('Could not validate coupon. Try again.');
+        }
+        setCouponLoading(false);
+    };
+
+    const handleRemoveCoupon = () => {
+        setAppliedCoupon(null);
+        setCouponCode('');
+        setCouponSuccess('');
+        setCouponError('');
+    };
 
     const handlePlaceOrder = (e) => {
         e.preventDefault();
@@ -487,7 +581,7 @@ const CheckoutPage = () => {
                                         </>
                                     ) : (
                                         <div style={{ padding: '20px', background: '#f8f7f4', borderRadius: '10px', textAlign: 'center' }}>
-                                            <MdStorefront style={{ fontSize: '32px', color: '#7e2d67', marginBottom: '8px' }} />
+                                            <MdStorefront style={{ fontSize: '32px', color: '#D40511', marginBottom: '8px' }} />
                                             <p style={{ fontWeight: 600, color: '#333', marginBottom: '4px' }}>Collect from our store</p>
                                             <p style={{ fontSize: '14px', color: '#888', margin: 0 }}>{settings?.our_location || settings?.contact_address || 'Contact us for pickup details'}</p>
                                         </div>
@@ -565,11 +659,80 @@ const CheckoutPage = () => {
                                     </div>
                                 ))}
 
-                                <div style={{ borderTop: '1px solid #f0ede8', marginTop: '10px', paddingTop: '14px' }}>
+                                {/* Coupon Code */}
+                                <div style={{ borderTop: '1px solid #f0ede8', marginTop: '10px', paddingTop: '16px', marginBottom: '12px' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '10px', fontSize: '14px', fontWeight: 600, color: '#333' }}>
+                                        <IoPricetagOutline style={{ fontSize: '16px' }} /> Coupon Code
+                                    </div>
+                                    {!appliedCoupon ? (
+                                        <div style={{ display: 'flex', gap: '8px' }}>
+                                            <input
+                                                type="text"
+                                                value={couponCode}
+                                                onChange={(e) => { setCouponCode(e.target.value.toUpperCase()); setCouponError(''); }}
+                                                placeholder="Enter code"
+                                                style={{
+                                                    flex: 1, padding: '10px 14px', border: '1.5px solid #e0ddd8',
+                                                    borderRadius: '8px', fontSize: '14px', fontWeight: 600,
+                                                    letterSpacing: '1px', textTransform: 'uppercase',
+                                                    outline: 'none', background: '#faf9f7', fontFamily: 'inherit'
+                                                }}
+                                                onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleApplyCoupon())}
+                                            />
+                                            <button
+                                                type="button"
+                                                onClick={handleApplyCoupon}
+                                                disabled={couponLoading}
+                                                style={{
+                                                    padding: '10px 18px', background: '#D40511', color: '#fff',
+                                                    border: 'none', borderRadius: '8px', fontSize: '13px',
+                                                    fontWeight: 700, cursor: couponLoading ? 'wait' : 'pointer',
+                                                    whiteSpace: 'nowrap', transition: 'background 0.2s'
+                                                }}
+                                            >
+                                                {couponLoading ? '...' : 'Apply'}
+                                            </button>
+                                        </div>
+                                    ) : (
+                                        <div style={{
+                                            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                            padding: '10px 14px', background: '#e8f5e9', borderRadius: '8px',
+                                            border: '1px solid #a5d6a7'
+                                        }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                                <IoPricetagOutline style={{ color: '#2e7d32', fontSize: '16px' }} />
+                                                <span style={{ fontWeight: 700, fontSize: '14px', color: '#2e7d32', letterSpacing: '0.5px' }}>{appliedCoupon.code}</span>
+                                                <span style={{ fontSize: '12px', color: '#4caf50' }}>
+                                                    (−{currencySymbol}{discountAmount.toFixed(2)})
+                                                </span>
+                                            </div>
+                                            <button type="button" onClick={handleRemoveCoupon} style={{
+                                                background: 'none', border: 'none', cursor: 'pointer',
+                                                color: '#c62828', fontSize: '18px', display: 'flex', padding: '2px'
+                                            }}>
+                                                <IoClose />
+                                            </button>
+                                        </div>
+                                    )}
+                                    {couponError && (
+                                        <p style={{ fontSize: '12px', color: '#e53935', marginTop: '6px', marginBottom: 0, fontWeight: 500 }}>{couponError}</p>
+                                    )}
+                                    {couponSuccess && !couponError && (
+                                        <p style={{ fontSize: '12px', color: '#2e7d32', marginTop: '6px', marginBottom: 0, fontWeight: 500 }}>{couponSuccess}</p>
+                                    )}
+                                </div>
+
+                                <div style={{ borderTop: '1px solid #f0ede8', paddingTop: '14px' }}>
                                     <div className="order-row">
                                         <span>Subtotal</span>
                                         <span style={{ fontWeight: 600, color: '#333' }}>{currencySymbol}{subtotal.toFixed(2)}</span>
                                     </div>
+                                    {discountAmount > 0 && (
+                                        <div className="order-row" style={{ color: '#2e7d32' }}>
+                                            <span>Discount ({appliedCoupon?.code})</span>
+                                            <span style={{ fontWeight: 600 }}>−{currencySymbol}{discountAmount.toFixed(2)}</span>
+                                        </div>
+                                    )}
                                     <div className="order-row">
                                         <span>Delivery</span>
                                         {isFreeShipping ? (
