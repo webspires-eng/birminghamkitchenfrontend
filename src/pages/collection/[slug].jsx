@@ -3,7 +3,7 @@ import settings from "@data/settings";
 import Layout from "@components/layout";
 import ShopProductsFeed from "@components/shop";
 import EmptyProduct from "@components/ui/empty";
-import { client, collectionQuery } from "@graphql";
+import { fetchProductsByCategory } from "@lib/api";
 import Breadcrumb from "@components/ui/breadcrumb";
 
 const CollectionPage = ({ collection }) => {
@@ -28,18 +28,15 @@ const CollectionPage = ({ collection }) => {
     );
 };
 
-export const getServerSideProps = async ({ params, query }) => {
+export const getServerSideProps = async ({ params }) => {
     const { slug } = params;
-    const { sort } = query;
-    const sortKey = sort?.split("-")[0].toUpperCase();
-    const reverse = sort?.split("-")[1] !== "ascending";
-    const collectionData = await client(collectionQuery(slug, sortKey, reverse));
+    const data = await fetchProductsByCategory(slug);
 
     return {
         props: {
             collection: {
-                title: collectionData?.collectionByHandle?.title,
-                products: collectionData?.collectionByHandle?.products?.edges,
+                title: data.title,
+                products: data.products,
             },
         }
     };

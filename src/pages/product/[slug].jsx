@@ -5,7 +5,7 @@ import Layout from "@components/layout";
 import Loader from "@components/ui/loader";
 import Breadcrumb from "@components/ui/breadcrumb";
 import { Fragment, useState, useEffect } from "react";
-import { fetchProducts, fetchProductBySlug } from "@lib/api";
+import { fetchProducts, fetchProductById } from "@lib/api";
 import ProductDetailsContent from "@components/product/details";
 import RelatedProducts from "@components/product/feed/related-products";
 import ProductDescriptionReview from "@components/product/details/desc-review";
@@ -52,7 +52,7 @@ const ProductDetailsPage = ({ products, product }) => {
 
 export const getServerSideProps = async ({ params }) => {
     const { slug } = params;
-    const product = await fetchProductBySlug(slug);
+    const product = await fetchProductById(slug);
     const productsData = await fetchProducts();
 
     if (!product) {

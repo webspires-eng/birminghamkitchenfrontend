@@ -108,53 +108,40 @@ const ProductDetailsContent = ({
         }
     }, [selectedOptions]);
 
-    const getPriceAdjustmentValue = (value, optionName) => {
-        if (optionName === 'Size') {
-            const prices = {
-                'Small Single 2FT6': -200,
-                'Single 3FT': -185,
-                'Small Double 4FT': -50,
-                'Double 4FT6': 0,
-                'King 5FT': 50,
-                'Super King 6FT': 120
-            };
-            return prices[value] || 0;
-        }
-        if (optionName === 'Headboard') {
-            const prices = {
-                'Free 54" Headboard': 0,
-                'Premium 54" Headboard': 75
-            };
-            return prices[value] || 0;
-        }
-        if (optionName === 'Colour') {
-            // Some colors might be premium fabrics
-            if (value.includes('Plush Velvet')) return 20;
-            if (value.includes('Coniston')) return 0;
-        }
-        return 0;
-    };
-
     const getPriceAdjustmentLabel = (value, optionName) => {
-        const adj = getPriceAdjustmentValue(value, optionName);
+        // Find the matching variant to calculate the price difference from base
+        if (!variants?.length) return null;
+        const baseVariant = variants[0]?.node;
+        const baseAmount = parseFloat(baseVariant?.priceV2?.amount || 0);
+
+        // Find a variant that has this option value selected
+        const matchingVariant = variants.find(({ node }) =>
+            node?.selectedOptions?.some(opt => opt.name === optionName && opt.value === value)
+        );
+        if (!matchingVariant) return null;
+        const matchAmount = parseFloat(matchingVariant.node?.priceV2?.amount || 0);
+
+        // Estimate the delta by comparing to the first variant's base option for this same option
+        const baseOption = baseVariant?.selectedOptions?.find(opt => opt.name === optionName);
+        if (baseOption?.value === value) return null;
+
+        // Find variant with only this option changed from base
+        const adj = matchAmount - baseAmount;
         if (adj === 0) return null;
-        return adj > 0 ? `+£${adj}.00` : `-£${Math.abs(adj)}.00`;
+        return adj > 0 ? `+£${adj.toFixed(2)}` : `-£${Math.abs(adj).toFixed(2)}`;
     };
 
     // Cumulative Price Calculation
     const mattressPrice = selectedMattress ? selectedMattress.price : 0;
     const assemblyPrice = isAssemblyAdded ? 39.99 : 0;
 
-    // Calculate total adjustment from selected options
-    const variantAdjustment = Object.entries(selectedOptions).reduce((acc, [name, opt]) => {
-        return acc + getPriceAdjustmentValue(opt.value, name);
-    }, 0);
+    // Use the variant price directly (already includes option deltas)
+    const displayBasePrice = parseFloat(basePrice) || 0;
 
-    // If Shopify variant exists, use its price, otherwise fallback to a default base price + adjustments
-    const displayBasePrice = variations?.id ? parseFloat(basePrice) : 399.99;
-
-    const totalPrice = (displayBasePrice + variantAdjustment + mattressPrice + assemblyPrice).toFixed(2);
-    const totalComparePrice = baseCompareAtPrice ? (parseFloat(baseCompareAtPrice) + variantAdjustment + mattressPrice + assemblyPrice).toFixed(2) : (displayBasePrice * 2 + variantAdjustment + mattressPrice + assemblyPrice).toFixed(2);
+    const totalPrice = (displayBasePrice + mattressPrice + assemblyPrice).toFixed(2);
+    const totalComparePrice = baseCompareAtPrice && parseFloat(baseCompareAtPrice) > 0
+        ? (parseFloat(baseCompareAtPrice) + mattressPrice + assemblyPrice).toFixed(2)
+        : null;
 
     return (
         <ContentWrap {...props}>

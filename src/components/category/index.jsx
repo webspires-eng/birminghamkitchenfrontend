@@ -1,6 +1,5 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
-import Image from "next/image";
 import { placeholder } from "@utils/constant";
 import { CategoryItem, CatItemInner, CatName, CatSubtext } from "./category.style";
 
@@ -9,12 +8,10 @@ const Category = ({ category, icon, slug }) => {
         <Link href={slug} passHref>
             <CategoryItem>
                 <CatItemInner>
-                    <Image
-                        fill
+                    <img
                         alt={category}
                         src={icon ? icon : placeholder}
-                        sizes="(max-width: 768px) 100vw, 25vw"
-                        style={{ objectFit: 'cover' }}
+                        style={{ objectFit: 'cover', width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}
                     />
                     <CatName>{category}</CatName>
 

@@ -119,7 +119,7 @@ function transformProduct(product) {
         node: {
             id: `prod_${product.id}`,
             title: product.title,
-            handle: product.slug,
+            handle: product.id,
             description: product.description || "",
             descriptionHtml: product.description || "",
             options,
@@ -154,15 +154,30 @@ export async function fetchProducts() {
  */
 export async function fetchProductBySlug(slug) {
     try {
-        const res = await fetch(`${API_BASE_URL}/api/products`);
-        if (!res.ok) throw new Error(`API error: ${res.status}`);
-        const data = await res.json();
-        const products = Array.isArray(data) ? data : data.data || [];
-        const product = products.find((p) => p.slug === slug);
-        if (!product) return null;
-        return transformProduct(product).node;
+        const listRes = await fetch(`${API_BASE_URL}/api/products`);
+        if (!listRes.ok) throw new Error(`API error: ${listRes.status}`);
+        const listData = await listRes.json();
+        const products = Array.isArray(listData) ? listData : listData.data || [];
+        const match = products.find((p) => p.slug === slug);
+        if (!match) return null;
+        return transformProduct(match).node;
     } catch (err) {
         console.error("fetchProductBySlug failed:", err.message);
+        return null;
+    }
+}
+
+/**
+ * Fetch a single product by ID directly from the API.
+ */
+export async function fetchProductById(id) {
+    try {
+        const res = await fetch(`${API_BASE_URL}/api/products/${id}`);
+        if (!res.ok) throw new Error(`API error: ${res.status}`);
+        const product = await res.json();
+        return transformProduct(product).node;
+    } catch (err) {
+        console.error("fetchProductById failed:", err.message);
         return null;
     }
 }
@@ -190,5 +205,35 @@ export async function fetchCategories() {
     } catch (err) {
         console.error("fetchCategories failed:", err.message);
         return [];
+    }
+}
+
+/**
+ * Fetch products belonging to a category (by slug).
+ * Returns { title, products } where products is in Shopify edges shape.
+ */
+export async function fetchProductsByCategory(categorySlug) {
+    try {
+        const [catRes, prodRes] = await Promise.all([
+            fetch(`${API_BASE_URL}/api/categories`),
+            fetch(`${API_BASE_URL}/api/products`),
+        ]);
+        if (!catRes.ok || !prodRes.ok) throw new Error("API error");
+        const cats = await catRes.json();
+        const prods = await prodRes.json();
+        const categories = Array.isArray(cats) ? cats : cats.data || [];
+        const products = Array.isArray(prods) ? prods : prods.data || [];
+
+        const category = categories.find((c) => c.slug === categorySlug);
+        if (!category) return { title: categorySlug, products: [] };
+
+        const filtered = products.filter((p) => p.category_id === category.id);
+        return {
+            title: category.name,
+            products: filtered.map(transformProduct),
+        };
+    } catch (err) {
+        console.error("fetchProductsByCategory failed:", err.message);
+        return { title: categorySlug, products: [] };
     }
 }
