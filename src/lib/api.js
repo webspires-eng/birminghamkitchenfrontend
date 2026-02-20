@@ -55,7 +55,12 @@ function transformProduct(product) {
     const options = dedupedOptions.map((opt) => ({
         id: `opt_${opt.id}`,
         name: opt.name,
-        values: opt.values.map((v) => v.name),
+        values: opt.values.map((v) => ({
+            name: v.name,
+            image: buildImageUrl(v.image),
+            color: v.color || null,
+            price: parseFloat(v.price) || 0,
+        })),
     }));
 
     // Build variant edges from the cartesian product of option values.
@@ -97,6 +102,13 @@ function transformProduct(product) {
 
     if (optionValueArrays.length > 0) {
         buildVariants([], 0);
+        // Sort so the variant closest to the base sale_price (zero delta) comes first
+        const baseSalePrice = parseFloat(product.sale_price) || 0;
+        variantEdges.sort((a, b) => {
+            const aDiff = Math.abs(parseFloat(a.node.priceV2.amount) - baseSalePrice);
+            const bDiff = Math.abs(parseFloat(b.node.priceV2.amount) - baseSalePrice);
+            return aDiff - bDiff;
+        });
     } else {
         // No options — single default variant
         variantEdges.push({

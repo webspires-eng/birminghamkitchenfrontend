@@ -69,6 +69,57 @@ const ProductDetails = ({ product, ...props }) => {
                             thumbnails={product?.images?.edges}
                         />
 
+                        <div className="d-none d-md-block" style={{ marginTop: '20px' }}>
+                            <BundleSection>
+                                <BundleItem active={!!selectedMattress}>
+                                    <div className="bundle-label">
+                                        <div className="bundle-icons">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/3232/3232147.png" alt="mattress" />
+                                        </div>
+                                        <div className="bundle-text">
+                                            <span>Add Mattress &amp; Save</span>
+                                            <p>Get a discount when you buy together</p>
+                                        </div>
+                                    </div>
+                                    <div className="bundle-action">
+                                        <BundleButton
+                                            className={selectedMattress ? 'active' : ''}
+                                            onClick={() => setShowMattressModal(true)}
+                                        >
+                                            {selectedMattress ? (
+                                                <>Selected <span style={{ fontSize: '12px', opacity: 0.9 }}>£{selectedMattress.price}</span></>
+                                            ) : 'Choose Mattress'}
+                                        </BundleButton>
+                                    </div>
+                                </BundleItem>
+
+                                <BundleItem active={isAssemblyAdded}>
+                                    <div className="bundle-label">
+                                        <div className="bundle-icons">
+                                            <MdBuild />
+                                        </div>
+                                        <div className="bundle-text">
+                                            <span>Professional Assembly</span>
+                                            <p>Let us take your new bed to your room, assemble and take away packaging.</p>
+                                        </div>
+                                    </div>
+                                    <div className="bundle-action">
+                                        <div className="bundle-price">£39.99</div>
+                                        <BundleButton
+                                            className={isAssemblyAdded ? 'active' : ''}
+                                            onClick={() => setIsAssemblyAdded(!isAssemblyAdded)}
+                                        >
+                                            {isAssemblyAdded ? (
+                                                <>Added <span style={{ fontSize: '12px', opacity: 0.9 }}>£39.99</span></>
+                                            ) : (
+                                                <>Add <span style={{ fontSize: '12px', opacity: 0.9 }}>£39.99</span></>
+                                            )}
+                                        </BundleButton>
+                                    </div>
+                                </BundleItem>
+                            </BundleSection>
+                        </div>
+
                     </Col>
 
                     <Col md={6} lg={6}>

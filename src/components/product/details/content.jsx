@@ -203,31 +203,39 @@ const ProductDetailsContent = ({
                     {options?.map(option => (
                         <div key={option?.id} style={{ display: activeTab === option?.name ? 'block' : 'none' }}>
                             <OptionGrid>
-                                {option?.values.map(value => {
-                                    const isActive = selectedOptions[option?.name]?.value === value;
-                                    const priceAdj = getPriceAdjustmentLabel(value, option.name);
+                                {option?.values.map(val => {
+                                    const valueName = typeof val === 'string' ? val : val.name;
+                                    const valueImage = typeof val === 'object' ? val.image : null;
+                                    const valuePrice = typeof val === 'object' ? val.price : 0;
+                                    const isActive = selectedOptions[option?.name]?.value === valueName;
+                                    const priceLabel = valuePrice !== 0
+                                        ? (valuePrice > 0 ? `+£${valuePrice.toFixed(2)}` : `-£${Math.abs(valuePrice).toFixed(2)}`)
+                                        : null;
 
                                     return (
                                         <OptionItem
-                                            key={value}
+                                            key={valueName}
                                             active={isActive}
-                                            onClick={() => setSelectedOptions(prev => ({ ...prev, [option.name]: { value, label: value } }))}
+                                            onClick={() => setSelectedOptions(prev => ({ ...prev, [option.name]: { value: valueName, label: valueName } }))}
                                         >
                                             {isActive && <CheckBadge><IoCheckmark /></CheckBadge>}
 
-                                            {option.name === 'Colour' ? (
+                                            {valueImage ? (
                                                 <div className="option-img">
-                                                    <img src={`/assets/images/products/variants/${value.toLowerCase().replace(/ /g, '_')}.png`} alt={value} onError={(e) => { e.target.src = "https://sonno.co.uk/cdn/shop/files/Sofia-Ottoman-Bed-Pink-Plush-Velvet-1.jpg"; e.target.onerror = null; }} />
+                                                    <img src={valueImage} alt={valueName} />
                                                 </div>
                                             ) : (
                                                 <div className="option-icon">
-                                                    <MdHotel />
+                                                    {option.name === 'Colour' && <MdColorLens />}
+                                                    {option.name === 'Size' && <MdStraighten />}
+                                                    {option.name === 'Headboard' && <MdHotel />}
+                                                    {!['Colour', 'Size', 'Headboard'].includes(option.name) && <MdHotel />}
                                                 </div>
                                             )}
 
                                             <div className="option-text">
-                                                {value}
-                                                {priceAdj && <div className="option-price">{priceAdj}</div>}
+                                                {valueName}
+                                                {priceLabel && <div className="option-price">{priceLabel}</div>}
                                             </div>
                                         </OptionItem>
                                     );
@@ -280,54 +288,6 @@ const ProductDetailsContent = ({
                     </Button>
                 </div>
 
-                <BundleSection>
-                    <BundleItem active={!!selectedMattress}>
-                        <div className="bundle-label">
-                            <div className="bundle-icons">
-                                <img src="https://cdn-icons-png.flaticon.com/512/3232/3232147.png" alt="mattress" />
-                            </div>
-                            <div className="bundle-text">
-                                <span>Add Mattress & Save</span>
-                                <p>Get a discount when you buy together</p>
-                            </div>
-                        </div>
-                        <div className="bundle-action">
-                            <BundleButton
-                                className={selectedMattress ? 'active' : ''}
-                                onClick={() => setShowMattressModal(true)}
-                            >
-                                {selectedMattress ? (
-                                    <>Selected <span className="ml-1 d-md-none" style={{ fontSize: '12px', opacity: 0.9 }}>£{selectedMattress.price}</span></>
-                                ) : 'Choose Mattress'}
-                            </BundleButton>
-                        </div>
-                    </BundleItem>
-
-                    <BundleItem active={isAssemblyAdded}>
-                        <div className="bundle-label">
-                            <div className="bundle-icons">
-                                <MdBuild />
-                            </div>
-                            <div className="bundle-text">
-                                <span>Professional Assembly</span>
-                                <p>Let us take your new bed to your room, assemble and take away packaging.</p>
-                            </div>
-                        </div>
-                        <div className="bundle-action">
-                            <div className="bundle-price">£39.99</div>
-                            <BundleButton
-                                className={isAssemblyAdded ? 'active' : ''}
-                                onClick={() => setIsAssemblyAdded(!isAssemblyAdded)}
-                            >
-                                {isAssemblyAdded ? (
-                                    <>Added <span className="ml-1 d-md-none" style={{ fontSize: '12px', opacity: 0.9 }}>£39.99</span></>
-                                ) : (
-                                    <>Add <span className="ml-1 d-md-none" style={{ fontSize: '12px', opacity: 0.9 }}>£39.99</span></>
-                                )}
-                            </BundleButton>
-                        </div>
-                    </BundleItem>
-                </BundleSection>
 
                 <CheckoutInfo>
                     <PaymentIcons>
