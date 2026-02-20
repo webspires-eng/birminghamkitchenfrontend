@@ -78,8 +78,11 @@ FurnsAPP.getInitialProps = async (appContext) => {
     pageProps = await Component.getInitialProps(ctx);
   }
 
-  // Fetch settings server-side once for all pages
-  const siteSettings = await fetchSettings();
+  // Only fetch settings server-side; client-side is handled by SettingsContext
+  let siteSettings = {};
+  if (ctx.req) {
+    siteSettings = await fetchSettings();
+  }
 
   return { pageProps: { ...pageProps, siteSettings } };
 };

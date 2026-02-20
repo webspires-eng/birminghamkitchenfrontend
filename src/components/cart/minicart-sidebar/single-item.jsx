@@ -36,24 +36,27 @@ const MiniCartProduct = ({ product }) => {
 
     return (
         <MiniCartProductItem>
-            <Link href={`/product/${handle}`}>
-                <MiniCartProThumb>
-                    <img
-                        alt={title}
-                        src={imageSrc}
-                    />
-                </MiniCartProThumb>
-            </Link>
 
             <MiniCartProContent>
                 <div>
-                    <Link href={`/product/${handle}`}>
+                    <Link href={`/product/${product.apiId || product.id}`}>
                         <MiniCartProName>{title}</MiniCartProName>
                     </Link>
 
                     {variants?.edges?.length > 1 && (
                         <MiniCartProMeta>
                             {variations?.title}
+                        </MiniCartProMeta>
+                    )}
+
+                    {product?.selectedMattress && (
+                        <MiniCartProMeta style={{ fontSize: '11px', color: '#7e2d67' }}>
+                            + {product.selectedMattress.title}
+                        </MiniCartProMeta>
+                    )}
+                    {product?.isAssemblyAdded && (
+                        <MiniCartProMeta style={{ fontSize: '11px', color: '#7e2d67' }}>
+                            + Professional Assembly
                         </MiniCartProMeta>
                     )}
 

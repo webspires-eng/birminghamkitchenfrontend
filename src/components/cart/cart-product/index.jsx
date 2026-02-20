@@ -44,7 +44,7 @@ const CartItem = ({ product }) => {
     return (
         <SingleCartItem>
             <CartProThumb>
-                <Link href={`/product/${handle}`} className="d-block">
+                <Link href={`/product/${product.apiId || product.id}`} className="d-block">
                     <Image
                         width={150}
                         height={150}
@@ -54,12 +54,22 @@ const CartItem = ({ product }) => {
                 </Link>
             </CartProThumb>
             <CartProInfo>
-                <Link href={`/product/${handle}`}>
+                <Link href={`/product/${product.apiId || product.id}`}>
                     <CartProName>{title}</CartProName>
                 </Link>
 
                 {variants?.edges?.length > 1 && (
                     <CartProMeta>{variations?.title}</CartProMeta>
+                )}
+                {product?.selectedMattress && (
+                    <CartProMeta style={{ fontSize: '12px', color: '#7e2d67', marginTop: '4px' }}>
+                        + {product.selectedMattress.title}
+                    </CartProMeta>
+                )}
+                {product?.isAssemblyAdded && (
+                    <CartProMeta style={{ fontSize: '12px', color: '#7e2d67', marginTop: '4px' }}>
+                        + Professional Assembly
+                    </CartProMeta>
                 )}
             </CartProInfo>
 
@@ -90,7 +100,7 @@ const CartItem = ({ product }) => {
             <CartProAction>
                 <CartActionBtn
                     tag="a"
-                    href={`/product/${handle}`}
+                    href={`/product/${product.apiId || product.id}`}
                 >
                     <FiEdit />
                 </CartActionBtn>

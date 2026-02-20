@@ -8,7 +8,7 @@ import { addToCartAction } from "@global/actions/cartAction";
 import { AddToCartButton as CartButtonStyle, SelectOptionButton } from "./product.style";
 
 const AddToCartButton = ({ isShowInMobile, product }) => {
-    const { title, variants, handle } = product;
+    const { title, variants, apiId } = product;
     const dispatch = useDispatch();
     const {
         price,
@@ -29,7 +29,7 @@ const AddToCartButton = ({ isShowInMobile, product }) => {
 
     return (
         variants?.edges?.length > 1 ? (
-            <Link href={`/product/${handle}`}>
+            <Link href={`/product/${apiId || product.id}`}>
                 <SelectOptionButton mobile={isShowInMobile}>
                     <IoIosCart /> Select Options
                 </SelectOptionButton>

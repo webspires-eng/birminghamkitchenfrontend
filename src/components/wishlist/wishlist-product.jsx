@@ -21,7 +21,7 @@ import {
 import { placeholder } from "@utils/constant";
 
 const WishlistItem = ({ product }) => {
-    const { title, images, slug } = product;
+    const { title, images, apiId } = product;
     const dispatch = useDispatch();
     const {
         price,
@@ -46,7 +46,7 @@ const WishlistItem = ({ product }) => {
     return (
         <SingleCartItem>
             <CartProThumb>
-                <Link href={`/product/${slug}`} className="d-block">
+                <Link href={`/product/${apiId || product.id}`} className="d-block">
                     <Image
                         width={150}
                         height={150}
@@ -56,7 +56,7 @@ const WishlistItem = ({ product }) => {
                 </Link>
             </CartProThumb>
             <CartProInfo>
-                <Link href={`/product/${slug}`}>
+                <Link href={`/product/${apiId || product.id}`}>
                     <CartProName>{title}</CartProName>
                 </Link>
             </CartProInfo>

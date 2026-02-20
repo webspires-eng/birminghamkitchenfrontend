@@ -130,6 +130,7 @@ function transformProduct(product) {
     return {
         node: {
             id: `prod_${product.id}`,
+            apiId: product.id,
             title: product.title,
             handle: product.slug || product.id,
             description: product.description || "",

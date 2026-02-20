@@ -22,7 +22,7 @@ import {
 import { getDiscountPercentage } from "@utils/product";
 
 const ProductCard = ({ product, className }) => {
-    let { title, handle } = product;
+    let { title, apiId } = product;
 
     const {
         price,
@@ -39,7 +39,7 @@ const ProductCard = ({ product, className }) => {
         <Fragment>
             <Product className={cn(className)}>
                 <ProductThumb>
-                    <Link href={`/product/${handle}`}>
+                    <Link href={`/product/${apiId || product.id}`}>
                         <div style={{ cursor: 'pointer' }}>
                             <ProductThumbnail product={product} />
                         </div>
@@ -60,7 +60,7 @@ const ProductCard = ({ product, className }) => {
                     <AddToCartButton product={product} />
                 </ProductThumb>
 
-                <Link href={`/product/${handle}`}>
+                <Link href={`/product/${apiId || product.id}`}>
                     <ProductMeta style={{ cursor: 'pointer' }}>
                         <ProductTitle>{title}</ProductTitle>
                         <ProductPrice>
