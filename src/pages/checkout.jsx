@@ -144,7 +144,9 @@ const CheckoutPage = () => {
         setCouponError('');
     };
 
-    const handlePlaceOrder = (e) => {
+    const [orderLoading, setOrderLoading] = useState(false);
+
+    const handlePlaceOrder = async (e) => {
         e.preventDefault();
         if (isBelowMinOrder) {
             alert(`Minimum order amount is ${currencySymbol}${minOrderAmount.toFixed(2)}. Please add more items.`);
@@ -158,9 +160,60 @@ const CheckoutPage = () => {
             alert("Please fill in your delivery address.");
             return;
         }
-        dispatch(clearCartAction());
-        alert("Order placed successfully! We will contact you shortly.");
-        router.push("/");
+
+        setOrderLoading(true);
+
+        const orderPayload = {
+            customer_name: `${form.firstName} ${form.lastName}`,
+            customer_email: form.email,
+            customer_phone: form.phone,
+            customer_address: deliveryMethod === 'delivery' ? form.address : 'Store Pickup',
+            city: form.city || null,
+            county: form.county || null,
+            postcode: form.postcode || null,
+            delivery_method: deliveryMethod,
+            payment_method: paymentMethod,
+            subtotal: parseFloat(subtotal.toFixed(2)),
+            shipping_cost: parseFloat(shipping.toFixed(2)),
+            discount_amount: parseFloat(discountAmount.toFixed(2)),
+            coupon_code: appliedCoupon?.code || null,
+            tax_amount: parseFloat(taxAmount.toFixed(2)),
+            total: parseFloat(total.toFixed(2)),
+            notes: form.notes || null,
+            items: cart.map(item => ({
+                product_id: item.apiId || item.id || null,
+                title: item.title || item.name || 'Product',
+                price: parseFloat(item.price),
+                quantity: item.quantity || 1,
+                total: parseFloat((item.price * (item.quantity || 1)).toFixed(2)),
+            })),
+        };
+
+        try {
+            const res = await fetch('/api/orders', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(orderPayload),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                const errorMsg = data?.message || 'Failed to place order. Please try again.';
+                alert(errorMsg);
+                setOrderLoading(false);
+                return;
+            }
+
+            dispatch(clearCartAction());
+            router.push({
+                pathname: '/order-confirmation',
+                query: { order: data.order_number },
+            });
+        } catch (err) {
+            alert('Something went wrong. Please try again.');
+            setOrderLoading(false);
+        }
     };
 
     // Orders disabled
@@ -467,6 +520,10 @@ const CheckoutPage = () => {
                         padding: 20px 0 60px;
                     }
                 }
+
+                @keyframes spin {
+                    to { transform: rotate(360deg); }
+                }
             `}</style>
 
             <div className="checkout-wrapper">
@@ -626,8 +683,12 @@ const CheckoutPage = () => {
                                         </div>
                                     )}
 
-                                    <button type="submit" className="place-order-btn" disabled={isBelowMinOrder} style={isBelowMinOrder ? { opacity: 0.5, cursor: 'not-allowed' } : {}}>
-                                        <IoLockClosed /> PLACE ORDER — {currencySymbol}{total.toFixed(2)}
+                                    <button type="submit" className="place-order-btn" disabled={isBelowMinOrder || orderLoading} style={(isBelowMinOrder || orderLoading) ? { opacity: 0.6, cursor: 'not-allowed' } : {}}>
+                                        {orderLoading ? (
+                                            <><span style={{ display: 'inline-block', width: '18px', height: '18px', border: '2px solid rgba(255,255,255,0.3)', borderTopColor: '#fff', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} /> PROCESSING...</>
+                                        ) : (
+                                            <><IoLockClosed /> PLACE ORDER — {currencySymbol}{total.toFixed(2)}</>
+                                        )}
                                     </button>
 
                                     <div className="secure-badge">
