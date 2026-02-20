@@ -7,9 +7,10 @@ import { ProductDetailsWrapper } from "@components/product/details/details.style
 import Link from "next/link";
 import { BreadcrumbNav, BreadcrumbNavItem, BreadcrumbNavLink } from "@components/ui/breadcrumb/breadcrumb.style";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MdHotel, MdBuild } from "react-icons/md";
 import { IoCheckmark, IoClose } from "react-icons/io5";
+import { useSettings } from "@context/SettingsContext";
 import {
     BundleSection,
     BundleItem,
@@ -20,34 +21,28 @@ import {
     MattressCard
 } from "@components/product/details/details.style";
 
-const mattresses = [
-    {
-        id: "m_1",
-        title: "Standard Orthopaedic Mattress",
-        price: 149.99,
-        description: "Firm support for back health and a comfortable night's sleep.",
-        image: "https://sonno.co.uk/cdn/shop/files/Orthopaedic-Mattress-1.jpg"
-    },
-    {
-        id: "m_2",
-        title: "Pocket Spring 1000 Mattress",
-        price: 199.99,
-        description: "Individually wrapped springs for minimal motion transfer.",
-        image: "https://sonno.co.uk/cdn/shop/files/Pocket-Spring-1000-1.jpg"
-    },
-    {
-        id: "m_3",
-        title: "Memory Foam Hybrid Mattress",
-        price: 249.99,
-        description: "The perfect mix of support and pressure-relieving comfort.",
-        image: "https://sonno.co.uk/cdn/shop/files/Memory-Hybrid-1.jpg"
-    }
-];
-
 const ProductDetails = ({ product, ...props }) => {
+    const siteSettings = useSettings();
+    const assemblyPrice = parseFloat(siteSettings?.assembly_pricing) || 39.99;
     const [selectedMattress, setSelectedMattress] = useState(null);
     const [isAssemblyAdded, setIsAssemblyAdded] = useState(false);
     const [showMattressModal, setShowMattressModal] = useState(false);
+    const [mattresses, setMattresses] = useState([]);
+    const [mattressesLoading, setMattressesLoading] = useState(false);
+
+    useEffect(() => {
+        if (showMattressModal && mattresses.length === 0) {
+            setMattressesLoading(true);
+            fetch('/api/mattresses')
+                .then(res => res.json())
+                .then(data => {
+                    const list = Array.isArray(data) ? data : data.data || [];
+                    setMattresses(list.filter(m => m.is_active));
+                })
+                .catch(err => console.error('Failed to fetch mattresses:', err))
+                .finally(() => setMattressesLoading(false));
+        }
+    }, [showMattressModal]);
 
     return (
         <ProductDetailsWrapper className="product-details-content" {...props}>
@@ -104,15 +99,14 @@ const ProductDetails = ({ product, ...props }) => {
                                         </div>
                                     </div>
                                     <div className="bundle-action">
-                                        <div className="bundle-price">£39.99</div>
                                         <BundleButton
                                             className={isAssemblyAdded ? 'active' : ''}
                                             onClick={() => setIsAssemblyAdded(!isAssemblyAdded)}
                                         >
                                             {isAssemblyAdded ? (
-                                                <>Added <span style={{ fontSize: '12px', opacity: 0.9 }}>£39.99</span></>
+                                                <>Added <span style={{ fontWeight: 700 }}>£{assemblyPrice.toFixed(2)}</span></>
                                             ) : (
-                                                <>Add <span style={{ fontSize: '12px', opacity: 0.9 }}>£39.99</span></>
+                                                <>Add <span style={{ fontWeight: 700 }}>£{assemblyPrice.toFixed(2)}</span></>
                                             )}
                                         </BundleButton>
                                     </div>
@@ -143,24 +137,42 @@ const ProductDetails = ({ product, ...props }) => {
                             <IoClose />
                         </div>
                         <h3>Choose Your Mattress</h3>
-                        <MattressGrid>
-                            {mattresses.map(m => (
-                                <MattressCard
-                                    key={m.id}
-                                    selected={selectedMattress?.id === m.id}
-                                    onClick={() => {
-                                        setSelectedMattress(selectedMattress?.id === m.id ? null : m);
-                                        setShowMattressModal(false);
-                                    }}
-                                >
-                                    <div className="check-icon"><IoCheckmark /></div>
-                                    <img src={m.image} alt={m.title} />
-                                    <span className="m-title">{m.title}</span>
-                                    <p className="m-desc">{m.description}</p>
-                                    <span className="m-price">£{m.price}</span>
-                                </MattressCard>
-                            ))}
-                        </MattressGrid>
+                        {mattressesLoading ? (
+                            <div style={{ textAlign: 'center', padding: '40px 0', color: '#888' }}>
+                                Loading mattresses...
+                            </div>
+                        ) : (
+                            <MattressGrid>
+                                {mattresses.map(m => {
+                                    const mPrice = parseFloat(m.price) || 0;
+                                    return (
+                                        <MattressCard
+                                            key={m.id}
+                                            selected={selectedMattress?.id === m.id}
+                                            onClick={() => {
+                                                setSelectedMattress(
+                                                    selectedMattress?.id === m.id
+                                                        ? null
+                                                        : { ...m, price: mPrice }
+                                                );
+                                                setShowMattressModal(false);
+                                            }}
+                                        >
+                                            <div className="check-icon"><IoCheckmark /></div>
+                                            {m.image ? (
+                                                <img src={m.image} alt={m.title} />
+                                            ) : (
+                                                <div style={{ width: '100%', height: '160px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f5f0ed' }}>
+                                                    <MdHotel style={{ fontSize: '50px', color: '#ccc' }} />
+                                                </div>
+                                            )}
+                                            <span className="m-title">{m.title}</span>
+                                            <span className="m-price">£{mPrice.toFixed(2)}</span>
+                                        </MattressCard>
+                                    );
+                                })}
+                            </MattressGrid>
+                        )}
                     </ModalContent>
                 </ModalOverlay>
             )}

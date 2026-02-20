@@ -1,8 +1,12 @@
 import { IoIosHeart } from "react-icons/io";
 import { Container, Col, Row } from "@bootstrap";
 import { CopyrightText, FooterBottomWrapper } from "./footer.style";
+import { useSettings } from "@context/SettingsContext";
 
 const FooterBottom = ({ bg }) => {
+    const settings = useSettings();
+    const siteName = settings?.site_name || "Birmingham Kitchens & Bedrooms";
+
     return (
         <FooterBottomWrapper
             bg={bg}
@@ -13,7 +17,7 @@ const FooterBottom = ({ bg }) => {
                 <Row className="align-items-center">
                     <Col md={6} className="text-center text-md-left">
                         <CopyrightText>
-                            © {new Date().getFullYear()} Birmingham Kitchens & Bedrooms. All rights reserved.
+                            © {new Date().getFullYear()} {siteName}. All rights reserved.
                         </CopyrightText>
                     </Col>
 

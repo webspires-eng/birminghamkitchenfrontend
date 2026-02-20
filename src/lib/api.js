@@ -131,9 +131,15 @@ function transformProduct(product) {
         node: {
             id: `prod_${product.id}`,
             title: product.title,
-            handle: product.id,
+            handle: product.slug || product.id,
             description: product.description || "",
             descriptionHtml: product.description || "",
+            dimensions: product.dimensions || "",
+            delivery: product.delivery || "",
+            finance: product.finance || "",
+            excerpt: product.excerpt || "",
+            metaTitle: product.meta_title || "",
+            metaDescription: product.meta_description || "",
             options,
             images: { edges: imageEdges },
             variants: { edges: variantEdges },
@@ -247,5 +253,19 @@ export async function fetchProductsByCategory(categorySlug) {
     } catch (err) {
         console.error("fetchProductsByCategory failed:", err.message);
         return { title: categorySlug, products: [] };
+    }
+}
+
+/**
+ * Fetch site settings from the Laravel API.
+ */
+export async function fetchSettings() {
+    try {
+        const res = await fetch(`${API_BASE_URL}/api/settings`);
+        if (!res.ok) throw new Error(`API error: ${res.status}`);
+        return await res.json();
+    } catch (err) {
+        console.error("fetchSettings failed:", err.message);
+        return {};
     }
 }

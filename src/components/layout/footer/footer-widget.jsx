@@ -3,9 +3,11 @@ import Widget from "@components/ui/widget";
 import NewsletterForm from "@components/newsletter";
 import { Container, Col, Row, Ul, Li, } from "@bootstrap";
 import { WidgetWrapper, SocialIcons } from "./footer.style";
-import { SiFacebook, SiTwitter, SiLinkedin, SiPinterest, SiYoutube } from "react-icons/si";
+import { SiFacebook, SiInstagram, SiTwitter, SiLinkedin, SiPinterest, SiYoutube } from "react-icons/si";
+import { useSettings } from "@context/SettingsContext";
 
 const FooterWidget = (props) => {
+    const settings = useSettings();
 
     return (
         <WidgetWrapper
@@ -20,25 +22,35 @@ const FooterWidget = (props) => {
                             mb={[30, null, null, 0]}
                         >
                             <p className="about-text">
-                                Premium Kitchens & Bedrooms designed and crafted in the UK for your lifestyle. Quality you can trust, designs you'll love.
+                                {settings?.site_tagline || "Premium Kitchens & Bedrooms designed and crafted in the UK for your lifestyle. Quality you can trust, designs you'll love."}
                             </p>
 
                             <SocialIcons mt={24}>
-                                <Li inline={true}>
-                                    <a href="https://facebook.com" target="_blank" rel="noopener"><SiFacebook /></a>
-                                </Li>
-                                <Li inline={true}>
-                                    <a href="https://twitter.com" target="_blank" rel="noopener"><SiTwitter /></a>
-                                </Li>
-                                <Li inline={true}>
-                                    <a href="https://linkedin.com" target="_blank" rel="noopener"><SiLinkedin /></a>
-                                </Li>
-                                <Li inline={true}>
-                                    <a href="https://youtube.com" target="_blank" rel="noopener"><SiYoutube /></a>
-                                </Li>
-                                <Li inline={true}>
-                                    <a href="https://pinterest.com" target="_blank" rel="noopener"><SiPinterest /></a>
-                                </Li>
+                                {settings?.social_facebook && (
+                                    <Li inline={true}>
+                                        <a href={settings.social_facebook} target="_blank" rel="noopener"><SiFacebook /></a>
+                                    </Li>
+                                )}
+                                {settings?.social_instagram && (
+                                    <Li inline={true}>
+                                        <a href={settings.social_instagram} target="_blank" rel="noopener"><SiInstagram /></a>
+                                    </Li>
+                                )}
+                                {settings?.social_twitter && (
+                                    <Li inline={true}>
+                                        <a href={settings.social_twitter} target="_blank" rel="noopener"><SiTwitter /></a>
+                                    </Li>
+                                )}
+                                {settings?.social_youtube && (
+                                    <Li inline={true}>
+                                        <a href={settings.social_youtube} target="_blank" rel="noopener"><SiYoutube /></a>
+                                    </Li>
+                                )}
+                                {settings?.social_pinterest && (
+                                    <Li inline={true}>
+                                        <a href={settings.social_pinterest} target="_blank" rel="noopener"><SiPinterest /></a>
+                                    </Li>
+                                )}
                             </SocialIcons>
                         </Widget>
                     </Col>
@@ -59,14 +71,19 @@ const FooterWidget = (props) => {
 
                     <Col xs={6} sm={6} lg={2} className="mb-4 mb-lg-0">
                         <Widget
-                            title="SUPPORT"
+                            title="CONTACT"
                             mb={[30, null, null, 0]}
                         >
                             <Ul className="widget-list">
-                                <Li><Link href="/contact">Help Centre</Link></Li>
-                                <Li><Link href="/contact">Delivery Info</Link></Li>
-                                <Li><Link href="/contact">Returns</Link></Li>
-                                <Li><Link href="/contact">FAQs</Link></Li>
+                                {settings?.contact_phone && (
+                                    <Li><a href={`tel:${settings.contact_phone}`}>{settings.contact_phone}</a></Li>
+                                )}
+                                {settings?.contact_email && (
+                                    <Li><a href={`mailto:${settings.contact_email}`}>{settings.contact_email}</a></Li>
+                                )}
+                                {settings?.contact_address && (
+                                    <Li><span>{settings.contact_address}</span></Li>
+                                )}
                             </Ul>
                         </Widget>
                     </Col>

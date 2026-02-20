@@ -10,7 +10,7 @@ import ReviewForm from "@components/product/details/review-form";
 import { ProductDescReviewWrapper, ProductDescReviewContent, ProInfoList, ProDescription } from "./details.style";
 
 const ProductDescriptionReview = ({ product, ...props }) => {
-    const { descriptionHtml, options, variants } = product;
+    const { descriptionHtml, dimensions, delivery, finance, options, variants } = product;
     const [reviews, setReviews] = useState([...reviewsDefaultData]);
 
     const getReviewValue = value => {
@@ -19,6 +19,16 @@ const ProductDescriptionReview = ({ product, ...props }) => {
             { id: prevState.length + 1, ...value }
         ]));
     }
+
+    // Convert plain text with \r\n to HTML paragraphs
+    const formatText = (text) => {
+        if (!text) return '';
+        return text
+            .split(/\r?\n/)
+            .filter(line => line.trim())
+            .map(line => `<p>${line}</p>`)
+            .join('');
+    };
 
     return (
         <ProductDescReviewWrapper {...props}>
@@ -34,31 +44,37 @@ const ProductDescriptionReview = ({ product, ...props }) => {
                     <ProductDescReviewContent>
                         <TabPanel>
                             <ProDescription>
-                                {parse(descriptionHtml)}
+                                {parse(descriptionHtml || '<p>No description available.</p>')}
                             </ProDescription>
                         </TabPanel>
 
                         <TabPanel>
                             <ProDescription>
                                 <h3>Dimensions</h3>
-                                <p><strong>Single:</strong> 90cm x 190cm</p>
-                                <p><strong>Double:</strong> 135cm x 190cm</p>
-                                <p><strong>King Size:</strong> 150cm x 200cm</p>
-                                <p><strong>Super King:</strong> 180cm x 200cm</p>
+                                {dimensions
+                                    ? parse(formatText(dimensions))
+                                    : <p>Dimensions information not available.</p>
+                                }
                             </ProDescription>
                         </TabPanel>
 
                         <TabPanel>
                             <ProDescription>
                                 <h3>Delivery Information</h3>
-                                <p>We deliver to all UK mainland addresses. Delivery times are typically 5-7 working days.</p>
+                                {delivery
+                                    ? parse(formatText(delivery))
+                                    : <p>Delivery information not available.</p>
+                                }
                             </ProDescription>
                         </TabPanel>
 
                         <TabPanel>
                             <ProDescription>
                                 <h3>Finance Options</h3>
-                                <p>Spread the cost with our flexible finance options. 0% APR available on orders over £500.</p>
+                                {finance
+                                    ? parse(formatText(finance))
+                                    : <p>Finance information not available.</p>
+                                }
                             </ProDescription>
                         </TabPanel>
                     </ProductDescReviewContent>

@@ -7,6 +7,8 @@ import { persistor, store } from "@global/store";
 import { GlobalStyle } from "@assets/css/global.style";
 import { PersistGate } from "redux-persist/integration/react";
 import { Toaster } from "react-hot-toast";
+import { SettingsProvider } from "@context/SettingsContext";
+import { fetchSettings } from "@lib/api";
 
 // CSS import
 import "swiper/swiper.scss";
@@ -38,13 +40,15 @@ const themeBootstrap = {
 };
 
 const FurnsAPP = ({ Component, pageProps }) => {
+  const { siteSettings, ...restPageProps } = pageProps;
+
   return (
     <Fragment>
       <Head>
-        <title>Birmingham Kitchens & Bedrooms | Premium Bespoke Design</title>
+        <title>{siteSettings?.meta_title || "Birmingham Kitchens & Bedrooms | Premium Bespoke Design"}</title>
         <meta
           name="description"
-          content="Premium bespoke kitchens and bedrooms designed and crafted in Birmingham, UK."
+          content={siteSettings?.meta_description || "Premium bespoke kitchens and bedrooms designed and crafted in Birmingham, UK."}
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -54,14 +58,30 @@ const FurnsAPP = ({ Component, pageProps }) => {
           <GlobalStyle />
           <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-              <Toaster position="top-right" />
-              <Component {...pageProps} />
+              <SettingsProvider initialSettings={siteSettings || {}}>
+                <Toaster position="top-right" />
+                <Component {...restPageProps} />
+              </SettingsProvider>
             </PersistGate>
           </Provider>
         </BootstrapProvider>
       </ThemeProvider>
     </Fragment>
   );
+};
+
+FurnsAPP.getInitialProps = async (appContext) => {
+  const { Component, ctx } = appContext;
+  let pageProps = {};
+
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx);
+  }
+
+  // Fetch settings server-side once for all pages
+  const siteSettings = await fetchSettings();
+
+  return { pageProps: { ...pageProps, siteSettings } };
 };
 
 export default FurnsAPP;

@@ -8,8 +8,16 @@ import ProductCard from "@components/product/card";
 import SectionTitle from "@components/ui/section-title";
 import { RelatedProductsWrapper } from "@components/product/feed/style";
 
-const RelatedProducts = ({ products, categories, tags, limit, className, ...props }) => {
-    const relatedProducts = getRelatedProducts(categories, tags, products, limit);
+const RelatedProducts = ({ products, categories, tags, limit, currentProductId, className, ...props }) => {
+    let relatedProducts = getRelatedProducts(categories, tags, products, limit);
+
+    // Fallback: if no related products found, show any other products
+    if (relatedProducts.length === 0 && products?.length > 0) {
+        relatedProducts = products
+            .map(p => p?.node)
+            .filter(p => p && p.id !== currentProductId)
+            .slice(0, limit);
+    }
 
     return (
         relatedProducts.length > 0 ? (
@@ -39,11 +47,7 @@ const RelatedProducts = ({ products, categories, tags, limit, className, ...prop
                     </Row>
                 </Container>
             </RelatedProductsWrapper>
-        ) : (
-            <RelatedProductsWrapper {...props} className="w-100">
-                <EmptyProduct message="Related products not found!" />
-            </RelatedProductsWrapper>
-        )
+        ) : null
     );
 };
 

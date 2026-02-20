@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { CURRENCY } from "@utils/constant";
 import { useState, useEffect } from "react";
+import { useSettings } from "@context/SettingsContext";
 import Select from "@components/ui/select";
 import Button from "@components/ui/button";
 import { excerpt, toCapitalize } from "@utils/method";
@@ -131,9 +132,12 @@ const ProductDetailsContent = ({
         return adj > 0 ? `+£${adj.toFixed(2)}` : `-£${Math.abs(adj).toFixed(2)}`;
     };
 
+    const siteSettings = useSettings();
+    const assemblyPriceValue = parseFloat(siteSettings?.assembly_pricing) || 39.99;
+
     // Cumulative Price Calculation
     const mattressPrice = selectedMattress ? selectedMattress.price : 0;
-    const assemblyPrice = isAssemblyAdded ? 39.99 : 0;
+    const assemblyPrice = isAssemblyAdded ? assemblyPriceValue : 0;
 
     // Use the variant price directly (already includes option deltas)
     const displayBasePrice = parseFloat(basePrice) || 0;
@@ -288,6 +292,56 @@ const ProductDetailsContent = ({
                     </Button>
                 </div>
 
+                {/* Mobile-only: Bundle section below Add to Basket */}
+                <div className="d-block d-md-none" style={{ marginTop: '15px', marginBottom: '15px', order: 1 }}>
+                    <BundleSection>
+                        <BundleItem active={!!selectedMattress}>
+                            <div className="bundle-label">
+                                <div className="bundle-icons">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/3232/3232147.png" alt="mattress" />
+                                </div>
+                                <div className="bundle-text">
+                                    <span>Add Mattress &amp; Save</span>
+                                    <p>Get a discount when you buy together</p>
+                                </div>
+                            </div>
+                            <div className="bundle-action">
+                                <BundleButton
+                                    className={selectedMattress ? 'active' : ''}
+                                    onClick={() => setShowMattressModal(true)}
+                                >
+                                    {selectedMattress ? (
+                                        <>Selected <span style={{ fontSize: '12px', opacity: 0.9 }}>£{selectedMattress.price}</span></>
+                                    ) : 'Choose Mattress'}
+                                </BundleButton>
+                            </div>
+                        </BundleItem>
+
+                        <BundleItem active={isAssemblyAdded}>
+                            <div className="bundle-label">
+                                <div className="bundle-icons">
+                                    <MdBuild />
+                                </div>
+                                <div className="bundle-text">
+                                    <span>Professional Assembly</span>
+                                    <p>Let us take your new bed to your room, assemble and take away packaging.</p>
+                                </div>
+                            </div>
+                            <div className="bundle-action">
+                                <BundleButton
+                                    className={isAssemblyAdded ? 'active' : ''}
+                                    onClick={() => setIsAssemblyAdded(!isAssemblyAdded)}
+                                >
+                                    {isAssemblyAdded ? (
+                                        <>Added <span style={{ fontWeight: 700 }}>£{assemblyPriceValue.toFixed(2)}</span></>
+                                    ) : (
+                                        <>Add <span style={{ fontWeight: 700 }}>£{assemblyPriceValue.toFixed(2)}</span></>
+                                    )}
+                                </BundleButton>
+                            </div>
+                        </BundleItem>
+                    </BundleSection>
+                </div>
 
                 <CheckoutInfo>
                     <PaymentIcons>

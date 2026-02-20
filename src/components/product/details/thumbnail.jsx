@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
-import {Fragment, useState} from "react";
-import Image from "@components/ui/image";
-import Slider, {Slide} from "@components/ui/swiper";
-import {ProductThumbGallery, ProductThumbNav} from "@components/product/details/details.style";
+import { Fragment, useState } from "react";
+import Slider, { Slide } from "@components/ui/swiper";
+import { ProductThumbGallery, ProductThumbNav } from "@components/product/details/details.style";
 
-const ProductDetailsThumb = ({thumbnails}) => {
+const ProductDetailsThumb = ({ thumbnails }) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     const thumbGalleryConfig = {
@@ -32,10 +31,10 @@ const ProductDetailsThumb = ({thumbnails}) => {
                     {thumbnails?.map(image => (
                         <Slide key={image?.node?.id}>
                             <figure>
-                                <Image
-                                    layout="fill"
-                                    alt="furns"
+                                <img
+                                    alt={image?.node?.altText || "Product image"}
                                     src={image?.node?.originalSrc}
+                                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                                 />
                             </figure>
                         </Slide>
@@ -45,15 +44,14 @@ const ProductDetailsThumb = ({thumbnails}) => {
 
             {thumbnails?.length > 1 && (
                 <ProductThumbNav>
-                    <Slider settings={{...thumbNavConfig}}>
+                    <Slider settings={{ ...thumbNavConfig }}>
                         {thumbnails?.map(image => (
                             <Slide key={image?.node?.id}>
                                 <figure>
-                                    <Image
-                                        width={108}
-                                        height={108}
-                                        alt="furns"
+                                    <img
+                                        alt={image?.node?.altText || "Product thumbnail"}
                                         src={image?.node?.originalSrc}
+                                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                                     />
                                 </figure>
                             </Slide>

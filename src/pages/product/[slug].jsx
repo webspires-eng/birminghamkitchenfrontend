@@ -26,8 +26,8 @@ const ProductDetailsPage = ({ products, product }) => {
     return (
         <Layout>
             <Head>
-                <title>{product?.title + " :: " + settings?.title}</title>
-                <meta name="description" content={settings?.title} />
+                <title>{(product?.metaTitle || product?.title) + " :: " + settings?.title}</title>
+                <meta name="description" content={product?.metaDescription || product?.excerpt || settings?.title} />
             </Head>
 
 
@@ -40,6 +40,7 @@ const ProductDetailsPage = ({ products, product }) => {
                     <RelatedProducts
                         products={products}
                         tags={product?.tags}
+                        currentProductId={product?.id}
                         mt={[48, null, 85]}
                         pb={[60, null, 100]}
                         categories={product?.collections?.edges}

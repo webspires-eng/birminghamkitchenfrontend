@@ -155,11 +155,18 @@ export const ProductDescReviewWrapper = styled.section`
 export const ProductThumbNav = styled.div`
   margin-top: 10px;
 
+  ${devices.sm} {
+    margin-bottom: 15px;
+  }
   figure {
     height: 85px;
     overflow: hidden;
     position: relative;
     cursor: pointer;
+
+    img {
+      object-fit: cover !important;
+    }
 
     ${devices.xs} {
       height: 70px;
@@ -191,6 +198,10 @@ export const ProductThumbGallery = styled.div`
     height: 500px;
     overflow: hidden;
     position: relative;
+
+    img {
+      object-fit: contain !important;
+    }
 
     ${devices.md} {
       height: 400px;
@@ -277,6 +288,9 @@ export const ProductActionButton = styled.div`
     display: flex;
     order: 1;
 
+    ${devices.sm} {
+      order: 2;
+    }
     .btn-cart {
       border: 1px solid transparent;
 
@@ -678,6 +692,7 @@ export const BundleSection = styled.div`
     order: 2;
 
     ${devices.sm} {
+        margin-top: 5px;
         order: 3;
     }
 `;
@@ -813,7 +828,7 @@ export const CheckoutInfo = styled.div`
     padding-top: 10px;
     
     ${devices.sm} {
-        order: 2;
+        order: 3;
         padding-bottom: 20px;
     }
 `;
