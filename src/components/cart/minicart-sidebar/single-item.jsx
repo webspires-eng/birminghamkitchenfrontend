@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 import { useDispatch } from "react-redux";
 import { CURRENCY } from "@utils/constant";
 import { getProductStock } from "@utils/product";
-import { Quantity } from "@components/cart/cart.style";
-import { CgMathPlus, CgMathMinus, CgTrash } from "react-icons/cg";
+import { CgTrash } from "react-icons/cg";
+import { IoAdd, IoRemove } from "react-icons/io5";
+import { useSettings } from "@context/SettingsContext";
 import {
     PriceAmount,
     RemoveButton,
@@ -27,6 +28,8 @@ const MiniCartProduct = ({ product }) => {
     const { title, handle, images, quantity, price, variations, variants } = product;
     const stock = getProductStock(product, variations);
     const dispatch = useDispatch();
+    const settings = useSettings();
+    const currencySymbol = settings?.currency_symbol || CURRENCY;
 
     const imageSrc = images?.edges?.[0]?.node?.originalSrc ||
         images?.[0]?.node?.originalSrc ||
@@ -36,9 +39,14 @@ const MiniCartProduct = ({ product }) => {
 
     return (
         <MiniCartProductItem>
+            <MiniCartProThumb>
+                <Link href={`/product/${product.apiId || product.id}`}>
+                    <Image src={imageSrc} alt={title} width={72} height={80} />
+                </Link>
+            </MiniCartProThumb>
 
             <MiniCartProContent>
-                <div>
+                <div style={{ flex: 1, minWidth: 0 }}>
                     <Link href={`/product/${product.apiId || product.id}`}>
                         <MiniCartProName>{title}</MiniCartProName>
                     </Link>
@@ -50,35 +58,70 @@ const MiniCartProduct = ({ product }) => {
                     )}
 
                     {product?.selectedMattress && (
-                        <MiniCartProMeta style={{ fontSize: '11px', color: '#7e2d67' }}>
+                        <MiniCartProMeta>
                             + {product.selectedMattress.title}
                         </MiniCartProMeta>
                     )}
                     {product?.isAssemblyAdded && (
-                        <MiniCartProMeta style={{ fontSize: '11px', color: '#7e2d67' }}>
-                            + Professional Assembly
+                        <MiniCartProMeta>
+                            + Assembly
                         </MiniCartProMeta>
                     )}
 
                     <MiniCartProPrice>
-                        {quantity} x <PriceAmount>{CURRENCY + price}</PriceAmount>
+                        <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            marginTop: '8px'
+                        }}>
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                border: '1px solid #e8e8e8',
+                                borderRadius: '6px',
+                                overflow: 'hidden'
+                            }}>
+                                <button
+                                    onClick={() => dispatch(decrementCartQuantityAction(product))}
+                                    style={{
+                                        width: '28px', height: '28px',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        border: 'none', background: '#fafafa',
+                                        cursor: quantity === 1 ? 'not-allowed' : 'pointer',
+                                        opacity: quantity === 1 ? 0.4 : 1,
+                                        fontSize: '14px', color: '#555',
+                                        transition: 'background 0.2s'
+                                    }}
+                                    disabled={quantity === 1}
+                                >
+                                    <IoRemove />
+                                </button>
+                                <span style={{
+                                    width: '28px', textAlign: 'center',
+                                    fontSize: '13px', fontWeight: 600, color: '#333'
+                                }}>
+                                    {quantity}
+                                </span>
+                                <button
+                                    onClick={() => dispatch(incrementCartQuantityAction(product))}
+                                    style={{
+                                        width: '28px', height: '28px',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        border: 'none', background: '#fafafa',
+                                        cursor: quantity === stock ? 'not-allowed' : 'pointer',
+                                        opacity: quantity === stock ? 0.4 : 1,
+                                        fontSize: '14px', color: '#555',
+                                        transition: 'background 0.2s'
+                                    }}
+                                    disabled={quantity === stock}
+                                >
+                                    <IoAdd />
+                                </button>
+                            </div>
+                            <PriceAmount>{currencySymbol}{price}</PriceAmount>
+                        </div>
                     </MiniCartProPrice>
-
-                    <Quantity>
-                        <button
-                            style={{ pointerEvents: quantity === 1 ? "none" : "visible" }}
-                            onClick={() => dispatch(decrementCartQuantityAction(product))}
-                        >
-                            <CgMathMinus />
-                        </button>
-                        <input type="text" value={quantity} size={stock} readOnly />
-                        <button
-                            style={{ pointerEvents: quantity === stock ? "none" : "visible" }}
-                            onClick={() => dispatch(incrementCartQuantityAction(product))}
-                        >
-                            <CgMathPlus />
-                        </button>
-                    </Quantity>
                 </div>
 
                 <RemoveButton onClick={() => dispatch(removeCartAction(product))}>

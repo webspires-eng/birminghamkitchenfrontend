@@ -34,10 +34,10 @@ export const OffCanvasTitle = styled.h3`
 export const OffCanvasHead = styled.div`
   width: 100%;
   display: flex;
-  padding: 25px 20px;
+  padding: 20px;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #f0f0f0;
   background: white;
 `;
 

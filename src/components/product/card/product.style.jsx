@@ -301,7 +301,6 @@ export const ProductThumb = styled.figure`
     width: 100% !important;
     height: auto !important;
     display: block;
-    mix-blend-mode: multiply;
     transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -312,8 +311,13 @@ export const ProductThumb = styled.figure`
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 0.4s ease;
-    mix-blend-mode: multiply;
+    transition: opacity 0.5s ease;
+
+    img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover;
+    }
   }
 `
 

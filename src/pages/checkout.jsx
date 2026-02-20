@@ -8,18 +8,29 @@ import { useRouter } from "next/router";
 import { useSettings } from "@context/SettingsContext";
 import { CURRENCY } from "@utils/constant";
 import { getCartProductTotalPrice, getCartTotalPrice } from "@utils/product";
-import { IoLockClosed, IoShieldCheckmark, IoCard, IoCash, IoChevronDown, IoChevronUp } from "react-icons/io5";
-import { MdLocalShipping } from "react-icons/md";
-
-const FREE_SHIPPING_THRESHOLD = 500;
-const SHIPPING_COST = 0; // Free delivery on all orders
+import { IoLockClosed, IoShieldCheckmark, IoCard, IoCash, IoChevronDown, IoChevronUp, IoWarning } from "react-icons/io5";
+import { MdLocalShipping, MdStorefront } from "react-icons/md";
 
 const CheckoutPage = () => {
     const dispatch = useDispatch();
     const router = useRouter();
     const cart = useSelector(state => state.shoppingCart);
     const settings = useSettings();
-    const [paymentMethod, setPaymentMethod] = useState('cod');
+
+    const currencySymbol = settings?.currency_symbol || CURRENCY;
+    const deliveryCharges = parseFloat(settings?.delivery_charges) || 0;
+    const freeDeliveryAbove = parseFloat(settings?.free_delivery_above) || 0;
+    const minOrderAmount = parseFloat(settings?.min_order_amount) || 0;
+    const taxPercentage = parseFloat(settings?.tax_percentage) || 0;
+    const enableCod = settings?.enable_cod !== '0';
+    const enableOnlinePayment = settings?.enable_online_payment !== '0';
+    const enableOrder = settings?.enable_order !== '0';
+    const enableDelivery = settings?.enable_delivery !== '0';
+    const enablePickup = settings?.enable_pickup !== '0';
+
+    const defaultPayment = enableCod ? 'cod' : enableOnlinePayment ? 'bank' : 'cod';
+    const [paymentMethod, setPaymentMethod] = useState(defaultPayment);
+    const [deliveryMethod, setDeliveryMethod] = useState(enableDelivery ? 'delivery' : 'pickup');
     const [showOrderSummary, setShowOrderSummary] = useState(false);
 
     const [form, setForm] = useState({
@@ -32,19 +43,52 @@ const CheckoutPage = () => {
     };
 
     const subtotal = getCartTotalPrice(cart);
-    const shipping = SHIPPING_COST;
-    const total = subtotal + shipping;
+    const isPickup = deliveryMethod === 'pickup';
+    const isFreeShipping = isPickup || (freeDeliveryAbove > 0 ? subtotal >= freeDeliveryAbove : deliveryCharges === 0);
+    const shipping = isFreeShipping ? 0 : deliveryCharges;
+    const taxAmount = taxPercentage > 0 ? ((subtotal + shipping) * taxPercentage) / 100 : 0;
+    const total = subtotal + shipping + taxAmount;
+    const isBelowMinOrder = minOrderAmount > 0 && subtotal < minOrderAmount;
 
     const handlePlaceOrder = (e) => {
         e.preventDefault();
-        if (!form.firstName || !form.lastName || !form.email || !form.phone || !form.address || !form.city || !form.postcode) {
+        if (isBelowMinOrder) {
+            alert(`Minimum order amount is ${currencySymbol}${minOrderAmount.toFixed(2)}. Please add more items.`);
+            return;
+        }
+        if (!form.firstName || !form.lastName || !form.email || !form.phone) {
             alert("Please fill in all required fields.");
+            return;
+        }
+        if (deliveryMethod === 'delivery' && (!form.address || !form.city || !form.postcode)) {
+            alert("Please fill in your delivery address.");
             return;
         }
         dispatch(clearCartAction());
         alert("Order placed successfully! We will contact you shortly.");
         router.push("/");
     };
+
+    // Orders disabled
+    if (!enableOrder) {
+        return (
+            <Layout>
+                <Head><title>Checkout | {settings?.site_name || "Birmingham Kitchens & Bedrooms"}</title></Head>
+                <div style={{ textAlign: 'center', padding: '100px 20px' }}>
+                    <div style={{ fontSize: '60px', marginBottom: '20px' }}>🚫</div>
+                    <h2 style={{ color: '#333', marginBottom: '15px' }}>Orders are currently unavailable</h2>
+                    <p style={{ color: '#888', marginBottom: '30px' }}>We are not accepting orders at this time. Please check back later.</p>
+                    <button
+                        onClick={() => router.push('/')}
+                        style={{
+                            padding: '14px 40px', background: '#D40511', color: '#fff',
+                            border: 'none', borderRadius: '8px', fontSize: '16px', fontWeight: 600, cursor: 'pointer'
+                        }}
+                    >Return to Home</button>
+                </div>
+            </Layout>
+        );
+    }
 
     if (cart.length === 0) {
         return (
@@ -56,7 +100,7 @@ const CheckoutPage = () => {
                     <button
                         onClick={() => router.push('/shop')}
                         style={{
-                            padding: '14px 40px', background: '#7e2d67', color: '#fff',
+                            padding: '14px 40px', background: '#D40511', color: '#fff',
                             border: 'none', borderRadius: '8px', fontSize: '16px', fontWeight: 600, cursor: 'pointer'
                         }}
                     >Continue Shopping</button>
@@ -99,7 +143,7 @@ const CheckoutPage = () => {
                     justify-content: center;
                     width: 32px;
                     height: 32px;
-                    background: #7e2d67;
+                    background: #D40511;
                     color: #fff;
                     border-radius: 50%;
                     font-size: 14px;
@@ -142,9 +186,9 @@ const CheckoutPage = () => {
                 }
                 .form-group input:focus,
                 .form-group textarea:focus {
-                    border-color: #7e2d67;
+                    border-color: #D40511;
                     background: #fff;
-                    box-shadow: 0 0 0 3px rgba(126,45,103,0.1);
+                    box-shadow: 0 0 0 3px rgba(212,5,17,0.1);
                 }
                 .form-group textarea {
                     resize: vertical;
@@ -231,20 +275,20 @@ const CheckoutPage = () => {
                     background: #faf9f7;
                 }
                 .payment-option:hover {
-                    border-color: #7e2d67;
+                    border-color: #D40511;
                 }
                 .payment-option.active {
-                    border-color: #7e2d67;
-                    background: rgba(126,45,103,0.04);
+                    border-color: #D40511;
+                    background: rgba(212,5,17,0.04);
                 }
                 .payment-option input[type="radio"] {
-                    accent-color: #7e2d67;
+                    accent-color: #D40511;
                     width: 18px;
                     height: 18px;
                 }
                 .payment-option .pay-icon {
                     font-size: 22px;
-                    color: #7e2d67;
+                    color: #D40511;
                 }
                 .payment-option .pay-label {
                     font-size: 15px;
@@ -256,7 +300,7 @@ const CheckoutPage = () => {
                 .place-order-btn {
                     width: 100%;
                     padding: 16px;
-                    background: #7e2d67;
+                    background: #D40511;
                     color: #fff;
                     border: none;
                     border-radius: 10px;
@@ -272,9 +316,9 @@ const CheckoutPage = () => {
                     letter-spacing: 0.5px;
                 }
                 .place-order-btn:hover {
-                    background: #692456;
+                    background: #b8040e;
                     transform: translateY(-1px);
-                    box-shadow: 0 6px 20px rgba(126,45,103,0.3);
+                    box-shadow: 0 6px 20px rgba(212,5,17,0.3);
                 }
 
                 .secure-badge {
@@ -290,7 +334,7 @@ const CheckoutPage = () => {
                 /* Mobile order summary toggle */
                 .mobile-summary-toggle {
                     display: none;
-                    background: #7e2d67;
+                    background: #D40511;
                     color: #fff;
                     padding: 14px 20px;
                     border-radius: 10px;
@@ -338,7 +382,7 @@ const CheckoutPage = () => {
                         <div className="mobile-summary-toggle" onClick={() => setShowOrderSummary(!showOrderSummary)}>
                             <span>Order Summary ({cart.length} items)</span>
                             <span style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                {CURRENCY}{total.toFixed(2)}
+                                {currencySymbol}{total.toFixed(2)}
                                 {showOrderSummary ? <IoChevronUp /> : <IoChevronDown />}
                             </span>
                         </div>
@@ -355,7 +399,7 @@ const CheckoutPage = () => {
                                                 {item?.isAssemblyAdded && ` • Assembly`}
                                             </div>
                                         </div>
-                                        <div className="order-item-price">{CURRENCY}{Math.round(getCartProductTotalPrice(cart, item)).toFixed(2)}</div>
+                                        <div className="order-item-price">{currencySymbol}{Math.round(getCartProductTotalPrice(cart, item)).toFixed(2)}</div>
                                     </div>
                                 ))}
                             </div>
@@ -395,35 +439,63 @@ const CheckoutPage = () => {
                                 <div className="checkout-card" style={{ marginBottom: '24px' }}>
                                     <div className="checkout-title">
                                         <span className="step-num">2</span>
-                                        Delivery Address
+                                        Delivery Method & Address
                                     </div>
-                                    <div className="form-group">
-                                        <label>Street Address <span className="required">*</span></label>
-                                        <input name="address" value={form.address} onChange={handleChange} placeholder="House number and street name" required />
-                                    </div>
-                                    <div className="form-row">
-                                        <div className="form-group">
-                                            <label>Town / City <span className="required">*</span></label>
-                                            <input name="city" value={form.city} onChange={handleChange} required />
+
+                                    {/* Delivery Method Toggle */}
+                                    {(enableDelivery && enablePickup) && (
+                                        <div className="payment-options" style={{ marginBottom: '20px' }}>
+                                            <label className={`payment-option ${deliveryMethod === 'delivery' ? 'active' : ''}`}>
+                                                <input type="radio" name="deliveryMethod" value="delivery" checked={deliveryMethod === 'delivery'} onChange={(e) => setDeliveryMethod(e.target.value)} />
+                                                <MdLocalShipping className="pay-icon" />
+                                                <span className="pay-label">Home Delivery</span>
+                                            </label>
+                                            <label className={`payment-option ${deliveryMethod === 'pickup' ? 'active' : ''}`}>
+                                                <input type="radio" name="deliveryMethod" value="pickup" checked={deliveryMethod === 'pickup'} onChange={(e) => setDeliveryMethod(e.target.value)} />
+                                                <MdStorefront className="pay-icon" />
+                                                <span className="pay-label">Store Pickup</span>
+                                            </label>
                                         </div>
-                                        <div className="form-group">
-                                            <label>County</label>
-                                            <input name="county" value={form.county} onChange={handleChange} />
+                                    )}
+
+                                    {deliveryMethod === 'delivery' ? (
+                                        <>
+                                            <div className="form-group">
+                                                <label>Street Address <span className="required">*</span></label>
+                                                <input name="address" value={form.address} onChange={handleChange} placeholder="House number and street name" required />
+                                            </div>
+                                            <div className="form-row">
+                                                <div className="form-group">
+                                                    <label>Town / City <span className="required">*</span></label>
+                                                    <input name="city" value={form.city} onChange={handleChange} required />
+                                                </div>
+                                                <div className="form-group">
+                                                    <label>County</label>
+                                                    <input name="county" value={form.county} onChange={handleChange} />
+                                                </div>
+                                            </div>
+                                            <div className="form-row">
+                                                <div className="form-group">
+                                                    <label>Postcode <span className="required">*</span></label>
+                                                    <input name="postcode" value={form.postcode} onChange={handleChange} required />
+                                                </div>
+                                                <div className="form-group">
+                                                    <label>Country</label>
+                                                    <input value="United Kingdom" readOnly style={{ background: '#f0ede8', cursor: 'not-allowed' }} />
+                                                </div>
+                                            </div>
+                                        </>
+                                    ) : (
+                                        <div style={{ padding: '20px', background: '#f8f7f4', borderRadius: '10px', textAlign: 'center' }}>
+                                            <MdStorefront style={{ fontSize: '32px', color: '#7e2d67', marginBottom: '8px' }} />
+                                            <p style={{ fontWeight: 600, color: '#333', marginBottom: '4px' }}>Collect from our store</p>
+                                            <p style={{ fontSize: '14px', color: '#888', margin: 0 }}>{settings?.our_location || settings?.contact_address || 'Contact us for pickup details'}</p>
                                         </div>
-                                    </div>
-                                    <div className="form-row">
-                                        <div className="form-group">
-                                            <label>Postcode <span className="required">*</span></label>
-                                            <input name="postcode" value={form.postcode} onChange={handleChange} required />
-                                        </div>
-                                        <div className="form-group">
-                                            <label>Country</label>
-                                            <input value="United Kingdom" readOnly style={{ background: '#f0ede8', cursor: 'not-allowed' }} />
-                                        </div>
-                                    </div>
-                                    <div className="form-group" style={{ marginBottom: 0 }}>
+                                    )}
+
+                                    <div className="form-group" style={{ marginBottom: 0, marginTop: deliveryMethod === 'pickup' ? '16px' : '0' }}>
                                         <label>Order Notes (optional)</label>
-                                        <textarea name="notes" value={form.notes} onChange={handleChange} placeholder="Special instructions for delivery..." rows={3} />
+                                        <textarea name="notes" value={form.notes} onChange={handleChange} placeholder="Special instructions..." rows={3} />
                                     </div>
                                 </div>
 
@@ -433,20 +505,35 @@ const CheckoutPage = () => {
                                         Payment Method
                                     </div>
                                     <div className="payment-options">
-                                        <label className={`payment-option ${paymentMethod === 'cod' ? 'active' : ''}`}>
-                                            <input type="radio" name="payment" value="cod" checked={paymentMethod === 'cod'} onChange={(e) => setPaymentMethod(e.target.value)} />
-                                            <IoCash className="pay-icon" />
-                                            <span className="pay-label">Cash on Delivery</span>
-                                        </label>
-                                        <label className={`payment-option ${paymentMethod === 'bank' ? 'active' : ''}`}>
-                                            <input type="radio" name="payment" value="bank" checked={paymentMethod === 'bank'} onChange={(e) => setPaymentMethod(e.target.value)} />
-                                            <IoCard className="pay-icon" />
-                                            <span className="pay-label">Bank Transfer</span>
-                                        </label>
+                                        {enableCod && (
+                                            <label className={`payment-option ${paymentMethod === 'cod' ? 'active' : ''}`}>
+                                                <input type="radio" name="payment" value="cod" checked={paymentMethod === 'cod'} onChange={(e) => setPaymentMethod(e.target.value)} />
+                                                <IoCash className="pay-icon" />
+                                                <span className="pay-label">Cash on Delivery</span>
+                                            </label>
+                                        )}
+                                        {enableOnlinePayment && (
+                                            <label className={`payment-option ${paymentMethod === 'bank' ? 'active' : ''}`}>
+                                                <input type="radio" name="payment" value="bank" checked={paymentMethod === 'bank'} onChange={(e) => setPaymentMethod(e.target.value)} />
+                                                <IoCard className="pay-icon" />
+                                                <span className="pay-label">Bank Transfer</span>
+                                            </label>
+                                        )}
                                     </div>
 
-                                    <button type="submit" className="place-order-btn">
-                                        <IoLockClosed /> PLACE ORDER — {CURRENCY}{total.toFixed(2)}
+                                    {isBelowMinOrder && (
+                                        <div style={{
+                                            display: 'flex', alignItems: 'center', gap: '10px',
+                                            padding: '14px 18px', background: '#fff3e0', borderRadius: '10px',
+                                            border: '1px solid #ffcc02', marginBottom: '16px', fontSize: '14px', color: '#e65100'
+                                        }}>
+                                            <IoWarning style={{ fontSize: '20px', flexShrink: 0 }} />
+                                            Minimum order amount is {currencySymbol}{minOrderAmount.toFixed(2)}. You need {currencySymbol}{(minOrderAmount - subtotal).toFixed(2)} more.
+                                        </div>
+                                    )}
+
+                                    <button type="submit" className="place-order-btn" disabled={isBelowMinOrder} style={isBelowMinOrder ? { opacity: 0.5, cursor: 'not-allowed' } : {}}>
+                                        <IoLockClosed /> PLACE ORDER — {currencySymbol}{total.toFixed(2)}
                                     </button>
 
                                     <div className="secure-badge">
@@ -474,26 +561,36 @@ const CheckoutPage = () => {
                                                 {item?.isAssemblyAdded && ` • Assembly`}
                                             </div>
                                         </div>
-                                        <div className="order-item-price">{CURRENCY}{Math.round(getCartProductTotalPrice(cart, item)).toFixed(2)}</div>
+                                        <div className="order-item-price">{currencySymbol}{Math.round(getCartProductTotalPrice(cart, item)).toFixed(2)}</div>
                                     </div>
                                 ))}
 
                                 <div style={{ borderTop: '1px solid #f0ede8', marginTop: '10px', paddingTop: '14px' }}>
                                     <div className="order-row">
                                         <span>Subtotal</span>
-                                        <span style={{ fontWeight: 600, color: '#333' }}>{CURRENCY}{subtotal.toFixed(2)}</span>
+                                        <span style={{ fontWeight: 600, color: '#333' }}>{currencySymbol}{subtotal.toFixed(2)}</span>
                                     </div>
                                     <div className="order-row">
                                         <span>Delivery</span>
-                                        <span className="free-shipping-badge">
-                                            <MdLocalShipping /> Free Delivery
-                                        </span>
+                                        {isFreeShipping ? (
+                                            <span className="free-shipping-badge">
+                                                <MdLocalShipping /> {isPickup ? 'Store Pickup' : 'Free Delivery'}
+                                            </span>
+                                        ) : (
+                                            <span style={{ fontWeight: 600, color: '#333' }}>{currencySymbol}{shipping.toFixed(2)}</span>
+                                        )}
                                     </div>
+                                    {taxPercentage > 0 && (
+                                        <div className="order-row">
+                                            <span>VAT ({taxPercentage}%)</span>
+                                            <span style={{ fontWeight: 600, color: '#333' }}>{currencySymbol}{taxAmount.toFixed(2)}</span>
+                                        </div>
+                                    )}
                                 </div>
 
                                 <div className="order-total">
                                     <span>Total</span>
-                                    <span>{CURRENCY}{total.toFixed(2)}</span>
+                                    <span>{currencySymbol}{total.toFixed(2)}</span>
                                 </div>
                             </div>
                         </Col>

@@ -10,14 +10,32 @@ import { InputField } from "@components/checkout/checkout-form.style";
 import Input, { TextArea } from "@components/ui/input";
 import Button from "@components/ui/button";
 import { IoCallOutline, IoMailOutline, IoLocationOutline, IoTimeOutline } from "react-icons/io5";
+import { SiFacebook, SiInstagram, SiTwitter, SiYoutube, SiWhatsapp, SiTiktok } from "react-icons/si";
+import { useSettings } from "@context/SettingsContext";
 
 const Contact = (props) => {
+    const settings = useSettings();
+
+    // Parse showroom hours into lines
+    const hoursLines = settings?.showroom_hours
+        ? settings.showroom_hours.split(/\r?\n/).filter(Boolean)
+        : ['Mon - Fri: 09:00 - 18:00', 'Sat: 10:00 - 16:00', 'Sun: Closed'];
+
+    const socialLinks = [
+        { url: settings?.social_facebook, icon: <SiFacebook />, label: 'Facebook' },
+        { url: settings?.social_instagram, icon: <SiInstagram />, label: 'Instagram' },
+        { url: settings?.social_twitter, icon: <SiTwitter />, label: 'Twitter' },
+        { url: settings?.social_youtube, icon: <SiYoutube />, label: 'YouTube' },
+        { url: settings?.social_whatsapp, icon: <SiWhatsapp />, label: 'WhatsApp' },
+        { url: settings?.social_tiktok, icon: <SiTiktok />, label: 'TikTok' },
+    ].filter(s => s.url);
+
     return (
         <ContactWrapper {...props}>
             <Container>
                 <div className="section-title">
                     <h2>Get in Touch</h2>
-                    <p>Have questions about our bespoke beds? We're here to help you.</p>
+                    <p>Have questions about our bespoke kitchens & bedrooms? We're here to help you.</p>
                 </div>
 
                 <Row>
@@ -27,8 +45,11 @@ const Contact = (props) => {
                                 <div className="icon"><IoCallOutline /></div>
                                 <div className="content">
                                     <h4>Call Us</h4>
-                                    <p><a href="tel:+447814444983">0781 444 4983</a></p>
-                                    <p>Available Mon-Sat, 9am - 6pm</p>
+                                    <p>
+                                        <a href={`tel:${settings?.contact_phone || '+441211234567'}`}>
+                                            {settings?.contact_phone || '+44 121 123 4567'}
+                                        </a>
+                                    </p>
                                 </div>
                             </ContactInfoItem>
 
@@ -36,8 +57,11 @@ const Contact = (props) => {
                                 <div className="icon"><IoMailOutline /></div>
                                 <div className="content">
                                     <h4>Email Us</h4>
-                                    <p><a href="mailto:Group961sales@gmail.com">Group961sales@gmail.com</a></p>
-                                    <p><a href="mailto:webspires@gmail.com">webspires@gmail.com</a></p>
+                                    <p>
+                                        <a href={`mailto:${settings?.contact_email || 'info@birminghamkitchens.co.uk'}`}>
+                                            {settings?.contact_email || 'info@birminghamkitchens.co.uk'}
+                                        </a>
+                                    </p>
                                 </div>
                             </ContactInfoItem>
 
@@ -45,8 +69,7 @@ const Contact = (props) => {
                                 <div className="icon"><IoLocationOutline /></div>
                                 <div className="content">
                                     <h4>Our Location</h4>
-                                    <p>Birmingham, West Midlands</p>
-                                    <p>United Kingdom</p>
+                                    <p>{settings?.our_location || settings?.contact_address || 'Birmingham, West Midlands, United Kingdom'}</p>
                                 </div>
                             </ContactInfoItem>
 
@@ -54,92 +77,58 @@ const Contact = (props) => {
                                 <div className="icon"><IoTimeOutline /></div>
                                 <div className="content">
                                     <h4>Showroom Hours</h4>
-                                    <p>Mon - Fri: 09:00 - 18:00</p>
-                                    <p>Sat: 10:00 - 16:00</p>
-                                    <p>Sun: Closed</p>
+                                    {hoursLines.map((line, i) => (
+                                        <p key={i}>{line}</p>
+                                    ))}
                                 </div>
                             </ContactInfoItem>
+
+                            {socialLinks.length > 0 && (
+                                <div style={{
+                                    display: 'flex',
+                                    gap: '12px',
+                                    marginTop: '10px',
+                                    flexWrap: 'wrap'
+                                }}>
+                                    {socialLinks.map((social, i) => (
+                                        <a
+                                            key={i}
+                                            href={social.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            title={social.label}
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                width: '44px',
+                                                height: '44px',
+                                                borderRadius: '12px',
+                                                background: '#fff',
+                                                boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
+                                                color: '#7e2d67',
+                                                fontSize: '20px',
+                                                transition: 'all 0.3s ease',
+                                                textDecoration: 'none'
+                                            }}
+                                        >
+                                            {social.icon}
+                                        </a>
+                                    ))}
+                                </div>
+                            )}
                         </ContactInfoCard>
                     </Col>
 
                     <Col lg={7}>
-                        <ContactFormWrap>
-                            <h3>Send a Message</h3>
-                            <Form>
-                                <InputField>
-                                    <Row>
-                                        <Col md={6}>
-                                            <Input
-                                                id="firstName"
-                                                name="firstName"
-                                                label="First Name"
-                                                placeholder="Enter your first name"
-                                            />
-                                        </Col>
-
-                                        <Col md={6} className="mt-3 mt-md-0">
-                                            <Input
-                                                id="lastName"
-                                                name="lastName"
-                                                label="Last Name"
-                                                placeholder="Enter your last name"
-                                            />
-                                        </Col>
-                                    </Row>
-                                </InputField>
-
-                                <InputField>
-                                    <Input
-                                        id="email"
-                                        name="email"
-                                        label="Email Address"
-                                        placeholder="Enter your email"
-                                    />
-                                </InputField>
-
-                                <InputField>
-                                    <Input
-                                        id="subject"
-                                        name="subject"
-                                        label="Subject"
-                                        placeholder="What is this regarding?"
-                                    />
-                                </InputField>
-
-                                <InputField>
-                                    <TextArea
-                                        rows={5}
-                                        id="message"
-                                        name="message"
-                                        label="Message"
-                                        placeholder="Tell us more about what you're looking for..."
-                                    />
-                                </InputField>
-
-                                <Button
-                                    tag="button"
-                                    type="submit"
-                                    color="white"
-                                    bg="primary"
-                                    hvrBg="secondary"
-                                    className="w-100"
-                                    fontSize="standard"
-                                    textTransform="uppercase"
-                                    style={{ padding: '15px', borderRadius: '5px', fontWeight: 'bold' }}
-                                >
-                                    Send Message
-                                </Button>
-                            </Form>
-                        </ContactFormWrap>
+                        <ContactMapWrap style={{ marginTop: 0, height: '100%', minHeight: '500px' }}>
+                            <iframe
+                                title="Our Location Map"
+                                src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(settings?.our_location || settings?.contact_address || 'Birmingham, UK')}`}
+                            />
+                        </ContactMapWrap>
                     </Col>
                 </Row>
-
-                <ContactMapWrap>
-                    <iframe
-                        title="Birmingham Kitchen & Bedrooms Map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155458.1189196155!2d-2.02293425!3d52.47743915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870942d1b417173%3A0xca81f1a4f618f9e!2sBirmingham!5e0!3m2!1sen!2suk!4v1700000000000"
-                    />
-                </ContactMapWrap>
             </Container>
         </ContactWrapper>
     );

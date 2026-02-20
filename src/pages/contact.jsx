@@ -1,15 +1,18 @@
 import Head from "next/head";
-import settings from "@data/settings";
 import Layout from "@components/layout";
 import Breadcrumb from "@components/ui/breadcrumb";
 import Contact from "@components/contact";
+import { useSettings } from "@context/SettingsContext";
 
 const ContactPage = () => {
+    const settings = useSettings();
+    const siteName = settings?.site_name || "Birmingham Kitchens & Bedrooms";
+
     return (
         <Layout>
             <Head>
-                <title>{"Contact Us :: " + settings?.title}</title>
-                <meta name="description" content={settings?.description} />
+                <title>{"Contact Us | " + siteName}</title>
+                <meta name="description" content={`Get in touch with ${siteName}. ${settings?.contact_phone ? `Call us at ${settings.contact_phone}` : ''} ${settings?.contact_email ? `or email ${settings.contact_email}` : ''}.`} />
             </Head>
 
             <Breadcrumb
