@@ -26,9 +26,14 @@ module.exports = {
                 hostname: 'images.unsplash.com',
             },
             {
+                protocol: 'https',
+                hostname: 'admin.birminghamkitchen.co.uk',
+            },
+            // Development only — remove in production
+            ...(process.env.NODE_ENV === 'development' ? [{
                 protocol: 'http',
                 hostname: '127.0.0.1',
-            }
+            }] : []),
         ]
     },
     compiler: {

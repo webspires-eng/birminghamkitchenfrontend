@@ -54,26 +54,15 @@ const CheckoutPage = () => {
     const isFreeShipping = isPickup || (freeDeliveryAbove > 0 ? subtotal >= freeDeliveryAbove : deliveryCharges === 0);
     const shipping = isFreeShipping ? 0 : deliveryCharges;
 
-    // Coupon discount calculation
-    let discountAmount = 0;
-    if (appliedCoupon) {
-        if (appliedCoupon.type === 'percentage') {
-            discountAmount = (subtotal * parseFloat(appliedCoupon.value)) / 100;
-            if (appliedCoupon.max_discount) {
-                discountAmount = Math.min(discountAmount, parseFloat(appliedCoupon.max_discount));
-            }
-        } else {
-            discountAmount = parseFloat(appliedCoupon.value);
-        }
-        discountAmount = Math.min(discountAmount, subtotal);
-    }
+    // Coupon discount — uses server-calculated amount
+    const discountAmount = appliedCoupon ? parseFloat(appliedCoupon.discount) || 0 : 0;
 
     const discountedSubtotal = subtotal - discountAmount;
     const taxAmount = taxPercentage > 0 ? ((discountedSubtotal + shipping) * taxPercentage) / 100 : 0;
     const total = discountedSubtotal + shipping + taxAmount;
     const isBelowMinOrder = minOrderAmount > 0 && subtotal < minOrderAmount;
 
-    // Validate coupon
+    // Validate coupon (server-side — codes never exposed to client)
     const handleApplyCoupon = async () => {
         if (!couponCode.trim()) {
             setCouponError('Please enter a coupon code');
@@ -83,53 +72,31 @@ const CheckoutPage = () => {
         setCouponError('');
         setCouponSuccess('');
         try {
-            const res = await fetch('/api/coupons');
-            if (!res.ok) throw new Error('Failed to fetch coupons');
-            const coupons = await res.json();
-            const coupon = coupons.find(c => c.code.toUpperCase() === couponCode.trim().toUpperCase());
+            const res = await fetch('/api/coupons', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    code: couponCode.trim(),
+                    order_total: subtotal,
+                }),
+            });
 
-            if (!coupon) {
-                setCouponError('Invalid coupon code');
-                setCouponLoading(false);
-                return;
-            }
-            if (!coupon.is_active) {
-                setCouponError('This coupon is no longer active');
-                setCouponLoading(false);
-                return;
-            }
-            const now = new Date();
-            if (coupon.start_date && new Date(coupon.start_date) > now) {
-                setCouponError('This coupon is not yet valid');
-                setCouponLoading(false);
-                return;
-            }
-            if (coupon.end_date && new Date(coupon.end_date) < now) {
-                setCouponError('This coupon has expired');
-                setCouponLoading(false);
-                return;
-            }
-            if (coupon.usage_limit && coupon.used_count >= coupon.usage_limit) {
-                setCouponError('This coupon has reached its usage limit');
-                setCouponLoading(false);
-                return;
-            }
-            if (coupon.min_order_amount && subtotal < parseFloat(coupon.min_order_amount)) {
-                setCouponError(`Minimum order of ${currencySymbol}${parseFloat(coupon.min_order_amount).toFixed(2)} required`);
+            const data = await res.json();
+
+            if (!res.ok || !data.valid) {
+                setCouponError(data.message || 'Invalid coupon code');
                 setCouponLoading(false);
                 return;
             }
 
-            setAppliedCoupon(coupon);
-            let disc = 0;
-            if (coupon.type === 'percentage') {
-                disc = (subtotal * parseFloat(coupon.value)) / 100;
-                if (coupon.max_discount) disc = Math.min(disc, parseFloat(coupon.max_discount));
-                setCouponSuccess(`${coupon.code} applied! ${parseFloat(coupon.value)}% off (−${currencySymbol}${Math.min(disc, subtotal).toFixed(2)})`);
-            } else {
-                disc = parseFloat(coupon.value);
-                setCouponSuccess(`${coupon.code} applied! ${currencySymbol}${disc.toFixed(2)} off`);
-            }
+            // Server validated — set the coupon
+            setAppliedCoupon({
+                code: data.code,
+                type: data.type,
+                value: data.value,
+                discount: data.discount,
+            });
+            setCouponSuccess(`${data.code} applied! −${currencySymbol}${parseFloat(data.discount).toFixed(2)} off`);
             setCouponError('');
         } catch (err) {
             setCouponError('Could not validate coupon. Try again.');
