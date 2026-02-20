@@ -5,13 +5,12 @@ export const Input = styled.input`
   vertical-align: top;
   line-height: 48px;
   height: 48px;
-  color: #fff;
+  color: #333;
   font-size: 14px;
   width: 100%;
-  border: none;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 4px;
+  background: #f8f8f8;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
   text-align: left;
   box-shadow: none;
   padding-left: 16px;
@@ -19,11 +18,13 @@ export const Input = styled.input`
   transition: all 0.3s ease;
   
   &::placeholder {
-      color: rgba(255, 255, 255, 0.35);
+      color: #aaa;
   }
   &:focus {
-    border-color: ${themeGet('colors.primary')};
-    background: rgba(255, 255, 255, 0.05);
+    border-color: #005DAA;
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 93, 170, 0.08);
   }
 `
 
@@ -49,8 +50,15 @@ export const FormNewsletter = styled.div`
     margin-top: 12px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    border-radius: 4px;
-    padding: 12px 24px;
+    border-radius: 8px;
+    padding: 13px 24px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(212, 5, 17, 0.3);
+    }
+    
     svg {
       font-size: ${themeGet('fontSizes.body')};
       margin-right: 4px;

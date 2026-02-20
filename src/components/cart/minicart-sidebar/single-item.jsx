@@ -39,96 +39,89 @@ const MiniCartProduct = ({ product }) => {
 
     return (
         <MiniCartProductItem>
-            <MiniCartProThumb>
+            <div style={{ flex: 1, minWidth: 0 }}>
                 <Link href={`/product/${product.apiId || product.id}`}>
-                    <Image src={imageSrc} alt={title} width={72} height={80} />
+                    <MiniCartProName>{title}</MiniCartProName>
                 </Link>
-            </MiniCartProThumb>
 
-            <MiniCartProContent>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                    <Link href={`/product/${product.apiId || product.id}`}>
-                        <MiniCartProName>{title}</MiniCartProName>
-                    </Link>
+                {variants?.edges?.length > 1 && (
+                    <MiniCartProMeta>
+                        {variations?.title}
+                    </MiniCartProMeta>
+                )}
 
-                    {variants?.edges?.length > 1 && (
-                        <MiniCartProMeta>
-                            {variations?.title}
-                        </MiniCartProMeta>
-                    )}
+                {product?.selectedMattress && (
+                    <MiniCartProMeta>
+                        + {product.selectedMattress.title}
+                    </MiniCartProMeta>
+                )}
+                {product?.isAssemblyAdded && (
+                    <MiniCartProMeta>
+                        + Assembly
+                    </MiniCartProMeta>
+                )}
 
-                    {product?.selectedMattress && (
-                        <MiniCartProMeta>
-                            + {product.selectedMattress.title}
-                        </MiniCartProMeta>
-                    )}
-                    {product?.isAssemblyAdded && (
-                        <MiniCartProMeta>
-                            + Assembly
-                        </MiniCartProMeta>
-                    )}
-
-                    <MiniCartProPrice>
+                <MiniCartProPrice>
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        marginTop: '8px'
+                    }}>
                         <div style={{
                             display: 'flex',
                             alignItems: 'center',
-                            gap: '8px',
-                            marginTop: '8px'
+                            border: '1px solid #e8e8e8',
+                            borderRadius: '6px',
+                            overflow: 'hidden'
                         }}>
-                            <div style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                border: '1px solid #e8e8e8',
-                                borderRadius: '6px',
-                                overflow: 'hidden'
+                            <button
+                                onClick={() => dispatch(decrementCartQuantityAction(product))}
+                                style={{
+                                    width: '28px', height: '28px',
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                    border: 'none', background: '#fafafa',
+                                    cursor: quantity === 1 ? 'not-allowed' : 'pointer',
+                                    opacity: quantity === 1 ? 0.4 : 1,
+                                    fontSize: '14px', color: '#555',
+                                    transition: 'background 0.2s'
+                                }}
+                                disabled={quantity === 1}
+                            >
+                                <IoRemove />
+                            </button>
+                            <span style={{
+                                width: '28px', textAlign: 'center',
+                                fontSize: '13px', fontWeight: 600, color: '#333'
                             }}>
-                                <button
-                                    onClick={() => dispatch(decrementCartQuantityAction(product))}
-                                    style={{
-                                        width: '28px', height: '28px',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                        border: 'none', background: '#fafafa',
-                                        cursor: quantity === 1 ? 'not-allowed' : 'pointer',
-                                        opacity: quantity === 1 ? 0.4 : 1,
-                                        fontSize: '14px', color: '#555',
-                                        transition: 'background 0.2s'
-                                    }}
-                                    disabled={quantity === 1}
-                                >
-                                    <IoRemove />
-                                </button>
-                                <span style={{
-                                    width: '28px', textAlign: 'center',
-                                    fontSize: '13px', fontWeight: 600, color: '#333'
-                                }}>
-                                    {quantity}
-                                </span>
-                                <button
-                                    onClick={() => dispatch(incrementCartQuantityAction(product))}
-                                    style={{
-                                        width: '28px', height: '28px',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                        border: 'none', background: '#fafafa',
-                                        cursor: quantity === stock ? 'not-allowed' : 'pointer',
-                                        opacity: quantity === stock ? 0.4 : 1,
-                                        fontSize: '14px', color: '#555',
-                                        transition: 'background 0.2s'
-                                    }}
-                                    disabled={quantity === stock}
-                                >
-                                    <IoAdd />
-                                </button>
-                            </div>
-                            <PriceAmount>{currencySymbol}{price}</PriceAmount>
+                                {quantity}
+                            </span>
+                            <button
+                                onClick={() => dispatch(incrementCartQuantityAction(product))}
+                                style={{
+                                    width: '28px', height: '28px',
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                    border: 'none', background: '#fafafa',
+                                    cursor: quantity === stock ? 'not-allowed' : 'pointer',
+                                    opacity: quantity === stock ? 0.4 : 1,
+                                    fontSize: '14px', color: '#555',
+                                    transition: 'background 0.2s'
+                                }}
+                                disabled={quantity === stock}
+                            >
+                                <IoAdd />
+                            </button>
                         </div>
-                    </MiniCartProPrice>
-                </div>
+                        <PriceAmount>{currencySymbol}{price}</PriceAmount>
+                    </div>
+                </MiniCartProPrice>
+            </div>
 
-                <RemoveButton onClick={() => dispatch(removeCartAction(product))}>
-                    <CgTrash />
-                </RemoveButton>
-            </MiniCartProContent>
-        </MiniCartProductItem>
+            <RemoveButton onClick={() => dispatch(removeCartAction(product))}>
+                <CgTrash />
+            </RemoveButton>
+        </MiniCartProContent>
+        </MiniCartProductItem >
     );
 };
 

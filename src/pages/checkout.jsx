@@ -119,7 +119,7 @@ const CheckoutPage = () => {
             <style jsx>{`
                 .checkout-wrapper {
                     padding: 50px 0 80px;
-                    background: #f8f7f5;
+                    background: #fff;
                     min-height: 80vh;
                 }
                 .checkout-card {
