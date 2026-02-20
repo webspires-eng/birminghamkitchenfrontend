@@ -142,7 +142,8 @@ const CTAImage = styled.div`
 `;
 
 const HomeTwo = ({ products, collections }) => {
-    const displayCollections = collections?.length > 0 ? collections : categoriesData;
+    const hasUsableCollections = collections?.length > 0 && collections.some(c => c?.node?.image?.originalSrc);
+    const displayCollections = hasUsableCollections ? collections : categoriesData;
     return (
         <Layout bg="#fff">
             <Head>
