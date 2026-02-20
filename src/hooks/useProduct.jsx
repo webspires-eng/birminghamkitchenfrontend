@@ -61,15 +61,16 @@ const useProduct = (product) => {
     const onIncrementQuantity = () => setQuantity((prevState) => prevState < stock - cartProductQuantity ? (prevState += 1) : prevState);
 
     useEffect(() => {
+        if (!variants?.length) return;
         setSku(variants[0]?.node?.sku);
         setPrice(variants[0]?.node?.priceV2?.amount);
-        setStock(variants[0].node?.quantityAvailable);
-        setSize(variants[0]?.node?.selectedOptions[0]?.value);
-        setIsDiscounted(!!variants[0].node?.compareAtPriceV2);
-        setColor(variants[0]?.node?.selectedOptions[1]?.value);
-        setMaterial(variants[0]?.node?.selectedOptions[2]?.value);
-        setVariations({ id: variants[0].node?.id, title: variants[0].node?.title });
-        setCompareAtPrice(variants[0].node?.compareAtPriceV2 ? variants[0].node?.compareAtPriceV2?.amount : 0);
+        setStock(variants[0]?.node?.quantityAvailable);
+        setSize(variants[0]?.node?.selectedOptions?.[0]?.value);
+        setIsDiscounted(!!variants[0]?.node?.compareAtPriceV2);
+        setColor(variants[0]?.node?.selectedOptions?.[1]?.value);
+        setMaterial(variants[0]?.node?.selectedOptions?.[2]?.value);
+        setVariations({ id: variants[0]?.node?.id, title: variants[0]?.node?.title });
+        setCompareAtPrice(variants[0]?.node?.compareAtPriceV2 ? variants[0]?.node?.compareAtPriceV2?.amount : 0);
     }, []);
 
     return {

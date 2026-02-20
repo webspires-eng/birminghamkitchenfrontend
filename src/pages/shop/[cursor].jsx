@@ -1,32 +1,28 @@
 import Head from "next/head";
 import settings from "@data/settings";
 import Layout from "@components/layout";
-import {client, productsQuery} from "@graphql";
+import { fetchProducts } from "@lib/api";
 import ShopProductsFeed from "@components/shop";
 import Breadcrumb from "@components/ui/breadcrumb";
 
-const ShopPageWithPaginate = ({products}) => {
+const ShopPageWithPaginate = ({ products }) => {
     return (
         <Layout>
             <Head>
                 <title>{"Products :: " + settings?.title}</title>
-                <meta name="description" content={settings?.title}/>
+                <meta name="description" content={settings?.title} />
             </Head>
 
-            <Breadcrumb py={[40, 80]} mb={[60, null, 100]} pageTitle="Products"/>
+            <Breadcrumb py={[40, 80]} mb={[60, null, 100]} pageTitle="Products" />
 
-            <ShopProductsFeed products={products}/>
+            <ShopProductsFeed products={products} />
         </Layout>
     );
 };
 
-export const getServerSideProps = async ({query}) => {
-    const {sort} = query;
-    const sortKey = sort?.split("-")[0].toUpperCase();
-    const reverse = sort?.split("-")[1] !== "ascending";
-
-    const productsData = await client(productsQuery(20, sortKey, reverse)),
-        products = productsData?.products?.edges;
+export const getServerSideProps = async ({ query }) => {
+    const productsData = await fetchProducts();
+    const products = productsData?.products?.edges || [];
 
     return {
         props: {

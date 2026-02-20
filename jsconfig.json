@@ -40,6 +40,9 @@
       ],
       "@bootstrap": [
         "src/styled/bootstrap"
+      ],
+      "@lib/*": [
+        "src/lib/*"
       ]
     }
   },

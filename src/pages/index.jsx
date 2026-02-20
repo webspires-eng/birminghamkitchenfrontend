@@ -9,7 +9,7 @@ import { SliderTwo as Slider } from "@components/slider";
 import Features from "@components/features";
 import BrandShowcase from "@components/brand-showcase";
 import SectionTitle from "@components/ui/section-title";
-import { client, productsQuery, collectionsQuery } from "@graphql";
+import { fetchProducts, fetchCategories } from "@lib/api";
 import styled, { themeGet, devices } from "@styled";
 import Button from "@components/ui/button";
 import { Container } from "@bootstrap";
@@ -238,10 +238,11 @@ const HomeTwo = ({ products, collections }) => {
 };
 
 export const getStaticProps = async () => {
-    const productsData = await client(productsQuery(50)),
-        products = productsData?.products?.edges,
-        collectionsData = await client(collectionsQuery(5)),
-        collections = collectionsData?.collections?.edges;
+    const [productsData, collections] = await Promise.all([
+        fetchProducts(),
+        fetchCategories(),
+    ]);
+    const products = productsData?.products?.edges || [];
 
     return {
         props: {

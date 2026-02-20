@@ -3,7 +3,7 @@ import settings from "@data/settings";
 import Layout from "@components/layout";
 import Breadcrumb from "@components/ui/breadcrumb";
 import ShopProductsFeed from "@components/shop";
-import { client, productsQuery } from "@graphql";
+import { fetchProducts } from "@lib/api";
 
 const ShopPage = ({ products }) => {
     return (
@@ -24,11 +24,8 @@ const ShopPage = ({ products }) => {
 };
 
 export const getServerSideProps = async ({ query }) => {
-    const { sort } = query;
-    const sortKey = sort?.split("-")[0].toUpperCase();
-    const reverse = sort?.split("-")[1] !== "ascending";
-    const productsData = await client(productsQuery(20, sortKey, reverse)),
-        products = productsData?.products?.edges;
+    const productsData = await fetchProducts();
+    const products = productsData?.products?.edges || [];
 
     return {
         props: {
