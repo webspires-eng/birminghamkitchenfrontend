@@ -37,12 +37,14 @@ export const WidgetWrapper = styled.div`
   ${space};
   ${color};
   
-  .widget-title {
+  /* Override widget title for light backgrounds */
+  .widget-title,
+  h4 {
     font-size: 14px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #1a1a1a !important;
     margin-bottom: 24px;
     position: relative;
     padding-bottom: 14px;
@@ -54,17 +56,21 @@ export const WidgetWrapper = styled.div`
       left: 0;
       width: 28px;
       height: 2px;
-      background: #005DAA;
+      background: #D40511;
       border-radius: 1px;
     }
   }
   
   .about-text {
-    color: #111;
+    color: #555 !important;
     font-size: 14px;
     font-weight: 500;
     line-height: 1.75;
     max-width: 320px;
+  }
+
+  p {
+    color: #555 !important;
   }
 
   .widget-list {
@@ -72,7 +78,7 @@ export const WidgetWrapper = styled.div`
       margin-bottom: 10px;
       
       a, span {
-        color: #111;
+        color: #444 !important;
         font-size: 14px;
         font-weight: 500;
         text-decoration: none;
@@ -81,7 +87,7 @@ export const WidgetWrapper = styled.div`
         align-items: center;
         
         &:hover {
-          color: #005DAA;
+          color: #D40511 !important;
           transform: translateX(3px);
         }
       }
@@ -123,11 +129,11 @@ export const SocialIcons = styled.ul`
       font-size: 15px;
 
       &:hover {
-        background-color: #005DAA;
-        border-color: #005DAA;
+        background-color: #D40511;
+        border-color: #D40511;
         color: #fff;
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 93, 170, 0.25);
+        box-shadow: 0 4px 12px rgba(212, 5, 17, 0.25);
       }
     }
   }
@@ -154,16 +160,16 @@ export const ContactItem = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f5f5f5;
+    background: #fef2f2;
     border-radius: 8px;
-    color: #005DAA;
+    color: #D40511;
     font-size: 16px;
     flex-shrink: 0;
   }
   
   .contact-text {
     a, span {
-      color: #111;
+      color: #444 !important;
       font-size: 14px;
       font-weight: 500;
       text-decoration: none;
@@ -171,7 +177,7 @@ export const ContactItem = styled.div`
       line-height: 1.5;
       
       &:hover {
-        color: #005DAA;
+        color: #D40511 !important;
       }
     }
     
