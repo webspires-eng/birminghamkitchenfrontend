@@ -1,18 +1,10 @@
-import Link from "next/link";
-import { useState } from "react";
 import PropTypes from "prop-types";
-import { useIsLoggedIn } from "@hooks";
 import Logo from "@components/ui/logo";
 import { useSelector } from "react-redux";
 import { Col, Container, Row } from "@bootstrap";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { getCartProductsQuantity } from "@utils/product";
-import { AiOutlineMenu, AiOutlineSetting } from "react-icons/ai";
-import { IoPersonOutline, IoSearchOutline } from "react-icons/io5";
-import {
-  DropdownMenu,
-  DropdownToggleButton,
-} from "@components/ui/dropdown/dropdwon.style";
+import { AiOutlineMenu } from "react-icons/ai";
 import {
   ActionItem,
   CartItemCount,
@@ -25,14 +17,11 @@ import {
 const HeaderBottom = ({
   onConfigHandler,
   onMiniCartHandler,
-  onSearchBoxHandler,
   onMobileNavHandler,
   children
 }) => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const shoppingCart = useSelector((state) => state.shoppingCart);
   const cartQuantity = getCartProductsQuantity(shoppingCart);
-  const isLoggedIn = useIsLoggedIn();
 
   return (
     <HeaderBottomWrap>
@@ -64,44 +53,6 @@ const HeaderBottom = ({
           <Col lg={2} className="d-none d-lg-block text-right">
             <HeaderAction>
               <ActionItem>
-                <HeaderActionBtn onClick={() => onSearchBoxHandler()}>
-                  <IoSearchOutline />
-                </HeaderActionBtn>
-              </ActionItem>
-
-              <ActionItem>
-                <DropdownToggleButton
-                  color="#333"
-                  className="header-action-btn"
-                  onClick={() => setIsDropdownOpen((prevState) => !prevState)}
-                >
-                  <IoPersonOutline />
-                </DropdownToggleButton>
-                <DropdownMenu
-                  align="right"
-                  className={isDropdownOpen ? "show" : "hide"}
-                >
-                  {isLoggedIn ? (
-                    <li>
-                      <Link href="/account">My Account</Link>
-                    </li>
-                  ) : (
-                    <li>
-                      <Link href="/signin">Signin</Link>
-                    </li>
-                  )}
-                  <li>
-                    <Link href="/cart">Cart</Link>
-                  </li>
-                  {isLoggedIn && (
-                    <li>
-                      <Link href="/logout">Logout</Link>
-                    </li>
-                  )}
-                </DropdownMenu>
-              </ActionItem>
-
-              <ActionItem>
                 <HeaderActionBtn
                   className="pr-1"
                   onClick={() => onMiniCartHandler()}
@@ -132,7 +83,6 @@ const HeaderBottom = ({
 HeaderBottom.propTypes = {
   onConfigHandler: PropTypes.func.isRequired,
   onMiniCartHandler: PropTypes.func.isRequired,
-  onSearchBoxHandler: PropTypes.func.isRequired,
   onMobileNavHandler: PropTypes.func.isRequired,
   children: PropTypes.node
 };

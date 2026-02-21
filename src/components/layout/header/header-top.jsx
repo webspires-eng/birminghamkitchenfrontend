@@ -29,8 +29,8 @@ const HeaderTop = ({ className }) => {
             setTimeout(() => {
                 setCurrentIndex(prev => (prev + 1) % messages.length);
                 setIsAnimating(false);
-            }, 400);
-        }, 3500);
+            }, 600);
+        }, 5000);
 
         return () => clearInterval(interval);
     }, [messages.length]);
@@ -47,7 +47,7 @@ const HeaderTop = ({ className }) => {
                                 position: relative;
                             }
                             .top-bar-message {
-                                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                                transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
                                 opacity: 1;
                                 transform: translateY(0);
                             }
