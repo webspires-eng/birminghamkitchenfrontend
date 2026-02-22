@@ -6,12 +6,14 @@ import PropTypes from "prop-types";
 import Logo from "@components/ui/logo";
 import OffCanvas from "@components/ui/offCanvas";
 import { CgMathPlus, CgMathMinus } from "react-icons/cg";
-import { IoCallOutline, IoMailOutline, IoTimeOutline, IoLogoFacebook, IoLogoInstagram, IoLogoYoutube, IoLogoPinterest } from "react-icons/io5";
+import { IoCloseOutline, IoCallOutline, IoMailOutline, IoTimeOutline, IoLogoFacebook, IoLogoInstagram, IoLogoYoutube, IoLogoPinterest } from "react-icons/io5";
 import { MobileNav, MobileNavContact, MobileSocial } from "@components/layout/navbar/mobile-nav.style";
 import { getClosest, getSiblings, slideToggle, slideUp } from "@utils/method";
 import { OffCanvasCloseBtn, OffCanvasHead, OffCanvasContent } from "@components/ui/offCanvas/style";
+import { useSettings } from "@context/SettingsContext";
 
 const MobileNavbar = ({ isOpen, onHandler }) => {
+    const settings = useSettings();
     const onNavHandler = (e) => {
         const target = e.target;
         const hasSubmenus = getSiblings(target);
@@ -45,7 +47,7 @@ const MobileNavbar = ({ isOpen, onHandler }) => {
                     width={120}
                     src="/images/logo/logo.png"
                 />
-                <OffCanvasCloseBtn onClick={() => onHandler()}>Close</OffCanvasCloseBtn>
+                <OffCanvasCloseBtn onClick={() => onHandler()}><IoCloseOutline size={28} /></OffCanvasCloseBtn>
             </OffCanvasHead>
 
             <OffCanvasContent>
@@ -82,21 +84,27 @@ const MobileNavbar = ({ isOpen, onHandler }) => {
 
                 <MobileNavContact>
                     <h4>Contact Us</h4>
-                    <a href="tel:+447814444983" className="contact-item">
-                        <IoCallOutline /> 0781 444 4983
-                    </a>
-                    <a href="mailto:Group961sales@gmail.com" className="contact-item">
-                        <IoMailOutline /> Group961sales@gmail.com
-                    </a>
-                    <div className="contact-item">
-                        <IoTimeOutline /> Mon - Sat: 9am - 6pm
-                    </div>
+                    {settings?.contact_phone && (
+                        <a href={`tel:${settings.contact_phone}`} className="contact-item">
+                            <IoCallOutline /> {settings.contact_phone}
+                        </a>
+                    )}
+                    {settings?.contact_email && (
+                        <a href={`mailto:${settings.contact_email}`} className="contact-item">
+                            <IoMailOutline /> {settings.contact_email}
+                        </a>
+                    )}
+                    {settings?.showroom_hours && (
+                        <div className="contact-item">
+                            <IoTimeOutline /> {settings.showroom_hours.split('\n')[0]}
+                        </div>
+                    )}
 
                     <MobileSocial>
-                        <a href="https://facebook.com" target="_blank" rel="noreferrer"><IoLogoFacebook /></a>
-                        <a href="https://instagram.com" target="_blank" rel="noreferrer"><IoLogoInstagram /></a>
-                        <a href="https://youtube.com" target="_blank" rel="noreferrer"><IoLogoYoutube /></a>
-                        <a href="https://pinterest.com" target="_blank" rel="noreferrer"><IoLogoPinterest /></a>
+                        {settings?.social_facebook && <a href={settings.social_facebook} target="_blank" rel="noreferrer"><IoLogoFacebook /></a>}
+                        {settings?.social_instagram && <a href={settings.social_instagram} target="_blank" rel="noreferrer"><IoLogoInstagram /></a>}
+                        {settings?.social_youtube && <a href={settings.social_youtube} target="_blank" rel="noreferrer"><IoLogoYoutube /></a>}
+                        {settings?.social_pinterest && <a href={settings.social_pinterest} target="_blank" rel="noreferrer"><IoLogoPinterest /></a>}
                     </MobileSocial>
                 </MobileNavContact>
             </OffCanvasContent>
