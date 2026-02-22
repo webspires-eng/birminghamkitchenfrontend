@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Button from "@components/ui/button";
 import { IoIosSend } from "react-icons/io";
-import { Form, FormGroup } from "@bootstrap";
 import { FormNewsletter, Input } from "./newsletter.style";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -42,7 +41,7 @@ const NewsletterForm = () => {
                 setMessage(data.message);
                 if (data.success) setEmail("");
             }
-        } catch {
+        } catch (err) {
             setIsError(true);
             setMessage("Something went wrong. Please try again.");
         } finally {
@@ -52,8 +51,8 @@ const NewsletterForm = () => {
 
     return (
         <FormNewsletter mt={20}>
-            <Form onSubmit={handleSubmit}>
-                <FormGroup className="mb-0">
+            <form onSubmit={handleSubmit}>
+                <div className="mb-0">
                     <label className="sr-only" htmlFor="newsletterInput">Newsletter</label>
                     <Input
                         type="email"
@@ -74,8 +73,8 @@ const NewsletterForm = () => {
                         <IoIosSend />
                         {loading ? "Sending..." : "Subscribe"}
                     </Button>
-                </FormGroup>
-            </Form>
+                </div>
+            </form>
             {message && (
                 <p
                     style={{
