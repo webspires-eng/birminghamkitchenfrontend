@@ -23,7 +23,7 @@ const FooterBottom = ({ bg }) => {
 
                     <Col md={6} className="text-center text-md-right">
                         <CopyrightText>
-                            Crafted with <IoIosHeart /> in Birmingham, UK
+                            Developed with <IoIosHeart /> by <a href="https://webspires.co.uk?utm_souce=birmkitch" target="_blank" rel="noopener" style={{ fontWeight: 700, color: '#2563EB', textDecoration: 'none' }}>Webspires Limited</a>
                         </CopyrightText>
                     </Col>
                 </Row>
