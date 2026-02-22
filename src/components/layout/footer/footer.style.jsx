@@ -168,6 +168,9 @@ export const ContactItem = styled.div`
   }
   
   .contact-text {
+    overflow: hidden;
+    min-width: 0;
+    
     a, span {
       color: #444 !important;
       font-size: 14px;
@@ -175,6 +178,7 @@ export const ContactItem = styled.div`
       text-decoration: none;
       transition: color 0.2s;
       line-height: 1.5;
+      word-break: break-all;
       
       &:hover {
         color: #D40511 !important;
