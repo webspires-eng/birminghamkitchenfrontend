@@ -10,6 +10,25 @@
     "mega_menu": false
   },
   {
+    "text": "Services",
+    "link": "#",
+    "mega_menu": false,
+    "submenu": [
+      {
+        "list": [
+          {
+            "text": "Media Walls",
+            "link": "/media-walls"
+          },
+          {
+            "text": "Kitchen Remodelling",
+            "link": "/kitchen-remodelling"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "text": "About",
     "link": "/about",
     "mega_menu": false
