@@ -13,6 +13,8 @@ import { fetchProducts, fetchCategories } from "@lib/api";
 import styled, { themeGet, devices } from "@styled";
 import Button from "@components/ui/button";
 import { Container } from "@bootstrap";
+import Link from "next/link";
+import { IoTvOutline, IoHomeOutline, IoBedOutline } from "react-icons/io5";
 
 const CollectionSection = styled.section`
     padding: 60px 0;
@@ -54,6 +56,129 @@ const ViewAllWrap = styled.div`
         &:hover {
             background: #111;
             color: #fff;
+        }
+    }
+`;
+
+const ServicesSection = styled.section`
+    padding: 80px 0;
+    background: #fff;
+
+    ${devices.sm} {
+        padding: 50px 0;
+    }
+`;
+
+const ServicesGrid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 10px;
+
+    ${devices.md} {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+`;
+
+const ServiceCard = styled.a`
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 380px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    ${devices.sm} {
+        min-height: 300px;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+        color: #fff;
+
+        .card-bg img {
+            transform: scale(1.08);
+        }
+
+        .card-arrow {
+            transform: translateX(6px);
+        }
+    }
+
+    .card-bg {
+        position: absolute;
+        inset: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.05) 0%,
+                rgba(0, 0, 0, 0.7) 100%
+            );
+        }
+    }
+
+    .card-content {
+        position: relative;
+        z-index: 2;
+        padding: 32px;
+
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 18px;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 16px;
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .card-arrow {
+            transition: transform 0.3s ease;
         }
     }
 `;
@@ -191,6 +316,60 @@ const HomeTwo = ({ products, collections }) => {
                     <a href="/shop">View All Products →</a>
                 </ViewAllWrap>
             </ProductsSection>
+
+            <ServicesSection>
+                <Container>
+                    <SectionTitle
+                        label="What We Do"
+                        title="Our Services"
+                        content="From bespoke media walls to complete kitchen transformations, we bring expert craftsmanship to every project."
+                    />
+
+                    <ServicesGrid>
+                        <Link href="/media-walls" passHref legacyBehavior>
+                            <ServiceCard>
+                                <div className="card-bg">
+                                    <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&q=80&w=700" alt="Media Walls" />
+                                </div>
+                                <div className="card-content">
+                                    <div className="card-icon"><IoTvOutline /></div>
+                                    <h3>Media Walls</h3>
+                                    <p>Stunning bespoke feature walls with integrated fireplaces, ambient lighting, and concealed storage.</p>
+                                    <span className="card-link">Learn More <span className="card-arrow">→</span></span>
+                                </div>
+                            </ServiceCard>
+                        </Link>
+
+                        <Link href="/kitchen-remodelling" passHref legacyBehavior>
+                            <ServiceCard>
+                                <div className="card-bg">
+                                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=700" alt="Kitchen Remodelling" />
+                                </div>
+                                <div className="card-content">
+                                    <div className="card-icon"><IoHomeOutline /></div>
+                                    <h3>Kitchen Remodelling</h3>
+                                    <p>Complete kitchen transformations — from design and supply to expert installation and finishing.</p>
+                                    <span className="card-link">Learn More <span className="card-arrow">→</span></span>
+                                </div>
+                            </ServiceCard>
+                        </Link>
+
+                        <Link href="/collection/ottoman-divan-bed" passHref legacyBehavior>
+                            <ServiceCard>
+                                <div className="card-bg">
+                                    <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=700" alt="Bespoke Bedrooms" />
+                                </div>
+                                <div className="card-content">
+                                    <div className="card-icon"><IoBedOutline /></div>
+                                    <h3>Bespoke Bedrooms</h3>
+                                    <p>Handcrafted Ottoman divan beds, luxury headboards, and fitted bedroom furniture built to order.</p>
+                                    <span className="card-link">Learn More <span className="card-arrow">→</span></span>
+                                </div>
+                            </ServiceCard>
+                        </Link>
+                    </ServicesGrid>
+                </Container>
+            </ServicesSection>
 
             <BrandShowcase />
 
