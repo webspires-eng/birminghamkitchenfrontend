@@ -3,7 +3,7 @@ import styled, { devices, themeGet, keyframes } from "@styled";
 /* ──────────── Hero Banner ──────────── */
 export const ServiceHero = styled.section`
   position: relative;
-  min-height: 520px;
+  min-height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,8 +71,8 @@ export const ServiceHero = styled.section`
     }
   }
 
-  ${devices.md} { min-height: 400px; }
-  ${devices.sm} { min-height: 340px; }
+  ${devices.md} { min-height: 350px; }
+  ${devices.sm} { min-height: 300px; }
 `;
 
 /* ──────────── Intro / About ──────────── */
